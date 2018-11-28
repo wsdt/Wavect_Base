@@ -2,7 +2,7 @@
 This microservice uses React, (in future additionally Redux), typescript and scss. 
 Everything compiles by starting **npm start**. If you run this application the first time execute **npm install** before. 
 
-**As long as issue #1 is open, you should run _npm run dev_ instead of _npm start_ as the start command will fail bc. of the tests which run beforehand.**
+**As long as issue #4 is open, you should run _npm run dev_ instead of _npm start_ as the start command will fail bc. of the tests which run beforehand.**
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
