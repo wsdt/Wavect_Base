@@ -1,3 +1,7 @@
+# Frontend Service
+This microservice uses React, (in future additionally Redux), typescript and scss. 
+Everything compiles by starting **npm start**. If you run this application the first time execute **npm install** before. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
