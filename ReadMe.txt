@@ -1,0 +1,3 @@
+Microservice architecture first try: 
+
+Database, Node.JS (with Typescript), React.JS, ...

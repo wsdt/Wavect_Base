@@ -1,0 +1,35 @@
+{
+  "name": "s_backend",
+  "version": "1.0.0",
+  "description": "Backend for BeKind",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build&&nodemon ./dist/app.js",
+    "build": "tsc && npm run lint",
+    "clean": "rimraf ./dist",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "tsc": "tsc",
+    "test": "mocha -r ts-node/register src/**/*.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "NotAvailable"
+  },
+  "keywords": [
+    "bekind"
+  ],
+  "author": "Kevin Riedl",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "^10.12.10",
+    "nodemon": "^1.18.7",
+    "rimraf": "^2.6.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6",
+    "typescript-eslint-parser": "^21.0.1"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
