@@ -13,10 +13,12 @@
     "typescript": "3.1.6"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "tsc && npm run lint && react-scripts start",
+    "build": "tsc && npm run lint && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "tsc": "tsc"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,6 +30,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "node-sass": "^4.10.0"
+    "node-sass": "^4.10.0",
+	"typescript-eslint-parser": "^21.0.1",
+	"tslint": "^5.11.0"
   }
 }

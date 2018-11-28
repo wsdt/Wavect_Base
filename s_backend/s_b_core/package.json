@@ -4,7 +4,9 @@
   "description": "Backend for BeKind",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build&&nodemon ./dist/app.js",
+    "start": "npm run build&&nodemon ./dist/server.js",
+	"dev": "ts-node ./src/server.ts",
+	"prod": "npm run build&&node ./dist/server.js",
     "build": "tsc && npm run lint",
     "clean": "rimraf ./dist",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
