@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/jest": "23.3.9",
     "@types/node": "10.12.10",
     "@types/react": "16.7.7",
     "@types/react-dom": "16.0.11",
@@ -13,9 +12,10 @@
     "typescript": "3.1.6"
   },
   "scripts": {
-    "start": "tsc && npm run lint && react-scripts start",
-    "build": "tsc && npm run lint && react-scripts build",
-    "test": "react-scripts test",
+    "start": "tsc && npm run test && npm run lint && react-scripts start",
+    "dev": "react-scripts start",
+    "build": "tsc && npm run test && npm run lint && react-scripts build",
+    "test": "jest && react-scripts test",
     "eject": "react-scripts eject",
     "lint": "tslint -c tslint.json 'src/**/*.ts'",
     "tsc": "tsc"
@@ -30,8 +30,13 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@types/jest": "^23.3.9",
+    "@types/react-test-renderer": "^16.0.3",
+    "jest": "^23.6.0",
     "node-sass": "^4.10.0",
-	"typescript-eslint-parser": "^21.0.1",
-	"tslint": "^5.11.0"
+    "react-test-renderer": "^16.6.3",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.11.0",
+    "typescript-eslint-parser": "^21.0.1"
   }
 }
