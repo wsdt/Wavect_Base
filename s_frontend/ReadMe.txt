@@ -1,1 +1,4 @@
 https://levelup.gitconnected.com/typescript-and-react-using-create-react-app-a-step-by-step-guide-to-setting-up-your-first-app-6deda70843a4
+
+Add scss: 
+https://www.robinwieruch.de/create-react-app-with-sass-support/
