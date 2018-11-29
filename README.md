@@ -33,4 +33,4 @@ Exemplare technologies used:
 
 ## Contributors
 [[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/badges/shields/graphs/contributors"><img src="https://opencollective.com/shields/contributors.svg?width=890" /></a>
+<a href="https://github.com/wsdt/BeKind_Playground/graphs/contributors"><img src="https://opencollective.com/shields/contributors.svg?width=890" /></a>
