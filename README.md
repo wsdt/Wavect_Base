@@ -1,5 +1,13 @@
-# BeKind_Playground [![Build Status](https://travis-ci.com/wsdt/BeKind_Playground.svg?token=DRpYu6MjKAo2SePYFzpo&branch=master)](https://travis-ci.com/wsdt/BeKind_Playground) [![Known Vulnerabilities](https://snyk.io/test/github/wsdt/BeKind_Playground/badge.svg)](https://snyk.io/test/github/wsdt/BeKind_Playground)
+# BeKind_Playground
 
+## Used external tools
+### Snyk - Dependency security vulnerabilities
+We are using [Snyk](https://snyk.io) for automatically scanning for security vulnerabilities. As we have a private repository we cannot add the badge here. Please check for vulnerabilities regularly: [Snyk - Projects](https://app.snyk.io/org/wsdt/projects). 
+
+### Travis - Test suite [![Build Status](https://travis-ci.com/wsdt/BeKind_Playground.svg?token=DRpYu6MjKAo2SePYFzpo&branch=master)](https://travis-ci.com/wsdt/BeKind_Playground)
+[Travis](https://travis-ci.com) is used for automatically executing our test cases. See the result above whether all tets succeeded (all microservices are tested). 
+
+## What is it?
 Basic first project structure. 
 
 Each superior folder represents a separate service which will be placed into a separate docker image (with n container instances -> Kubernetes in future, for first few releases just one container via cloud scaling) and maybe also a separate physical device. 
@@ -9,16 +17,16 @@ Therefore the frontend (react, redux, typescript) will be placed into a separate
 Each folder contains a separate README.md. 
 
 Exemplare technologies used: 
-## Backend
+### Backend
 - Node.JS
 - Typescript
 - Nodemon
 
-## Frontend
+### Frontend
 - Typescript
 - React.JS
 - (in future Redux when we are familiar with react)
 - SCSS
 
-## Database
+### Database
 - NoSQL/SQL in future. 
