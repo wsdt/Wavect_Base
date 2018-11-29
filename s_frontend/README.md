@@ -2,7 +2,7 @@
 This microservice uses React, (in future additionally Redux), typescript and scss. 
 Everything compiles by starting **npm start**. If you run this application the first time execute **npm install** before. 
 
-**Test cases for .tsx files need to be made in .jsx files. Tsx files will be ignored. Different test files need to have different names regardless of their filetype (app.test.jsx, app.test.ts -> only one file will be tested, if e.g. the ts-file is renamed to app2.test.ts both are getting tested [as said .tsx-files won't work as I didn't get it to work]).** 
+**Test cases for .tsx files need to be made in .jsx files. Tsx files will be ignored. Different test files need to have different names regardless of their filetype (app.test.jsx, app.test.ts -> only one file will be tested, if e.g. the ts-file is renamed to app2.test.ts both are getting tested [as said .tsx-files won't work as I didn't get it to work]). Issue: [#5](https://github.com/wsdt/BeKind_Playground/issues/5)** 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
