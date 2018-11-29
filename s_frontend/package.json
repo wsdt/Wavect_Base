@@ -20,7 +20,6 @@
     "tsc": "tsc"
   },
   "pre-commit": [
-    "precommit-msg",
     "lint",
     "test:nowatch"
   ],
