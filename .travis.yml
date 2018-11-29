@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+  - node_modules
+env:
+  - SERVICE_DIR=s_frontend
+  - SERVICE_DIR=s_backend/s_b_core
+script:
+  - cd $SERVICE_DIR && npm install && npm test && npm run build
