@@ -1,5 +1,5 @@
 # BeKind_Playground [![HitCount](http://hits.dwyl.com/wsdt/BeKind_Playground.svg)](http://hits.dwyl.com/wsdt/BeKind_Playground) 
-[![GitHub issues](https://img.shields.io/github/issues-raw/badges/shields.svg)](https://github.com/wsdt/BeKind_Playground)
+[![GitHub issues](https://img.shields.io/wsdt/BeKind_Playground/badges/shields.svg)](https://github.com/wsdt/BeKind_Playground)
 
 
 ## Used external tools 
