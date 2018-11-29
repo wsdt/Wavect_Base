@@ -1,4 +1,4 @@
-# BeKind_Playground [![Build Status](https://travis-ci.com/wsdt/BeKind_Playground.svg?token=DRpYu6MjKAo2SePYFzpo&branch=master)](https://travis-ci.com/wsdt/BeKind_Playground)
+# BeKind_Playground [![Build Status](https://travis-ci.com/wsdt/BeKind_Playground.svg?token=DRpYu6MjKAo2SePYFzpo&branch=master)](https://travis-ci.com/wsdt/BeKind_Playground) [![Known Vulnerabilities](https://snyk.io/test/github/wsdt/BeKind_Playground/badge.svg)](https://snyk.io/test/github/wsdt/BeKind_Playground)
 
 Basic first project structure. 
 
