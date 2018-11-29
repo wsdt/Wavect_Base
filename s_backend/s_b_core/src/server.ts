@@ -1,7 +1,7 @@
 import app from "./app";
 
 // SERVER CONSTANTS
-const PORT = 3080;
+const PORT = 8080;
 
 runServer();
 
