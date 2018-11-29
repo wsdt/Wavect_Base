@@ -1,5 +1,5 @@
 # BeKind_Playground 
-[![HitCount](http://hits.dwyl.com/wsdt/BeKind_Playground.svg)](http://hits.dwyl.com/wsdt/BeKind_Playground) [![GitHub contributors](https://img.shields.io/github/contributors/wsdt/BeKind_Playground.svg)](https://GitHub.com/wsdt/BeKind_Playground/graphs/contributors/) [![GitHub issues](https://img.shields.io/github/issues/wsdt/BeKind_Playground.svg)](https://GitHub.com/wsdt/BeKind_Playground/issues/) [![GitHub pull-requests](https://img.shields.io/github/issues-pr/wsdt/BeKind_Playground.svg)](https://GitHub.com/wsdt/BeKind_Playground/pull/)
+[![HitCount](http://hits.dwyl.com/wsdt/BeKind_Playground.svg)](http://hits.dwyl.com/wsdt/BeKind_Playground)
 
 ## Used external tools 
 ### Snyk - Dependency security vulnerabilities
