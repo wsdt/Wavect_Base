@@ -4,6 +4,9 @@ about: Suggest an idea for this project
 
 ---
 
+**Before adding the issue please assign this issue to a relevant github project to let everyone keep track about your new issue!**
+-----------------------------------------
+
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
