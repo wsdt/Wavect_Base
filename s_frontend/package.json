@@ -21,7 +21,7 @@
   },
   "pre-commit": {
 		"precommit-msg",
-		"tslint",
+		"lint",
 		"test:nowatch"
   },
   "eslintConfig": {
