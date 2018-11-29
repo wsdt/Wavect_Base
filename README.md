@@ -30,3 +30,7 @@ Exemplare technologies used:
 
 ### Database
 - NoSQL/SQL in future. 
+
+## Contributors
+[[Contribute](CONTRIBUTING.md)].
+<a href="https://github.com/badges/shields/graphs/contributors"><img src="https://opencollective.com/shields/contributors.svg?width=890" /></a>
