@@ -1,6 +1,8 @@
-# BeKind_Playground [![HitCount](http://hits.dwyl.com/wsdt/BeKind_Playground.svg)](http://hits.dwyl.com/wsdt/BeKind_Playground)
+# BeKind_Playground [![HitCount](http://hits.dwyl.com/wsdt/BeKind_Playground.svg)](http://hits.dwyl.com/wsdt/BeKind_Playground) 
+[![GitHub issues](https://img.shields.io/github/issues-raw/badges/shields.svg)](https://github.com/wsdt/BeKind_Playground)
 
-## Used external tools
+
+## Used external tools 
 ### Snyk - Dependency security vulnerabilities
 We are using [Snyk](https://snyk.io) for automatically scanning for security vulnerabilities. As we have a private repository we cannot add the badge here. Please check for vulnerabilities regularly: [Snyk - Projects](https://app.snyk.io/org/wsdt/projects). 
 
@@ -31,6 +33,3 @@ Exemplare technologies used:
 ### Database
 - NoSQL/SQL in future. 
 
-## Contributors
-[[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/wsdt/BeKind_Playground/graphs/contributors"><img src="https://opencollective.com/shields/contributors.svg?width=890" /></a>
