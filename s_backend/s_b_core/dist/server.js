@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var app_1 = require("./app");
-// SERVER CONSTANTS
 var PORT = 3080;
 runServer();
 function runServer() {
