@@ -1,4 +1,4 @@
-# BeKind_Playground
+# BeKind_Playground [![HitCount](http://hits.dwyl.com/wsdt/BeKind_Playground.svg)](http://hits.dwyl.com/wsdt/BeKind_Playground)
 
 ## Used external tools
 ### Snyk - Dependency security vulnerabilities
