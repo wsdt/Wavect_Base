@@ -9,7 +9,7 @@ cache:
 before_install:
   - cd s_backend/s_b_core
   - docker build -t bekind/s_b_core .
-  - sudo sh ./docker_start.sh
+  - docker run -p 3080:8080  --name=bekind_s_b_core s_b_core
   - docker ps -a
 env:
   - SERVICE_DIR=s_frontend
