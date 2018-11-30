@@ -1,13 +1,15 @@
 language: node_js
 node_js:
   - "stable"
+services:
+  - docker
 cache:
   directories:
   - node_modules
 before_install:
   - cd s_backend/s_b_core
   - docker build -t bekind/s_b_core .
-  - ./docker_start.sh
+  - sudo ./docker_start.sh
   - docker ps -a
 env:
   - SERVICE_DIR=s_frontend
