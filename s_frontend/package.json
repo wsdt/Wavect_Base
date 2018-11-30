@@ -18,6 +18,9 @@
 		"@types/jest": "^23.3.10",
 		"node-sass": "^4.10.0",
 		"tslint": "^5.11.0",
+		"tslint-consistent-codestyle": "^1.14.1",
+		"tslint-eslint-rules": "^5.4.0",
+		"tslint-react": "^3.6.0",
 		"typescript": "^3.1.6",
 		"typescript-eslint-parser": "^21.0.1"
 	},
@@ -29,11 +32,7 @@
 		"testnw": "react-scripts test --watchAll=false",
 		"eject": "react-scripts eject",
 		"tslint": "tslint -p tsconfig.json",
-		"tslint-fix": "tslint --fix -p tsconfig.json",
-		"tsc": "tsc"
-	},
-	"eslintConfig": {
-		"extends": "react-app"
+		"tslint-fix": "tslint --fix -p tsconfig.json"
 	},
 	"browserslist": [
 		">0.2%",
