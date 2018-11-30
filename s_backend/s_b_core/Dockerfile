@@ -10,7 +10,5 @@ RUN npm install --only=production
 # Bundle app source (copy everything)
 COPY . .
 
-EXPOSE 8080
-
 # Run npm run prod 
 CMD ["npm", "run","prod"]

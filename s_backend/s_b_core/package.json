@@ -24,7 +24,7 @@
 	"scripts": {
 		"start": "npm run build && nodemon ./dist/server.js",
 		"dev": "ts-node ./src/server.ts",
-		"prod": "npm run build && ts-node ./dist/server.js",
+		"prod": "node ./dist/server.js",
 		"build": "tsc && npm run test && npm run tslint",
 		"clean": "rimraf ./dist",
 		"tslint": "tslint -p tsconfig.json",
