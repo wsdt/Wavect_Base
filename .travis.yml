@@ -10,5 +10,5 @@ env:
   - SERVICE_DIR=s_frontend
   - SERVICE_DIR=s_backend/s_b_core
 script:
-  - cd $SERVICE_DIR && npm install && npm test && npm run build && npm start
+  - cd $SERVICE_DIR && npm install && npm run dev && npm run build
   - cd $SERVICE_DIR && sh ./docker_start.sh
