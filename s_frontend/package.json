@@ -27,6 +27,7 @@
 	"scripts": {
 		"start": "tsc && npm run testnw && npm run tslint && react-scripts start",
 		"dev": "react-scripts start",
+		"start-built": "react-scripts start",
 		"build": "tsc && npm run testnw && npm run tslint && react-scripts build",
 		"test": "react-scripts test",
 		"testnw": "react-scripts test --watchAll=false",

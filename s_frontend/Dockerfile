@@ -13,4 +13,4 @@ RUN npm install && \
 	npm install react-scripts -g
 	
 # start app
-CMD ["npm", "run", "prod"]
+CMD ["npm", "run", "start-built"]
