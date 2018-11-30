@@ -4,8 +4,13 @@ node_js:
 cache:
   directories:
   - node_modules
+before_install:
+  - cd s_backend/s_b_core
+  - docker build -t bekind/s_b_core .
+  - ./docker_start.sh
+  - docker ps -a
 env:
   - SERVICE_DIR=s_frontend
   - SERVICE_DIR=s_backend/s_b_core
 script:
-  - cd $SERVICE_DIR && npm install && npm test && npm run build
+  - cd $SERVICE_DIR && npm install && npm test && npm run build && npm start
