@@ -12,3 +12,4 @@ env:
 script:
   - cd $SERVICE_DIR && npm install && npm run build
   - sh ./docker_start.sh
+  
