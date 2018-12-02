@@ -7,9 +7,9 @@ COPY package.json /usr/src/app/package.json
 RUN npm install
 RUN npm install react-scripts
 COPY . /usr/src/app
-RUN npm run build
+RUN ls&&npm run build
 
-# produtction environment
+# production environment
 FROM nginx:1.15.7-alpine
 COPY --from builder /usr/src/app/build /usr/share/nginx/html
 EXPOSE 80
