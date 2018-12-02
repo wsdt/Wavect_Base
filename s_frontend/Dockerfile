@@ -1,16 +1,16 @@
-FROM node:11
-
-# set working directory
+# Build environment
+FROM node:11 as builder
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
-
-# add to path
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
-
-# install and cache app dependencies
 COPY package.json /usr/src/app/package.json
-RUN npm install && \
-	npm install react-scripts -g
-	
-# start app
-CMD ["npm", "run", "start-built"]
+RUN npm install
+RUN npm install react-scripts
+COPY . /usr/src/app
+RUN npm run build
+
+# produtction environment
+FROM nginx:1.15.7-alpine
+COPY --from builder /usr/src/app/build /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
