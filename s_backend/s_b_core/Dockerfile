@@ -11,4 +11,4 @@ RUN npm install --only=production
 COPY . .
 
 # Run npm run prod 
-CMD ["npm", "run","prod"]
+CMD ["npm", "run","start-built"]
