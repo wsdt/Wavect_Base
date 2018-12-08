@@ -10,7 +10,7 @@
     "prettier": "prettier --write \"**/*.{ts,tsx,js,jsx,scss,css,json}",
     "tslint": "tslint -p ./tsconfig.json",
     "tslint-fix": "tslint --fix -p ./tsconfig.json",
-    "precommit": "npm run test && npm run prettier && npm run tslint-fix"
+    "evaluate": "npm run test && npm run prettier && npm run tslint-fix"
   },
   "keywords": [],
   "author": "",

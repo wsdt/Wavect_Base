@@ -9,7 +9,6 @@
   "devDependencies": {
     "@types/jest": "^23.3.9",
     "@types/node": "^10.12.10",
-    "husky": "^1.2.0",
     "jest": "^23.6.0",
     "nodemon": "^1.18.7",
     "prettier": "^1.15.3",
@@ -33,7 +32,7 @@
     "tslint-fix": "tslint --fix -p tsconfig.json",
     "test": "jest",
     "prettier": "prettier --write \"**/*.{ts,js,json}",
-    "precommit": "npm run test && npm run prettier && npm run tslint-fix"
+    "evaluate": "npm run test && npm run prettier && npm run tslint-fix"
   },
   "repository": "github:wsdt/BeKind_Playground",
   "bugs": {
@@ -43,4 +42,3 @@
   "author": "Kevin Riedl",
   "license": "UNLICENSED"
 }
-
