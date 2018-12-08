@@ -1,3 +1,3 @@
-test('basis', () => {
-	expect((5+5) == (10));
+test("basis", () => {
+  expect(5 + 5 === 10);
 });
