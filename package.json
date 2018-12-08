@@ -2,8 +2,10 @@
   "name": "BeKind_Playground",
   "version": "0.0.1",
   "description": "BeKind_Playground for prototypes and maybe production build.",
-  "scripts": {
-    "pre-commit": "cd s_backend/s_b_core && npm run evaluate && cd ../../s_frontend && npm run evaluate"
+  "husky": {
+	 "hooks": {
+		"pre-commit": "cd s_backend/s_b_core && npm run evaluate && cd ../../s_frontend && npm run evaluate"
+	 }
   },
   "repository": {
     "type": "git",

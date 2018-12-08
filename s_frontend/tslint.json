@@ -1,20 +1,18 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended",
-		"tslint-react",
-		"tslint-eslint-rules",
-		"tslint-consistent-codestyle"
-    ],
-    "jsRules": {},
-    "rules": {
-		"no-console": [false]
-	},
-    "rulesDirectory": [],
-	"linterOptions": {
-		"exclude": [
-			"node_modules",
-			"src/serviceWorker.ts"
-		]
-	}
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-prettier",
+    "tslint-eslint-rules",
+    "tslint-consistent-codestyle"
+  ],
+  "jsRules": {},
+  "rules": {
+    "no-console": [false]
+  },
+  "rulesDirectory": [],
+  "linterOptions": {
+    "exclude": ["node_modules"]
+  }
 }
