@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 // <any, any> to set constraints we can set interfaces for props, states
 export class App extends React.Component<IProps, any> {

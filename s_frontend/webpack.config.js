@@ -12,7 +12,7 @@ module.exports = {
     filename: "bundle.js"
   },
   devServer: {
-	  contentBase: "./public"
+    contentBase: "./public"
   },
   optimization: {
     splitChunks: {
@@ -29,7 +29,7 @@ module.exports = {
   },
   module: {
     rules: [
-	//todo: add file-loader and image-webpack-loader for better performance: https://github.com/tcoopman/image-webpack-loader to load files (ONLY IF NEEDED)
+      //todo: add file-loader and image-webpack-loader for better performance: https://github.com/tcoopman/image-webpack-loader to load files (ONLY IF NEEDED)
       {
         test: /\.tsx?$/,
         loader: "awesome-typescript-loader"
@@ -59,13 +59,13 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: "./public/html/index.html",
-	  minify: {
-		  collapseWhitespace: true,
-		  removeComments: true,
-		  removeRedundantAttributes: true,
-		  removeScriptTypeAttributes: true,
-		  removeStyleLinkAttributes: true
-	  }
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkAttributes: true
+      }
     }),
     new MiniCssExtractPlugin({
       filename: "style.css"

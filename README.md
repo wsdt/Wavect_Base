@@ -16,17 +16,27 @@ Therefore the frontend (react, redux, typescript) will be placed into a separate
 
 Each folder contains a separate README.md. 
 
-Exemplare technologies used: 
+Exemplary technologies used: 
+### PARENT
+- Husky: Precommit-hook to test, execute tslint and prettier. 
+
 ### Backend
 - Node.JS
-- Typescript
 - Nodemon
+- TypeScript
+- Jest
+- Prettier
+- Tslint
 
 ### Frontend
-- Typescript
-- React.JS
+- React.JS (not using create-react-app anymore)
 - (in future Redux when we are familiar with react)
 - SCSS
+- TypeScript
+- Jest
+- Webpack
+- Prettier
+- Tslint
 
 ### Database
 - NoSQL/SQL in future. 
