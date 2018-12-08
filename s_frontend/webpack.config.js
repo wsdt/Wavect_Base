@@ -8,8 +8,11 @@ module.exports = {
   entry: "./src/index.tsx",
   mode: "development",
   output: {
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "dist"),
     filename: "bundle.js"
+  },
+  devServer: {
+	  contentBase: "./public"
   },
   optimization: {
     splitChunks: {
@@ -26,6 +29,7 @@ module.exports = {
   },
   module: {
     rules: [
+	//todo: add file-loader and image-webpack-loader for better performance: https://github.com/tcoopman/image-webpack-loader to load files (ONLY IF NEEDED)
       {
         test: /\.tsx?$/,
         loader: "awesome-typescript-loader"
@@ -54,7 +58,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./index.html"
+      template: "./public/html/index.html",
+	  minify: {
+		  collapseWhitespace: true,
+		  removeComments: true,
+		  removeRedundantAttributes: true,
+		  removeScriptTypeAttributes: true,
+		  removeStyleLinkAttributes: true
+	  }
     }),
     new MiniCssExtractPlugin({
       filename: "style.css"

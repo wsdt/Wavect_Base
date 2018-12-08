@@ -1,7 +1,8 @@
 {
-  "name": "s_frontend_new",
+  "name": "s_frontend",
   "version": "0.0.1",
-  "description": "",
+  "description": "Frontend Service with React.",
+  "private": true,
   "main": "webpack.config.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -12,7 +13,6 @@
     "tslint-fix": "tslint --fix -p ./tsconfig.json",
     "evaluate": "npm run test && npm run prettier && npm run tslint-fix"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
