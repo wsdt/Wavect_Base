@@ -1,19 +1,18 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended",
-		"tslint-react",
-		"tslint-eslint-rules",
-		"tslint-consistent-codestyle"
-    ],
-    "jsRules": {},
-    "rules": {
-		"no-console": [false]
-	},
-    "rulesDirectory": [],
-	"linterOptions": {
-		"exclude": [
-			"node_modules"
-		]
-	}
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-eslint-rules",
+    "tslint-consistent-codestyle",
+    "tslint-config-prettier"
+  ],
+  "jsRules": {},
+  "rules": {
+    "no-console": [false]
+  },
+  "rulesDirectory": [],
+  "linterOptions": {
+    "exclude": ["node_modules"]
+  }
 }

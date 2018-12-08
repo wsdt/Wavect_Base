@@ -6,7 +6,7 @@ const PORT = 8080;
 runServer();
 
 function runServer() {
-    app.listen(PORT, () => {
-        console.log("Express server listening on port " + PORT);
-    });
+  app.listen(PORT, () => {
+    console.log("Express server listening on port " + PORT);
+  });
 }
