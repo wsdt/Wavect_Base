@@ -2,8 +2,8 @@ FROM node:11
 WORKDIR /app
 
 # Install app dependencies (copy lock and normal package.json)
-COPY package*.json ./ && \
-	dist/ dist/
+COPY package*.json ./ 
+COPY dist/ dist/
 
 RUN npm install --only-production
 
