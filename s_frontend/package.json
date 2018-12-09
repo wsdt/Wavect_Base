@@ -38,10 +38,10 @@
   },
   "scripts": {
     "start": "webpack-dev-server --watch",
-	"start-once": "webpack-dev-server",
+    "start-once": "webpack-dev-server",
     "build": "webpack --mode production --optimize-max-chunks 10 --optimize-min-chunk-size true --optimize-minimize true",
-	"start-built": "start ./dist/index.html",
-	"test": "jest",
+    "start-built": "start ./dist/index.html",
+    "test": "jest",
     "prettier": "prettier --write \"**/*.{ts,tsx,js,jsx,scss,css,json}\"",
     "tslint": "tslint -p ./tsconfig.json",
     "tslint-fix": "tslint --fix -p ./tsconfig.json",

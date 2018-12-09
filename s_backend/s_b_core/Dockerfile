@@ -4,9 +4,9 @@ FROM node:11
 WORKDIR /usr/src/app
 
 # Install app dependencies (copy lock and normal package.json)
-COPY package*.json ./
-RUN npm install --only=production && \
-	npm run build
+COPY package*.json ./ && \
+	dist/ dist/
+RUN npm install --only=production 
 
 # Run npm run prod 
 CMD ["npm", "run","start-built"]
