@@ -5,7 +5,7 @@
 We are using [Snyk](https://snyk.io) for automatically scanning for security vulnerabilities. As we have a private repository we cannot add the badge here. Please check for vulnerabilities regularly: [Snyk - Projects](https://app.snyk.io/org/wsdt/projects). 
 
 ### Travis - Test suite [![Build Status](https://travis-ci.com/wsdt/BeKind_Playground.svg?token=DRpYu6MjKAo2SePYFzpo&branch=master)](https://travis-ci.com/wsdt/BeKind_Playground)
-[Travis](https://travis-ci.com) is used for automatically executing our test cases. See the result above whether all tets succeeded (all microservices are tested). 
+[Travis](https://travis-ci.com) is used for automatically executing our test cases, prettier, tslint and also building the corresponding Dockerfile. The built images itself are not tested (no container started). See the result above whether all tets succeeded (all services are tested). 
 
 ## What is it?
 Basic first project structure. 
