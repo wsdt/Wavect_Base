@@ -1,4 +1,5 @@
+# Push dist folder for travis docker build
+
 /coverage/
 /node_modules/
 /.idea/
-/dist/

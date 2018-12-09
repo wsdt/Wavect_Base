@@ -1,3 +1,5 @@
+# Push dist folder for travis docker build!
+
 /.idea/
 
 # dependencies
@@ -8,10 +10,6 @@
 # testing
 /coverage
 /.jest
-
-# production
-/build
-/dist
 
 # misc
 .DS_Store

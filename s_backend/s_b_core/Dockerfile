@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 
 # Install app dependencies (copy lock and normal package.json)
 COPY package*.json ./ && \
-	dist/**/* dist/
+	./dist/**/* dist/
 RUN npm install --only=production 
 
 # Run npm run prod 
