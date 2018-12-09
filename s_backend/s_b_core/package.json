@@ -31,7 +31,7 @@
     "tslint": "tslint -p tsconfig.json",
     "tslint-fix": "tslint --fix -p tsconfig.json",
     "test": "jest",
-    "prettier": "prettier --write \"**/*.{ts,js,json}",
+    "prettier": "prettier --write \"**/*.{ts,js,json}\"",
     "evaluate": "npm run test && npm run prettier && npm run tslint-fix"
   },
   "repository": "github:wsdt/BeKind_Playground",
