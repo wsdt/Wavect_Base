@@ -1,3 +1,4 @@
+dist/
 .jest/
 coverage/
 node_modules/
