@@ -26,6 +26,7 @@
   "scripts": {
     "start": "nodemon ./dist/server.js",
     "start-once": "ts-node ./src/server.ts",
+	"build": "tsc",
     "start-built": "node ./dist/server.js",
     "clean": "rimraf ./dist",
     "tslint": "tslint -p tsconfig.json",

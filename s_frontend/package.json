@@ -4,17 +4,6 @@
   "description": "Frontend Service with React.",
   "private": true,
   "main": "webpack.config.js",
-  "scripts": {
-    "start": "webpack-dev-server",
-    "test": "jest",
-    "build": "webpack",
-    "prettier": "prettier --write \"**/*.{ts,tsx,js,jsx,scss,css,json}\"",
-    "tslint": "tslint -p ./tsconfig.json",
-    "tslint-fix": "tslint --fix -p ./tsconfig.json",
-    "evaluate": "npm run test && npm run prettier && npm run tslint-fix"
-  },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -46,5 +35,23 @@
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
-  }
+  },
+  "scripts": {
+    "start": "webpack-dev-server --watch",
+	"start-once": "webpack-dev-server",
+    "build": "webpack --mode production --optimize-max-chunks 10 --optimize-min-chunk-size true --optimize-minimize true",
+	"start-built": "start ./dist/index.html",
+	"test": "jest",
+    "prettier": "prettier --write \"**/*.{ts,tsx,js,jsx,scss,css,json}\"",
+    "tslint": "tslint -p ./tsconfig.json",
+    "tslint-fix": "tslint --fix -p ./tsconfig.json",
+    "evaluate": "npm run test && npm run prettier && npm run tslint-fix"
+  },
+  "repository": "github:wsdt/BeKind_Playground",
+  "bugs": {
+    "url": "https://github.com/wsdt/BeKind_Playground/issues",
+    "email:": "kevin.riedl.privat@gmail.com"
+  },
+  "author": "Kevin Riedl",
+  "license": "UNLICENSED"
 }
