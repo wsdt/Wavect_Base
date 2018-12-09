@@ -8,7 +8,7 @@
     "start": "webpack-dev-server",
     "test": "jest",
     "build": "webpack",
-    "prettier": "prettier --write \"**/*.{ts,tsx,js,jsx,scss,css,json}",
+    "prettier": "prettier --write \"**/*.{ts,tsx,js,jsx,scss,css,json}\"",
     "tslint": "tslint -p ./tsconfig.json",
     "tslint-fix": "tslint --fix -p ./tsconfig.json",
     "evaluate": "npm run test && npm run prettier && npm run tslint-fix"
