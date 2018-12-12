@@ -7,6 +7,10 @@ We are using [Snyk](https://snyk.io) for automatically scanning for security vul
 ### Travis - Test suite [![Build Status](https://travis-ci.com/wsdt/BeKind_Playground.svg?token=DRpYu6MjKAo2SePYFzpo&branch=master)](https://travis-ci.com/wsdt/BeKind_Playground)
 [Travis](https://travis-ci.com) is used for automatically executing our test cases, prettier, tslint and also building the corresponding Dockerfile. The built images itself are not tested (no container started). See the result above whether all tets succeeded (all services are tested). 
 
+### Husky - Precommit Hook
+As we use Husky to sustain a good code quality, there might be valid reasons to skip the precommit hook (e.g. just pushing a readme). 
+`git commit -m "msg" --no-verify`
+
 ## What is it?
 Basic first project structure. 
 
