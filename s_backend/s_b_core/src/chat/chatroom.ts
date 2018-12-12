@@ -1,5 +1,5 @@
-import EventEmitter = require('events').EventEmitter;
-const chatRoomEvents = new EventEmitter();
+import EventEmitter = require("events");
+const chatRoomEvents = new EventEmitter.EventEmitter();
 
 class Chatroom {
   public chatroomName: string;
@@ -30,9 +30,9 @@ class Chatroom {
   };
 }
 
-let chatroom = new Chatroom("example_chat");
+const chatroom = new Chatroom("example_chat");
 
-let usernames: string[] = ["Kevin", "Martin", "Robert"];
+const usernames: string[] = ["Kevin", "Martin", "Robert"];
 for (const username of usernames) {
   chatroom.addUser(username);
 }
