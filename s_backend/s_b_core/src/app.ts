@@ -3,10 +3,18 @@ import * as express from "express";
 
 class App {
   public app: express.Application;
+  public static get PORT():number {return 8090;} //getter to make it const
 
   constructor() {
     this.app = express();
     this.config();
+    this.runServer();
+  }
+
+  private runServer() {
+      this.app.listen(App.PORT, () => {
+          console.log("Express server listening on port " + App.PORT);
+      });
   }
 
   private config(): void {
@@ -17,5 +25,6 @@ class App {
     this.app.use(bodyParser.urlencoded({ extended: false }));
   }
 }
+
 
 export default new App().app;

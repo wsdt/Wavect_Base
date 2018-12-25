@@ -1,7 +1,7 @@
 {
   "name": "s_b_core",
   "description": "Backend-Core-Service for BeKind",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "dependencies": {
     "express": "^4.16.4"
@@ -24,10 +24,10 @@
     "typescript-eslint-parser": "^21.0.1"
   },
   "scripts": {
-    "start": "nodemon ./dist/server.js",
-    "start-once": "ts-node ./src/server.ts",
+    "start": "nodemon ./dist/app.js",
+    "start-once": "ts-node ./src/app.ts",
     "build": "tsc",
-    "start-built": "node ./dist/server.js",
+    "start-built": "node ./dist/app.js",
     "clean": "rimraf ./dist",
     "tslint": "tslint -p tsconfig.json",
     "tslint-fix": "tslint --fix -p tsconfig.json",
