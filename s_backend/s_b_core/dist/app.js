@@ -6,10 +6,11 @@ var App = (function () {
     function App() {
         this.app = express();
         this.config();
-        this.runServer();
     }
     Object.defineProperty(App, "PORT", {
-        get: function () { return 8090; },
+        get: function () {
+            return 8090;
+        },
         enumerable: true,
         configurable: true
     });
@@ -24,4 +25,4 @@ var App = (function () {
     };
     return App;
 }());
-exports.default = new App().app;
+exports.default = new App();
