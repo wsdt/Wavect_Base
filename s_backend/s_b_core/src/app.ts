@@ -3,18 +3,19 @@ import * as express from "express";
 
 class App {
   public app: express.Application;
-  public static get PORT():number {return 8090;} //getter to make it const
+  public static get PORT(): number {
+    return 8090;
+  } // getter to make it const
 
   constructor() {
     this.app = express();
     this.config();
-    this.runServer();
   }
 
-  private runServer() {
-      this.app.listen(App.PORT, () => {
-          console.log("Express server listening on port " + App.PORT);
-      });
+  public runServer() {
+    this.app.listen(App.PORT, () => {
+      console.log("Express server listening on port " + App.PORT);
+    });
   }
 
   private config(): void {
@@ -26,5 +27,4 @@ class App {
   }
 }
 
-
-export default new App().app;
+export default new App();

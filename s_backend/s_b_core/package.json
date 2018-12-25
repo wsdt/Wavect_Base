@@ -31,7 +31,7 @@
     "clean": "rimraf ./dist",
     "tslint": "tslint -p tsconfig.json",
     "tslint-fix": "tslint --fix -p tsconfig.json",
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "prettier": "prettier --write \"**/*.{ts,js,json}\"",
     "evaluate": "npm run test && npm run prettier && npm run tslint-fix"
   },
