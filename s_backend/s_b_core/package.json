@@ -7,6 +7,7 @@
     "express": "^4.16.4"
   },
   "devDependencies": {
+    "concurrently": "^4.1.0",
     "@types/jest": "^23.3.9",
     "@types/node": "^10.12.10",
     "jest": "^23.6.0",
@@ -24,7 +25,7 @@
     "typescript-eslint-parser": "^21.0.1"
   },
   "scripts": {
-    "start": "nodemon ./dist/server.js",
+    "start": "concurrently --kill-others \"tsc -w\" \"nodemon ./dist/server.js\"",
     "start-once": "ts-node ./src/server.ts",
     "build": "tsc",
     "start-built": "node ./dist/server.js",
