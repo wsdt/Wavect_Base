@@ -1,8 +1,12 @@
 import * as bodyParser from "body-parser";
 import * as express from "express";
+import * as http from "http";
+import * as io from "socket.io";
 
 class App {
   public app: express.Application;
+  public server = http.createServer();
+  public io = io(this.server);
   public static get PORT(): number {
     return 8090;
   } // getter to make it const
@@ -13,8 +17,9 @@ class App {
   }
 
   public runServer() {
-    this.app.listen(App.PORT, () => {
-      console.log("Express server listening on port " + App.PORT);
+    this.server.listen(App.PORT, (err:Error) => {
+        if (err) throw err;
+        console.log("Express server listening on port " + App.PORT);
     });
   }
 

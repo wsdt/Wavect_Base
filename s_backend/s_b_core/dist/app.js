@@ -2,8 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var bodyParser = require("body-parser");
 var express = require("express");
+var http = require("http");
+var io = require("socket.io");
 var App = (function () {
     function App() {
+        this.server = http.createServer();
+        this.io = io(this.server);
         this.app = express();
         this.config();
     }
@@ -15,7 +19,9 @@ var App = (function () {
         configurable: true
     });
     App.prototype.runServer = function () {
-        this.app.listen(App.PORT, function () {
+        this.server.listen(App.PORT, function (err) {
+            if (err)
+                throw err;
             console.log("Express server listening on port " + App.PORT);
         });
     };
