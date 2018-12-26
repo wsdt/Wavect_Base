@@ -4,10 +4,3 @@ import App from "./app";
 App.runServer();
 
 // Major server configurations into app.ts_config()!
-
-
-
-App.app.get('/', (_req, res) => {
-    res.send("Hello")
-});
-
