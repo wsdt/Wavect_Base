@@ -3,6 +3,11 @@ import * as express from "express";
 import * as http from "http";
 import * as io from "socket.io";
 
+/** Add more params to socket */
+interface ExtendedSocket extends io.Socket {
+    username: string;
+}
+
 class App {
   public app: express.Application;
   public server = http.createServer();
@@ -17,10 +22,35 @@ class App {
   }
 
   public runServer() {
-    this.server.listen(App.PORT, (err:Error) => {
-        if (err) throw err;
-        console.log("Express server listening on port " + App.PORT);
-    });
+      let chatConversation:string[] = [];
+      this.io.on('connection', (client: ExtendedSocket) => {
+         client.username = "Anonymous";
+         console.log("New client connected: "+client.id);
+         if (chatConversation.length > 0) {client.emit('prev_convo_available', chatConversation);}
+         //send to all clients except myself
+
+
+         client.on('change_username', (data) => {
+             let sysMsg:string = `Client ${client.username} changed his name to ${data.username}`;
+             console.log(sysMsg);
+             client.username = data.username;
+             chatConversation.push(sysMsg);
+             this.io.emit('new_uploaded_msg', sysMsg);
+         });
+
+         client.on('new_message', (data) => {
+             let msg = client.username+": "+data.message;
+            chatConversation.push(msg);
+            this.io.emit('new_uploaded_msg', msg);
+         });
+
+         client.on('disconnect', () => {
+            console.log("Client disconnected: "+client.id);
+         });
+      });
+
+      this.io.listen(App.PORT);
+      console.log("App:runServer: Listening on port: "+App.PORT);
   }
 
   private config(): void {

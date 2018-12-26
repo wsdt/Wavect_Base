@@ -19,11 +19,32 @@ var App = (function () {
         configurable: true
     });
     App.prototype.runServer = function () {
-        this.server.listen(App.PORT, function (err) {
-            if (err)
-                throw err;
-            console.log("Express server listening on port " + App.PORT);
+        var _this = this;
+        var chatConversation = [];
+        this.io.on('connection', function (client) {
+            client.username = "Anonymous";
+            console.log("New client connected: " + client.id);
+            if (chatConversation.length > 0) {
+                client.emit('prev_convo_available', chatConversation);
+            }
+            client.on('change_username', function (data) {
+                var sysMsg = "Client " + client.username + " changed his name to " + data.username;
+                console.log(sysMsg);
+                client.username = data.username;
+                chatConversation.push(sysMsg);
+                _this.io.emit('new_uploaded_msg', sysMsg);
+            });
+            client.on('new_message', function (data) {
+                var msg = client.username + ": " + data.message;
+                chatConversation.push(msg);
+                _this.io.emit('new_uploaded_msg', msg);
+            });
+            client.on('disconnect', function () {
+                console.log("Client disconnected: " + client.id);
+            });
         });
+        this.io.listen(App.PORT);
+        console.log("App:runServer: Listening on port: " + App.PORT);
     };
     App.prototype.config = function () {
         this.app.use(bodyParser.json());

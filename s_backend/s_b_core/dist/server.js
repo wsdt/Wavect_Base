@@ -2,3 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var app_1 = require("./app");
 app_1.default.runServer();
+app_1.default.app.get('/', function (_req, res) {
+    res.send("Hello");
+});
