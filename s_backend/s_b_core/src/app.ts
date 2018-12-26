@@ -4,7 +4,7 @@ import * as http from "http";
 import * as io from "socket.io";
 
 /** Add more params to socket */
-//interface IExtendedSocket extends io.Socket {} // when uncommented change io.Socket with IExtendedSocket
+// interface IExtendedSocket extends io.Socket {} // when uncommented change io.Socket with IExtendedSocket
 
 class App {
   public app: express.Application;
