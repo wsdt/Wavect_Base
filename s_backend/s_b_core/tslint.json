@@ -7,7 +7,9 @@
     "tslint-consistent-codestyle",
     "tslint-config-prettier"
   ],
-  "jsRules": {},
+  "jsRules": {
+	"semicolon": [true, "never"] /* Semicolons are not free, remove them */
+  },
   "rules": {
     "no-console": [false]
   },
