@@ -8,10 +8,11 @@
     "tslint-consistent-codestyle"
   ],
   "jsRules": {
-	"semicolon": [true, "never"] /* Semicolons are not free, remove them */
+    "semicolon": [true, "never"] /* Semicolons are not free, remove them */
   },
   "rules": {
-    "no-console": [false]
+    "no-console": [false],
+	"semicolon": [true, "never"] /* Semicolons are not free, remove them */
   },
   "rulesDirectory": [],
   "linterOptions": {
