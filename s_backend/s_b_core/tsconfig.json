@@ -2,23 +2,20 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "allowJs": false,
     "removeComments": true,
+	"preserveConstEnums": true,
     "outDir": "dist",
-    "sourceMap": false,
+    "sourceMap": true,
     "declaration": true,
     "lib": ["es2017.object", "es2015", "es2017"],
-    /* Strict Type-Checking Options */
-
+	allowSyntheticDefaultImports: true,
+    
     "strict": true /* Enable all strict type-checking options. */,
-    "noImplicitAny": false /* Raise error on expressions and declarations with an implied 'any' type. */,
     "strictNullChecks": true /* Enable strict null checks. */,
+	
     "noImplicitThis": true /* Raise error on 'this' expressions with an implied 'any' type. */,
     "noImplicitAny": true,
     "alwaysStrict": true /* Parse in strict mode and emit "use strict" for each source file. */,
-
-    /* Additional Checks */
-
     "noUnusedLocals": true /* Report errors on unused locals. */,
     "noUnusedParameters": true /* Report errors on unused parameters. */,
     "noImplicitReturns": true /* Report error when not all code paths in function return a value. */,

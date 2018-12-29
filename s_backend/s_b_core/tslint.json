@@ -1,8 +1,7 @@
 {
   "defaultSeverity": "error",
   "extends": [
-    "tslint:recommended",
-    "tslint-react",
+    "tslint:latest",
     "tslint-eslint-rules",
     "tslint-consistent-codestyle",
     "tslint-config-prettier"
@@ -12,7 +11,7 @@
   },
   "rules": {
     "no-console": [false],
-	"semicolon": [true, "never"] /* Semicolons are not free, remove them */
+    "semicolon": [true, "never"] /* Semicolons are not free, remove them */
   },
   "rulesDirectory": [],
   "linterOptions": {
