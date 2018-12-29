@@ -21,6 +21,7 @@
     "jest": "^23.6.0",
     "mini-css-extract-plugin": "^0.5.0",
     "node-sass": "^4.10.0",
+    "nps": "^5.9.3",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "prettier": "^1.15.3",
     "sass-loader": "^7.1.0",
@@ -39,15 +40,8 @@
     "webpack-dev-server": "^3.1.10"
   },
   "scripts": {
-    "start": "webpack-dev-server --watch",
-    "start-once": "webpack-dev-server",
-    "build": "webpack --mode production --optimize-max-chunks 10 --optimize-min-chunk-size true --optimize-minimize true",
-    "start-built": "start ./dist/index.html",
-    "test": "jest --detectOpenHandles",
-    "prettier": "prettier --write \"**/*.{ts,tsx,js,jsx,scss,css,json}\"",
-    "tslint": "tslint -p ./tsconfig.json",
-    "tslint-fix": "tslint --fix -p ./tsconfig.json",
-    "evaluate": "npm run test && npm run prettier && npm run tslint-fix"
+    "start": "nps",
+    "test": "nps test"
   },
   "repository": "github:wsdt/BeKind_Playground",
   "bugs": {

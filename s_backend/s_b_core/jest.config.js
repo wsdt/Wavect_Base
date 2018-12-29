@@ -1,11 +1,6 @@
-// Use also Mocks for testing if neccessary.
+const baseConfig = require("../../_base/jest.config");
 
-module.exports = {
-  roots: ["<rootDir>/src"],
-  transform: {
-    "^.+\\.ts?$": "ts-jest"
-  },
-  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.ts?$",
-  moduleFileExtensions: ["ts", "js", "json", "node"],
-  collectCoverage: true
-};
+/* As this is a javaScript file you can simple manipulate or add params to the
+ * baseConfig-Json. */
+
+module.exports = baseConfig;

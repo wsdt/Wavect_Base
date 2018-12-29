@@ -1,0 +1,26 @@
+/* This is the parent json for all services. 
+* They extend from this json and might add or overwrite some params. */
+
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "declaration": true,
+    /*"lib": ["es2017.object", "es2015", "es2017"],*/
+    "allowSyntheticDefaultImports": true,
+
+    "strict": true /* Enable all strict type-checking options. */,
+    "strictNullChecks": true /* Enable strict null checks. */,
+
+    "noImplicitThis": true /* Raise error on 'this' expressions with an implied 'any' type. */,
+    "noImplicitAny": true,
+    "alwaysStrict": true /* Parse in strict mode and emit "use strict" for each source file. */,
+    "noUnusedLocals": true /* Report errors on unused locals. */,
+    "noUnusedParameters": true /* Report errors on unused parameters. */,
+    "noImplicitReturns": true /* Report error when not all code paths in function return a value. */,
+    "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */
+  }
+}

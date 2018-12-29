@@ -35,3 +35,4 @@ var App = (function () {
     return App;
 }());
 exports.default = new App();
+//# sourceMappingURL=app.js.map

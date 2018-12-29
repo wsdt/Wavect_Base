@@ -1,0 +1,546 @@
+c8b589911f0a5aaa02d57c52b1c31a50
+"use strict";
+
+/* istanbul ignore next */var cov_3rzug3ysj = function () {
+    var path = "C:\\Users\\kevin\\Desktop\\BeKind\\ThrowAwayPrototypes\\BeKind_Playground\\s_backend\\s_b_core\\src\\app.ts",
+        hash = "20e6322add3ceae0d7c5dfc981a0c49c632614f1",
+        Function = function () {}.constructor,
+        global = new Function('return this')(),
+        gcv = "__coverage__",
+        coverageData = {
+        path: "C:\\Users\\kevin\\Desktop\\BeKind\\ThrowAwayPrototypes\\BeKind_Playground\\s_backend\\s_b_core\\src\\app.ts",
+        statementMap: {
+            "0": {
+                start: {
+                    line: 2,
+                    column: 0
+                },
+                end: {
+                    line: 2,
+                    column: 62
+                }
+            },
+            "1": {
+                start: {
+                    line: 3,
+                    column: 17
+                },
+                end: {
+                    line: 3,
+                    column: 39
+                }
+            },
+            "2": {
+                start: {
+                    line: 4,
+                    column: 14
+                },
+                end: {
+                    line: 4,
+                    column: 32
+                }
+            },
+            "3": {
+                start: {
+                    line: 5,
+                    column: 11
+                },
+                end: {
+                    line: 5,
+                    column: 26
+                }
+            },
+            "4": {
+                start: {
+                    line: 6,
+                    column: 9
+                },
+                end: {
+                    line: 6,
+                    column: 29
+                }
+            },
+            "5": {
+                start: {
+                    line: 9,
+                    column: 25
+                },
+                end: {
+                    line: 41,
+                    column: 3
+                }
+            },
+            "6": {
+                start: {
+                    line: 11,
+                    column: 8
+                },
+                end: {
+                    line: 11,
+                    column: 42
+                }
+            },
+            "7": {
+                start: {
+                    line: 12,
+                    column: 8
+                },
+                end: {
+                    line: 12,
+                    column: 34
+                }
+            },
+            "8": {
+                start: {
+                    line: 13,
+                    column: 8
+                },
+                end: {
+                    line: 13,
+                    column: 29
+                }
+            },
+            "9": {
+                start: {
+                    line: 14,
+                    column: 8
+                },
+                end: {
+                    line: 14,
+                    column: 22
+                }
+            },
+            "10": {
+                start: {
+                    line: 16,
+                    column: 4
+                },
+                end: {
+                    line: 23,
+                    column: 7
+                }
+            },
+            "11": {
+                start: {
+                    line: 18,
+                    column: 12
+                },
+                end: {
+                    line: 18,
+                    column: 24
+                }
+            },
+            "12": {
+                start: {
+                    line: 24,
+                    column: 4
+                },
+                end: {
+                    line: 33,
+                    column: 6
+                }
+            },
+            "13": {
+                start: {
+                    line: 25,
+                    column: 8
+                },
+                end: {
+                    line: 30,
+                    column: 11
+                }
+            },
+            "14": {
+                start: {
+                    line: 26,
+                    column: 12
+                },
+                end: {
+                    line: 26,
+                    column: 62
+                }
+            },
+            "15": {
+                start: {
+                    line: 27,
+                    column: 12
+                },
+                end: {
+                    line: 29,
+                    column: 15
+                }
+            },
+            "16": {
+                start: {
+                    line: 28,
+                    column: 16
+                },
+                end: {
+                    line: 28,
+                    column: 65
+                }
+            },
+            "17": {
+                start: {
+                    line: 31,
+                    column: 8
+                },
+                end: {
+                    line: 31,
+                    column: 33
+                }
+            },
+            "18": {
+                start: {
+                    line: 32,
+                    column: 8
+                },
+                end: {
+                    line: 32,
+                    column: 69
+                }
+            },
+            "19": {
+                start: {
+                    line: 34,
+                    column: 4
+                },
+                end: {
+                    line: 39,
+                    column: 6
+                }
+            },
+            "20": {
+                start: {
+                    line: 36,
+                    column: 8
+                },
+                end: {
+                    line: 36,
+                    column: 40
+                }
+            },
+            "21": {
+                start: {
+                    line: 38,
+                    column: 8
+                },
+                end: {
+                    line: 38,
+                    column: 65
+                }
+            },
+            "22": {
+                start: {
+                    line: 40,
+                    column: 4
+                },
+                end: {
+                    line: 40,
+                    column: 15
+                }
+            },
+            "23": {
+                start: {
+                    line: 42,
+                    column: 0
+                },
+                end: {
+                    line: 42,
+                    column: 28
+                }
+            }
+        },
+        fnMap: {
+            "0": {
+                name: "(anonymous_0)",
+                decl: {
+                    start: {
+                        line: 9,
+                        column: 25
+                    },
+                    end: {
+                        line: 9,
+                        column: 26
+                    }
+                },
+                loc: {
+                    start: {
+                        line: 9,
+                        column: 37
+                    },
+                    end: {
+                        line: 41,
+                        column: 1
+                    }
+                },
+                line: 9
+            },
+            "1": {
+                name: "App",
+                decl: {
+                    start: {
+                        line: 10,
+                        column: 13
+                    },
+                    end: {
+                        line: 10,
+                        column: 16
+                    }
+                },
+                loc: {
+                    start: {
+                        line: 10,
+                        column: 19
+                    },
+                    end: {
+                        line: 15,
+                        column: 5
+                    }
+                },
+                line: 10
+            },
+            "2": {
+                name: "(anonymous_2)",
+                decl: {
+                    start: {
+                        line: 17,
+                        column: 13
+                    },
+                    end: {
+                        line: 17,
+                        column: 14
+                    }
+                },
+                loc: {
+                    start: {
+                        line: 17,
+                        column: 25
+                    },
+                    end: {
+                        line: 19,
+                        column: 9
+                    }
+                },
+                line: 17
+            },
+            "3": {
+                name: "(anonymous_3)",
+                decl: {
+                    start: {
+                        line: 24,
+                        column: 30
+                    },
+                    end: {
+                        line: 24,
+                        column: 31
+                    }
+                },
+                loc: {
+                    start: {
+                        line: 24,
+                        column: 42
+                    },
+                    end: {
+                        line: 33,
+                        column: 5
+                    }
+                },
+                line: 24
+            },
+            "4": {
+                name: "(anonymous_4)",
+                decl: {
+                    start: {
+                        line: 25,
+                        column: 33
+                    },
+                    end: {
+                        line: 25,
+                        column: 34
+                    }
+                },
+                loc: {
+                    start: {
+                        line: 25,
+                        column: 51
+                    },
+                    end: {
+                        line: 30,
+                        column: 9
+                    }
+                },
+                line: 25
+            },
+            "5": {
+                name: "(anonymous_5)",
+                decl: {
+                    start: {
+                        line: 27,
+                        column: 36
+                    },
+                    end: {
+                        line: 27,
+                        column: 37
+                    }
+                },
+                loc: {
+                    start: {
+                        line: 27,
+                        column: 48
+                    },
+                    end: {
+                        line: 29,
+                        column: 13
+                    }
+                },
+                line: 27
+            },
+            "6": {
+                name: "(anonymous_6)",
+                decl: {
+                    start: {
+                        line: 34,
+                        column: 27
+                    },
+                    end: {
+                        line: 34,
+                        column: 28
+                    }
+                },
+                loc: {
+                    start: {
+                        line: 34,
+                        column: 39
+                    },
+                    end: {
+                        line: 39,
+                        column: 5
+                    }
+                },
+                line: 34
+            }
+        },
+        branchMap: {},
+        s: {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 0,
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0
+        },
+        f: {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0
+        },
+        b: {},
+        _coverageSchema: "332fd63041d2c1bcb487cc26dd0d5f7d97098a6c"
+    },
+        coverage = global[gcv] || (global[gcv] = {});
+
+    if (coverage[path] && coverage[path].hash === hash) {
+        return coverage[path];
+    }
+
+    coverageData.hash = hash;
+    return coverage[path] = coverageData;
+}();
+
+cov_3rzug3ysj.s[0]++;
+Object.defineProperty(exports, "__esModule", { value: true });
+var bodyParser = /* istanbul ignore next */(cov_3rzug3ysj.s[1]++, require("body-parser"));
+var express = /* istanbul ignore next */(cov_3rzug3ysj.s[2]++, require("express"));
+var http = /* istanbul ignore next */(cov_3rzug3ysj.s[3]++, require("http"));
+var io = /* istanbul ignore next */(cov_3rzug3ysj.s[4]++, require("socket.io"));
+/** Add more params to socket */
+// interface IExtendedSocket extends io.Socket {} // when uncommented change io.Socket with IExtendedSocket
+var App = /* istanbul ignore next */( /** @class */cov_3rzug3ysj.s[5]++, function () {
+    /* istanbul ignore next */cov_3rzug3ysj.f[0]++;
+
+    function App() {
+        /* istanbul ignore next */cov_3rzug3ysj.f[1]++;
+        cov_3rzug3ysj.s[6]++;
+
+        this.server = http.createServer();
+        /* istanbul ignore next */cov_3rzug3ysj.s[7]++;
+        this.io = io(this.server);
+        /* istanbul ignore next */cov_3rzug3ysj.s[8]++;
+        this.app = express();
+        /* istanbul ignore next */cov_3rzug3ysj.s[9]++;
+        this.config();
+    }
+    /* istanbul ignore next */cov_3rzug3ysj.s[10]++;
+    Object.defineProperty(App, "PORT", {
+        get: function () {
+            /* istanbul ignore next */cov_3rzug3ysj.f[2]++;
+            cov_3rzug3ysj.s[11]++;
+
+            return 8090;
+        } // getter to make it const
+
+        , enumerable: true,
+        configurable: true
+    });
+    /* istanbul ignore next */cov_3rzug3ysj.s[12]++;
+    App.prototype.runServer = function () {
+        /* istanbul ignore next */cov_3rzug3ysj.f[3]++;
+        cov_3rzug3ysj.s[13]++;
+
+        this.io.on("connection", function (client) {
+            /* istanbul ignore next */cov_3rzug3ysj.f[4]++;
+            cov_3rzug3ysj.s[14]++;
+
+            console.log("New client connected: " + client.id);
+            /* istanbul ignore next */cov_3rzug3ysj.s[15]++;
+            client.on("disconnect", function () {
+                /* istanbul ignore next */cov_3rzug3ysj.f[5]++;
+                cov_3rzug3ysj.s[16]++;
+
+                console.log("Client disconnected: " + client.id);
+            });
+        });
+        /* istanbul ignore next */cov_3rzug3ysj.s[17]++;
+        this.io.listen(App.PORT);
+        /* istanbul ignore next */cov_3rzug3ysj.s[18]++;
+        console.log("App:runServer: Listening on port: " + App.PORT);
+    };
+    /* istanbul ignore next */cov_3rzug3ysj.s[19]++;
+    App.prototype.config = function () {
+        /* istanbul ignore next */cov_3rzug3ysj.f[6]++;
+        cov_3rzug3ysj.s[20]++;
+
+        // support application/json type post data (might be needed later)
+        this.app.use(bodyParser.json());
+        // support application/x-www-form-urlencoded post data
+        /* istanbul ignore next */cov_3rzug3ysj.s[21]++;
+        this.app.use(bodyParser.urlencoded({ extended: false }));
+    };
+    /* istanbul ignore next */cov_3rzug3ysj.s[22]++;
+    return App;
+}());
+/* istanbul ignore next */cov_3rzug3ysj.s[23]++;
+exports.default = new App();

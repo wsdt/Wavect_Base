@@ -5,7 +5,7 @@
   "description": "BeKind_Playground for prototypes and maybe production build.",
   "husky": {
     "hooks": {
-      "pre-commit": "cd s_backend/s_b_core && npm run evaluate && cd ../../s_frontend && npm run evaluate"
+      "pre-commit": "cd s_backend/s_b_core && npm start evaluate && cd ../../s_frontend && npm start evaluate"
     }
   },
   "repository": {
