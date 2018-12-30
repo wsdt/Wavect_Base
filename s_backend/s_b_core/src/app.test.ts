@@ -1,5 +1,5 @@
-import app from "./app";
+import app from "./app"
 
 test("app_instantiation", () => {
-  expect(app !== null && app !== undefined);
-});
+  expect(app !== null && app !== undefined)
+})
