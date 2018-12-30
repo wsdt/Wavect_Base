@@ -8,7 +8,7 @@ We are using [Snyk](https://snyk.io) for automatically scanning for security vul
 [Travis](https://travis-ci.com) is used for automatically executing our test cases, prettier, tslint and also building the corresponding Dockerfile. The built images itself are not tested (no container started). See the result above whether all tets succeeded (all services are tested). 
 
 ### Husky - Precommit Hook
-As we use Husky to sustain a good code quality, there might be valid reasons to skip the precommit hook (e.g. just pushing a readme). 
+As we use [Husky](https://github.com/typicode/husky) to sustain a good code quality, there might be valid reasons to skip the precommit hook (e.g. just pushing a readme). 
 `git commit -m "msg" --no-verify`
 
 ## What is it?
@@ -22,8 +22,8 @@ Each folder contains a separate README.md.
 
 Exemplary technologies used: 
 ### PARENT
-- Husky: Precommit-hook to test, execute tslint and prettier.
-- Nps: Used to give package.json-scripts an inheritance functionality to provide better maintenance. 
+- [Husky](https://github.com/typicode/husky): Precommit-hook to test, execute tslint and prettier.
+- [Nps](https://github.com/kentcdodds/nps): Used to give package.json-scripts an inheritance functionality to provide better maintenance. 
 
 ### Backend
 - Node.JS
