@@ -4,7 +4,8 @@
     "tslint:latest",
     "tslint-eslint-rules",
     "tslint-consistent-codestyle",
-    "tslint-config-prettier"
+    "tslint-config-prettier",
+	"prettier"
   ],
   "jsRules": {
     "semicolon": [true, "never"] /* Semicolons are not free, remove them */
