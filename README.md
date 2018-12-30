@@ -22,7 +22,8 @@ Each folder contains a separate README.md.
 
 Exemplary technologies used: 
 ### PARENT
-- Husky: Precommit-hook to test, execute tslint and prettier. 
+- Husky: Precommit-hook to test, execute tslint and prettier.
+- Nps: Used to give package.json-scripts an inheritance functionality to provide better maintenance. 
 
 ### Backend
 - Node.JS
