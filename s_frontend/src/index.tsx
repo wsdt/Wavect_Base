@@ -5,5 +5,5 @@ import "./scss/style.scss"
 
 const ROOT = document.querySelector("#root")
 
-ReactDOM.render(<App name="ExampleProperty" />, ROOT)
+ReactDOM.render(<App />, ROOT)
 // Maybe add serviceWorker for better performance

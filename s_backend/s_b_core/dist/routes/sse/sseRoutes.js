@@ -7,7 +7,7 @@ router.use(function (_req, res, next) {
     res.header("Connection", "keep-alive");
     next();
 });
-var v1SSE = require("./v1/testing");
+var v1SSE = require("./v1/example");
 router.use("/v1", v1SSE);
 router.use("*", function (_req, res) {
     res.send("ERROR: Something went wrong.");
