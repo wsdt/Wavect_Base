@@ -9,7 +9,7 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "declaration": true,
-    /*"lib": ["es2017.object", "es2015", "es2017"],*/
+    "lib": ["es6"],
     "allowSyntheticDefaultImports": true,
 
     "strict": true /* Enable all strict type-checking options. */,
