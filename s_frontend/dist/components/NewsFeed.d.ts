@@ -1,18 +1,18 @@
 import * as React from "react";
-import { IProps_Post } from "./Post";
 import { Http2SSEclient } from "../Http2SSEclient";
-export declare class NewsFeed extends React.Component<IProps_Newsfeed, IState_Newsfeed> {
-    state: IState_Newsfeed;
+import { IPropsPost } from "./Post";
+export declare class NewsFeed extends React.Component<IPropsNewsfeed, IStateNewsfeed> {
+    state: IStateNewsfeed;
     http2SSEclient: Http2SSEclient;
-    constructor(props: IProps_Newsfeed);
+    constructor(props: IPropsNewsfeed);
     componentDidMount(): void;
-    private getCurrNewsfeed;
     render(): JSX.Element[];
+    private getCurrNewsfeed;
 }
-interface IState_Newsfeed {
-    posts: IProps_Post[];
+interface IStateNewsfeed {
+    posts: IPropsPost[];
 }
-interface IProps_Newsfeed {
+interface IPropsNewsfeed {
     userId: string;
 }
 export default NewsFeed;

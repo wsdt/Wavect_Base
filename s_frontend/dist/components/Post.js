@@ -22,21 +22,21 @@ var Post = (function (_super) {
     }
     Post.prototype.render = function () {
         var mediaJsx = React.createElement("span", { className: "errorMsg" }, "Media couldn't be loaded.");
-        switch (this.props.media_type) {
+        switch (this.props.mediaType) {
             case "p":
-                mediaJsx = React.createElement("img", { src: this.props.media_url, alt: "post_pic" });
+                mediaJsx = React.createElement("img", { src: this.props.mediaUrl, alt: "post_pic" });
                 break;
             case "v":
-                mediaJsx = React.createElement("video", { width: "100", height: "100", controls: true },
-                    React.createElement("source", { src: this.props.media_url, type: "video/mp4" }),
-                    "Your browser does not support the video tag.");
+                mediaJsx = (React.createElement("video", { width: "100", height: "100", controls: true },
+                    React.createElement("source", { src: this.props.mediaUrl, type: "video/mp4" }),
+                    "Your browser does not support the video tag."));
                 break;
         }
-        return React.createElement("div", { className: "post_container" },
-            React.createElement("span", { className: "post_uploaddatetime" }, this.props.upload_datetime),
+        return (React.createElement("div", { className: "post_container" },
+            React.createElement("span", { className: "post_uploaddatetime" }, this.props.uploadDatetime),
             React.createElement("span", { className: "post_title" }, this.props.title),
             React.createElement("span", { className: "post_descr" }, this.props.descr),
-            React.createElement("div", { className: "post_media" }, mediaJsx));
+            React.createElement("div", { className: "post_media" }, mediaJsx)));
     };
     return Post;
 }(React.Component));

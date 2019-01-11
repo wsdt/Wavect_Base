@@ -8,8 +8,8 @@ router.use(function (_req, res, next) {
     next();
 });
 var apiRoutes = require("./api/apiRoutes");
-router.use('/api', apiRoutes);
+router.use("/api", apiRoutes);
 var sseRoutes = require("./sse/sseRoutes");
-router.use('/sse', sseRoutes);
+router.use("/sse", sseRoutes);
 module.exports = router;
 //# sourceMappingURL=routes.js.map

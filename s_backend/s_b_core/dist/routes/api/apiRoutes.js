@@ -6,8 +6,8 @@ router.use(function (_req, res, next) {
     next();
 });
 var v1API = require("./v1/testing");
-router.use('/v1', v1API);
-router.use('*', function (_req, res) {
+router.use("/v1", v1API);
+router.use("*", function (_req, res) {
     res.json({ error: { msg: "Route not found.", err_code: 404 } });
 });
 module.exports = router;

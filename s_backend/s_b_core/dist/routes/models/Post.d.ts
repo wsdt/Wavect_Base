@@ -1,8 +1,8 @@
 export declare class Post {
-    upload_datetime: string;
+    uploadDatetime: string;
     title: string;
     descr: string;
-    media_type: string;
-    media_url: string;
-    constructor(title: string, descr: string, upload_datetime: string, media_type: string, media_url: string);
+    mediaType: string;
+    mediaUrl: string;
+    constructor(title: string, descr: string, uploadDatetime: string, mediaType: string, mediaUrl: string);
 }

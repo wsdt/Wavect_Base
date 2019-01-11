@@ -7,9 +7,7 @@ var SSEvent = (function () {
         this.data = data;
     }
     SSEvent.prototype.toString = function () {
-        return "event: new_post\n" +
-            ("id: " + this.id + "\n") +
-            ("data: " + this.data + "\n\n");
+        return "event: new_post\n" + ("id: " + this.id + "\n") + ("data: " + this.data + "\n\n");
     };
     return SSEvent;
 }());

@@ -51,7 +51,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var Http2SSEclient_1 = require("../Http2SSEclient");
 var App_constants_1 = require("./App.constants");
-var LazyPost = React.lazy(function () { return Promise.resolve().then(function () { return require('./Post'); }); });
+var LAZY_POST = React.lazy(function () { return Promise.resolve().then(function () { return require("./Post"); }); });
 var NewsFeed = (function (_super) {
     __extends(NewsFeed, _super);
     function NewsFeed(props) {
@@ -65,7 +65,8 @@ var NewsFeed = (function (_super) {
                     .then(function (res) { return res.json(); })
                     .then(function (resJson) {
                     _this.setState({ posts: resJson });
-                }).catch(function (err) {
+                })
+                    .catch(function (err) {
                     console.error("getCurrNewsFeed: Fetch failed -> " + err);
                 });
                 return [2];
@@ -89,9 +90,9 @@ var NewsFeed = (function (_super) {
         if (posts.length > 0) {
             for (var _i = 0, posts_1 = posts; _i < posts_1.length; _i++) {
                 var post = posts_1[_i];
-                var postKey = post.title + post.upload_datetime;
+                var postKey = post.title + post.uploadDatetime;
                 newsFeedJsx.push(React.createElement(React.Suspense, { fallback: React.createElement("div", null, "Loading ..."), key: postKey },
-                    React.createElement(LazyPost, { key: postKey, title: post.title, descr: post.descr, media_type: post.media_type, media_url: post.media_url, upload_datetime: post.upload_datetime })));
+                    React.createElement(LAZY_POST, { key: postKey, title: post.title, descr: post.descr, mediaType: post.mediaType, mediaUrl: post.mediaUrl, uploadDatetime: post.uploadDatetime })));
             }
         }
         else {

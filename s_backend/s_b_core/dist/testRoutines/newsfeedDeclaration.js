@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var User_1 = require("../routes/models/User");
 var Post_1 = require("../routes/models/Post");
+var User_1 = require("../routes/models/User");
 exports.users = [];
 exports.posts = [];
 exports.posts.push(new Post_1.Post("Post title 0 by user 0", "Post descr", "12.5.2018", "p", "blaUrl"));

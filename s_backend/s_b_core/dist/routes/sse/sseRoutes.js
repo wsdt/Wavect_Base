@@ -8,8 +8,8 @@ router.use(function (_req, res, next) {
     next();
 });
 var v1SSE = require("./v1/testing");
-router.use('/v1', v1SSE);
-router.use('*', function (_req, res) {
+router.use("/v1", v1SSE);
+router.use("*", function (_req, res) {
     res.send("ERROR: Something went wrong.");
 });
 module.exports = router;

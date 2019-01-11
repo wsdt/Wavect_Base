@@ -1,13 +1,13 @@
 import * as React from "react";
 import "../scss/newsfeed.scss";
-export declare class Post extends React.Component<IProps_Post, any> {
+export declare class Post extends React.Component<IPropsPost, any> {
     render(): JSX.Element;
 }
-export interface IProps_Post {
-    upload_datetime: string;
+export interface IPropsPost {
+    uploadDatetime: string;
     title: string;
     descr: string;
-    media_type: string;
-    media_url: string;
+    mediaType: string;
+    mediaUrl: string;
 }
 export default Post;

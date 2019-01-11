@@ -2,10 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var bodyParser = require("body-parser");
 var express = require("express");
-var routes = require("./routes/routes");
-var http2 = require("spdy");
 var helmet = require("helmet");
+var http2 = require("spdy");
 var app_constants_1 = require("./app.constants");
+var routes = require("./routes/routes");
 var App = (function () {
     function App() {
         this.app = express();
