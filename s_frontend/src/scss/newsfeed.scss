@@ -18,3 +18,25 @@
     font-size: 7px;
   }
 }
+
+.postCreationForm {
+  display:block;
+  background-color:#ccc;
+  padding:5px;
+  margin:5px;
+
+  #postCreationSubmit {
+    display:block;
+  }
+
+  .postCreationGroup {
+
+    label, input {
+      display:block;
+    }
+
+    input {
+      margin-bottom: 6px;
+    }
+  }
+}

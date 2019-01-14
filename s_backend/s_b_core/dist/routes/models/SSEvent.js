@@ -6,6 +6,9 @@ var SSEvent = (function () {
         this.id = id;
         this.data = data;
     }
+    SSEvent.prototype.sendSSEvent = function (res) {
+        res.write(this.toString());
+    };
     SSEvent.prototype.toString = function () {
         return "event: new_post\n" + ("id: " + this.id + "\n") + ("data: " + this.data + "\n\n");
     };

@@ -18,8 +18,8 @@ router.use((_req, res, next) => {
 })
 
 // v1 routes can be modularized too!
-import * as v1SSE from "./v1/testing"
-router.use("/v1", v1SSE)
+import {v1Router} from "./v1/newsfeed"
+router.use("/v1", v1Router)
 
 // show page not found error for API use (json)
 router.use("*", (_req, res) => {

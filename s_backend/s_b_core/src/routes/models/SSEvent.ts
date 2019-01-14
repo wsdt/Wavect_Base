@@ -1,3 +1,5 @@
+import {Response} from "express"
+
 export class SSEvent {
   public event: string
   public id: string
@@ -7,6 +9,10 @@ export class SSEvent {
     this.event = event
     this.id = id
     this.data = data
+  }
+
+  public sendSSEvent(res:Response) {
+    res.write(this.toString())
   }
 
   public toString() {

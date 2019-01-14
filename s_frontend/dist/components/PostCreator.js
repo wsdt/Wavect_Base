@@ -49,61 +49,55 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var Http2SSEclient_1 = require("../Http2SSEclient");
 var App_constants_1 = require("./App.constants");
-var PostCreator_1 = require("./PostCreator");
-var LAZY_POST = React.lazy(function () { return Promise.resolve().then(function () { return require("./Post"); }); });
-var NewsFeed = (function (_super) {
-    __extends(NewsFeed, _super);
-    function NewsFeed(props) {
-        var _this = _super.call(this, props) || this;
-        _this.state = { posts: [] };
-        _this.http2SSEclient = new Http2SSEclient_1.Http2SSEclient("newsfeed/" + _this.props.userId);
-        _this.getCurrNewsfeed = function () { return __awaiter(_this, void 0, void 0, function () {
-            var _this = this;
+var PostCreator = (function (_super) {
+    __extends(PostCreator, _super);
+    function PostCreator() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { title: "", descr: "" };
+        _this.handleChangeTitle = function (e) {
+            _this.setState({ title: e.target.value });
+        };
+        _this.handleChangeDescr = function (e) {
+            _this.setState({ descr: e.target.value });
+        };
+        _this.sendToApi = function (e) { return __awaiter(_this, void 0, void 0, function () {
+            var rawResp, content;
             return __generator(this, function (_a) {
-                fetch(App_constants_1.API_URL + "/newsfeed/" + this.props.userId)
-                    .then(function (res) { return res.json(); })
-                    .then(function (resJson) {
-                    _this.setState({ posts: resJson });
-                })
-                    .catch(function (err) {
-                    console.error("getCurrNewsFeed: Fetch failed -> " + err);
-                });
-                return [2];
+                switch (_a.label) {
+                    case 0:
+                        e.preventDefault();
+                        return [4, fetch(App_constants_1.API_URL + "/newsfeed", {
+                                body: JSON.stringify(this.state),
+                                headers: {
+                                    'Accept': 'application/json',
+                                    'Content-Type': 'application/json'
+                                },
+                                method: 'POST'
+                            })];
+                    case 1:
+                        rawResp = _a.sent();
+                        return [4, rawResp.json()];
+                    case 2:
+                        content = _a.sent();
+                        console.log("sendToApi: Response is -> " + JSON.stringify(content));
+                        return [2];
+                }
             });
         }); };
-        _this.getCurrNewsfeed();
         return _this;
     }
-    NewsFeed.prototype.componentDidMount = function () {
-        var _this = this;
-        this.http2SSEclient.getSSE_SOURCE().addEventListener("new_post", (function (e) {
-            var newState = _this.state.posts;
-            newState.push(JSON.parse(e.data));
-            _this.setState({ posts: newState });
-        }));
+    PostCreator.prototype.render = function () {
+        return React.createElement("form", { className: "postCreationForm", method: "post", encType: "application/json", action: "#", onSubmit: this.sendToApi },
+            React.createElement("span", { className: "postCreationGroup" },
+                React.createElement("label", { htmlFor: "nPostTitle" }, "Title"),
+                React.createElement("input", { type: "text", id: "nPostTitle", name: "nPostTitle", value: this.state.title, onChange: this.handleChangeTitle })),
+            React.createElement("span", { className: "postCreationGroup" },
+                React.createElement("label", { htmlFor: "nPostDescr" }, "Description"),
+                React.createElement("textarea", { id: "nPostDescr", name: "nPostDescr", onChange: this.handleChangeDescr, value: this.state.descr })),
+            React.createElement("input", { type: "submit", value: "Post now", id: "postCreationSubmit" }));
     };
-    NewsFeed.prototype.render = function () {
-        var newsFeedJsx = [];
-        var posts = this.state.posts;
-        console.log(posts);
-        newsFeedJsx.push(React.createElement(PostCreator_1.PostCreator, null));
-        if (posts.length > 0) {
-            for (var _i = 0, posts_1 = posts; _i < posts_1.length; _i++) {
-                var post = posts_1[_i];
-                var postKey = post.title + post.uploadDatetime;
-                newsFeedJsx.push(React.createElement(React.Suspense, { fallback: React.createElement("div", null, "Loading ..."), key: postKey },
-                    React.createElement(LAZY_POST, { key: postKey, title: post.title, descr: post.descr, mediaType: post.mediaType, mediaUrl: post.mediaUrl, uploadDatetime: post.uploadDatetime })));
-            }
-        }
-        else {
-            newsFeedJsx.push(React.createElement("p", { key: "no_posts_available" }, "You have no posts or data is being fetched."));
-        }
-        return newsFeedJsx;
-    };
-    return NewsFeed;
+    return PostCreator;
 }(React.Component));
-exports.NewsFeed = NewsFeed;
-exports.default = NewsFeed;
-//# sourceMappingURL=NewsFeed.js.map
+exports.PostCreator = PostCreator;
+//# sourceMappingURL=PostCreator.js.map
