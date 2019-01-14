@@ -6,9 +6,7 @@ export class App extends React.Component<any, any> {
     return (
       <React.Fragment>
         <h1>Hello Be-Kind Team</h1>
-
       </React.Fragment>
     )
   }
 }
-

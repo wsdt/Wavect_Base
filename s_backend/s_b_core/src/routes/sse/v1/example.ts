@@ -15,5 +15,4 @@ const router = express.Router()
     res.write(sse.toString())
   }, 4000)*/
 
-
 export = router

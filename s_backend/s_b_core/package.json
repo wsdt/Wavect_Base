@@ -1,7 +1,7 @@
 {
   "name": "s_b_core",
   "description": "Backend-Core-Service for BeKind",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "dependencies": {
     "body-parser": "^1.18.3",

@@ -1,6 +1,6 @@
 {
   "name": "s_frontend",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Frontend Service with React.",
   "private": true,
   "main": "webpack.config.js",
