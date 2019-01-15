@@ -21,7 +21,7 @@ export class Post extends React.Component<IPropsPost, any> {
     return (
       <div className="post_container">
         <span className="post_uploaddatetime">{this.props.uploadDatetime}</span>
-        <span className="post_title">{this.props.title}</span>
+        <span className="post_title">{this.props.userName}: {this.props.title}</span>
         <span className="post_descr">{this.props.descr}</span>
         <div className="post_media">{mediaJsx}</div>
       </div>
@@ -30,6 +30,7 @@ export class Post extends React.Component<IPropsPost, any> {
 }
 
 export interface IPropsPost {
+  userName:string
   uploadDatetime: string
   title: string
   descr: string

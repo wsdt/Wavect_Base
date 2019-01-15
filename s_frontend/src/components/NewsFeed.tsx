@@ -2,7 +2,7 @@ import * as React from "react"
 import { Http2SSEclient } from "../Http2SSEclient"
 import { API_URL } from "./App.constants"
 import { IPropsPost } from "./Post"
-import {PostCreator} from "./PostCreator"
+import { PostCreator } from "./PostCreator"
 
 const LAZY_POST = React.lazy(() => import("./Post"))
 
@@ -42,6 +42,7 @@ export class NewsFeed extends React.Component<IPropsNewsfeed, IStateNewsfeed> {
           <React.Suspense fallback={<div>Loading ...</div>} key={postKey}>
             <LAZY_POST
               key={postKey}
+              userName={post.userName}
               title={post.title}
               descr={post.descr}
               mediaType={post.mediaType}

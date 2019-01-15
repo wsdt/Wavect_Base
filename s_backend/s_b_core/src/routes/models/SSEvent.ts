@@ -1,4 +1,4 @@
-import {Response} from "express"
+import { Response } from "express"
 
 export class SSEvent {
   public event: string
@@ -11,7 +11,7 @@ export class SSEvent {
     this.data = data
   }
 
-  public sendSSEvent(res:Response) {
+  public sendSSEvent(res: Response) {
     res.write(this.toString())
   }
 

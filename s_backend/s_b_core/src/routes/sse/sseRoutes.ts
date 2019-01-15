@@ -18,7 +18,7 @@ router.use((_req, res, next) => {
 })
 
 // v1 routes can be modularized too!
-import {v1Router} from "./v1/newsfeed"
+import { v1Router } from "./v1/newsfeed"
 router.use("/v1", v1Router)
 
 // show page not found error for API use (json)

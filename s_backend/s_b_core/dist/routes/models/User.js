@@ -1,22 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var Post_1 = require("./Post");
 var User = (function () {
-    function User(id, forename, surname, profilePicPath, followers, following, posts) {
+    function User(id, forename, surname, profilePicPath, following) {
         this._id = id;
         this._forename = forename;
         this._surname = surname;
         this._profilePicPath = profilePicPath;
-        this._followers = followers;
         this._following = following;
-        this._posts = posts;
     }
-    Object.defineProperty(User.prototype, "posts", {
-        get: function () {
-            return this._posts;
-        },
-        enumerable: true,
-        configurable: true
-    });
     Object.defineProperty(User.prototype, "id", {
         get: function () {
             return this._id;
@@ -57,16 +49,6 @@ var User = (function () {
         enumerable: true,
         configurable: true
     });
-    Object.defineProperty(User.prototype, "followers", {
-        get: function () {
-            return this._followers;
-        },
-        set: function (value) {
-            this._followers = value;
-        },
-        enumerable: true,
-        configurable: true
-    });
     Object.defineProperty(User.prototype, "profilePicPath", {
         get: function () {
             return this._profilePicPath;
@@ -77,6 +59,29 @@ var User = (function () {
         enumerable: true,
         configurable: true
     });
+    User.getUserById = function (id) {
+        return new User(id, "Max", "Mustermann", "#", [
+            new User("blaUser", "Katharina", "Summer", "#", [])
+        ]);
+    };
+    User.prototype.getPosts = function () {
+        return [
+            new Post_1.Post("First post", "first descr", (new Date()).toDateString(), "p", "#", this),
+            new Post_1.Post("Sec post", "descr", (new Date()).toISOString(), "p", "#", this),
+            new Post_1.Post("Third post", "description", (new Date()).toLocaleString(), "p", "#", this)
+        ];
+    };
+    User.prototype.getPostsByFollowings = function () {
+        var posts = [];
+        for (var _i = 0, _a = this.following; _i < _a.length; _i++) {
+            var user = _a[_i];
+            for (var _b = 0, _c = user.getPosts(); _b < _c.length; _b++) {
+                var post = _c[_b];
+                posts.push(post);
+            }
+        }
+        return posts;
+    };
     return User;
 }());
 exports.User = User;

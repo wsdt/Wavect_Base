@@ -70,10 +70,10 @@ var PostCreator = (function (_super) {
                         return [4, fetch(App_constants_1.API_URL + "/newsfeed", {
                                 body: JSON.stringify(this.state),
                                 headers: {
-                                    'Accept': 'application/json',
-                                    'Content-Type': 'application/json'
+                                    Accept: "application/json",
+                                    "Content-Type": "application/json"
                                 },
-                                method: 'POST'
+                                method: "POST"
                             })];
                     case 1:
                         rawResp = _a.sent();
@@ -88,14 +88,14 @@ var PostCreator = (function (_super) {
         return _this;
     }
     PostCreator.prototype.render = function () {
-        return React.createElement("form", { className: "postCreationForm", method: "post", encType: "application/json", action: "#", onSubmit: this.sendToApi },
+        return (React.createElement("form", { className: "postCreationForm", method: "post", encType: "application/json", action: "#", onSubmit: this.sendToApi },
             React.createElement("span", { className: "postCreationGroup" },
                 React.createElement("label", { htmlFor: "nPostTitle" }, "Title"),
                 React.createElement("input", { type: "text", id: "nPostTitle", name: "nPostTitle", value: this.state.title, onChange: this.handleChangeTitle })),
             React.createElement("span", { className: "postCreationGroup" },
                 React.createElement("label", { htmlFor: "nPostDescr" }, "Description"),
                 React.createElement("textarea", { id: "nPostDescr", name: "nPostDescr", onChange: this.handleChangeDescr, value: this.state.descr })),
-            React.createElement("input", { type: "submit", value: "Post now", id: "postCreationSubmit" }));
+            React.createElement("input", { type: "submit", value: "Post now", id: "postCreationSubmit" })));
     };
     return PostCreator;
 }(React.Component));
