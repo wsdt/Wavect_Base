@@ -66,9 +66,9 @@ var User = (function () {
     };
     User.prototype.getPosts = function () {
         return [
-            new Post_1.Post("First post", "first descr", (new Date()).toDateString(), "p", "#", this),
-            new Post_1.Post("Sec post", "descr", (new Date()).toISOString(), "p", "#", this),
-            new Post_1.Post("Third post", "description", (new Date()).toLocaleString(), "p", "#", this)
+            new Post_1.Post("First post", "first descr", new Date().toDateString(), "p", "#", this.id),
+            new Post_1.Post("Sec post", "descr", new Date().toISOString(), "p", "#", this.id),
+            new Post_1.Post("Third post", "description", new Date().toLocaleString(), "p", "#", this.id)
         ];
     };
     User.prototype.getPostsByFollowings = function () {

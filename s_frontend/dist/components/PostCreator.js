@@ -67,7 +67,7 @@ var PostCreator = (function (_super) {
                 switch (_a.label) {
                     case 0:
                         e.preventDefault();
-                        return [4, fetch(App_constants_1.API_URL + "/newsfeed", {
+                        return [4, fetch(App_constants_1.API_URL + "/newsfeed/12e7-7d7s-jfjk-6e6d-8d8d-9999-0akEq", {
                                 body: JSON.stringify(this.state),
                                 headers: {
                                     Accept: "application/json",

@@ -1,4 +1,3 @@
-import {User} from "./User";
 
 export class Post {
   public uploadDatetime: string
@@ -6,7 +5,7 @@ export class Post {
   public descr: string
   public mediaType: string
   public mediaUrl: string
-  public user: User
+  public userId: string
   // likedBy
   // comments etc.
 
@@ -16,13 +15,13 @@ export class Post {
     uploadDatetime: string,
     mediaType: string,
     mediaUrl: string,
-    user: User
+    userId: string
   ) {
     this.title = title
     this.descr = descr
     this.uploadDatetime = uploadDatetime
     this.mediaType = mediaType
     this.mediaUrl = mediaUrl
-    this.user = user
+    this.userId = userId
   }
 }

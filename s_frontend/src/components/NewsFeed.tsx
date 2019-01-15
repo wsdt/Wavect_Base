@@ -42,7 +42,7 @@ export class NewsFeed extends React.Component<IPropsNewsfeed, IStateNewsfeed> {
           <React.Suspense fallback={<div>Loading ...</div>} key={postKey}>
             <LAZY_POST
               key={postKey}
-              userName={post.userName}
+              userId={post.userId}
               title={post.title}
               descr={post.descr}
               mediaType={post.mediaType}

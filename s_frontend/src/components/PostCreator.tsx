@@ -50,7 +50,7 @@ export class PostCreator extends React.Component<any, any> {
   private sendToApi = async (e: any) => {
     e.preventDefault() // prevent form to refresh page
 
-    const rawResp = await fetch(`${API_URL}/newsfeed`, {
+    const rawResp = await fetch(`${API_URL}/newsfeed/12e7-7d7s-jfjk-6e6d-8d8d-9999-0akEq`, {
       body: JSON.stringify(this.state),
       headers: {
         Accept: "application/json",

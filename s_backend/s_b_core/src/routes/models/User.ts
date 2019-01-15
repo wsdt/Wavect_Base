@@ -1,8 +1,7 @@
 /** User class */
-import {Post} from "./Post"
+import { Post } from "./Post"
 
 export class User {
-
   get id(): string {
     return this._id
   }
@@ -41,7 +40,7 @@ export class User {
   }
   public static getUserById(id: string) {
     return new User(id, "Max", "Mustermann", "#", [
-        new User("blaUser", "Katharina", "Summer", "#", [])
+      new User("blaUser", "Katharina", "Summer", "#", [])
     ])
   }
 
@@ -67,9 +66,23 @@ export class User {
 
   public getPosts() {
     return [
-        new Post("First post", "first descr", (new Date()).toDateString(), "p", "#", this),
-        new Post("Sec post", "descr", (new Date()).toISOString(), "p", "#", this),
-        new Post("Third post", "description", (new Date()).toLocaleString(), "p", "#", this)
+      new Post(
+        "First post",
+        "first descr",
+        new Date().toDateString(),
+        "p",
+        "#",
+        this.id
+      ),
+      new Post("Sec post", "descr", new Date().toISOString(), "p", "#", this.id),
+      new Post(
+        "Third post",
+        "description",
+        new Date().toLocaleString(),
+        "p",
+        "#",
+        this.id
+      )
     ]
   }
 

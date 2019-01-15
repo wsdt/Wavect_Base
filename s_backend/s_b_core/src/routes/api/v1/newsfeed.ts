@@ -19,7 +19,7 @@ router.route("/newsfeed/:userId").post((req, res) => {
     new Date().toDateString(),
     "p",
     "#",
-    User.getUserById(req.params.userId)
+    req.params.userId
   )
   EE.emit(E_NEW_POST, E_NEW_POST, submittedPost)
   res.json({ error: false })

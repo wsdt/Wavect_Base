@@ -35,7 +35,7 @@ var Post = (function (_super) {
         return (React.createElement("div", { className: "post_container" },
             React.createElement("span", { className: "post_uploaddatetime" }, this.props.uploadDatetime),
             React.createElement("span", { className: "post_title" },
-                this.props.userName,
+                this.props.userId,
                 ": ",
                 this.props.title),
             React.createElement("span", { className: "post_descr" }, this.props.descr),
