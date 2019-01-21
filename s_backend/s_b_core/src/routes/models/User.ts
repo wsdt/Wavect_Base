@@ -74,7 +74,14 @@ export class User {
         "#",
         this.id
       ),
-      new Post("Sec post", "descr", new Date().toISOString(), "p", "#", this.id),
+      new Post(
+        "Sec post",
+        "descr",
+        new Date().toISOString(),
+        "p",
+        "#",
+        this.id
+      ),
       new Post(
         "Third post",
         "description",

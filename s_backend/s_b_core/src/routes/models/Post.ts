@@ -1,4 +1,3 @@
-
 export class Post {
   public uploadDatetime: string
   public title: string

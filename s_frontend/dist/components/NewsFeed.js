@@ -92,8 +92,7 @@ var NewsFeed = (function (_super) {
         if (posts.length > 0) {
             for (var _i = 0, posts_1 = posts; _i < posts_1.length; _i++) {
                 var post = posts_1[_i];
-                var postKey = post.title + post.uploadDatetime;
-                newsFeedJsx.push(React.createElement(React.Suspense, { fallback: React.createElement("div", null, "Loading ..."), key: postKey },
+                var postKey = newsFeedJsx.push(React.createElement(React.Suspense, { fallback: React.createElement("div", null, "Loading ..."), key: postKey },
                     React.createElement(LAZY_POST, { key: postKey, userId: post.userId, title: post.title, descr: post.descr, mediaType: post.mediaType, mediaUrl: post.mediaUrl, uploadDatetime: post.uploadDatetime })));
             }
         }

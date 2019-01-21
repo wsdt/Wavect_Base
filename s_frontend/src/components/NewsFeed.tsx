@@ -37,7 +37,7 @@ export class NewsFeed extends React.Component<IPropsNewsfeed, IStateNewsfeed> {
 
     if (posts.length > 0) {
       for (const post of posts) {
-        const postKey = post.title + post.uploadDatetime
+        const postKey =
         newsFeedJsx.push(
           <React.Suspense fallback={<div>Loading ...</div>} key={postKey}>
             <LAZY_POST
