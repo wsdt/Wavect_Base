@@ -1,7 +1,7 @@
 import * as React from "react"
 import { API_URL } from "./App.constants"
 
-export class PostCreator extends React.Component<any, any> {
+export class PostCreator extends React.Component<IPropsPostCreator, any> {
   public state = { title: "", descr: "" }
 
   public render() {
@@ -51,7 +51,7 @@ export class PostCreator extends React.Component<any, any> {
     e.preventDefault() // prevent form to refresh page
 
     const rawResp = await fetch(
-      `${API_URL}/newsfeed/12e7-7d7s-jfjk-6e6d-8d8d-9999-0akEq`,
+      `${API_URL}/newsfeed/${this.props.userId}`,
       {
         body: JSON.stringify(this.state),
         headers: {
@@ -66,4 +66,8 @@ export class PostCreator extends React.Component<any, any> {
 
     console.log("sendToApi: Response is -> " + JSON.stringify(content))
   }
+}
+
+interface IPropsPostCreator {
+  userId:string
 }

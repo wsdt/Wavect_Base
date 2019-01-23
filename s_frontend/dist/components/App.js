@@ -14,6 +14,8 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
+var StringFunctions_1 = require("../helper/StringFunctions");
+var PostCreator_1 = require("./PostCreator");
 var LAZY_NEWS_FEED = React.lazy(function () { return Promise.resolve().then(function () { return require("./NewsFeed"); }); });
 var App = (function (_super) {
     __extends(App, _super);
@@ -21,10 +23,12 @@ var App = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     App.prototype.render = function () {
+        var userId = StringFunctions_1.getRandomStr();
         return (React.createElement(React.Fragment, null,
             React.createElement("h1", null, "Hello Be-Kind Team"),
+            React.createElement(PostCreator_1.PostCreator, { userId: userId }),
             React.createElement(React.Suspense, { fallback: React.createElement("div", null, "Loading newsfeed ...") },
-                React.createElement(LAZY_NEWS_FEED, { userId: "12e7-7d7s-jfjk-6e6d-8d8d-9999-0akEq" }))));
+                React.createElement(LAZY_NEWS_FEED, { userId: userId }))));
     };
     return App;
 }(React.Component));

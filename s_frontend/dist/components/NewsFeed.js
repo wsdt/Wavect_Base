@@ -49,9 +49,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
+var StringFunctions_1 = require("../helper/StringFunctions");
 var Http2SSEclient_1 = require("../Http2SSEclient");
 var App_constants_1 = require("./App.constants");
-var PostCreator_1 = require("./PostCreator");
 var LAZY_POST = React.lazy(function () { return Promise.resolve().then(function () { return require("./Post"); }); });
 var NewsFeed = (function (_super) {
     __extends(NewsFeed, _super);
@@ -88,11 +88,11 @@ var NewsFeed = (function (_super) {
         var newsFeedJsx = [];
         var posts = this.state.posts;
         console.log(posts);
-        newsFeedJsx.push(React.createElement(PostCreator_1.PostCreator, null));
         if (posts.length > 0) {
             for (var _i = 0, posts_1 = posts; _i < posts_1.length; _i++) {
                 var post = posts_1[_i];
-                var postKey = newsFeedJsx.push(React.createElement(React.Suspense, { fallback: React.createElement("div", null, "Loading ..."), key: postKey },
+                var postKey = StringFunctions_1.getRandomStr();
+                newsFeedJsx.push(React.createElement(React.Suspense, { fallback: React.createElement("div", null, "Loading ..."), key: postKey },
                     React.createElement(LAZY_POST, { key: postKey, userId: post.userId, title: post.title, descr: post.descr, mediaType: post.mediaType, mediaUrl: post.mediaUrl, uploadDatetime: post.uploadDatetime })));
             }
         }

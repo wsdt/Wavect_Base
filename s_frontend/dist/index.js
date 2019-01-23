@@ -5,5 +5,5 @@ var ReactDOM = require("react-dom");
 var App_1 = require("./components/App");
 require("./scss/style.scss");
 var ROOT = document.querySelector("#root");
-ReactDOM.render(React.createElement(App_1.App, { name: "ExampleProperty" }), ROOT);
+ReactDOM.render(React.createElement(App_1.App, null), ROOT);
 //# sourceMappingURL=index.js.map

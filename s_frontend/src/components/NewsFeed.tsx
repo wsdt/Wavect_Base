@@ -1,8 +1,8 @@
 import * as React from "react"
+import { getRandomStr } from "../helper/StringFunctions"
 import { Http2SSEclient } from "../Http2SSEclient"
 import { API_URL } from "./App.constants"
 import { IPropsPost } from "./Post"
-import { PostCreator } from "./PostCreator"
 
 const LAZY_POST = React.lazy(() => import("./Post"))
 
@@ -32,12 +32,9 @@ export class NewsFeed extends React.Component<IPropsNewsfeed, IStateNewsfeed> {
     const posts = this.state.posts
     console.log(posts)
 
-    // Add also creation jsx
-    newsFeedJsx.push(<PostCreator />)
-
     if (posts.length > 0) {
       for (const post of posts) {
-        const postKey =
+        const postKey = getRandomStr()
         newsFeedJsx.push(
           <React.Suspense fallback={<div>Loading ...</div>} key={postKey}>
             <LAZY_POST

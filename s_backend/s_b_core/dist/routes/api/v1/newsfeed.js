@@ -10,7 +10,7 @@ router.route("/newsfeed/:userId").get(function (req, res) {
 });
 router.route("/newsfeed/:userId").post(function (req, res) {
     var submittedPost = new Post_1.Post(req.body.title, req.body.descr, new Date().toDateString(), "p", "#", req.params.userId);
-    newsfeed_1.EE.emit(sseEvents_constants_1.E_NEW_POST, sseEvents_constants_1.E_NEW_POST, submittedPost);
+    newsfeed_1.EE.emit(sseEvents_constants_1.E_NEW_POST + "_" + req.params.userId, sseEvents_constants_1.E_NEW_POST, submittedPost);
     res.json({ error: false });
 });
 module.exports = router;

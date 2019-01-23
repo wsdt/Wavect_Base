@@ -1,5 +1,5 @@
 import * as React from "react";
-export declare class PostCreator extends React.Component<any, any> {
+export declare class PostCreator extends React.Component<IPropsPostCreator, any> {
     state: {
         title: string;
         descr: string;
@@ -9,3 +9,7 @@ export declare class PostCreator extends React.Component<any, any> {
     private handleChangeDescr;
     private sendToApi;
 }
+interface IPropsPostCreator {
+    userId: string;
+}
+export {};

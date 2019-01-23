@@ -7,8 +7,8 @@ var sseEvents_constants_1 = require("../sseEvents.constants");
 exports.v1Router = express.Router();
 exports.EE = new EventEmitter();
 exports.v1Router.route("/newsfeed/:userId").get(function (req, res) {
-    exports.EE.on(sseEvents_constants_1.E_NEW_POST, function (e, post) {
-        var sse = new SSEvent_1.SSEvent(String(e), req.params.userId, JSON.stringify(post));
+    exports.EE.on(sseEvents_constants_1.E_NEW_POST + "_" + req.params.userId, function (e, post) {
+        var sse = new SSEvent_1.SSEvent(String(e), post.userId, JSON.stringify(post));
         sse.sendSSEvent(res);
     });
 });

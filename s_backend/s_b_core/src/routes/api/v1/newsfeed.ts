@@ -21,7 +21,8 @@ router.route("/newsfeed/:userId").post((req, res) => {
     "#",
     req.params.userId
   )
-  EE.emit(E_NEW_POST, E_NEW_POST, submittedPost)
+
+  EE.emit(`${E_NEW_POST}_${req.params.userId}`, E_NEW_POST, submittedPost)
   res.json({ error: false })
 })
 
