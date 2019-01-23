@@ -50,17 +50,14 @@ export class PostCreator extends React.Component<IPropsPostCreator, any> {
   private sendToApi = async (e: any) => {
     e.preventDefault() // prevent form to refresh page
 
-    const rawResp = await fetch(
-      `${API_URL}/newsfeed/${this.props.userId}`,
-      {
-        body: JSON.stringify(this.state),
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        },
-        method: "POST"
-      }
-    )
+    const rawResp = await fetch(`${API_URL}/newsfeed/${this.props.userId}`, {
+      body: JSON.stringify(this.state),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
 
     const content = await rawResp.json()
 
@@ -69,5 +66,5 @@ export class PostCreator extends React.Component<IPropsPostCreator, any> {
 }
 
 interface IPropsPostCreator {
-  userId:string
+  userId: string
 }

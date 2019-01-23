@@ -20,15 +20,22 @@ var LAZY_NEWS_FEED = React.lazy(function () { return Promise.resolve().then(func
 var App = (function (_super) {
     __extends(App, _super);
     function App() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { userId: StringFunctions_1.getRandomStr() };
+        _this.handleUserId = function (e) {
+            _this.setState({ userId: e.target.value });
+        };
+        return _this;
     }
     App.prototype.render = function () {
-        var userId = StringFunctions_1.getRandomStr();
         return (React.createElement(React.Fragment, null,
+            React.createElement("p", null,
+                "Change userId:",
+                React.createElement("input", { type: "text", onChange: this.handleUserId, value: this.state.userId })),
             React.createElement("h1", null, "Hello Be-Kind Team"),
-            React.createElement(PostCreator_1.PostCreator, { userId: userId }),
+            React.createElement(PostCreator_1.PostCreator, { userId: this.state.userId }),
             React.createElement(React.Suspense, { fallback: React.createElement("div", null, "Loading newsfeed ...") },
-                React.createElement(LAZY_NEWS_FEED, { userId: userId }))));
+                React.createElement(LAZY_NEWS_FEED, { userId: this.state.userId, key: this.state.userId }))));
     };
     return App;
 }(React.Component));
