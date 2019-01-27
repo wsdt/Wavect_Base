@@ -17,5 +17,8 @@ v1Router.route("/newsfeed/:userId").get((req, res) => {
       JSON.stringify(post)
     )
     sse.sendSSEvent(res)
+
+    // also save post to user
+
   })
 })
