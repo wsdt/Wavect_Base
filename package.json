@@ -1,6 +1,6 @@
 {
-  "name": "BeKind_Playground",
-  "version": "0.0.1",
+  "name": "bekind_playground",
+  "version": "0.0.2",
   "private": true,
   "description": "BeKind_Playground for prototypes and maybe production build.",
   "husky": {

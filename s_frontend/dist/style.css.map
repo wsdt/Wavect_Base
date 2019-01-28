@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack:///./src/scss/style.scss"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA,4BAA4B","file":"style.css","sourcesContent":["body {\n  font-family: \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 1.3rem;\n  background-color: #f3f3f3; }\n"],"sourceRoot":""}

@@ -2,4 +2,4 @@
 var express = require("express");
 var router = express.Router();
 module.exports = router;
-//# sourceMappingURL=testing.js.map
+//# sourceMappingURL=example.js.map

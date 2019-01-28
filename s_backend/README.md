@@ -3,6 +3,16 @@ This service groups multiple backend microservices. Separate as much services as
 
 The default backend service is the **core**. 
 
+## Backend does not work?
+Ensure that you try to access the backend via **https://** instead of **http://** as
+the server does not accept any http-requests which might look like the server does not
+work properly. 
+
+If you receive on the frontend/client-side a **CERT_INVALID** error just open the backend
+website and you will see the famous 'This website is not secure warning'. Just click on proceed. 
+After that the frontend should work too! In production we will have a real TLS-certificate so this
+won't happen then. 
+
 ## Possible further microservices
 Potential microservices might be in future: 
 - GetStream Service (for parsing/receiving data)
