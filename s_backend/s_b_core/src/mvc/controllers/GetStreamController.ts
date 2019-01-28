@@ -1,11 +1,15 @@
 import * as stream from "getstream"
-import {GS_APP_ID, GS_KEY, GS_SECRET} from "./GetStreamController.constants"
+import { GS_APP_ID, GS_KEY, GS_SECRET } from "./GetStreamController.constants"
 
-export const GETSTREAM:stream.StreamClient = getGetStreamConn()
+export const GETSTREAM: stream.StreamClient = getGetStreamConn()
 
 /** Connects to GetStream API for scalable newsfeeds etc. */
-function getGetStreamConn() : stream.StreamClient {
-    return stream.connect(GS_KEY, GS_SECRET, GS_APP_ID)
+function getGetStreamConn(): stream.StreamClient {
+  return stream.connect(
+    GS_KEY,
+    GS_SECRET,
+    GS_APP_ID
+  )
 }
 
 /**
@@ -14,8 +18,8 @@ function getGetStreamConn() : stream.StreamClient {
  *
  * This function should be called on registration or on login.
  */
-export function createUserToken(userId:string) {
-    // does work, just typescript definition is wrong
-    // maybe alt enter and add to getstream lib file per right click
-    return GETSTREAM.createUserToken(userId)
+export function createUserToken(userId: string) {
+  // does work, just typescript definition is wrong
+  // maybe alt enter and add to getstream lib file per right click
+  return GETSTREAM.createUserToken(userId)
 }

@@ -13,15 +13,15 @@ module.exports = {
     filename: "bundle.js"
   },
   devServer: {
-	port: 8080,
-	compress: true,
+    port: 8080,
+    compress: true,
     contentBase: "./public",
-	https: {
-		key: fs.readFileSync("./secrets/sFrontend.key"),
-		cert: fs.readFileSync("./secrets/sFrontend.crt"),
-		ca: fs.readFileSync("./secrets/sFrontend.pem")
-	}, 
-	overlay: {
+    https: {
+      key: fs.readFileSync("./secrets/sFrontend.key"),
+      cert: fs.readFileSync("./secrets/sFrontend.crt"),
+      ca: fs.readFileSync("./secrets/sFrontend.pem")
+    },
+    overlay: {
       warnings: true,
       errors: true
     }

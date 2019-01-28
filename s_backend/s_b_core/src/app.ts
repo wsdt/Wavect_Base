@@ -8,7 +8,7 @@ import * as helmet from "helmet"
  * wait for express V5 to use http2 instead of spdy.
  */
 import * as http2 from "spdy"
-import {CLIENT_WEB, HTTP2_OPTIONS, PORT} from "./app.constants"
+import { CLIENT_WEB, HTTP2_OPTIONS, PORT } from "./app.constants"
 import * as routes from "./routes/routes"
 
 /**
@@ -49,9 +49,11 @@ class App {
     this.app.use(bodyParser.urlencoded({ extended: false }))
 
     // Add cors header to be accessible from frontend
-    this.app.use(cors({
-      origin: CLIENT_WEB
-    }))
+    this.app.use(
+      cors({
+        origin: CLIENT_WEB
+      })
+    )
 
     // Add routes
     this.app.use("/", routes)
