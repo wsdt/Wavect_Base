@@ -14,37 +14,14 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var Newsfeed_1 = require("../Newsfeed/Newsfeed");
-var App_constants_1 = require("./App.constants");
 var App = (function (_super) {
     __extends(App, _super);
     function App() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.state = { userToken: "" };
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    App.prototype.componentDidMount = function () {
-        this.queryUserToken();
-    };
     App.prototype.render = function () {
-        var newsfeedTsx = React.createElement("div", null, "Loading newsfeed ...");
-        if (this.state.userToken) {
-            newsfeedTsx = React.createElement(Newsfeed_1.Newsfeed, { userToken: this.state.userToken, userId: App_constants_1.TEST_USER_ID });
-        }
         return (React.createElement(React.Fragment, null,
-            React.createElement("h1", null, "Hello Be-Kind Team"),
-            newsfeedTsx));
-    };
-    App.prototype.queryUserToken = function () {
-        var _this = this;
-        fetch(App_constants_1.API_URL + "/auth/" + App_constants_1.TEST_USER_ID)
-            .then(function (res) { return res.json(); })
-            .then(function (data) {
-            _this.setState({ userToken: data.token });
-        })
-            .catch(function (err) {
-            console.error("App:connectToGetStream: Could not connect to getStream!", err);
-        });
+            React.createElement("h1", null, "Hello Be-Kind Team")));
     };
     return App;
 }(React.Component));

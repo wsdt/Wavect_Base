@@ -6,7 +6,3 @@
  */
 export const API_URL = "https://localhost:8090/api/v1"
 export const SSE_URL = "https://localhost:8090/sse/v1"
-
-
-// TODO: Delete after login registration introduced
-export const TEST_USER_ID = "kevin"

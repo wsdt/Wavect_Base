@@ -1,8 +1,8 @@
 import * as express from "express"
-import {createUserToken} from "../../../mvc/controllers/GetStreamController"
 
 const router = express.Router()
 
+/* EXAMPLE --------------------------------------
 router.route("/auth/:userId").get((req, res) => {
     const userId = req.params.userId // just assumed for testing that userId has been used to get the following User obj -> user[0]
 
@@ -10,7 +10,7 @@ router.route("/auth/:userId").get((req, res) => {
     res.json({"token":createUserToken(userId)})
 })
 
-/*router.route("/newsfeed/:userId").post((req, res) => {
+router.route("/newsfeed/:userId").post((req, res) => {
   const submittedPost: Post = new Post(
     req.body.title,
     req.body.descr,
