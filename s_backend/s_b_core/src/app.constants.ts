@@ -17,10 +17,10 @@ export const HTTP2_OPTIONS = {
   ),
   key: fs.readFileSync(
     path.resolve(__dirname, "..", "secrets", "server-key.pem")
-  )
+  ) // TODO: später wrschl auch .pem datei für trust hierachy
 }
 
 /**
  * Used by CORS Header to only specifically allow access to our frontend accessing our services.
  */
-export const CLIENT_WEB = "http://localhost:8080"
+export const CLIENT_WEB = "https://localhost:8080"

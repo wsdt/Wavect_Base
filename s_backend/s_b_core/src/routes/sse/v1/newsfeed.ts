@@ -1,7 +1,7 @@
 import * as EventEmitter from "events"
 import * as express from "express"
-import { Post } from "../../models/Post"
-import { SSEvent } from "../../models/SSEvent"
+import { Post } from "../../../mvc/models/Post"
+import { SSEvent } from "../../../mvc/models/SSEvent"
 import { E_NEW_POST } from "../sseEvents.constants"
 
 export const v1Router = express.Router()

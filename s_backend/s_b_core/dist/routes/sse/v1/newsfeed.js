@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var EventEmitter = require("events");
 var express = require("express");
-var SSEvent_1 = require("../../models/SSEvent");
+var SSEvent_1 = require("../../../mvc/models/SSEvent");
 var sseEvents_constants_1 = require("../sseEvents.constants");
 exports.v1Router = express.Router();
 exports.EE = new EventEmitter();

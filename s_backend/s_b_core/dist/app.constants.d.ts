@@ -4,4 +4,4 @@ export declare const HTTP2_OPTIONS: {
     cert: Buffer;
     key: Buffer;
 };
-export declare const CLIENT_WEB = "http://localhost:8080";
+export declare const CLIENT_WEB = "https://localhost:8080";

@@ -3,6 +3,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const fs = require("fs");
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -12,7 +13,18 @@ module.exports = {
     filename: "bundle.js"
   },
   devServer: {
-    contentBase: "./public"
+	port: 8080,
+	compress: true,
+    contentBase: "./public",
+	https: {
+		key: fs.readFileSync("./secrets/sFrontend.key"),
+		cert: fs.readFileSync("./secrets/sFrontend.crt"),
+		ca: fs.readFileSync("./secrets/sFrontend.pem")
+	}, 
+	overlay: {
+      warnings: true,
+      errors: true
+    }
   },
   optimization: {
     splitChunks: {
@@ -40,7 +52,7 @@ module.exports = {
         loader: "source-map-loader"
       },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {

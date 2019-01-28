@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var bodyParser = require("body-parser");
+var cors = require("cors");
 var express = require("express");
 var helmet = require("helmet");
 var http2 = require("spdy");
@@ -26,6 +27,9 @@ var App = (function () {
     App.prototype.config = function () {
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({ extended: false }));
+        this.app.use(cors({
+            origin: app_constants_1.CLIENT_WEB
+        }));
         this.app.use("/", routes);
         this.app.use(helmet());
         console.log("app: Configuration done.");
