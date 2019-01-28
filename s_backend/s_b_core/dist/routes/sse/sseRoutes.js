@@ -7,8 +7,8 @@ router.use(function (_req, res, next) {
     res.header("Connection", "keep-alive");
     next();
 });
-var v1SSE = require("./v1/example");
-router.use("/v1", v1SSE);
+var newsfeed_1 = require("./v1/newsfeed");
+router.use("/v1", newsfeed_1.v1Router);
 router.use("*", function (_req, res) {
     res.send("ERROR: Something went wrong.");
 });

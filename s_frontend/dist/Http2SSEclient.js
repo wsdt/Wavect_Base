@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var App_constants_1 = require("./components/App.constants");
+var App_constants_1 = require("./components/App/App.constants");
 var Http2SSEclient = (function () {
     function Http2SSEclient(sseChannel) {
         this.SSE_SOURCE = new EventSource(App_constants_1.SSE_URL + "/" + sseChannel);
