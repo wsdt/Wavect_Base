@@ -1,4 +1,4 @@
-import { SSE_URL } from "./components/App/App.constants"
+import { SSE_URL } from "./mvc/views/App/App.constants"
 
 /** Initializes server sent events on client side */
 
