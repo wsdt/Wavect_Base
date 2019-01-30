@@ -1,9 +1,24 @@
-import {FormEvent} from "react"
 import * as React from "react"
+import {connect} from "react-redux"
+import {bindActionCreators} from "redux"
+import * as loginActions from "../../../redux/actions/login"
 import "../../../scss/style.scss"
 
 
-export class DummyLogin extends React.Component<any, any> {
+class DummyLogin extends React.Component<any, any> {
+
+    public static mapStateToProps = (state:any, ownProps:any) => {
+        console.log(JSON.stringify(state), JSON.stringify(ownProps))
+        return {
+            ownProps,
+            userName: state.username
+        }
+    }
+
+    public static mapDispatchToProps = (dispatch:any) => {
+        return {actions: bindActionCreators(loginActions, dispatch)}
+    }
+
     public state = {login: {username: "", password: ""}}
 
     public render() {
@@ -22,8 +37,8 @@ export class DummyLogin extends React.Component<any, any> {
         </form>
     }
 
-    private handleSubmit = (e:FormEvent) => {
-
+    private handleSubmit = (e:React.FormEvent) => {
+        this.props.actions.setCurrentUsername(this.state.login.username)
         e.preventDefault()
     }
 
@@ -35,3 +50,5 @@ export class DummyLogin extends React.Component<any, any> {
         this.setState({login: {username: this.state.login.username, password: e.target.value}})
     }
 }
+
+export default connect(DummyLogin.mapStateToProps, DummyLogin.mapDispatchToProps)(DummyLogin)

@@ -14,6 +14,9 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
+var react_redux_1 = require("react-redux");
+var redux_1 = require("redux");
+var loginActions = require("../../../redux/actions/login");
 require("../../../scss/style.scss");
 var DummyLogin = (function (_super) {
     __extends(DummyLogin, _super);
@@ -21,6 +24,7 @@ var DummyLogin = (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = { login: { username: "", password: "" } };
         _this.handleSubmit = function (e) {
+            _this.props.actions.setCurrentUsername(_this.state.login.username);
             e.preventDefault();
         };
         _this.handleChangeUsername = function (e) {
@@ -44,7 +48,17 @@ var DummyLogin = (function (_super) {
             React.createElement("div", { className: "inputBlock" },
                 React.createElement("input", { type: "submit", value: "Login" })));
     };
+    DummyLogin.mapStateToProps = function (state, ownProps) {
+        console.log(JSON.stringify(state), JSON.stringify(ownProps));
+        return {
+            ownProps: ownProps,
+            userName: state.username
+        };
+    };
+    DummyLogin.mapDispatchToProps = function (dispatch) {
+        return { actions: redux_1.bindActionCreators(loginActions, dispatch) };
+    };
     return DummyLogin;
 }(React.Component));
-exports.DummyLogin = DummyLogin;
+exports.default = react_redux_1.connect(DummyLogin.mapStateToProps, DummyLogin.mapDispatchToProps)(DummyLogin);
 //# sourceMappingURL=DummyLogin.js.map

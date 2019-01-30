@@ -23,7 +23,7 @@ var App = (function (_super) {
     App.prototype.render = function () {
         return (React.createElement(React.Fragment, null,
             React.createElement("h1", null, "Hello Be-Kind Team"),
-            React.createElement(DummyLogin_1.DummyLogin, null)));
+            React.createElement(DummyLogin_1.default, null)));
     };
     return App;
 }(React.Component));

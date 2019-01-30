@@ -1,2 +1,8 @@
-declare const _default: any;
-export default _default;
+export declare const DEFAULT_STATE: {
+    userName: string;
+};
+export default function reducer(state: {
+    userName: string;
+} | undefined, action: any): {
+    userName: any;
+};
