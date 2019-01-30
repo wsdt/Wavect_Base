@@ -3,15 +3,16 @@ import {connect} from "react-redux"
 import {bindActionCreators} from "redux"
 import * as loginActions from "../../../redux/actions/login"
 import "../../../scss/style.scss"
+import {NAV_ROUTER as NavRouter} from "../NavRouter/NavRouter"
 
-
+// SIMPLE REDUX EXAMPLE: https://github.com/jasonmendes/simple-redux-example
+// REACT-REDUX CONNECT EXPLAINED: https://www.sohamkamani.com/blog/2017/03/31/react-redux-connect-explained/
 class DummyLogin extends React.Component<any, any> {
 
     public static mapStateToProps = (state:any, ownProps:any) => {
-        console.log(JSON.stringify(state), JSON.stringify(ownProps))
         return {
             ownProps,
-            userName: state.username
+            userName: state.userName
         }
     }
 
@@ -22,7 +23,9 @@ class DummyLogin extends React.Component<any, any> {
     public state = {login: {username: "", password: ""}}
 
     public render() {
-        return <form onSubmit={this.handleSubmit} className="formBlock">
+        const formNotFilledOut:boolean = (this.state.login.username === "" || this.state.login.password === "")
+        let toRender: JSX.Element = (<form onSubmit={this.handleSubmit} className="formBlock">
+            {formNotFilledOut ? <p className="pWarning">Password and username required.</p> : "" }
             <div className="inputBlock">
                 <label htmlFor="login_username">Username</label><br />
                 <input type="text" onChange={this.handleChangeUsername} value={this.state.login.username}/>
@@ -34,7 +37,14 @@ class DummyLogin extends React.Component<any, any> {
             <div className="inputBlock">
                 <input type="submit" value="Login" />
             </div>
-        </form>
+        </form>)
+
+        // If redux state (see mapStateToProps) is set then open userPage
+        if (this.props.userName && !formNotFilledOut) {
+            toRender = <NavRouter />
+        }
+
+        return toRender
     }
 
     private handleSubmit = (e:React.FormEvent) => {

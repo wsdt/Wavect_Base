@@ -1,2 +1,4 @@
-declare const store: import("redux").Store<{}, import("redux").Action<any>>;
+declare const store: import("redux").Store<{
+    userName: any;
+}, any>;
 export default store;

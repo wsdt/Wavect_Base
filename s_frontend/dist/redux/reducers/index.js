@@ -20,6 +20,8 @@ function reducer(state, action) {
     switch (action.type) {
         case login_constants_1.LOG_IN:
             return __assign({}, state, { userName: action.userName });
+        case login_constants_1.LOG_OUT:
+            return __assign({}, state, { userName: '' });
         default: return state;
     }
 }

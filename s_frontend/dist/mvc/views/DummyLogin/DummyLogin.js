@@ -18,6 +18,7 @@ var react_redux_1 = require("react-redux");
 var redux_1 = require("redux");
 var loginActions = require("../../../redux/actions/login");
 require("../../../scss/style.scss");
+var NavRouter_1 = require("../NavRouter/NavRouter");
 var DummyLogin = (function (_super) {
     __extends(DummyLogin, _super);
     function DummyLogin() {
@@ -36,7 +37,9 @@ var DummyLogin = (function (_super) {
         return _this;
     }
     DummyLogin.prototype.render = function () {
-        return React.createElement("form", { onSubmit: this.handleSubmit, className: "formBlock" },
+        var formNotFilledOut = (this.state.login.username === "" || this.state.login.password === "");
+        var toRender = (React.createElement("form", { onSubmit: this.handleSubmit, className: "formBlock" },
+            formNotFilledOut ? React.createElement("p", { className: "pWarning" }, "Password and username required.") : "",
             React.createElement("div", { className: "inputBlock" },
                 React.createElement("label", { htmlFor: "login_username" }, "Username"),
                 React.createElement("br", null),
@@ -46,13 +49,16 @@ var DummyLogin = (function (_super) {
                 React.createElement("br", null),
                 React.createElement("input", { type: "password", onChange: this.handleChangePassword, value: this.state.login.password })),
             React.createElement("div", { className: "inputBlock" },
-                React.createElement("input", { type: "submit", value: "Login" })));
+                React.createElement("input", { type: "submit", value: "Login" }))));
+        if (this.props.userName && !formNotFilledOut) {
+            toRender = React.createElement(NavRouter_1.NAV_ROUTER, null);
+        }
+        return toRender;
     };
     DummyLogin.mapStateToProps = function (state, ownProps) {
-        console.log(JSON.stringify(state), JSON.stringify(ownProps));
         return {
             ownProps: ownProps,
-            userName: state.username
+            userName: state.userName
         };
     };
     DummyLogin.mapDispatchToProps = function (dispatch) {

@@ -5,4 +5,7 @@ exports.setCurrentUsername = function (userName) { return ({
     type: login_constants_1.LOG_IN,
     userName: userName
 }); };
+exports.unsetCurrentUsername = function () { return ({
+    type: login_constants_1.LOG_OUT
+}); };
 //# sourceMappingURL=login.js.map
