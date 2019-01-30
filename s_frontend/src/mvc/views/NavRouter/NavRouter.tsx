@@ -2,7 +2,7 @@ import * as React from "react"
 import { BrowserRouter as Router, Link, Route } from "react-router-dom"
 import {unsetCurrentUsername} from "../../../redux/actions/login"
 import store from "../../../redux/reduxStore"
-import {Home} from "../Home/Home"
+import {HOME as Home} from "../Home/Home"
 import {IMPRESSUM as Impressum} from "../Impressum/Impressum"
 
 export const NAV_ROUTER = () => {

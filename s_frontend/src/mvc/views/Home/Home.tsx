@@ -1,7 +1,9 @@
 import * as React from "react"
+import Newsfeed from "../Newsfeed/Newsfeed"
 
-export class Home extends React.Component<any, any> {
-    public render() {
-        return <div><h2>Home</h2></div>
-    }
+export const HOME = () => {
+    return <React.Fragment>
+        <h2>Home</h2>
+        <Newsfeed />
+    </React.Fragment>
 }

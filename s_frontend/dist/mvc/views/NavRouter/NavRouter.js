@@ -18,7 +18,7 @@ exports.NAV_ROUTER = function () {
                 React.createElement("li", { onClick: unsetSession },
                     React.createElement(react_router_dom_1.Link, { to: "#" }, "Logout"))),
             React.createElement("hr", null),
-            React.createElement(react_router_dom_1.Route, { exact: true, path: "/", component: Home_1.Home }),
+            React.createElement(react_router_dom_1.Route, { exact: true, path: "/", component: Home_1.HOME }),
             React.createElement(react_router_dom_1.Route, { path: "/impressum", component: Impressum_1.IMPRESSUM })));
 };
 //# sourceMappingURL=NavRouter.js.map
