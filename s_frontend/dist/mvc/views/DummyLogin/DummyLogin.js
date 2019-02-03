@@ -19,6 +19,7 @@ var redux_1 = require("redux");
 var loginActions = require("../../../redux/actions/login");
 require("../../../scss/style.scss");
 var NavRouter_1 = require("../NavRouter/NavRouter");
+var App_1 = require("../App/App");
 var DummyLogin = (function (_super) {
     __extends(DummyLogin, _super);
     function DummyLogin() {
@@ -26,6 +27,7 @@ var DummyLogin = (function (_super) {
         _this.state = { login: { username: "", password: "" } };
         _this.handleSubmit = function (e) {
             _this.props.actions.setCurrentUsername(_this.state.login.username);
+            App_1.COOKIES.set("AUTH", _this.state.login.username, { path: "/", secure: true, maxAge: 10 });
             e.preventDefault();
         };
         _this.handleChangeUsername = function (e) {
@@ -37,21 +39,24 @@ var DummyLogin = (function (_super) {
         return _this;
     }
     DummyLogin.prototype.render = function () {
-        var formNotFilledOut = (this.state.login.username === "" || this.state.login.password === "");
-        var toRender = (React.createElement("form", { onSubmit: this.handleSubmit, className: "formBlock" },
-            formNotFilledOut ? React.createElement("p", { className: "pWarning" }, "Password and username required.") : "",
-            React.createElement("div", { className: "inputBlock" },
-                React.createElement("label", { htmlFor: "login_username" }, "Username"),
-                React.createElement("br", null),
-                React.createElement("input", { type: "text", onChange: this.handleChangeUsername, value: this.state.login.username })),
-            React.createElement("div", { className: "inputBlock" },
-                React.createElement("label", { htmlFor: "login_password" }, "Password"),
-                React.createElement("br", null),
-                React.createElement("input", { type: "password", onChange: this.handleChangePassword, value: this.state.login.password })),
-            React.createElement("div", { className: "inputBlock" },
-                React.createElement("input", { type: "submit", value: "Login" }))));
-        if (this.props.userName && !formNotFilledOut) {
+        var formFilledOut = (this.state.login.username !== "" && this.state.login.password !== "");
+        var toRender;
+        if (this.props.userName && formFilledOut || App_1.COOKIES.get("AUTH")) {
             toRender = React.createElement(NavRouter_1.NAV_ROUTER, null);
+        }
+        else {
+            toRender = (React.createElement("form", { onSubmit: this.handleSubmit, className: "formBlock" },
+                !formFilledOut ? React.createElement("p", { className: "pWarning" }, "Password and username required.") : "",
+                React.createElement("div", { className: "inputBlock" },
+                    React.createElement("label", { htmlFor: "login_username" }, "Username"),
+                    React.createElement("br", null),
+                    React.createElement("input", { type: "text", onChange: this.handleChangeUsername, value: this.state.login.username })),
+                React.createElement("div", { className: "inputBlock" },
+                    React.createElement("label", { htmlFor: "login_password" }, "Password"),
+                    React.createElement("br", null),
+                    React.createElement("input", { type: "password", onChange: this.handleChangePassword, value: this.state.login.password })),
+                React.createElement("div", { className: "inputBlock" },
+                    React.createElement("input", { type: "submit", value: "Login" }))));
         }
         return toRender;
     };

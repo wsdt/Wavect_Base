@@ -26,8 +26,8 @@ var __assign = (this && this.__assign) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var react_activity_feed_1 = require("react-activity-feed");
-var react_redux_1 = require("react-redux");
 require("../../../../node_modules/react-activity-feed/dist/index.css");
+var App_1 = require("../App/App");
 var App_constants_1 = require("../App/App.constants");
 var Newsfeed_constants_1 = require("./Newsfeed.constants");
 var Newsfeed = (function (_super) {
@@ -58,7 +58,7 @@ var Newsfeed = (function (_super) {
     };
     Newsfeed.prototype.queryUserToken = function () {
         var _this = this;
-        fetch(App_constants_1.API_URL + "/auth/" + this.props.userName)
+        fetch(App_constants_1.API_URL + "/auth/" + App_1.COOKIES.get("AUTH"))
             .then(function (res) { return res.json(); })
             .then(function (data) {
             _this.setState({ userToken: data.token });
@@ -67,10 +67,7 @@ var Newsfeed = (function (_super) {
             console.error("App:connectToGetStream: Could not connect to getStream!", err);
         });
     };
-    Newsfeed.mapStateToProps = function (state, ownProps) {
-        return { ownProps: ownProps, userName: state.userName };
-    };
     return Newsfeed;
 }(React.Component));
-exports.default = react_redux_1.connect(Newsfeed.mapStateToProps)(Newsfeed);
+exports.default = Newsfeed;
 //# sourceMappingURL=Newsfeed.js.map
