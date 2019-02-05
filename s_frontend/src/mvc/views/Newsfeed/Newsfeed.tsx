@@ -12,7 +12,7 @@ class Newsfeed extends React.Component<any, INewsfeedState> {
     /*public static mapStateToProps = (state:any, ownProps:any) => {
         return {ownProps, userName:state.userName}
     }*/
-    public state = {userToken:""}
+    public state:INewsfeedState = {userToken:""}
 
     public componentDidMount(): void {
         this.queryUserToken()

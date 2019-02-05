@@ -3,8 +3,8 @@ import {connect} from "react-redux"
 import {bindActionCreators} from "redux"
 import * as loginActions from "../../../redux/actions/login"
 import "../../../scss/style.scss"
-import {NAV_ROUTER as NavRouter} from "../NavRouter/NavRouter"
 import {COOKIES} from "../App/App"
+import {NAV_ROUTER as NavRouter} from "../NavRouter/NavRouter"
 
 
 // SIMPLE REDUX EXAMPLE: https://github.com/jasonmendes/simple-redux-example

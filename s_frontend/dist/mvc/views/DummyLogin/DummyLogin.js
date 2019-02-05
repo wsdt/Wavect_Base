@@ -18,8 +18,8 @@ var react_redux_1 = require("react-redux");
 var redux_1 = require("redux");
 var loginActions = require("../../../redux/actions/login");
 require("../../../scss/style.scss");
-var NavRouter_1 = require("../NavRouter/NavRouter");
 var App_1 = require("../App/App");
+var NavRouter_1 = require("../NavRouter/NavRouter");
 var DummyLogin = (function (_super) {
     __extends(DummyLogin, _super);
     function DummyLogin() {
