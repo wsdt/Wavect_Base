@@ -3,6 +3,8 @@ import "../../../../scss/style.scss"
 import {COOKIES} from "../../App/App"
 import {API_URL} from "../../App/App.constants"
 import {NAV_ROUTER as NavRouter} from "../../NavRouter/NavRouter"
+import {OAuthFacebook} from "../OAuth/OAuthFacebook/OAuthFacebook"
+import {OAuthInstagram} from "../OAuth/OAuthInstagram/OAuthInstagram"
 import {COOKIE_ID_GS_USERTOKEN, COOKIE_ID_USERID} from "./DummyLogin.constants"
 
 
@@ -12,28 +14,35 @@ class DummyLogin extends React.Component<any, any> {
 
     public state = {login: {username: "", password: ""}}
 
+
     public render() {
-        const formFilledOut:boolean = (this.state.login.username !== "" && this.state.login.password !== "")
+        const formFilledOut: boolean = (this.state.login.username !== "" && this.state.login.password !== "")
         let toRender: JSX.Element
 
         // If redux state (see mapStateToProps) is set then open userPage
         if (COOKIES.get(COOKIE_ID_GS_USERTOKEN) && COOKIES.get(COOKIE_ID_USERID)) { // only show if cookie valid and loggedIn status
-            toRender = <NavRouter userName={COOKIES.get(COOKIE_ID_USERID)} userToken={COOKIES.get(COOKIE_ID_GS_USERTOKEN)}/>
+            toRender =
+                <NavRouter userName={COOKIES.get(COOKIE_ID_USERID)} userToken={COOKIES.get(COOKIE_ID_GS_USERTOKEN)}/>
         } else {
             toRender = (<form onSubmit={this.handleSubmit} className="formBlock">
-                {!formFilledOut ? <p className="pWarning">Password and username required.</p> : "" }
-                <div className="inputBlock">
-                    <label htmlFor="login_username">Username</label><br />
-                    <input type="text" onChange={this.handleChangeUsername} value={this.state.login.username}/>
-                </div>
-                <div className="inputBlock">
-                    <label htmlFor="login_password">Password</label><br />
-                    <input type="password" onChange={this.handleChangePassword} value={this.state.login.password}/>
-                </div>
-                <div className="inputBlock">
-                    <input type="submit" value="Login" />
-                </div>
-            </form>)
+                    {!formFilledOut ? <p className="pWarning">Password and username required.</p> : ""}
+                    <div className="inputBlock">
+                        <label htmlFor="login_username">Username</label><br/>
+                        <input type="text" onChange={this.handleChangeUsername} value={this.state.login.username}/>
+                    </div>
+                    <div className="inputBlock">
+                        <label htmlFor="login_password">Password</label><br/>
+                        <input type="password" onChange={this.handleChangePassword} value={this.state.login.password}/>
+                    </div>
+                    <div className="inputBlock">
+                        <input type="submit" value="Login"/>
+                    </div>
+
+
+                    <OAuthFacebook/>
+                    <OAuthInstagram/>
+                </form>
+            )
         }
 
         return toRender
@@ -46,11 +55,11 @@ class DummyLogin extends React.Component<any, any> {
             .then(res => res.json())
             .then(data => {
                 console.log("DummyLogin:queryGSUserToken: GetStream token retrieved.")
-                COOKIES.set(COOKIE_ID_GS_USERTOKEN, data.token, {path:"/", secure:true, maxAge:3000})
-                COOKIES.set(COOKIE_ID_USERID, this.state.login.username, {path:"/", secure:true, maxAge:3000})
+                COOKIES.set(COOKIE_ID_GS_USERTOKEN, data.token, {path: "/", secure: true, maxAge: 3000})
+                COOKIES.set(COOKIE_ID_USERID, this.state.login.username, {path: "/", secure: true, maxAge: 3000})
                 console.log("DummyLogin:queryGSUserToken: Cookies created.")
                 this.forceUpdate()
-                console.log("DummyLogin:queryGSUserToken: Have set cookie and queried, cached userToken from Getstream on React server -> "+data.token)
+                console.log("DummyLogin:queryGSUserToken: Have set cookie and queried, cached userToken from Getstream on React server -> " + data.token)
             })
             .catch(err => {
                 console.error("App:connectToGetStream: Could not connect to getStream!", err)
@@ -58,7 +67,7 @@ class DummyLogin extends React.Component<any, any> {
 
     }
 
-    private handleSubmit = (e:React.FormEvent) => {
+    private handleSubmit = (e: React.FormEvent) => {
         this.queryGSUserToken()
         e.preventDefault()
     }

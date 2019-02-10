@@ -18,6 +18,8 @@ require("../../../../scss/style.scss");
 var App_1 = require("../../App/App");
 var App_constants_1 = require("../../App/App.constants");
 var NavRouter_1 = require("../../NavRouter/NavRouter");
+var OAuthFacebook_1 = require("../OAuth/OAuthFacebook/OAuthFacebook");
+var OAuthInstagram_1 = require("../OAuth/OAuthInstagram/OAuthInstagram");
 var DummyLogin_constants_1 = require("./DummyLogin.constants");
 var DummyLogin = (function (_super) {
     __extends(DummyLogin, _super);
@@ -40,7 +42,8 @@ var DummyLogin = (function (_super) {
         var formFilledOut = (this.state.login.username !== "" && this.state.login.password !== "");
         var toRender;
         if (App_1.COOKIES.get(DummyLogin_constants_1.COOKIE_ID_GS_USERTOKEN) && App_1.COOKIES.get(DummyLogin_constants_1.COOKIE_ID_USERID)) {
-            toRender = React.createElement(NavRouter_1.NAV_ROUTER, { userName: App_1.COOKIES.get(DummyLogin_constants_1.COOKIE_ID_USERID), userToken: App_1.COOKIES.get(DummyLogin_constants_1.COOKIE_ID_GS_USERTOKEN) });
+            toRender =
+                React.createElement(NavRouter_1.NAV_ROUTER, { userName: App_1.COOKIES.get(DummyLogin_constants_1.COOKIE_ID_USERID), userToken: App_1.COOKIES.get(DummyLogin_constants_1.COOKIE_ID_GS_USERTOKEN) });
         }
         else {
             toRender = (React.createElement("form", { onSubmit: this.handleSubmit, className: "formBlock" },
@@ -54,7 +57,9 @@ var DummyLogin = (function (_super) {
                     React.createElement("br", null),
                     React.createElement("input", { type: "password", onChange: this.handleChangePassword, value: this.state.login.password })),
                 React.createElement("div", { className: "inputBlock" },
-                    React.createElement("input", { type: "submit", value: "Login" }))));
+                    React.createElement("input", { type: "submit", value: "Login" })),
+                React.createElement(OAuthFacebook_1.OAuthFacebook, null),
+                React.createElement(OAuthInstagram_1.OAuthInstagram, null)));
         }
         return toRender;
     };

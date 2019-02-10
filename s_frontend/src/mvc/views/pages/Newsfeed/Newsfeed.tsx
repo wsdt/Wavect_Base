@@ -28,7 +28,7 @@ class Newsfeed extends React.Component<IUser, any> {
             <NotificationDropdown notify/>
             <StatusUpdateForm
                 feedGroup="timeline"
-                userId={this.props.userName}/>
+                userId={this.props.userName} />
             <FlatFeed
                 options={{reactions: {recent: true}}}
                 Paginator={InfiniteScrollPaginator}

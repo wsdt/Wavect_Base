@@ -1,7 +1,9 @@
 declare const store: import("redux").Store<{
     userName: string;
 } | {
-    userName: any;
-    userToken: any;
+    userTokens: {
+        [x: number]: any;
+    };
+    userName: string;
 }, any>;
 export default store;
