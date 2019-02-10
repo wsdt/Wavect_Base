@@ -1,6 +1,6 @@
 import * as React from "react"
 import Cookies from "universal-cookie"
-import DummyLogin from "../DummyLogin/DummyLogin"
+import DummyLogin from "../pages/DummyLogin/DummyLogin"
 
 // Cookie: https://github.com/reactivestack/cookies/tree/master/packages/universal-cookie
 export const COOKIES:Cookies = new Cookies()

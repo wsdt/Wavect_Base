@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var Newsfeed_1 = require("../Newsfeed/Newsfeed");
+var Newsfeed_1 = require("../pages/Newsfeed/Newsfeed");
 exports.HOME = function () {
     return React.createElement(React.Fragment, null,
         React.createElement("h2", null, "Home"),

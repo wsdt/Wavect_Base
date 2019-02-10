@@ -1,4 +1,4 @@
-import {LOG_IN, LOG_OUT} from "../actions/login.constants"
+import {GS_CACHE_USERTOKEN} from "../actions/getstream.constants"
 
 export const DEFAULT_STATE = {
     userName: ''
@@ -6,10 +6,8 @@ export const DEFAULT_STATE = {
 
 export default function reducer(state = DEFAULT_STATE, action:any) {
     switch (action.type) {
-        case LOG_IN:
-            return {...state, userName:action.userName}
-        case LOG_OUT:
-            return {...state, userName:''} // set emptyString to trigger logout
+        case GS_CACHE_USERTOKEN:
+            return {...state, userTokens:{[action.userName]:action.userToken}}
         default: return state
     }
 }

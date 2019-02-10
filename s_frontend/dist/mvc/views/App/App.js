@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var universal_cookie_1 = require("universal-cookie");
-var DummyLogin_1 = require("../DummyLogin/DummyLogin");
+var DummyLogin_1 = require("../pages/DummyLogin/DummyLogin");
 exports.COOKIES = new universal_cookie_1.default();
 var App = (function (_super) {
     __extends(App, _super);

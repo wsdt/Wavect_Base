@@ -11,17 +11,16 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var login_constants_1 = require("../actions/login.constants");
+var getstream_constants_1 = require("../actions/getstream.constants");
 exports.DEFAULT_STATE = {
     userName: ''
 };
 function reducer(state, action) {
     if (state === void 0) { state = exports.DEFAULT_STATE; }
+    var _a;
     switch (action.type) {
-        case login_constants_1.LOG_IN:
-            return __assign({}, state, { userName: action.userName });
-        case login_constants_1.LOG_OUT:
-            return __assign({}, state, { userName: '' });
+        case getstream_constants_1.GS_CACHE_USERTOKEN:
+            return __assign({}, state, { userTokens: (_a = {}, _a[action.userName] = action.userToken, _a) });
         default: return state;
     }
 }

@@ -1,3 +1,3 @@
 export interface INewsfeedState {
-    userToken:string
+    userToken: string;
 }

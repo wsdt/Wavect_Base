@@ -1,2 +1,3 @@
 /// <reference types="react" />
-export declare const NAV_ROUTER: () => JSX.Element;
+import { IUser } from "../pages/_general.interfaces/IUser";
+export declare const NAV_ROUTER: (props: IUser) => JSX.Element;

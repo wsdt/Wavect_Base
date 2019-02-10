@@ -1,31 +1,20 @@
 import * as React from "react"
 import {Activity, CommentField, CommentList, FlatFeed, InfiniteScrollPaginator, LikeButton, NotificationDropdown,StatusUpdateForm, StreamApp} from "react-activity-feed"
-import "../../../../node_modules/react-activity-feed/dist/index.css"
-import {COOKIES} from "../App/App"
-import {API_URL} from "../App/App.constants"
-import {INewsfeedState} from "./INewsfeedState"
+import "../../../../../node_modules/react-activity-feed/dist/index.css"
+import {IUser} from "../_general.interfaces/IUser"
 import {GS_APP_ID, GS_KEY} from "./Newsfeed.constants"
 
 
-class Newsfeed extends React.Component<any, INewsfeedState> {
-    
-    /*public static mapStateToProps = (state:any, ownProps:any) => {
-        return {ownProps, userName:state.userName}
-    }*/
-    public state:INewsfeedState = {userToken:""}
-
-    public componentDidMount(): void {
-        this.queryUserToken()
-    }
+class Newsfeed extends React.Component<IUser, any> {
 
     public render() {
-        if (!this.state.userToken) {
+        if (!this.props.userToken) {
             return <p>Loading newsfeed ...</p>
         } else {
             return <StreamApp
                 apiKey={GS_KEY}
                 appId={GS_APP_ID}
-                token={this.state.userToken}>
+                token={this.props.userToken}>
 
                 <NotificationDropdown notify/>
                 <StatusUpdateForm
@@ -53,16 +42,6 @@ class Newsfeed extends React.Component<any, INewsfeedState> {
         }
     }
 
-    private queryUserToken() {
-        fetch(`${API_URL}/auth/${COOKIES.get("AUTH")}`)
-            .then(res => res.json())
-            .then(data => {
-                this.setState({userToken: data.token})
-            })
-            .catch(err => {
-                console.error("App:connectToGetStream: Could not connect to getStream!", err)
-            })
-    }
 }
 
 export default Newsfeed
