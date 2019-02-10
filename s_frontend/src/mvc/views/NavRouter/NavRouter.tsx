@@ -27,7 +27,7 @@ export const NAV_ROUTER = (props:IUser) => {
                     <Link to="/impressum">Impressum</Link>
                 </li>
                 <li onClick={unsetSession}>
-                    <Link to="#">Logout</Link>
+                    <Link to="/">Logout</Link>
                 </li>
             </ul>
 

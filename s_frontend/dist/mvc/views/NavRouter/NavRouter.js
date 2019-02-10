@@ -34,7 +34,7 @@ exports.NAV_ROUTER = function (props) {
                 React.createElement("li", null,
                     React.createElement(react_router_dom_1.Link, { to: "/impressum" }, "Impressum")),
                 React.createElement("li", { onClick: unsetSession },
-                    React.createElement(react_router_dom_1.Link, { to: "#" }, "Logout"))),
+                    React.createElement(react_router_dom_1.Link, { to: "/" }, "Logout"))),
             React.createElement("hr", null),
             React.createElement(react_router_dom_1.Switch, null,
                 React.createElement(react_router_dom_1.Route, { exact: true, path: "/", render: function () { return React.createElement(Home_1.HOME, __assign({}, props)); } }),

@@ -34,20 +34,16 @@ var Newsfeed = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Newsfeed.prototype.render = function () {
-        if (!this.props.userToken) {
-            return React.createElement("p", null, "Loading newsfeed ...");
-        }
-        else {
-            return React.createElement(react_activity_feed_1.StreamApp, { apiKey: Newsfeed_constants_1.GS_KEY, appId: Newsfeed_constants_1.GS_APP_ID, token: this.props.userToken },
-                React.createElement(react_activity_feed_1.NotificationDropdown, { notify: true }),
-                React.createElement(react_activity_feed_1.StatusUpdateForm, { feedGroup: "timeline", userId: this.props.userName }),
-                React.createElement(react_activity_feed_1.FlatFeed, { options: { reactions: { recent: true } }, Paginator: react_activity_feed_1.InfiniteScrollPaginator, notify: true, Activity: function (props) {
-                        return React.createElement(react_activity_feed_1.Activity, __assign({}, props, { Footer: function () { return (React.createElement("div", { style: { padding: '8px 16px' } },
-                                React.createElement(react_activity_feed_1.LikeButton, __assign({}, props)),
-                                React.createElement(react_activity_feed_1.CommentField, { activity: props.activity, onAddReaction: props.onAddReaction }),
-                                React.createElement(react_activity_feed_1.CommentList, { activityId: props.activity.id }))); } }));
-                    } }));
-        }
+        console.log(JSON.stringify(this.props));
+        return React.createElement(react_activity_feed_1.StreamApp, { apiKey: Newsfeed_constants_1.GS_KEY, appId: Newsfeed_constants_1.GS_APP_ID, token: this.props.userToken },
+            React.createElement(react_activity_feed_1.NotificationDropdown, { notify: true }),
+            React.createElement(react_activity_feed_1.StatusUpdateForm, { feedGroup: "timeline", userId: this.props.userName }),
+            React.createElement(react_activity_feed_1.FlatFeed, { options: { reactions: { recent: true } }, Paginator: react_activity_feed_1.InfiniteScrollPaginator, notify: true, Activity: function (props) {
+                    return React.createElement(react_activity_feed_1.Activity, __assign({}, props, { Footer: function () { return (React.createElement("div", { style: { padding: '8px 16px' } },
+                            React.createElement(react_activity_feed_1.LikeButton, __assign({}, props)),
+                            React.createElement(react_activity_feed_1.CommentField, { activity: props.activity, onAddReaction: props.onAddReaction }),
+                            React.createElement(react_activity_feed_1.CommentList, { activityId: props.activity.id }))); } }));
+                } }));
     };
     return Newsfeed;
 }(React.Component));

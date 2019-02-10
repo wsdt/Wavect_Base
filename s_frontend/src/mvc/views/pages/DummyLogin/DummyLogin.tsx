@@ -3,7 +3,7 @@ import "../../../../scss/style.scss"
 import {COOKIES} from "../../App/App"
 import {API_URL} from "../../App/App.constants"
 import {NAV_ROUTER as NavRouter} from "../../NavRouter/NavRouter"
-import {COOKIE_ID_GS_USERTOKEN} from "./DummyLogin.constants"
+import {COOKIE_ID_GS_USERTOKEN, COOKIE_ID_USERID} from "./DummyLogin.constants"
 
 
 // SIMPLE REDUX EXAMPLE: https://github.com/jasonmendes/simple-redux-example
@@ -17,8 +17,8 @@ class DummyLogin extends React.Component<any, any> {
         let toRender: JSX.Element
 
         // If redux state (see mapStateToProps) is set then open userPage
-        if (COOKIES.get(COOKIE_ID_GS_USERTOKEN)) { // only show if cookie valid and loggedIn status
-            toRender = <NavRouter userName={this.state.login.username} userToken={COOKIES.get(COOKIE_ID_GS_USERTOKEN)}/>
+        if (COOKIES.get(COOKIE_ID_GS_USERTOKEN) && COOKIES.get(COOKIE_ID_USERID)) { // only show if cookie valid and loggedIn status
+            toRender = <NavRouter userName={COOKIES.get(COOKIE_ID_USERID)} userToken={COOKIES.get(COOKIE_ID_GS_USERTOKEN)}/>
         } else {
             toRender = (<form onSubmit={this.handleSubmit} className="formBlock">
                 {!formFilledOut ? <p className="pWarning">Password and username required.</p> : "" }
@@ -46,7 +46,8 @@ class DummyLogin extends React.Component<any, any> {
             .then(res => res.json())
             .then(data => {
                 console.log("DummyLogin:queryGSUserToken: GetStream token retrieved.")
-                COOKIES.set(COOKIE_ID_GS_USERTOKEN, data.token, {path:"/", secure:true, maxAge:10})
+                COOKIES.set(COOKIE_ID_GS_USERTOKEN, data.token, {path:"/", secure:true, maxAge:3000})
+                COOKIES.set(COOKIE_ID_USERID, this.state.login.username, {path:"/", secure:true, maxAge:3000})
                 console.log("DummyLogin:queryGSUserToken: Cookies created.")
                 this.forceUpdate()
                 console.log("DummyLogin:queryGSUserToken: Have set cookie and queried, cached userToken from Getstream on React server -> "+data.token)

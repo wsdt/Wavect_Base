@@ -39,8 +39,8 @@ var DummyLogin = (function (_super) {
     DummyLogin.prototype.render = function () {
         var formFilledOut = (this.state.login.username !== "" && this.state.login.password !== "");
         var toRender;
-        if (App_1.COOKIES.get(DummyLogin_constants_1.COOKIE_ID_GS_USERTOKEN)) {
-            toRender = React.createElement(NavRouter_1.NAV_ROUTER, { userName: this.state.login.username, userToken: App_1.COOKIES.get(DummyLogin_constants_1.COOKIE_ID_GS_USERTOKEN) });
+        if (App_1.COOKIES.get(DummyLogin_constants_1.COOKIE_ID_GS_USERTOKEN) && App_1.COOKIES.get(DummyLogin_constants_1.COOKIE_ID_USERID)) {
+            toRender = React.createElement(NavRouter_1.NAV_ROUTER, { userName: App_1.COOKIES.get(DummyLogin_constants_1.COOKIE_ID_USERID), userToken: App_1.COOKIES.get(DummyLogin_constants_1.COOKIE_ID_GS_USERTOKEN) });
         }
         else {
             toRender = (React.createElement("form", { onSubmit: this.handleSubmit, className: "formBlock" },
@@ -65,7 +65,8 @@ var DummyLogin = (function (_super) {
             .then(function (res) { return res.json(); })
             .then(function (data) {
             console.log("DummyLogin:queryGSUserToken: GetStream token retrieved.");
-            App_1.COOKIES.set(DummyLogin_constants_1.COOKIE_ID_GS_USERTOKEN, data.token, { path: "/", secure: true, maxAge: 10 });
+            App_1.COOKIES.set(DummyLogin_constants_1.COOKIE_ID_GS_USERTOKEN, data.token, { path: "/", secure: true, maxAge: 3000 });
+            App_1.COOKIES.set(DummyLogin_constants_1.COOKIE_ID_USERID, _this.state.login.username, { path: "/", secure: true, maxAge: 3000 });
             console.log("DummyLogin:queryGSUserToken: Cookies created.");
             _this.forceUpdate();
             console.log("DummyLogin:queryGSUserToken: Have set cookie and queried, cached userToken from Getstream on React server -> " + data.token);

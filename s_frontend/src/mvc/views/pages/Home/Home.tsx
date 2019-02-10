@@ -5,6 +5,6 @@ import Newsfeed from "../Newsfeed/Newsfeed"
 export const HOME = (props:IUser) => {
     return <React.Fragment>
         <h2>Home</h2>
-        <Newsfeed userName={props.userName} userToken={props.userToken} />
+        <Newsfeed {...props} />
     </React.Fragment>
 }
