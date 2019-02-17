@@ -2,6 +2,7 @@ import * as bodyParser from "body-parser"
 import * as cors from "cors"
 import * as express from "express"
 import * as helmet from "helmet"
+import * as morgan from "morgan"
 /**
  * Using spdy as http2 too, but not that fast as built-in module of node.JS.
  * But unfortunately, http2-module does not support express yet, so we have to
@@ -60,6 +61,9 @@ class App {
 
     // For additional security
     this.app.use(helmet())
+
+    // Log http requests
+    this.app.use(morgan("combined"))
 
     console.log("app: Configuration done.")
   }

@@ -12,6 +12,7 @@ function getGetStreamConn(): stream.StreamClient {
   )
 }
 
+
 /**
  * Create user Token which is passed to Frontend, so
  * that user gets access to getStream api without secret.

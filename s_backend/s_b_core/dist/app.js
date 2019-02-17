@@ -4,6 +4,7 @@ var bodyParser = require("body-parser");
 var cors = require("cors");
 var express = require("express");
 var helmet = require("helmet");
+var morgan = require("morgan");
 var http2 = require("spdy");
 var app_constants_1 = require("./app.constants");
 var routes = require("./routes/routes");
@@ -32,6 +33,7 @@ var App = (function () {
         }));
         this.app.use("/", routes);
         this.app.use(helmet());
+        this.app.use(morgan("combined"));
         console.log("app: Configuration done.");
     };
     return App;
