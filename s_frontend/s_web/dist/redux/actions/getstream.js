@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var getstream_constants_1 = require("./getstream.constants");
 exports.setUserToken = function (userName, userToken) {
     var _a;
@@ -12,4 +12,3 @@ exports.setUserToken = function (userName, userToken) {
             _a)
     });
 };
-//# sourceMappingURL=getstream.js.map

@@ -5,7 +5,7 @@ var __extends = (this && this.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -23,12 +23,12 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var React = require("react");
 var react_activity_feed_1 = require("react-activity-feed");
 require("../../../../../node_modules/react-activity-feed/dist/index.css");
 var Newsfeed_constants_1 = require("./Newsfeed.constants");
-var Newsfeed = (function (_super) {
+var Newsfeed = /** @class */ (function (_super) {
     __extends(Newsfeed, _super);
     function Newsfeed() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -47,5 +47,4 @@ var Newsfeed = (function (_super) {
     };
     return Newsfeed;
 }(React.Component));
-exports.default = Newsfeed;
-//# sourceMappingURL=Newsfeed.js.map
+exports["default"] = Newsfeed;

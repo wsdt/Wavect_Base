@@ -10,12 +10,11 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var React = require("react");
 var Newsfeed_1 = require("../Newsfeed/Newsfeed");
 exports.HOME = function (props) {
     return React.createElement(React.Fragment, null,
         React.createElement("h2", null, "Home"),
-        React.createElement(Newsfeed_1.default, __assign({}, props)));
+        React.createElement(Newsfeed_1["default"], __assign({}, props)));
 };
-//# sourceMappingURL=Home.js.map

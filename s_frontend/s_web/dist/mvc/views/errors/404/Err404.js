@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var React = require("react");
 require("../../../../scss/style.scss");
 exports.ERR_404 = function (msg) {
@@ -7,4 +7,3 @@ exports.ERR_404 = function (msg) {
         React.createElement("h3", null, "Error 404"),
         React.createElement("p", null, msg));
 };
-//# sourceMappingURL=Err404.js.map

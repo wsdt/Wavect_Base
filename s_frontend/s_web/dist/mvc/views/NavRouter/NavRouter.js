@@ -10,7 +10,7 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var React = require("react");
 var react_router_dom_1 = require("react-router-dom");
 var App_1 = require("../App/App");
@@ -38,8 +38,7 @@ exports.NAV_ROUTER = function (props) {
             React.createElement("hr", null),
             React.createElement(react_router_dom_1.Switch, null,
                 React.createElement(react_router_dom_1.Route, { exact: true, path: "/", render: function () { return React.createElement(Home_1.HOME, __assign({}, props)); } }),
-                React.createElement(react_router_dom_1.Route, { path: "/profile", render: function () { return React.createElement(Profile_1.default, __assign({}, props)); } }),
+                React.createElement(react_router_dom_1.Route, { path: "/profile", render: function () { return React.createElement(Profile_1["default"], __assign({}, props)); } }),
                 React.createElement(react_router_dom_1.Route, { path: "/impressum", component: Impressum_1.IMPRESSUM }),
                 React.createElement(react_router_dom_1.Route, { component: Err404_1.ERR_404 }))));
 };
-//# sourceMappingURL=NavRouter.js.map

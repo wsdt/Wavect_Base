@@ -10,7 +10,7 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var getstream_constants_1 = require("../actions/getstream.constants");
 exports.DEFAULT_STATE = {
     userName: ''
@@ -24,5 +24,4 @@ function reducer(state, action) {
         default: return state;
     }
 }
-exports.default = reducer;
-//# sourceMappingURL=index.js.map
+exports["default"] = reducer;

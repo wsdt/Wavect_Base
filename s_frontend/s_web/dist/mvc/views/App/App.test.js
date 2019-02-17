@@ -1,5 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var React = require("react");
 var ReactDOM = require("react-dom");
 var App_1 = require("./App");
@@ -8,4 +8,3 @@ it("renders without crashing", function () {
     ReactDOM.render(React.createElement(App_1.App, null), div);
     ReactDOM.unmountComponentAtNode(div);
 });
-//# sourceMappingURL=App.test.js.map
