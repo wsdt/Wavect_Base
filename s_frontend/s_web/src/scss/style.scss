@@ -1,0 +1,28 @@
+$background-grey: #f3f3f3;
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.3rem;
+  background-color: $background-grey;
+}
+
+.formBlock {
+  background-color: #7f7f7f;
+  width: 25%;
+  margin: auto;
+  text-align: center;
+
+  .pWarning {
+    color:#ff0000;
+    margin:3px;
+  }
+
+  .inputBlock {
+    padding: 15px;
+
+    label {
+      font-weight: bold;
+    }
+  }
+}
