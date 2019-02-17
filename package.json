@@ -3,11 +3,6 @@
   "version": "0.0.2",
   "private": true,
   "description": "BeKind_Playground for prototypes and maybe production build.",
-  "husky": {
-    "hooks": {
-      "pre-commit": "cd s_backend/s_b_core && npm start evaluate && cd ../../s_frontend && npm start evaluate"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wsdt/BeKind_Playground.git"
@@ -18,8 +13,5 @@
   "bugs": {
     "url": "https://github.com/wsdt/BeKind_Playground/issues"
   },
-  "homepage": "https://github.com/wsdt/BeKind_Playground#readme",
-  "devDependencies": {
-    "husky": "^1.2.0"
-  }
+  "homepage": "https://github.com/wsdt/BeKind_Playground#readme"
 }

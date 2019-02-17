@@ -1,0 +1,10 @@
+{
+  "extends": "../_base/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-native",
+    "outDir": "dist",
+    "lib": ["es6", "dom", "es2015", "es2016"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
