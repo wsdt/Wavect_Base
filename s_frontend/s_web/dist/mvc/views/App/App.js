@@ -12,22 +12,23 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var React = require("react");
-var react_native_1 = require("react-native");
-// @ts-ignore
-var styles = require("./src/scss/style.scss");
-// TODO: https://jaredpalmer.com/formik/docs/overview --> TO MAKE EASY VALIDATING FORMS
+var universal_cookie_1 = require("universal-cookie");
+var DummyLogin_1 = require("../pages/DummyLogin/DummyLogin");
+// Cookie: https://github.com/reactivestack/cookies/tree/master/packages/universal-cookie
+exports.COOKIES = new universal_cookie_1["default"]();
+// <any, any> to set constraints we can set interfaces for props, states
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
     function App() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     App.prototype.render = function () {
-        return (<react_native_1.View style={styles.container}>
-        <react_native_1.Text>Open up App.js to start working on your app!</react_native_1.Text>
-      </react_native_1.View>);
+        return (React.createElement(React.Fragment, null,
+            React.createElement("h1", null, "Hello Be-Kind Team"),
+            React.createElement(DummyLogin_1["default"], null)));
     };
     return App;
 }(React.Component));
-exports.default = App;
+exports.App = App;

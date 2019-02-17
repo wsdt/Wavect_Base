@@ -12,22 +12,19 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var React = require("react");
-var react_native_1 = require("react-native");
-// @ts-ignore
-var styles = require("./src/scss/style.scss");
-// TODO: https://jaredpalmer.com/formik/docs/overview --> TO MAKE EASY VALIDATING FORMS
-var App = /** @class */ (function (_super) {
-    __extends(App, _super);
-    function App() {
+var Profile = /** @class */ (function (_super) {
+    __extends(Profile, _super);
+    function Profile() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    App.prototype.render = function () {
-        return (<react_native_1.View style={styles.container}>
-        <react_native_1.Text>Open up App.js to start working on your app!</react_native_1.Text>
-      </react_native_1.View>);
+    Profile.prototype.render = function () {
+        return React.createElement("p", null,
+            this.props.userName,
+            " // ",
+            this.props.userToken);
     };
-    return App;
+    return Profile;
 }(React.Component));
-exports.default = App;
+exports["default"] = Profile;
