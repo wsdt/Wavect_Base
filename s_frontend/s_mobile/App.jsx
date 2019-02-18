@@ -14,19 +14,14 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var react_native_1 = require("react-native");
-// @ts-ignore
-var styles = require("./src/scss/style.scss");
-// TODO: https://jaredpalmer.com/formik/docs/overview --> TO MAKE EASY VALIDATING FORMS
+var Login_1 = require("./src/mvc/views/Login");
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
     function App() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     App.prototype.render = function () {
-        return (<react_native_1.View style={styles.container}>
-        <react_native_1.Text>Open up App.js to start working on your app!</react_native_1.Text>
-      </react_native_1.View>);
+        return <Login_1.default />;
     };
     return App;
 }(React.Component));
