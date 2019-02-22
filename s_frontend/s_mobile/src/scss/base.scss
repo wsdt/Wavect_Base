@@ -4,11 +4,15 @@
 // OAUTH FIREBASE (EASY AND COMPLETELY FREE): TODO: https://console.firebase.google.com/project/bekind-ff90c/authentication/providers
 
 .container {
-  align-items: center;
-  background-color: #fff;
-  flex: 1;
+  background-color: #fefefe;
+  flex:1;
   justify-content: center;
-  width: 50%;
+  align-items: center;
+
+  .button {
+    margin: 10px 4px 4px 4px;
+    width: 33%;
+  }
 }
 
 

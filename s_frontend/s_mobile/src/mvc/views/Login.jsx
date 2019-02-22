@@ -13,36 +13,34 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var formik_1 = require("formik");
 var React = require("react");
 var react_native_1 = require("react-native");
-// @ts-ignore
-var styles = require("../../scss/base.scss");
-StyleSheet.
-;
+var react_native_elements_1 = require("react-native-elements");
+var styleBase = require("../../scss/base.scss");
 var Login = /** @class */ (function (_super) {
     __extends(Login, _super);
     function Login() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.handleSubmit = function () {
-            console.log("LOGGING IN.");
+        _this.state = { form: { isLoading: false } };
+        _this.submitForm = function () {
+            _this.setState({ form: { isLoading: true } });
+            setTimeout(function () {
+                _this.setState({ form: { isLoading: false } });
+            }, 2000);
         };
         return _this;
     }
     Login.prototype.render = function () {
-        var _this = this;
-        return (<react_native_1.View style={styles.container}>
-                <formik_1.Formik initialValues={{ email: "", password: "" }} onSubmit={function () { return console.log("Login request sent."); }}>
-                    {function (_a) {
-            var values = _a.values, handleChange = _a.handleChange;
-            return (<React.Fragment>
-                            <react_native_1.TextInput value={values.email} onChangeText={handleChange("email")} placeholder="E-Mail"/>
-                            <react_native_1.TextInput value={values.password} onChangeText={handleChange("password")} placeholder="Password" secureTextEntry={true}/>
-                            <react_native_1.Text>{JSON.stringify(values)}</react_native_1.Text>
-                            <react_native_1.Button title="Log In" onPress={_this.handleSubmit}/>
-                        </React.Fragment>);
-        }}
-                </formik_1.Formik>
+        return (<react_native_1.View style={styleBase.container}>
+                <react_native_elements_1.Text h1> Log In</react_native_elements_1.Text>
+
+                <react_native_elements_1.Input label="Username" placeholder="Username"/>
+                <react_native_elements_1.Input label="Password" placeholder="Password"/>
+
+                <react_native_elements_1.Button buttonStyle={styleBase.button} title="Login" type="solid" onPress={this.submitForm} loading={this.state.form.isLoading}/>
+
+                <react_native_elements_1.Button buttonStyle={styleBase.button} title="Register now" type="clear"/>
+
             </react_native_1.View>);
     };
     return Login;

@@ -1,58 +1,32 @@
-import {Formik} from "formik"
 import * as React from "react"
-import {TextInput, View} from "react-native"
-import {Button, Icon, Input} from "react-native-elements"
+import {View, StyleSheet, RegisteredStyle} from "react-native"
+import {Button, Input, Text} from "react-native-elements"
 
-import "../../scss/base.scss"
-import "../../scss/login.scss"
+import * as styleBase from "../../scss/base.scss"
 
 export default class Login extends React.Component {
-    public state = {form:{isLoading:false}}
-
+    public state = {form: {isLoading: false}}
 
     public render() {
-        return (
-            <Formik initialValues={{email: "", password: ""}}
-                    onSubmit={() => console.log("Login request sent.")}>
-                {({values, handleChange}) => (
-                    <React.Fragment>
-                        <Input placeholder="E-Mail"
-                               rightIcon={{type: "feather", name: "mail"}}
-                               value={values.email}
-                               shake={true}
-                               onChangeText={handleChange("email")}/>
-                        <Input
-                            value={values.password}
-                            rightIcon={{type: "feather", name: "lock"}}
-                            onChangeText={handleChange("password")}
-                            placeholder="Password"
-                            shake={true}
-                            secureTextEntry={true}/>
+        console.log(JSON.stringify(styleBase))
 
-                        <Button icon={<Icon
-                            name="explore"
-                            size={15}
-                            color="white"
-                        />}
-                                title="Log In"
-                                iconRight
-                                onPress={() => this.handleSubmit(values)}
-                                loading={this.state.form.isLoading}/>
-                    </React.Fragment>
-                )}
-            </Formik>
-        )
+        return <View style={styleBase.container}>
+            <Text h1> Log In</Text>
+            <Input label="Username" placeholder="Username"/>
+            <Input label="Password" placeholder="Password" secureTextEntry={true}/>
+
+            <Button buttonStyle={styleBase.button} title="Login" type="solid" onPress={this.submitForm}
+                    loading={this.state.form.isLoading}/>
+
+            <Button buttonStyle={styleBase.button} title="Register now" type="clear"/>
+
+        </View>
     }
 
-    private handleSubmit = (values) => {
-        console.log("LOGGING IN.")
-        // TODO: send  values to server
-
-        this.setState({form:{isLoading: true}})
+    private submitForm = () => {
+        this.setState({form: {isLoading: true}})
         setTimeout(() => {
-            this.setState({form:{isLoading: false}})
+            this.setState({form: {isLoading: false}})
         }, 2000)
     }
 }
-
-

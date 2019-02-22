@@ -12,20 +12,17 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-exports.__esModule = true;
-var formik_1 = require("formik");
+Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
+var react_native_1 = require("react-native");
 var react_native_elements_1 = require("react-native-elements");
-require("../../scss/base.scss");
-require("../../scss/login.scss");
-var Login = /** @class */ (function (_super) {
+var styleBase = require("../../scss/base.scss");
+var Login = (function (_super) {
     __extends(Login, _super);
     function Login() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.state = { form: { isLoading: false } };
-        _this.handleSubmit = function (values) {
-            console.log("LOGGING IN.");
-            // TODO: send  values to server
+        _this.submitForm = function () {
             _this.setState({ form: { isLoading: true } });
             setTimeout(function () {
                 _this.setState({ form: { isLoading: false } });
@@ -34,19 +31,19 @@ var Login = /** @class */ (function (_super) {
         return _this;
     }
     Login.prototype.render = function () {
-        var _this = this;
-        return (<formik_1.Formik initialValues={{ email: "", password: "" }} onSubmit={function () { return console.log("Login request sent."); }}>
-                {function (_a) {
-            var values = _a.values, handleChange = _a.handleChange;
-            return (<React.Fragment>
-                        <react_native_elements_1.Input placeholder="E-Mail" rightIcon={{ type: "feather", name: "mail" }} value={values.email} shake={true} onChangeText={handleChange("email")}/>
-                        <react_native_elements_1.Input value={values.password} rightIcon={{ type: "feather", name: "lock" }} onChangeText={handleChange("password")} placeholder="Password" shake={true} secureTextEntry={true}/>
+        console.log(JSON.stringify(styleBase));
+        return <react_native_1.View style={styleBase.container}>
+            <react_native_elements_1.Text h1> Log In</react_native_elements_1.Text>
+            <react_native_elements_1.Input label="Username" placeholder="Username"/>
+            <react_native_elements_1.Input label="Password" placeholder="Password" secureTextEntry={true}/>
 
-                        <react_native_elements_1.Button icon={<react_native_elements_1.Icon name="explore" size={15} color="white"/>} title="Log In" iconRight onPress={function () { return _this.handleSubmit(values); }} loading={_this.state.form.isLoading}/>
-                    </React.Fragment>);
-        }}
-            </formik_1.Formik>);
+            <react_native_elements_1.Button buttonStyle={styleBase.button} title="Login" type="solid" onPress={this.submitForm} loading={this.state.form.isLoading}/>
+
+            <react_native_elements_1.Button buttonStyle={styleBase.button} title="Register now" type="clear"/>
+
+        </react_native_1.View>;
     };
     return Login;
 }(React.Component));
-exports["default"] = Login;
+exports.default = Login;
+//# sourceMappingURL=Login.js.map

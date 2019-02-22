@@ -26,9 +26,7 @@
       "supportsTablet": true
     },
     "packagerOpts": {
-      "config": "metro.config.js",
-      "sourceExts": ["js", "jsx", "scss", "sass"],
-      "transformer": "node_modules/react-native-sass-transformer/index.js"
+      "config": "metro.config.js"
     }
   }
 }
