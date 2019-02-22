@@ -8,9 +8,9 @@ import "../../scss/login.scss"
 
 export default class Login extends React.Component {
     public state = {form:{isLoading:false}}
-    
-    public render() {
 
+
+    public render() {
         return (
             <Formik initialValues={{email: "", password: ""}}
                     onSubmit={() => console.log("Login request sent.")}>
@@ -52,7 +52,6 @@ export default class Login extends React.Component {
         setTimeout(() => {
             this.setState({form:{isLoading: false}})
         }, 2000)
-
     }
 }
 
