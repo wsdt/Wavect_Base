@@ -13,16 +13,16 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = require("react");
-var Login_1 = require("./src/mvc/views/pages/Login");
-var App = /** @class */ (function (_super) {
-    __extends(App, _super);
-    function App() {
+var oAuthParent_1 = require("./oAuthParent");
+var OAuthTwitter = (function (_super) {
+    __extends(OAuthTwitter, _super);
+    function OAuthTwitter() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    App.prototype.render = function () {
-        return <Login_1.Login />;
+    OAuthTwitter.prototype.authenticate = function () {
+        return Promise.resolve("Not Implemented");
     };
-    return App;
-}(React.Component));
-exports.default = App;
+    return OAuthTwitter;
+}(oAuthParent_1.OAuthParent));
+exports.OAuthTwitter = OAuthTwitter;
+//# sourceMappingURL=oAuthTwitter.js.map

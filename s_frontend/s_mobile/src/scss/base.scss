@@ -1,18 +1,38 @@
 
-// LAYOUT: TODO: https://medium.com/wix-engineering/the-full-react-native-layout-cheat-sheet-a4147802405c
+// LAYOUT: https://medium.com/wix-engineering/the-full-react-native-layout-cheat-sheet-a4147802405c
 // FORM VALIDATOR YUP: TODO: https://medium.com/fotontech/react-native-formik-yup-%EF%B8%8F-18465e020ea0
 // OAUTH FIREBASE (EASY AND COMPLETELY FREE): TODO: https://console.firebase.google.com/project/bekind-ff90c/authentication/providers
 
-.container {
-  background-color: #fefefe;
-  flex:1;
+/** IMPORTANT NOTE: The current SCSS parser does not support inheritance! Thus, please do not nest css classes! */
+
+$primaryColor: #0275d8;
+$primaryBackgroundColor: #FFFAFA;
+
+.page {
+  background-color: $primaryBackgroundColor;
   justify-content: center;
   align-items: center;
-
-  .button {
-    margin: 10px 4px 4px 4px;
-    width: 33%;
-  }
+  flex: 1;
 }
 
+.container {
+  width: 85%;
+}
+
+.gridContainer {
+  flex-direction: column;
+  flex: 0.30;
+  margin-top: 25px;
+}
+
+.gridRow {
+  flex: 0.85;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.gridElem {
+  width: 50px;
+  height: 50px;
+}
 

@@ -13,16 +13,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = require("react");
-var Login_1 = require("./src/mvc/views/pages/Login");
-var App = /** @class */ (function (_super) {
-    __extends(App, _super);
-    function App() {
+var _oAuthParent_1 = require("./_oAuthParent");
+var OAuthInstagram = (function (_super) {
+    __extends(OAuthInstagram, _super);
+    function OAuthInstagram() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    App.prototype.render = function () {
-        return <Login_1.Login />;
-    };
-    return App;
-}(React.Component));
-exports.default = App;
+    return OAuthInstagram;
+}(_oAuthParent_1._oAuthParent));
+exports.OAuthInstagram = OAuthInstagram;
+//# sourceMappingURL=oAuthInstagram.js.map

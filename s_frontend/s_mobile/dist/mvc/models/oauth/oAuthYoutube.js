@@ -13,16 +13,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var React = require("react");
-var Login_1 = require("./src/mvc/views/pages/Login");
-var App = /** @class */ (function (_super) {
-    __extends(App, _super);
-    function App() {
+var _oAuthParent_1 = require("./_oAuthParent");
+var OAuthYoutube = (function (_super) {
+    __extends(OAuthYoutube, _super);
+    function OAuthYoutube() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    App.prototype.render = function () {
-        return <Login_1.Login />;
-    };
-    return App;
-}(React.Component));
-exports.default = App;
+    return OAuthYoutube;
+}(_oAuthParent_1._oAuthParent));
+exports.OAuthYoutube = OAuthYoutube;
+//# sourceMappingURL=oAuthYoutube.js.map
