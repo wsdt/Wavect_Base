@@ -18,6 +18,7 @@ var react_native_1 = require("react-native");
 var react_native_elements_1 = require("react-native-elements");
 var styleBase = require("../../scss/base.scss");
 var parseScss_1 = require("../../scss/parseScss");
+var react_native_2 = require("react-native");
 var oAuthFacebook_1 = require("../models/oauth/oAuthFacebook");
 var oAuthGithub_1 = require("../models/oauth/oAuthGithub");
 var oAuthInstagram_1 = require("../models/oauth/oAuthInstagram");
@@ -27,34 +28,50 @@ var oAuthYoutube_1 = require("../models/oauth/oAuthYoutube");
 var OAuth = /** @class */ (function (_super) {
     __extends(OAuth, _super);
     function OAuth() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = {
+            loading: {
+                "facebook": false,
+                "github": false,
+                "instagram": false,
+                "linkedin": false,
+                "twitter": false,
+                "youtube": false,
+            }
+        };
+        return _this;
     }
     OAuth.prototype.render = function () {
+        var _this = this;
         /* OAuth ==> TODO: LIBRARY SUPPORTS A LOT MORE :)*/
         return (<react_native_1.View style={parseScss_1.default(styleBase.gridContainer)}>
                 <react_native_1.View style={parseScss_1.default(styleBase.gridRow)}>
-                    <react_native_1.TouchableOpacityComponent onPress={oAuthFacebook_1.OAuthFacebook.authenticate}>
-                        <react_native_elements_1.SocialIcon type="facebook" button style={parseScss_1.default(styleBase.gridElem)}/>
-                    </react_native_1.TouchableOpacityComponent>
-                    <react_native_1.TouchableOpacityComponent onPress={oAuthInstagram_1.OAuthInstagram.authenticate}>
-                        <react_native_elements_1.SocialIcon type="instagram" button style={parseScss_1.default(styleBase.gridElem)}/>
-                    </react_native_1.TouchableOpacityComponent>
-                    <react_native_1.TouchableOpacityComponent onPress={oAuthLinkedin_1.OAuthLinkedin.authenticate}>
-                        <react_native_elements_1.SocialIcon type="linkedin" button style={parseScss_1.default(styleBase.gridElem)}/>
-                    </react_native_1.TouchableOpacityComponent>
+                    <react_native_1.TouchableOpacity onPress={function () { oAuthFacebook_1.OAuthFacebook.authenticate(); _this.onSocialBtnClick(); }}>
+                        <react_native_elements_1.SocialIcon type="facebook" button light style={parseScss_1.default(styleBase.gridElem)}/>
+                    </react_native_1.TouchableOpacity>
+                    <react_native_1.TouchableOpacity onPress={function () { oAuthInstagram_1.OAuthInstagram.authenticate(); _this.onSocialBtnClick(); }}>
+                        <react_native_elements_1.SocialIcon type="instagram" button light style={parseScss_1.default(styleBase.gridElem)}/>
+                    </react_native_1.TouchableOpacity>
+                    <react_native_1.TouchableOpacity onPress={function () { oAuthLinkedin_1.OAuthLinkedin.authenticate(); _this.onSocialBtnClick(); }}>
+                        <react_native_elements_1.SocialIcon type="linkedin" button light style={parseScss_1.default(styleBase.gridElem)}/>
+                    </react_native_1.TouchableOpacity>
                 </react_native_1.View>
                 <react_native_1.View style={parseScss_1.default(styleBase.gridRow)}>
-                    <react_native_1.TouchableOpacityComponent onPress={oAuthYoutube_1.OAuthYoutube.authenticate}>
-                        <react_native_elements_1.SocialIcon type="youtube" button style={parseScss_1.default(styleBase.gridElem)}/>
-                    </react_native_1.TouchableOpacityComponent>
-                    <react_native_1.TouchableOpacityComponent onPress={oAuthTwitter_1.OAuthTwitter.authenticate}>
-                        <react_native_elements_1.SocialIcon type="twitter" button style={parseScss_1.default(styleBase.gridElem)}/>
-                    </react_native_1.TouchableOpacityComponent>
-                    <react_native_1.TouchableOpacityComponent onPress={oAuthGithub_1.OAuthGithub.authenticate}>
-                        <react_native_elements_1.SocialIcon type="github" button style={parseScss_1.default(styleBase.gridElem)}/>
-                    </react_native_1.TouchableOpacityComponent>
+                    <react_native_1.TouchableOpacity onPress={function () { oAuthYoutube_1.OAuthYoutube.authenticate(); _this.onSocialBtnClick(); }}>
+                        <react_native_elements_1.SocialIcon type="youtube" button light style={parseScss_1.default(styleBase.gridElem)}/>
+                    </react_native_1.TouchableOpacity>
+                    <react_native_1.TouchableOpacity onPress={function () { oAuthTwitter_1.OAuthTwitter.authenticate(); _this.onSocialBtnClick(); }}>
+                        <react_native_elements_1.SocialIcon type="twitter" button light style={parseScss_1.default(styleBase.gridElem)}/>
+                    </react_native_1.TouchableOpacity>
+                    <react_native_1.TouchableOpacity onPress={function () { oAuthGithub_1.OAuthGithub.authenticate(); _this.onSocialBtnClick(); }}>
+                        <react_native_elements_1.SocialIcon type="github" button light style={parseScss_1.default(styleBase.gridElem)}/>
+                    </react_native_1.TouchableOpacity>
                 </react_native_1.View>
             </react_native_1.View>);
+    };
+    OAuth.prototype.onSocialBtnClick = function () {
+        console.log("onSocialBtnClick: Not implemented yet.");
+        react_native_2.ToastAndroid.show("Coming soon..", react_native_2.ToastAndroid.SHORT);
     };
     return OAuth;
 }(React.Component));

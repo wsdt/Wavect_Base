@@ -6,13 +6,20 @@
 /** IMPORTANT NOTE: The current SCSS parser does not support inheritance! Thus, please do not nest css classes! */
 
 $primaryColor: #0275d8;
-$primaryBackgroundColor: #FFFAFA;
+$primaryBackgroundColor: #FFFFFE;
 
 .page {
   background-color: $primaryBackgroundColor;
+  flex:1;
+}
+
+.center {
   justify-content: center;
   align-items: center;
-  flex: 1;
+}
+
+.header {
+  margin-bottom: 15px;
 }
 
 .container {
@@ -21,7 +28,8 @@ $primaryBackgroundColor: #FFFAFA;
 
 .gridContainer {
   flex-direction: column;
-  flex: 0.30;
+  height: 130px; // flex: 0.4;
+  /* max-height: 500px;*/
   margin-top: 25px;
 }
 

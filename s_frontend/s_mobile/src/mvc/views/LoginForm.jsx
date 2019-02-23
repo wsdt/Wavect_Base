@@ -12,12 +12,24 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var react_native_1 = require("react-native");
 var react_native_elements_1 = require("react-native-elements");
-var styleBase = require("../../scss/base.scss");
 var parseScss_1 = require("../../scss/parseScss");
+var baseStyle = require("../../scss/base.scss");
+var formStyle = require("../../scss/form.scss");
 var LoginForm = /** @class */ (function (_super) {
     __extends(LoginForm, _super);
     function LoginForm() {
@@ -25,7 +37,13 @@ var LoginForm = /** @class */ (function (_super) {
         _this.state = {
             btnGroup: {
                 selectedIndex: 0,
-            }
+            },
+            pwdHidden: true,
+        };
+        _this.togglePwdVisibility = function () {
+            _this.setState(function (prevState) {
+                return __assign({}, prevState, { pwdHidden: !prevState.pwdHidden });
+            });
         };
         _this.onRegLoginPress = function (selectedIndex) {
             switch (selectedIndex) {
@@ -55,12 +73,13 @@ var LoginForm = /** @class */ (function (_super) {
         return _this;
     }
     LoginForm.prototype.render = function () {
-        return (<react_native_1.View style={parseScss_1.default(styleBase.container)}>
-                <react_native_elements_1.Text h1> Log In</react_native_elements_1.Text>
-                <react_native_elements_1.Input label="Username" placeholder="Username"/>
-                <react_native_elements_1.Input label="Password" placeholder="Password" secureTextEntry={true}/>
+        // Which icon to show when pwd input (not) hidden?
+        var rightPwdIcon = (this.state.pwdHidden) ? "eye" : "eye-off";
+        return (<react_native_1.View style={parseScss_1.default(baseStyle.container)}>
+                <react_native_elements_1.Input label="Username" placeholder="Ernesto" leftIcon={{ type: "feather", name: "user", size: 15, color: "grey" }} containerStyle={parseScss_1.default(formStyle.listElem)} labelStyle={parseScss_1.default(formStyle.textLabel)} leftIconContainerStyle={parseScss_1.default(formStyle.leftIconContainer)}/>
+                <react_native_elements_1.Input label="Password" placeholder="Your secret password" secureTextEntry={this.state.pwdHidden} leftIcon={{ type: "feather", name: "lock", size: 15, color: "grey" }} rightIcon={{ type: "feather", name: rightPwdIcon, size: 18, color: "grey", onPress: this.togglePwdVisibility }} containerStyle={parseScss_1.default(formStyle.listElem)} labelStyle={parseScss_1.default(formStyle.textLabel)} leftIconContainerStyle={parseScss_1.default(formStyle.leftIconContainer)} rightIconContainerStyle={parseScss_1.default(formStyle.rightIconContainer)}/>
 
-                <react_native_elements_1.ButtonGroup selectedIndex={this.state.btnGroup.selectedIndex} buttons={["Login", "Register", "Forgot password"]} onPress={this.onRegLoginPress} containerStyle={{ height: 35 }}/>
+                <react_native_elements_1.ButtonGroup selectedIndex={this.state.btnGroup.selectedIndex} buttons={["Login", "Register", "Forgotten"]} onPress={this.onRegLoginPress} containerStyle={{ height: 35 }}/>
             </react_native_1.View>);
     };
     return LoginForm;

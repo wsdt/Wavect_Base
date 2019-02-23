@@ -23,7 +23,7 @@ export class LoginForm extends React.Component {
                 <Input label="Username" placeholder="Ernesto" leftIcon={{type:"feather", name:"user", size:15, color:"grey"}}
                        containerStyle={p(formStyle.listElem)} labelStyle={p(formStyle.textLabel)}  leftIconContainerStyle={p(formStyle.leftIconContainer)}/>
                 <Input label="Password" placeholder="Your secret password" secureTextEntry={this.state.pwdHidden}
-                       leftIcon={{type:"feather", name:"lock", size:15, color:"grey"}} rightIcon={{type:"feather", name:rightPwdIcon, size:15, color: "grey", onPress:this.togglePwdVisibility}}
+                       leftIcon={{type:"feather", name:"lock", size:15, color:"grey"}} rightIcon={{type:"feather", name:rightPwdIcon, size:18, color: "grey", onPress:this.togglePwdVisibility}}
                        containerStyle={p(formStyle.listElem)} labelStyle={p(formStyle.textLabel)} leftIconContainerStyle={p(formStyle.leftIconContainer)} rightIconContainerStyle={p(formStyle.rightIconContainer)}/>
 
                 <ButtonGroup selectedIndex={this.state.btnGroup.selectedIndex} buttons={
