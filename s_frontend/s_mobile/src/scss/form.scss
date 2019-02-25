@@ -4,6 +4,7 @@
     margin-bottom: 20px;
 }
 
+/** For react-native-elements input */
 .textLabel {
     color: $primaryColor;
 }
@@ -15,4 +16,10 @@
 
 .rightIconContainer {
     margin-left: 5px;
+}
+
+/** For react-native-elements buttons */
+.btn {
+    padding-left: 5px;
+    padding-right: 5px;
 }

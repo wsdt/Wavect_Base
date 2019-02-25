@@ -3,9 +3,9 @@ import {View} from "react-native"
 import {Header} from "react-native-elements"
 import * as styleBase from "../../../scss/base.scss"
 import p from "../../../scss/parseScss"
-import {BeKindIcon} from "../BeKindIcon/BeKindIcon"
-import {LoginForm} from "../LoginForm"
-import {OAuth} from "../OAuth"
+import {BeKindIcon} from "../components/BeKindIcon/BeKindIcon"
+import {LoginForm} from "../components/LoginForm/LoginForm"
+import {OAuth} from "../components/OAuth/OAuth"
 
 
 export const Login = () => {
