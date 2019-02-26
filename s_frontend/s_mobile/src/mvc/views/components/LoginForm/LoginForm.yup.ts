@@ -4,10 +4,10 @@ import str from "../../../controllers/LocalizationController"
 /** YUP is a validation scheme for forms/formik. */
 const validationYupSchema = Yup.object().shape({
     email: Yup.string()
-        .required(str.errEmailRequired)
-        .email(str.errEmailInvalid), // you can also provide here everywhere a custom msg
+        .required(str.errors.emailRequired)
+        .email(str.errors.emailInvalid), // you can also provide here everywhere a custom msg
     password: Yup.string()
-        .required(str.errPwdRequired)
+        .required(str.errors.pwdRequired)
 })
 
 export default validationYupSchema

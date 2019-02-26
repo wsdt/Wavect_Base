@@ -1,9 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var errors_1 = require("./errors");
+var labels_1 = require("./labels");
+var placeholders_1 = require("./placeholders");
 var bundle = {
-    errEmailInvalid: "This is not a valid e-mail address.",
-    errEmailRequired: "E-Mail address is required.",
-    errPwdRequired: "Password is required.",
+    errors: errors_1.default,
+    lbls: labels_1.default,
+    placeholders: placeholders_1.default,
 };
 exports.default = bundle;
 //# sourceMappingURL=bundle.js.map

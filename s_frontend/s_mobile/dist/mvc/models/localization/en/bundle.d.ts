@@ -1,6 +1,19 @@
 declare const bundle: {
-    errEmailInvalid: string;
-    errEmailRequired: string;
-    errPwdRequired: string;
+    errors: {
+        emailInvalid: string;
+        emailRequired: string;
+        pwdRequired: string;
+    };
+    lbls: {
+        "email": string;
+        "login": string;
+        "pwd": string;
+        "pwdForgotten": string;
+        "register": string;
+    };
+    placeholders: {
+        "emailInput": string;
+        "passwordInput": string;
+    };
 };
 export default bundle;
