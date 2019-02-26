@@ -1,9 +1,9 @@
 import * as React from "react"
-import {Login} from "./src/mvc/views/pages/Login"
+import {createAppContainer} from "react-navigation"
+import Router from "./src/mvc/controllers/RouteController"
 
-export default class App extends React.Component {
-
-    public render() {
-        return <Login />
-    }
-}
+/**
+ * Just export the router component in an app container, to
+ * make routes available to all pages.
+ */
+export default createAppContainer(Router)

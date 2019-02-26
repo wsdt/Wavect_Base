@@ -1,10 +1,9 @@
-import {Formik, FormikActions, FormikProps, FormikValues} from "formik"
+import {Formik, FormikActions, FormikProps} from "formik"
 import * as React from "react"
 import {View} from "react-native"
 import {Button, Input} from "react-native-elements"
 import {handleTextInput} from "react-native-formik"
 import p from "../../../../scss/parseScss"
-import str from "../../../models/localization/en/bundle"
 
 import * as baseStyle from "../../../../scss/base.scss"
 import * as formStyle from "../../../../scss/form.scss"
@@ -33,13 +32,13 @@ export class LoginForm extends React.Component {
         const rightPwdIcon = (this.state.pwdHidden) ? "eye" : "eye-off"
 
         return <View style={p(baseStyle.container)}>
-            <FormikInput label={str.lbls.email} name="email" type="email" placeholder={str.placeholders.emailInput} editable={!isSubmitting}
+            <FormikInput label={"E-Mail"} name="email" type="email" placeholder={"deine-mail@m.com"} editable={!isSubmitting}
                    value={values.email} leftIcon={{type: "feather", name: "user", size: 15, color: "grey"}}
                    containerStyle={p(formStyle.listElem)} labelStyle={p(formStyle.textLabel)}
                    leftIconContainerStyle={p(formStyle.leftIconContainer)} keyboardType="email-address"
                     errorMessage={(touched.email && errors.email) ? errors.email.toString() : undefined}/>
 
-            <FormikInput label={str.lbls.pwd} name="password" type="password" placeholder={str.placeholders.passwordInput} secureTextEntry={this.state.pwdHidden}
+            <FormikInput label={"Password"} name="password" type="password" placeholder={"your secret"} secureTextEntry={this.state.pwdHidden}
                    editable={!isSubmitting} autoCapitalize="none" autoCorrect={false} value={values.password}
                    leftIcon={{type: "feather", name: "lock", size: 15, color: "grey"}}
                    containerStyle={p(formStyle.listElem)} labelStyle={p(formStyle.textLabel)}
@@ -53,11 +52,11 @@ export class LoginForm extends React.Component {
             }}/>
 
             <View style={p(baseStyle.elemRow)}>
-                <Button title={str.lbls.login} onPress={handleSubmit as any} disabled={isSubmitting}
+                <Button title={"Login"} onPress={handleSubmit as any} disabled={isSubmitting}
                         loading={isSubmitting} type="solid" containerStyle={p(formStyle.btn)}/>
-                <Button title={str.lbls.register} onPress={this.onRegisterBtnPress} disabled={isSubmitting}
+                <Button title={"Register"} onPress={this.onRegisterBtnPress} disabled={isSubmitting}
                         type="outline" containerStyle={p(formStyle.btn)}/></View>
-            <Button title={str.lbls.pwdForgotten} onPress={this.onPwdForgottenBtnPress} disabled={isSubmitting}
+            <Button title={"Forgot password"} onPress={this.onPwdForgottenBtnPress} disabled={isSubmitting}
                     type="clear" containerStyle={p(formStyle.btn)}/>
         </View>
     }

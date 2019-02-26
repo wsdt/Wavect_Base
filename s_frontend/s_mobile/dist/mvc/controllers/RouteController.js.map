@@ -1,0 +1,1 @@
+{"version":3,"file":"RouteController.js","sourceRoot":"","sources":["../../../src/mvc/controllers/RouteController.ts"],"names":[],"mappings":";;AAAA,qDAAqG;AACrG,0DAAsD;AAGtD,IAAM,aAAa,GAAwB;IACvC,gBAAgB,EAAE,aAAa;CAClC,CAAA;AAMD,IAAM,MAAM,GAA4B;IACpC,WAAW,2BAAA;CACd,CAAA;AAOD,IAAM,YAAY,GAAG,uCAAoB,CACrC,MAAM,EACN,aAAa,CAChB,CAAA;AAED,kBAAe,YAAY,CAAA"}

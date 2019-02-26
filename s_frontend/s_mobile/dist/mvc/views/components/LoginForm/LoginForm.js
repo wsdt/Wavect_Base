@@ -30,7 +30,6 @@ var react_native_1 = require("react-native");
 var react_native_elements_1 = require("react-native-elements");
 var react_native_formik_1 = require("react-native-formik");
 var parseScss_1 = require("../../../../scss/parseScss");
-var bundle_1 = require("../../../models/localization/en/bundle");
 var baseStyle = require("../../../../scss/base.scss");
 var formStyle = require("../../../../scss/form.scss");
 var WarningsController_1 = require("../../../controllers/WarningsController");
@@ -48,9 +47,9 @@ var LoginForm = (function (_super) {
             var values = _a.values, handleSubmit = _a.handleSubmit, touched = _a.touched, errors = _a.errors, isSubmitting = _a.isSubmitting;
             var rightPwdIcon = (_this.state.pwdHidden) ? "eye" : "eye-off";
             return <react_native_1.View style={parseScss_1.default(baseStyle.container)}>
-            <FormikInput label={bundle_1.default.lbls.email} name="email" type="email" placeholder={bundle_1.default.placeholders.emailInput} editable={!isSubmitting} value={values.email} leftIcon={{ type: "feather", name: "user", size: 15, color: "grey" }} containerStyle={parseScss_1.default(formStyle.listElem)} labelStyle={parseScss_1.default(formStyle.textLabel)} leftIconContainerStyle={parseScss_1.default(formStyle.leftIconContainer)} keyboardType="email-address" errorMessage={(touched.email && errors.email) ? errors.email.toString() : undefined}/>
+            <FormikInput label={"E-Mail"} name="email" type="email" placeholder={"deine-mail@m.com"} editable={!isSubmitting} value={values.email} leftIcon={{ type: "feather", name: "user", size: 15, color: "grey" }} containerStyle={parseScss_1.default(formStyle.listElem)} labelStyle={parseScss_1.default(formStyle.textLabel)} leftIconContainerStyle={parseScss_1.default(formStyle.leftIconContainer)} keyboardType="email-address" errorMessage={(touched.email && errors.email) ? errors.email.toString() : undefined}/>
 
-            <FormikInput label={bundle_1.default.lbls.pwd} name="password" type="password" placeholder={bundle_1.default.placeholders.passwordInput} secureTextEntry={_this.state.pwdHidden} editable={!isSubmitting} autoCapitalize="none" autoCorrect={false} value={values.password} leftIcon={{ type: "feather", name: "lock", size: 15, color: "grey" }} containerStyle={parseScss_1.default(formStyle.listElem)} labelStyle={parseScss_1.default(formStyle.textLabel)} leftIconContainerStyle={parseScss_1.default(formStyle.leftIconContainer)} errorMessage={(touched.password && errors.password) ? errors.password.toString() : undefined} rightIconContainerStyle={parseScss_1.default(formStyle.rightIconContainer)} rightIcon={{
+            <FormikInput label={"Password"} name="password" type="password" placeholder={"your secret"} secureTextEntry={_this.state.pwdHidden} editable={!isSubmitting} autoCapitalize="none" autoCorrect={false} value={values.password} leftIcon={{ type: "feather", name: "lock", size: 15, color: "grey" }} containerStyle={parseScss_1.default(formStyle.listElem)} labelStyle={parseScss_1.default(formStyle.textLabel)} leftIconContainerStyle={parseScss_1.default(formStyle.leftIconContainer)} errorMessage={(touched.password && errors.password) ? errors.password.toString() : undefined} rightIconContainerStyle={parseScss_1.default(formStyle.rightIconContainer)} rightIcon={{
                 color: "grey",
                 name: rightPwdIcon,
                 onPress: _this.togglePwdVisibility,
@@ -59,9 +58,9 @@ var LoginForm = (function (_super) {
             }}/>
 
             <react_native_1.View style={parseScss_1.default(baseStyle.elemRow)}>
-                <react_native_elements_1.Button title={bundle_1.default.lbls.login} onPress={handleSubmit} disabled={isSubmitting} loading={isSubmitting} type="solid" containerStyle={parseScss_1.default(formStyle.btn)}/>
-                <react_native_elements_1.Button title={bundle_1.default.lbls.register} onPress={_this.onRegisterBtnPress} disabled={isSubmitting} type="outline" containerStyle={parseScss_1.default(formStyle.btn)}/></react_native_1.View>
-            <react_native_elements_1.Button title={bundle_1.default.lbls.pwdForgotten} onPress={_this.onPwdForgottenBtnPress} disabled={isSubmitting} type="clear" containerStyle={parseScss_1.default(formStyle.btn)}/>
+                <react_native_elements_1.Button title={"Login"} onPress={handleSubmit} disabled={isSubmitting} loading={isSubmitting} type="solid" containerStyle={parseScss_1.default(formStyle.btn)}/>
+                <react_native_elements_1.Button title={"Register"} onPress={_this.onRegisterBtnPress} disabled={isSubmitting} type="outline" containerStyle={parseScss_1.default(formStyle.btn)}/></react_native_1.View>
+            <react_native_elements_1.Button title={"Forgot password"} onPress={_this.onPwdForgottenBtnPress} disabled={isSubmitting} type="clear" containerStyle={parseScss_1.default(formStyle.btn)}/>
         </react_native_1.View>;
         };
         _this.togglePwdVisibility = function () {

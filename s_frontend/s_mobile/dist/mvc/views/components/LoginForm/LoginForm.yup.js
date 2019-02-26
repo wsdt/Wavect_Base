@@ -1,13 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var Yup = require("yup");
-var LocalizationController_1 = require("../../../controllers/LocalizationController");
 var validationYupSchema = Yup.object().shape({
     email: Yup.string()
-        .required(LocalizationController_1.default.errors.emailRequired)
-        .email(LocalizationController_1.default.errors.emailInvalid),
+        .required("Mail required")
+        .email("Mail not valid"),
     password: Yup.string()
-        .required(LocalizationController_1.default.errors.pwdRequired)
+        .required("Password required")
 });
 exports.default = validationYupSchema;
 //# sourceMappingURL=LoginForm.yup.js.map
