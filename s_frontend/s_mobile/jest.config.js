@@ -7,12 +7,12 @@ module.exports = {
         ...tsJestConfig.transform,
         '\\.js$': '<rootDir>/node_modules/react-native/jest/preprocessor.js',
     },
-    /*globals: {
+    globals: {
         'ts-jest': {
             babelConfig: false,
             tsConfig: './tsconfig.jest.json',
         },
-    },*/
+    },
     modulePaths: [
         "<rootDir>"
     ]
