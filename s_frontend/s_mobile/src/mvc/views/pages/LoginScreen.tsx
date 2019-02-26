@@ -7,11 +7,17 @@ import {OAuth} from "../components/OAuth/OAuth"
 
 // <Header leftComponent={<BeKindIcon width={30} height={30} />} centerComponent={{text: "Authentication", style: {color: "#fff"}}} containerStyle={p(styleBase.header)}/>
 
-export const LoginScreen = () => {
-    return <View style={p(styleBase.page)}>
-        <View style={p(styleBase.center)}>
-            <LoginForm/>
-            <OAuth/>
+export class LoginScreen extends React.Component<any, any> {
+    public static navigationOptions = {
+        title: "Login",
+    }
+
+    public render() {
+        return <View style={p(styleBase.page)}>
+            <View style={p(styleBase.center)}>
+                <LoginForm/>
+                <OAuth/>
+            </View>
         </View>
-    </View>
+    }
 }
