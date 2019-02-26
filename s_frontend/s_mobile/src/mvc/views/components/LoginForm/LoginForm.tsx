@@ -14,7 +14,7 @@ import validationYupSchema from "./LoginForm.yup"
 const FormikInput = handleTextInput(Input)
 const defaultFormValues:ILoginFormValues = {email:"", password:""}
 
-export class LoginForm extends React.Component {
+export class LoginForm extends React.Component<any, any> {
     public state = {
         pwdHidden: true,
     }
@@ -87,7 +87,7 @@ export class LoginForm extends React.Component {
     }
 
     private onRegisterBtnPress = () => {
-        // TODO
+        this.props.navigation.navigate('RegistrationForm')
         notImplementedSync()
     }
 
