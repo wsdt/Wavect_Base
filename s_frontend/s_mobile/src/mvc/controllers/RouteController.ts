@@ -4,8 +4,8 @@ import {
     NavigationScreenOptions,
     StackNavigatorConfig
 } from "react-navigation"
-//import {LoginScreen} from "../views/pages/LoginScreen"
-import {RegistrationForm} from "../views/components/RegistForm/RegistrationForm";
+import {LoginScreen} from "../views/pages/LoginScreen"
+import {RegistrationScreen} from "../views/pages/RegistrationScreen"
 
 /**
  * You can provide custom navigationoptions for your nav bar for each page.
@@ -24,7 +24,7 @@ const defaultNavigationOptions:NavigationScreenOptions = {
 /** You can define additional options for our router here */
 const routerOptions:StackNavigatorConfig = {
     defaultNavigationOptions,
-    initialRouteName: "RegistrationForm",
+    initialRouteName: "LoginScreen",
 }
 
 
@@ -33,7 +33,7 @@ const routerOptions:StackNavigatorConfig = {
  * use the shorthand by just writing the value).
  */
 const routes:NavigationRouteConfigMap = {
-    RegistrationForm
+    LoginScreen, RegistrationScreen,
 }
 
 

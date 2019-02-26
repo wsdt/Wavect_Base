@@ -13,6 +13,7 @@ $primaryBackgroundColor: #FFFFFE;
 $defaultWidth: 85%;
 
 .page {
+  margin-top: 20px;
   background-color: $primaryBackgroundColor;
   flex:1;
 }
@@ -20,10 +21,6 @@ $defaultWidth: 85%;
 .center {
   justify-content: center;
   align-items: center;
-}
-
-.header {
-  margin-bottom: 15px;
 }
 
 .container {

@@ -17,25 +17,21 @@ var React = require("react");
 var react_native_1 = require("react-native");
 var styleBase = require("../../../scss/base.scss");
 var parseScss_1 = require("../../../scss/parseScss");
-var LoginForm_1 = require("../components/LoginForm/LoginForm");
-var OAuth_1 = require("../components/OAuth/OAuth");
-var LoginScreen = (function (_super) {
-    __extends(LoginScreen, _super);
-    function LoginScreen() {
+var RegistrationForm_1 = require("../components/RegistrationForm/RegistrationForm");
+var RegistrationScreen = (function (_super) {
+    __extends(RegistrationScreen, _super);
+    function RegistrationScreen() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    LoginScreen.prototype.render = function () {
+    RegistrationScreen.prototype.render = function () {
         return <react_native_1.View style={parseScss_1.default(styleBase.page)}>
-            <react_native_1.View style={parseScss_1.default(styleBase.center)}>
-                <LoginForm_1.LoginForm {...this.props}/>
-                <OAuth_1.OAuth {...this.props}/>
-            </react_native_1.View>
-        </react_native_1.View>;
+                <RegistrationForm_1.RegistrationForm {...this.props}/>
+            </react_native_1.View>;
     };
-    LoginScreen.navigationOptions = {
-        title: "Login",
+    RegistrationScreen.navigationOptions = {
+        title: "Registration",
     };
-    return LoginScreen;
+    return RegistrationScreen;
 }(React.Component));
-exports.LoginScreen = LoginScreen;
-//# sourceMappingURL=LoginScreen.js.map
+exports.RegistrationScreen = RegistrationScreen;
+//# sourceMappingURL=RegistrationScreen.js.map

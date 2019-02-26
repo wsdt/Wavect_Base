@@ -76,7 +76,7 @@ var LoginForm = (function (_super) {
             }, 2000);
         };
         _this.onRegisterBtnPress = function () {
-            WarningsController_1.notImplementedSync();
+            _this.props.navigation.navigate("RegistrationScreen");
         };
         _this.onPwdForgottenBtnPress = function () {
             WarningsController_1.notImplementedSync();

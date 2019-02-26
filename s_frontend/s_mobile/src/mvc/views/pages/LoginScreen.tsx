@@ -13,10 +13,11 @@ export class LoginScreen extends React.Component<any, any> {
     }
 
     public render() {
+        /* Pass all props down to child component (e.g. navigation props! as screen is rendered)! */
         return <View style={p(styleBase.page)}>
             <View style={p(styleBase.center)}>
-                <LoginForm/>
-                <OAuth/>
+                <LoginForm {...this.props}/>
+                <OAuth {...this.props}/>
             </View>
         </View>
     }

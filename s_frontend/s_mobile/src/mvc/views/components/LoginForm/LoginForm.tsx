@@ -87,8 +87,7 @@ export class LoginForm extends React.Component<any, any> {
     }
 
     private onRegisterBtnPress = () => {
-        this.props.navigation.navigate('RegistrationForm')
-        notImplementedSync()
+        this.props.navigation.navigate("RegistrationScreen")
     }
 
     private onPwdForgottenBtnPress = () => {

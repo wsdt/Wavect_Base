@@ -1,23 +1,24 @@
 
-import React, {Component} from 'react'
-import {Formik, FormikActions, FormikProps} from 'formik'
-import {handleTextInput} from "react-native-formik";
-import {Button, Input} from "react-native-elements";
-import {View} from "react-native";
-import IAcceptable from "./RegisterForm.interface";
-import yup from "./Registration.yup"
+import {Formik, FormikActions, FormikProps} from "formik"
+import React, {Component} from "react"
+import {View} from "react-native"
+import {Button, Input} from "react-native-elements"
+import {handleTextInput} from "react-native-formik"
+import {notImplementedSync} from "../../../controllers/WarningsController"
+import IAcceptable from "./RegistrationForm.interfaces"
+import yup from "./RegistrationForm.yup"
 
 
 const acceptableValues: IAcceptable = {firstname: "", lastname: "", email: "", emailCheck: "", pw: "", pwCheck: "" }
 const FormikInput = handleTextInput(Input)
 
 export class RegistrationForm extends Component {
-    state = {
+    public state = {
         hidden: true,
         hiddenCheck: true
     }
 
-    render() {
+    public render() {
         return <Formik initialValues={acceptableValues}
                        validationSchema={yup}
                        onSubmit={ (formikValue: IAcceptable, formikbag: FormikActions<IAcceptable>) => {this.isSubmittingHandler(formikValue, formikbag)} }
@@ -52,7 +53,7 @@ export class RegistrationForm extends Component {
     private isHiddenHandler = (isCheck: boolean) => {
         if(isCheck){
             this.setState( (prevState: any) => {
-                return { ...prevState, hiddenCheck: !prevState.hiddenCheck}     //vgl udemy Objekt-copy
+                return { ...prevState, hiddenCheck: !prevState.hiddenCheck}     // vgl udemy Objekt-copy
             })
         }else{
             this.setState( (prevState: any) => {
@@ -64,6 +65,8 @@ export class RegistrationForm extends Component {
     private isSubmittingHandler = (values: IAcceptable, formikbag: FormikActions<IAcceptable>) => {
         formikbag.setSubmitting(true)
 
+        // TODO: Replace with real api call
+        notImplementedSync()
         setTimeout(() => {
             formikbag.setSubmitting(false)
         }, 2000)
