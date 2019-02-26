@@ -741,6 +741,11 @@
   resolved "https://registry.yarnpkg.com/@types/websql/-/websql-0.0.27.tgz#621a666a7f02018e7cbb4abab956a25736c27d71"
   integrity sha1-Yhpman8CAY58u0q6uVaiVzbCfXE=
 
+"@types/yup@^0.26.9":
+  version "0.26.9"
+  resolved "https://registry.yarnpkg.com/@types/yup/-/yup-0.26.9.tgz#8a619ac4d2b8dcacb0d81345746018303b479919"
+  integrity sha512-C7HdLLs1ZNPbYeNsSX++fMosxWAwzVeUs9wc76XlKJrKvLEyNwXMDUjag75EVAPxlZ36YiRJ6iTy4zc5Dbtndw==
+
 abab@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.0.tgz#aba0ab4c5eee2d4c79d3487d85450fb2376ebb0f"
@@ -5252,6 +5257,11 @@ loader-utils@^1.1.0:
     emojis-list "^2.0.0"
     json5 "^1.0.1"
 
+localized-strings@^0.2.00:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/localized-strings/-/localized-strings-0.2.1.tgz#4ecd9458ac9894bfb13b307551d9d8b92e4b4c51"
+  integrity sha512-WYARgs2tUJizhaHENG46Wrey5c0u1cR+HNN2cGGkbJy4KfibsvgjC/izUok9rO3xlfKPRLxzr/WJzg7zrDCHLg==
+
 locate-path@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/locate-path/-/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
@@ -6834,6 +6844,14 @@ react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.3:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.3.tgz#4ad8b029c2a718fc0cfc746c8d4e1b7221e5387d"
   integrity sha512-Y4rC1ZJmsxxkkPuMLwvKvlL1Zfpbcu+Bf4ZigkHup3v9EfdYhAlWAaVyA19olXq2o2mGn0w+dFKvk3pVVlYcIA==
 
+react-localization@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/react-localization/-/react-localization-1.0.13.tgz#7a1da114c61c8b4814fed2abc699b45ad6bb32b8"
+  integrity sha512-VKbcCpf6FnjhUs1QpEpxGeZCVyAGRknk58w1fG4L4CWHfju/v9A6eyPgRnw6WmKgn2A5EJZt9ewkiP1pQFEwEA==
+  dependencies:
+    localized-strings "^0.2.00"
+    react "^16.0.0"
+
 react-native-branch@2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/react-native-branch/-/react-native-branch-2.2.5.tgz#4074dd63b4973e6397d9ce50e97b57c77a518e9d"
@@ -6870,6 +6888,14 @@ react-native-gesture-handler@~1.0.14:
     hoist-non-react-statics "^2.3.1"
     invariant "^2.2.2"
     prop-types "^15.5.10"
+
+react-native-localization@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-localization/-/react-native-localization-2.1.0.tgz#950e947e3e7f9ff5817ed7f882575a9449b368bd"
+  integrity sha512-4e4A2EdKRaBFfPMUOTbMZDAOeIeZozQcCl29GBGjVzaAYyGBSIob5R7hVLY0gEhJFRKB44EANhaNt/LAOTlr+g==
+  dependencies:
+    react "^16.0.0"
+    react-localization "^1.0.13"
 
 react-native-maps@*:
   version "0.23.0"
@@ -7055,6 +7081,16 @@ react@16.5.0:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     schedule "^0.3.0"
+
+react@^16.0.0:
+  version "16.8.3"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.8.3.tgz#c6f988a2ce895375de216edcfaedd6b9a76451d9"
+  integrity sha512-3UoSIsEq8yTJuSu0luO1QQWYbgGEILm+eJl2QN/VLDi7hL+EN18M3q3oVZwmVzzBJ3DkM7RMdRwBmZZ+b4IzSA==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.13.3"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"

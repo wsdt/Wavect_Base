@@ -8,9 +8,11 @@ import p from "../../../../scss/parseScss"
 import * as baseStyle from "../../../../scss/base.scss"
 import * as formStyle from "../../../../scss/form.scss"
 import {notImplementedSync} from "../../../controllers/WarningsController"
+import {ILoginFormValues} from "./LoginForm.interfaces"
 import validationYupSchema from "./LoginForm.yup"
 
 const FormikInput = handleTextInput(Input)
+const defaultFormValues:ILoginFormValues = {email:"", password:""}
 
 export class LoginForm extends React.Component {
     public state = {
@@ -18,14 +20,14 @@ export class LoginForm extends React.Component {
     }
 
     public render() {
-        return <Formik initialValues={{email: "", password: ""}}
-                       onSubmit={(values:FormikValues, formikBag:FormikActions<FormikValues>) => this.onLoginBtnPress(values, formikBag)}
+        return <Formik initialValues={defaultFormValues}
+                       onSubmit={(values:ILoginFormValues, formikBag:FormikActions<ILoginFormValues>) => this.onLoginBtnPress(values, formikBag)}
                        validationSchema={validationYupSchema}
-                       render={(formikBag: FormikProps<FormikValues>) => this.renderForm(formikBag)} />
+                       render={(formikBag: FormikProps<ILoginFormValues>) => this.renderForm(formikBag)} />
     }
 
     /** Renders the whole login form (incl. form validation, state management, logic, etc.) */
-    private renderForm = ({values, handleSubmit, setFieldValue, touched, errors, setFieldTouched, isSubmitting}: FormikProps<FormikValues>) => {
+    private renderForm = ({values, handleSubmit, touched, errors, isSubmitting}: FormikProps<ILoginFormValues>) => {
         // Which icon to show when pwd input (not) hidden?
         const rightPwdIcon = (this.state.pwdHidden) ? "eye" : "eye-off"
 
@@ -33,13 +35,14 @@ export class LoginForm extends React.Component {
             <FormikInput label="E-Mail" name="email" type="email" placeholder="ernesto@gmail.com" editable={!isSubmitting}
                    value={values.email} leftIcon={{type: "feather", name: "user", size: 15, color: "grey"}}
                    containerStyle={p(formStyle.listElem)} labelStyle={p(formStyle.textLabel)}
-                   leftIconContainerStyle={p(formStyle.leftIconContainer)} keyboardType="email-address"/>
+                   leftIconContainerStyle={p(formStyle.leftIconContainer)} keyboardType="email-address"
+                    errorMessage={(touched.email && errors.email) ? errors.email.toString() : undefined}/>
 
             <FormikInput label="Password" name="password" type="password" placeholder="Your secret password" secureTextEntry={this.state.pwdHidden}
                    editable={!isSubmitting} autoCapitalize="none" autoCorrect={false} value={values.password}
                    leftIcon={{type: "feather", name: "lock", size: 15, color: "grey"}}
                    containerStyle={p(formStyle.listElem)} labelStyle={p(formStyle.textLabel)}
-                   leftIconContainerStyle={p(formStyle.leftIconContainer)}
+                   leftIconContainerStyle={p(formStyle.leftIconContainer)} errorMessage={(touched.password && errors.password) ? errors.password.toString() : undefined}
                    rightIconContainerStyle={p(formStyle.rightIconContainer)} rightIcon={{
                 color: "grey",
                 name: rightPwdIcon,
@@ -71,7 +74,7 @@ export class LoginForm extends React.Component {
         })
     }
 
-    private onLoginBtnPress = (values:FormikValues, formikBag: FormikActions<FormikValues>) => {
+    private onLoginBtnPress = (values:ILoginFormValues, formikBag: FormikActions<ILoginFormValues>) => {
         formikBag.setSubmitting(true)
 
         // TODO implement real login

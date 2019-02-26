@@ -35,6 +35,7 @@ var formStyle = require("../../../../scss/form.scss");
 var WarningsController_1 = require("../../../controllers/WarningsController");
 var LoginForm_yup_1 = require("./LoginForm.yup");
 var FormikInput = react_native_formik_1.handleTextInput(react_native_elements_1.Input);
+var defaultFormValues = { email: "", password: "" };
 var LoginForm = (function (_super) {
     __extends(LoginForm, _super);
     function LoginForm() {
@@ -43,12 +44,12 @@ var LoginForm = (function (_super) {
             pwdHidden: true,
         };
         _this.renderForm = function (_a) {
-            var values = _a.values, handleSubmit = _a.handleSubmit, setFieldValue = _a.setFieldValue, touched = _a.touched, errors = _a.errors, setFieldTouched = _a.setFieldTouched, isSubmitting = _a.isSubmitting;
+            var values = _a.values, handleSubmit = _a.handleSubmit, touched = _a.touched, errors = _a.errors, isSubmitting = _a.isSubmitting;
             var rightPwdIcon = (_this.state.pwdHidden) ? "eye" : "eye-off";
             return <react_native_1.View style={parseScss_1.default(baseStyle.container)}>
-            <FormikInput label="E-Mail" name="email" type="email" placeholder="ernesto@gmail.com" editable={!isSubmitting} value={values.email} leftIcon={{ type: "feather", name: "user", size: 15, color: "grey" }} containerStyle={parseScss_1.default(formStyle.listElem)} labelStyle={parseScss_1.default(formStyle.textLabel)} leftIconContainerStyle={parseScss_1.default(formStyle.leftIconContainer)} keyboardType="email-address"/>
+            <FormikInput label="E-Mail" name="email" type="email" placeholder="ernesto@gmail.com" editable={!isSubmitting} value={values.email} leftIcon={{ type: "feather", name: "user", size: 15, color: "grey" }} containerStyle={parseScss_1.default(formStyle.listElem)} labelStyle={parseScss_1.default(formStyle.textLabel)} leftIconContainerStyle={parseScss_1.default(formStyle.leftIconContainer)} keyboardType="email-address" errorMessage={(touched.email && errors.email) ? errors.email.toString() : undefined}/>
 
-            <FormikInput label="Password" name="password" type="password" placeholder="Your secret password" secureTextEntry={_this.state.pwdHidden} editable={!isSubmitting} autoCapitalize="none" autoCorrect={false} value={values.password} leftIcon={{ type: "feather", name: "lock", size: 15, color: "grey" }} containerStyle={parseScss_1.default(formStyle.listElem)} labelStyle={parseScss_1.default(formStyle.textLabel)} leftIconContainerStyle={parseScss_1.default(formStyle.leftIconContainer)} rightIconContainerStyle={parseScss_1.default(formStyle.rightIconContainer)} rightIcon={{
+            <FormikInput label="Password" name="password" type="password" placeholder="Your secret password" secureTextEntry={_this.state.pwdHidden} editable={!isSubmitting} autoCapitalize="none" autoCorrect={false} value={values.password} leftIcon={{ type: "feather", name: "lock", size: 15, color: "grey" }} containerStyle={parseScss_1.default(formStyle.listElem)} labelStyle={parseScss_1.default(formStyle.textLabel)} leftIconContainerStyle={parseScss_1.default(formStyle.leftIconContainer)} errorMessage={(touched.password && errors.password) ? errors.password.toString() : undefined} rightIconContainerStyle={parseScss_1.default(formStyle.rightIconContainer)} rightIcon={{
                 color: "grey",
                 name: rightPwdIcon,
                 onPress: _this.togglePwdVisibility,
@@ -84,7 +85,7 @@ var LoginForm = (function (_super) {
     }
     LoginForm.prototype.render = function () {
         var _this = this;
-        return <formik_1.Formik initialValues={{ email: "", password: "" }} onSubmit={function (values, formikBag) { return _this.onLoginBtnPress(values, formikBag); }} validationSchema={LoginForm_yup_1.default} render={function (formikBag) { return _this.renderForm(formikBag); }}/>;
+        return <formik_1.Formik initialValues={defaultFormValues} onSubmit={function (values, formikBag) { return _this.onLoginBtnPress(values, formikBag); }} validationSchema={LoginForm_yup_1.default} render={function (formikBag) { return _this.renderForm(formikBag); }}/>;
     };
     return LoginForm;
 }(React.Component));
