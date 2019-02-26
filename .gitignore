@@ -7,6 +7,9 @@
 /.pnp
 .pnp.js
 
+# Do not push unnecessary .jsx files as built (push js files as we have configs!!)
+*.jsx
+
 # testing
 /coverage
 
