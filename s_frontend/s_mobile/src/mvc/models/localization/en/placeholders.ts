@@ -3,6 +3,6 @@
 const bundle = {
   emailInput: "ernesto@gmail.com",
   passwordInput: "Your secret password"
-}
+};
 
-export default bundle
+export default bundle;

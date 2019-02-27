@@ -1,4 +1,4 @@
-import * as Yup from "yup"
+import * as Yup from "yup";
 
 const validationScheme = Yup.object().shape({
   firstname: Yup.string().required(),
@@ -19,6 +19,6 @@ const validationScheme = Yup.object().shape({
     .min(8)
     .max(32)
     .oneOf([Yup.ref("pw"), null], "Password must match!")
-})
+});
 
-export default validationScheme
+export default validationScheme;

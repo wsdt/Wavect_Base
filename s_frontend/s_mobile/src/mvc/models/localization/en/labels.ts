@@ -6,6 +6,6 @@ const bundle = {
   pwd: "Password",
   pwdForgotten: "Forgot password",
   register: "Register"
-}
+};
 
-export default bundle
+export default bundle;

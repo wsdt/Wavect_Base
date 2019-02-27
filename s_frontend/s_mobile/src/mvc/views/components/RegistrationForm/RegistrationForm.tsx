@@ -1,11 +1,11 @@
-import { Formik, FormikActions, FormikProps } from "formik"
-import React, { Component } from "react"
-import { View } from "react-native"
-import { Button, Input } from "react-native-elements"
-import { handleTextInput } from "react-native-formik"
-import { notImplementedSync } from "../../../controllers/WarningsController"
-import IAcceptable from "./RegistrationForm.interfaces"
-import yup from "./RegistrationForm.yup"
+import { Formik, FormikActions, FormikProps } from "formik";
+import React, { Component } from "react";
+import { View } from "react-native";
+import { Button, Input } from "react-native-elements";
+import { handleTextInput } from "react-native-formik";
+import { notImplementedSync } from "../../../controllers/WarningsController";
+import IAcceptable from "./RegistrationForm.interfaces";
+import yup from "./RegistrationForm.yup";
 
 const acceptableValues: IAcceptable = {
   email: "",
@@ -14,14 +14,14 @@ const acceptableValues: IAcceptable = {
   lastname: "",
   pw: "",
   pwCheck: ""
-}
-const FormikInput = handleTextInput(Input)
+};
+const FormikInput = handleTextInput(Input);
 
 export class RegistrationForm extends Component {
   public state = {
     hidden: true,
     hiddenCheck: true
-  }
+  };
 
   public render() {
     return (
@@ -32,13 +32,13 @@ export class RegistrationForm extends Component {
           formikValue: IAcceptable,
           formikbag: FormikActions<IAcceptable>
         ) => {
-          this.isSubmittingHandler(formikValue, formikbag)
+          this.isSubmittingHandler(formikValue, formikbag);
         }}
         render={(formikbag: FormikProps<IAcceptable>) =>
           this.renderForm(formikbag)
         }
       />
-    )
+    );
   }
 
   private renderForm = ({
@@ -150,31 +150,31 @@ export class RegistrationForm extends Component {
           disabled={isSubmitting}
         />
       </View>
-    )
-  }
+    );
+  };
 
   private isHiddenHandler = (isCheck: boolean) => {
     if (isCheck) {
       this.setState((prevState: any) => {
-        return { ...prevState, hiddenCheck: !prevState.hiddenCheck } // vgl udemy Objekt-copy
-      })
+        return { ...prevState, hiddenCheck: !prevState.hiddenCheck }; // vgl udemy Objekt-copy
+      });
     } else {
       this.setState((prevState: any) => {
-        return { ...prevState, hidden: !prevState.hidden }
-      })
+        return { ...prevState, hidden: !prevState.hidden };
+      });
     }
-  }
+  };
 
   private isSubmittingHandler = (
     values: IAcceptable,
     formikbag: FormikActions<IAcceptable>
   ) => {
-    formikbag.setSubmitting(true)
+    formikbag.setSubmitting(true);
 
     // TODO: Replace with real api call
-    notImplementedSync()
+    notImplementedSync();
     setTimeout(() => {
-      formikbag.setSubmitting(false)
-    }, 2000)
-  }
+      formikbag.setSubmitting(false);
+    }, 2000);
+  };
 }
