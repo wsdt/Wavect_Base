@@ -4,5 +4,5 @@
  *
  * Following API is used by normal REST queries.
  */
-export const API_URL = "https://localhost:8090/api/v1";
-export const SSE_URL = "https://localhost:8090/sse/v1";
+export const API_URL = "https://localhost:8090/api/v1"
+export const SSE_URL = "https://localhost:8090/sse/v1"

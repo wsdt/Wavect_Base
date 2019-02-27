@@ -5,4 +5,4 @@
  * Hopefully they have one in future.
  */
 
-declare module "react-activity-feed";
+declare module "react-activity-feed"

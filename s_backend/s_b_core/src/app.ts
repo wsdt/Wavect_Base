@@ -1,16 +1,16 @@
-import * as bodyParser from "body-parser";
-import * as cors from "cors";
-import * as express from "express";
-import * as helmet from "helmet";
-import * as morgan from "morgan";
+import * as bodyParser from "body-parser"
+import * as cors from "cors"
+import * as express from "express"
+import * as helmet from "helmet"
+import * as morgan from "morgan"
 /**
  * Using spdy as http2 too, but not that fast as built-in module of node.JS.
  * But unfortunately, http2-module does not support express yet, so we have to
  * wait for express V5 to use http2 instead of spdy.
  */
-import * as http2 from "spdy";
-import { CLIENT_WEB, HTTP2_OPTIONS, PORT } from "./app.constants";
-import * as routes from "./routes/routes";
+import * as http2 from "spdy"
+import { CLIENT_WEB, HTTP2_OPTIONS, PORT } from "./app.constants"
+import * as routes from "./routes/routes"
 
 /**
  * Use HTTP 2, Server-Sent-Events and TSL.
@@ -21,52 +21,52 @@ import * as routes from "./routes/routes";
  * redirection, as this is not a frontend.
  */
 class App {
-  public app: express.Application;
-  public server: http2.Server;
+    public app: express.Application
+    public server: http2.Server
 
-  constructor() {
-    this.app = express();
-    this.server = http2.createServer(HTTP2_OPTIONS, this.app);
-    this.config();
-  }
+    constructor() {
+        this.app = express()
+        this.server = http2.createServer(HTTP2_OPTIONS, this.app)
+        this.config()
+    }
 
-  public runServer() {
-    // @ts-ignore
-    this.server.listen(PORT, err => {
-      if (err) {
-        console.error(err);
-        return process.exit(1);
-      } else {
-        console.log("App:runServer: Listening on port: " + PORT);
-      }
-    });
-  }
+    public runServer() {
+        // @ts-ignore
+        this.server.listen(PORT, err => {
+            if (err) {
+                console.error(err)
+                return process.exit(1)
+            } else {
+                console.log("App:runServer: Listening on port: " + PORT)
+            }
+        })
+    }
 
-  private config(): void {
-    // support application/json type post data (might be needed later)
-    this.app.use(bodyParser.json());
+    private config(): void {
+        // support application/json type post data (might be needed later)
+        this.app.use(bodyParser.json())
 
-    // support application/x-www-form-urlencoded post data
-    this.app.use(bodyParser.urlencoded({ extended: false }));
+        // support application/x-www-form-urlencoded post data
+        this.app.use(bodyParser.urlencoded({ extended: false }))
 
-    // Add cors header to be accessible from frontend
-    this.app.use(
-      cors({
-        origin: CLIENT_WEB
-      })
-    );
+        // Add cors header to be accessible from frontend
+        this.app.use(
+            cors({
+                origin: CLIENT_WEB,
+            })
+        )
 
-    // Add routes
-    this.app.use("/", routes);
+        // Add routes
+        this.app.use("/", routes)
 
-    // For additional security
-    this.app.use(helmet());
+        // For additional security
+        this.app.use(helmet())
 
-    // Log http requests
-    this.app.use(morgan("combined"));
+        // Log http requests
+        this.app.use(morgan("combined"))
 
-    console.log("app: Configuration done.");
-  }
+        console.log("app: Configuration done.")
+    }
 }
 
-export default new App();
+export default new App()

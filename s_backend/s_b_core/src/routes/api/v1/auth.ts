@@ -1,14 +1,14 @@
-import * as express from "express";
-import { createUserToken } from "../../../mvc/controllers/GetStreamController";
+import * as express from "express"
+import { createUserToken } from "../../../mvc/controllers/GetStreamController"
 
-const router = express.Router();
+const router = express.Router()
 
 router.route("/auth/:userId").get((req, res) => {
-  const userId = req.params.userId; // just assumed for testing that userId has been used to get the following User obj -> user[0]
+    const userId = req.params.userId // just assumed for testing that userId has been used to get the following User obj -> user[0]
 
-  // res.json(User.getUserById(req.params.userId).getPostsByFollowings())
-  res.json({ token: createUserToken(userId) });
-});
+    // res.json(User.getUserById(req.params.userId).getPostsByFollowings())
+    res.json({ token: createUserToken(userId) })
+})
 
 /* EXAMPLE --------------------------------------
 router.route("/newsfeed/:userId").post((req, res) => {
@@ -25,4 +25,4 @@ router.route("/newsfeed/:userId").post((req, res) => {
   res.json({ error: false })
 })*/
 
-export = router;
+export = router
