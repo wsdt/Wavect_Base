@@ -8,19 +8,19 @@ import { OAuth } from "../components/OAuth/OAuth"
 // <Header leftComponent={<BeKindIcon width={30} height={30} />} centerComponent={{text: "Authentication", style: {color: "#fff"}}} containerStyle={p(styleBase.header)}/>
 
 export class LoginScreen extends React.Component<any, any> {
-  public static navigationOptions = {
-    title: "Login"
-  }
+    public static navigationOptions = {
+        title: "Login",
+    }
 
-  public render() {
-    /* Pass all props down to child component (e.g. navigation props! as screen is rendered)! */
-    return (
-      <View style={p(styleBase.page)}>
-        <View style={p(styleBase.center)}>
-          <LoginForm {...this.props} />
-          <OAuth {...this.props} />
-        </View>
-      </View>
-    )
-  }
+    public render() {
+        /* Pass all props down to child component (e.g. navigation props! as screen is rendered)! */
+        return (
+            <View style={p(styleBase.page)}>
+                <View style={p(styleBase.center)}>
+                    <LoginForm {...this.props} />
+                    <OAuth {...this.props} />
+                </View>
+            </View>
+        )
+    }
 }

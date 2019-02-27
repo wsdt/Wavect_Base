@@ -7,5 +7,5 @@ var RouteController_1 = require("./src/mvc/controllers/RouteController")
  * make routes available to all pages.
  */
 exports.default = react_navigation_1.createAppContainer(
-  RouteController_1.default
+    RouteController_1.default
 )

@@ -19,7 +19,7 @@
 import { StyleProp, ViewStyle } from "react-native"
 
 function p(parseableStyle: string): StyleProp<ViewStyle> {
-  return parseableStyle as StyleProp<ViewStyle>
+    return parseableStyle as StyleProp<ViewStyle>
 }
 
 export default p

@@ -5,15 +5,15 @@ import p from "../../../scss/parseScss"
 import { RegistrationForm } from "../components/RegistrationForm/RegistrationForm"
 
 export class RegistrationScreen extends React.Component<any, any> {
-  public static navigationOptions = {
-    title: "Registration"
-  }
+    public static navigationOptions = {
+        title: "Registration",
+    }
 
-  public render() {
-    return (
-      <View style={p(styleBase.page)}>
-        <RegistrationForm {...this.props} />
-      </View>
-    )
-  }
+    public render() {
+        return (
+            <View style={p(styleBase.page)}>
+                <RegistrationForm {...this.props} />
+            </View>
+        )
+    }
 }
