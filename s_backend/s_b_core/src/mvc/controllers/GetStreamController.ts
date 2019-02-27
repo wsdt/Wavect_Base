@@ -1,7 +1,7 @@
-import * as stream from "getstream"
-import { GS_APP_ID, GS_KEY, GS_SECRET } from "./GetStreamController.constants"
+import * as stream from "getstream";
+import { GS_APP_ID, GS_KEY, GS_SECRET } from "./GetStreamController.constants";
 
-export const GETSTREAM: stream.StreamClient = getGetStreamConn()
+export const GETSTREAM: stream.StreamClient = getGetStreamConn();
 
 /** Connects to GetStream API for scalable newsfeeds etc. */
 function getGetStreamConn(): stream.StreamClient {
@@ -9,9 +9,8 @@ function getGetStreamConn(): stream.StreamClient {
     GS_KEY,
     GS_SECRET,
     GS_APP_ID
-  )
+  );
 }
-
 
 /**
  * Create user Token which is passed to Frontend, so
@@ -22,5 +21,5 @@ function getGetStreamConn(): stream.StreamClient {
 export function createUserToken(userId: string) {
   // does work, just typescript definition is wrong
   // maybe alt enter and add to getstream lib file per right click
-  return GETSTREAM.createUserToken(userId)
+  return GETSTREAM.createUserToken(userId);
 }

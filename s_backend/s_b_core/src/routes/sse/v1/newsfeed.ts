@@ -1,8 +1,8 @@
-import * as EventEmitter from "events"
-import * as express from "express"
+import * as EventEmitter from "events";
+import * as express from "express";
 
-export const v1Router = express.Router()
-export const EE = new EventEmitter()
+export const v1Router = express.Router();
+export const EE = new EventEmitter();
 
 // EXAMPLE ---------------------------------
 /*v1Router.route("/newsfeed/:userId").get((req, res) => {

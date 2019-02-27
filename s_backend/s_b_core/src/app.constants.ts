@@ -1,11 +1,11 @@
-import * as fs from "fs"
-import * as path from "path"
+import * as fs from "fs";
+import * as path from "path";
 
 /**
  * Determines on which port the application can be called. Please keep in mind that maybe other
  * applications (e.g. Frontend, db, ...) run on the same machine especially during development!
  */
-export const PORT = 8090
+export const PORT = 8090;
 
 /**
  * Paths to server certificate and private key for a secure TLS connection. But keep in mind
@@ -18,9 +18,9 @@ export const HTTP2_OPTIONS = {
   key: fs.readFileSync(
     path.resolve(__dirname, "..", "secrets", "server-key.pem")
   ) // TODO: später wrschl auch .pem datei für trust hierachy
-}
+};
 
 /**
  * Used by CORS Header to only specifically allow access to our frontend accessing our services.
  */
-export const CLIENT_WEB = "https://localhost:8080"
+export const CLIENT_WEB = "https://localhost:8080";
