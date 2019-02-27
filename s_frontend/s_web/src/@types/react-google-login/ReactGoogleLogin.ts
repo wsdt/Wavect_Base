@@ -5,4 +5,4 @@
  * Hopefully they have one in future.
  */
 
-declare module "react-google-login"
+declare module "react-google-login";
