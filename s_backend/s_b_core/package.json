@@ -41,9 +41,9 @@
     "test": "nps test"
   },
   "husky": {
-	"hooks": {
-		"pre-commit": "yarn start prettier"
-	}
+    "hooks": {
+      "pre-commit": "yarn start prettier"
+    }
   },
   "repository": "github:wsdt/BeKind_Playground",
   "bugs": {

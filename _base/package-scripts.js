@@ -25,7 +25,7 @@ module.exports = {
     build: errScriptNotImplemented,
 	clean: 'rimraf ./dist',
     test: 'jest --detectOpenHandles',
-    prettier: 'prettier --write "**/*.{ts,tsx,js,jsx,scss,css,json}"',
+    prettier: 'prettier --write "**/*.{ts,tsx,js,jsx,scss,css,json} --no-semi"',
     tslint: 'tslint -p ./tsconfig.json',
     tslintFix: 'tslint --fix -p ./tsconfig.json',
     evaluate: 'yarn test && yarn start prettier && yarn start tslintFix'

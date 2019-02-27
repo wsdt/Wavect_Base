@@ -5,11 +5,7 @@ export const GETSTREAM: stream.StreamClient = getGetStreamConn();
 
 /** Connects to GetStream API for scalable newsfeeds etc. */
 function getGetStreamConn(): stream.StreamClient {
-  return stream.connect(
-    GS_KEY,
-    GS_SECRET,
-    GS_APP_ID
-  );
+  return stream.connect(GS_KEY, GS_SECRET, GS_APP_ID);
 }
 
 /**
