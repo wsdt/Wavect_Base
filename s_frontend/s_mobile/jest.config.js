@@ -1,4 +1,4 @@
-const { defaults: tsJestConfig } = require("ts-jest/presets");
+const { defaults: tsJestConfig } = require("ts-jest/presets")
 
 module.exports = {
   ...tsJestConfig,
@@ -14,4 +14,4 @@ module.exports = {
     }
   },
   modulePaths: ["<rootDir>"]
-};
+}

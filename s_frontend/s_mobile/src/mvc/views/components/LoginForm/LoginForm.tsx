@@ -1,23 +1,23 @@
-import { Formik, FormikActions, FormikProps } from "formik";
-import * as React from "react";
-import { View } from "react-native";
-import { Button, Input } from "react-native-elements";
-import { handleTextInput } from "react-native-formik";
-import p from "../../../../scss/parseScss";
+import { Formik, FormikActions, FormikProps } from "formik"
+import * as React from "react"
+import { View } from "react-native"
+import { Button, Input } from "react-native-elements"
+import { handleTextInput } from "react-native-formik"
+import p from "../../../../scss/parseScss"
 
-import * as baseStyle from "../../../../scss/base.scss";
-import * as formStyle from "../../../../scss/form.scss";
-import { notImplementedSync } from "../../../controllers/WarningsController";
-import { ILoginFormValues } from "./LoginForm.interfaces";
-import validationYupSchema from "./LoginForm.yup";
+import * as baseStyle from "../../../../scss/base.scss"
+import * as formStyle from "../../../../scss/form.scss"
+import { notImplementedSync } from "../../../controllers/WarningsController"
+import { ILoginFormValues } from "./LoginForm.interfaces"
+import validationYupSchema from "./LoginForm.yup"
 
-const FormikInput = handleTextInput(Input);
-const defaultFormValues: ILoginFormValues = { email: "", password: "" };
+const FormikInput = handleTextInput(Input)
+const defaultFormValues: ILoginFormValues = { email: "", password: "" }
 
 export class LoginForm extends React.Component<any, any> {
   public state = {
     pwdHidden: true
-  };
+  }
 
   public render() {
     return (
@@ -32,7 +32,7 @@ export class LoginForm extends React.Component<any, any> {
           this.renderForm(formikBag)
         }
       />
-    );
+    )
   }
 
   /** Renders the whole login form (incl. form validation, state management, logic, etc.) */
@@ -44,7 +44,7 @@ export class LoginForm extends React.Component<any, any> {
     isSubmitting
   }: FormikProps<ILoginFormValues>) => {
     // Which icon to show when pwd input (not) hidden?
-    const rightPwdIcon = this.state.pwdHidden ? "eye" : "eye-off";
+    const rightPwdIcon = this.state.pwdHidden ? "eye" : "eye-off"
 
     return (
       <View style={p(baseStyle.container)}>
@@ -119,8 +119,8 @@ export class LoginForm extends React.Component<any, any> {
           containerStyle={p(formStyle.btn)}
         />
       </View>
-    );
-  };
+    )
+  }
 
   /**
    * Toggles the visibility of the password field. On first click pwd will be readable, on every 2nd click
@@ -131,31 +131,31 @@ export class LoginForm extends React.Component<any, any> {
       return {
         ...prevState,
         pwdHidden: !prevState.pwdHidden
-      };
-    });
-  };
+      }
+    })
+  }
 
   private onLoginBtnPress = (
     values: ILoginFormValues,
     formikBag: FormikActions<ILoginFormValues>
   ) => {
-    formikBag.setSubmitting(true);
+    formikBag.setSubmitting(true)
 
     // TODO implement real login
-    notImplementedSync();
+    notImplementedSync()
 
     setTimeout(() => {
-      formikBag.setSubmitting(false);
+      formikBag.setSubmitting(false)
       // when successful navigate to next page
-    }, 2000);
-  };
+    }, 2000)
+  }
 
   private onRegisterBtnPress = () => {
-    this.props.navigation.navigate("RegistrationScreen");
-  };
+    this.props.navigation.navigate("RegistrationScreen")
+  }
 
   private onPwdForgottenBtnPress = () => {
     // TODO
-    notImplementedSync();
-  };
+    notImplementedSync()
+  }
 }

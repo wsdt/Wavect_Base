@@ -3,9 +3,9 @@ import {
   NavigationRouteConfigMap,
   NavigationScreenOptions,
   StackNavigatorConfig
-} from "react-navigation";
-import { LoginScreen } from "../views/pages/LoginScreen";
-import { RegistrationScreen } from "../views/pages/RegistrationScreen";
+} from "react-navigation"
+import { LoginScreen } from "../views/pages/LoginScreen"
+import { RegistrationScreen } from "../views/pages/RegistrationScreen"
 
 /**
  * You can provide custom navigationoptions for your nav bar for each page.
@@ -19,13 +19,13 @@ const defaultNavigationOptions: NavigationScreenOptions = {
   headerTitleStyle: {
     fontWeight: "bold"
   }
-};
+}
 
 /** You can define additional options for our router here */
 const routerOptions: StackNavigatorConfig = {
   defaultNavigationOptions,
   initialRouteName: "LoginScreen"
-};
+}
 
 /**
  * Add here your routes as key-value pairs (if key == value, you can
@@ -34,12 +34,12 @@ const routerOptions: StackNavigatorConfig = {
 const routes: NavigationRouteConfigMap = {
   LoginScreen,
   RegistrationScreen
-};
+}
 
 /**
  * This navigator is used by the root component to assign all routes to
  * our app.
  */
-const AppNavigator = createStackNavigator(routes, routerOptions);
+const AppNavigator = createStackNavigator(routes, routerOptions)
 
-export default AppNavigator;
+export default AppNavigator

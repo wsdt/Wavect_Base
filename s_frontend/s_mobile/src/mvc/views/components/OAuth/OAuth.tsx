@@ -1,15 +1,15 @@
-import * as React from "react";
-import { TouchableOpacity, View } from "react-native";
-import { SocialIcon } from "react-native-elements";
-import * as styleBase from "../../../../scss/base.scss";
-import p from "../../../../scss/parseScss";
+import * as React from "react"
+import { TouchableOpacity, View } from "react-native"
+import { SocialIcon } from "react-native-elements"
+import * as styleBase from "../../../../scss/base.scss"
+import p from "../../../../scss/parseScss"
 
-import { OAuthFacebook } from "../../../models/oauth/oAuthFacebook";
-import { OAuthGithub } from "../../../models/oauth/oAuthGithub";
-import { OAuthInstagram } from "../../../models/oauth/oAuthInstagram";
-import { OAuthLinkedin } from "../../../models/oauth/oAuthLinkedin";
-import { OAuthTwitter } from "../../../models/oauth/oAuthTwitter";
-import { OAuthYoutube } from "../../../models/oauth/oAuthYoutube";
+import { OAuthFacebook } from "../../../models/oauth/oAuthFacebook"
+import { OAuthGithub } from "../../../models/oauth/oAuthGithub"
+import { OAuthInstagram } from "../../../models/oauth/oAuthInstagram"
+import { OAuthLinkedin } from "../../../models/oauth/oAuthLinkedin"
+import { OAuthTwitter } from "../../../models/oauth/oAuthTwitter"
+import { OAuthYoutube } from "../../../models/oauth/oAuthYoutube"
 
 export class OAuth extends React.Component {
   public render() {
@@ -69,6 +69,6 @@ export class OAuth extends React.Component {
           </TouchableOpacity>
         </View>
       </View>
-    );
+    )
   }
 }
