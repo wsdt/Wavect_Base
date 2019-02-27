@@ -1,6 +1,5 @@
-import {_oAuthParent} from "./_oAuthParent"
+import { _oAuthParent } from "./_oAuthParent"
 
 export class OAuthTwitter extends _oAuthParent {
-    // TODO: Overwrite authenticate
-
+  // TODO: Overwrite authenticate
 }

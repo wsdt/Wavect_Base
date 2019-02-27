@@ -28,6 +28,6 @@ module.exports = {
     prettier: 'prettier --write "**/*.{ts,tsx,js,jsx,scss,css,json}"',
     tslint: 'tslint -p ./tsconfig.json',
     tslintFix: 'tslint --fix -p ./tsconfig.json',
-    evaluate: 'npm test && npm start prettier && npm start tslintFix'
+    evaluate: 'yarn test && yarn start prettier && yarn start tslintFix'
   }
 }

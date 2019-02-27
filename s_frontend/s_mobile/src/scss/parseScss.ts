@@ -16,10 +16,10 @@
  * To avoid such long unnecessary castings I made this function (with a short name). So, we can do this:
  *      <View style={p(styleBase.container)}>
  */
-import {StyleProp, ViewStyle} from "react-native"
+import { StyleProp, ViewStyle } from "react-native"
 
-function p(parseableStyle:string) : StyleProp<ViewStyle> {
-    return (parseableStyle as StyleProp<ViewStyle>)
+function p(parseableStyle: string): StyleProp<ViewStyle> {
+  return parseableStyle as StyleProp<ViewStyle>
 }
 
 export default p

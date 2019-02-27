@@ -1,4 +1,3 @@
-
 // LAYOUT: https://medium.com/wix-engineering/the-full-react-native-layout-cheat-sheet-a4147802405c
 // FORM VALIDATOR YUP: TODO: https://medium.com/fotontech/react-native-formik-yup-%EF%B8%8F-18465e020ea0
 // OAUTH FIREBASE (EASY AND COMPLETELY FREE): TODO: https://console.firebase.google.com/project/bekind-ff90c/authentication/providers
@@ -9,13 +8,13 @@
 /** IMPORTANT NOTE: The current SCSS parser does not support inheritance! Thus, please do not nest css classes! */
 
 $primaryColor: #0275d8;
-$primaryBackgroundColor: #FFFFFE;
+$primaryBackgroundColor: #fffffe;
 $defaultWidth: 85%;
 
 .page {
   margin-top: 20px;
   background-color: $primaryBackgroundColor;
-  flex:1;
+  flex: 1;
 }
 
 .center {
@@ -51,4 +50,3 @@ $defaultWidth: 85%;
   width: 50px;
   height: 50px;
 }
-

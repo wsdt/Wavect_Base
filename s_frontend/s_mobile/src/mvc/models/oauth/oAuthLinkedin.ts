@@ -1,6 +1,5 @@
-import {_oAuthParent} from "./_oAuthParent"
+import { _oAuthParent } from "./_oAuthParent"
 
 export class OAuthLinkedin extends _oAuthParent {
-    // TODO: Overwrite authenticate
-
+  // TODO: Overwrite authenticate
 }
