@@ -5,7 +5,7 @@ var path = require("path");
 exports.PORT = 8090;
 exports.HTTP2_OPTIONS = {
     cert: fs.readFileSync(path.resolve(__dirname, "..", "secrets", "server-cert.pem")),
-    key: fs.readFileSync(path.resolve(__dirname, "..", "secrets", "server-key.pem"))
+    key: fs.readFileSync(path.resolve(__dirname, "..", "secrets", "server-key.pem")),
 };
 exports.CLIENT_WEB = "https://localhost:8080";
 //# sourceMappingURL=app.constants.js.map

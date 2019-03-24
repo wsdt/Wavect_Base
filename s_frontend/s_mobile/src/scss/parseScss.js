@@ -1,6 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+"use strict"
+Object.defineProperty(exports, "__esModule", { value: true })
 function p(parseableStyle) {
-    return parseableStyle;
+    return parseableStyle
 }
-exports.default = p;
+exports.default = p

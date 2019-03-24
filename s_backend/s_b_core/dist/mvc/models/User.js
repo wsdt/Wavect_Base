@@ -61,14 +61,14 @@ var User = (function () {
     });
     User.getUserById = function (id) {
         return new User(id, "Max", "Mustermann", "#", [
-            new User("blaUser", "Katharina", "Summer", "#", [])
+            new User("blaUser", "Katharina", "Summer", "#", []),
         ]);
     };
     User.prototype.getPosts = function () {
         return [
             new Post_1.Post("First post", "first descr", new Date().toDateString(), "p", "#", this.id),
             new Post_1.Post("Sec post", "descr", new Date().toISOString(), "p", "#", this.id),
-            new Post_1.Post("Third post", "description", new Date().toLocaleString(), "p", "#", this.id)
+            new Post_1.Post("Third post", "description", new Date().toLocaleString(), "p", "#", this.id),
         ];
     };
     User.prototype.getPostsByFollowings = function () {

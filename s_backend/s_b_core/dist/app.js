@@ -3,10 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var bodyParser = require("body-parser");
 var cors = require("cors");
 var express = require("express");
+var graphqlHTTP = require("express-graphql");
 var helmet = require("helmet");
 var morgan = require("morgan");
 var http2 = require("spdy");
 var app_constants_1 = require("./app.constants");
+var graphql_queries_1 = require("./graphql/graphql_queries");
 var routes = require("./routes/routes");
 var App = (function () {
     function App() {
@@ -29,7 +31,12 @@ var App = (function () {
         this.app.use(bodyParser.json());
         this.app.use(bodyParser.urlencoded({ extended: false }));
         this.app.use(cors({
-            origin: app_constants_1.CLIENT_WEB
+            origin: app_constants_1.CLIENT_WEB,
+        }));
+        this.app.use("/graphql", graphqlHTTP({
+            graphiql: true,
+            rootValue: graphql_queries_1.graphqlRoot,
+            schema: graphql_queries_1.graphqlSchema,
         }));
         this.app.use("/", routes);
         this.app.use(helmet());

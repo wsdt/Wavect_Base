@@ -1,8 +1,10 @@
 import * as bodyParser from "body-parser"
 import * as cors from "cors"
 import * as express from "express"
+import * as graphqlHTTP from "express-graphql"
 import * as helmet from "helmet"
 import * as morgan from "morgan"
+
 /**
  * Using spdy as http2 too, but not that fast as built-in module of node.JS.
  * But unfortunately, http2-module does not support express yet, so we have to
@@ -10,6 +12,7 @@ import * as morgan from "morgan"
  */
 import * as http2 from "spdy"
 import { CLIENT_WEB, HTTP2_OPTIONS, PORT } from "./app.constants"
+import {graphqlRoot, graphqlSchema} from "./graphql/graphql_queries"
 import * as routes from "./routes/routes"
 
 /**
@@ -56,7 +59,14 @@ class App {
             })
         )
 
-        // Add routes
+        // graphql
+        this.app.use("/graphql", graphqlHTTP({
+            graphiql: true,
+            rootValue: graphqlRoot,
+            schema: graphqlSchema,
+        }))
+
+        // Add routes (sse + rest api)
         this.app.use("/", routes)
 
         // For additional security

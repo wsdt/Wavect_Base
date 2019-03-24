@@ -26,10 +26,9 @@ var GetStreamParent = (function (_super) {
         return "PLACE_SERVERSIDE_TOKEN_HERE";
     };
     GetStreamParent.prototype.render = function () {
-        return <react_navigation_1.SafeAreaView style={{ flex: 1 }} forceInset={{ top: "always" }}>
-            <expo_activity_feed_1.StreamApp apiKey={GetStreamParent_secrets_1.GS_API_KEY} appId={GetStreamParent_secrets_1.GS_APP_ID} token={function () { return GetStreamParent.requestGetstreamToken(); }}>
-            </expo_activity_feed_1.StreamApp>
-        </react_navigation_1.SafeAreaView>;
+        return (<react_navigation_1.SafeAreaView style={{ flex: 1 }} forceInset={{ top: "always" }}>
+                <expo_activity_feed_1.StreamApp apiKey={GetStreamParent_secrets_1.GS_API_KEY} appId={GetStreamParent_secrets_1.GS_APP_ID} token={function () { return GetStreamParent.requestGetstreamToken(); }}/>
+            </react_navigation_1.SafeAreaView>);
     };
     return GetStreamParent;
 }(React.Component));

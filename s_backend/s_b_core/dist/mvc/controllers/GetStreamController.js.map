@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"version":3,"file":"GetStreamController.js","sourceRoot":"","sources":["../../../src/mvc/controllers/GetStreamController.ts"],"names":[],"mappings":";;AAAA,kCAAmC;AACnC,iFAA8E;AAEjE,QAAA,SAAS,GAAwB,gBAAgB,EAAE,CAAA;AAGhE,SAAS,gBAAgB;IACvB,OAAO,MAAM,CAAC,OAAO,CACnB,sCAAM,EACN,yCAAS,EACT,yCAAS,CACV,CAAA;AACH,CAAC;AAQD,SAAgB,eAAe,CAAC,MAAc;IAG5C,OAAO,iBAAS,CAAC,eAAe,CAAC,MAAM,CAAC,CAAA;AAC1C,CAAC;AAJD,0CAIC"}
-=======
-{"version":3,"file":"GetStreamController.js","sourceRoot":"","sources":["../../../src/mvc/controllers/GetStreamController.ts"],"names":[],"mappings":";;AAAA,kCAAmC;AACnC,iFAA8E;AAEjE,QAAA,SAAS,GAAwB,gBAAgB,EAAE,CAAA;AAGhE,SAAS,gBAAgB;IACvB,OAAO,MAAM,CAAC,OAAO,CACnB,sCAAM,EACN,yCAAS,EACT,yCAAS,CACV,CAAA;AACH,CAAC;AASD,SAAgB,eAAe,CAAC,MAAc;IAG5C,OAAO,iBAAS,CAAC,eAAe,CAAC,MAAM,CAAC,CAAA;AAC1C,CAAC;AAJD,0CAIC"}
->>>>>>> 266ca5303892defaabd5c85e28c665ef50898914
+{"version":3,"file":"GetStreamController.js","sourceRoot":"","sources":["../../../src/mvc/controllers/GetStreamController.ts"],"names":[],"mappings":";;AAAA,kCAAmC;AACnC,iFAA8E;AAEjE,QAAA,SAAS,GAAwB,gBAAgB,EAAE,CAAA;AAGhE,SAAS,gBAAgB;IACrB,OAAO,MAAM,CAAC,OAAO,CAAC,sCAAM,EAAE,yCAAS,EAAE,yCAAS,CAAC,CAAA;AACvD,CAAC;AAQD,SAAgB,eAAe,CAAC,MAAc;IAG1C,OAAO,iBAAS,CAAC,eAAe,CAAC,MAAM,CAAC,CAAA;AAC5C,CAAC;AAJD,0CAIC"}

@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"version":3,"file":"auth.js","sourceRoot":"","sources":["../../../../src/routes/api/v1/auth.ts"],"names":[],"mappings":";AAAA,iCAAkC;AAElC,IAAM,MAAM,GAAG,OAAO,CAAC,MAAM,EAAE,CAAA;AAwB/B,iBAAS,MAAM,CAAA"}
-=======
-{"version":3,"file":"auth.js","sourceRoot":"","sources":["../../../../src/routes/api/v1/auth.ts"],"names":[],"mappings":";AAAA,iCAAkC;AAClC,oFAA4E;AAE5E,IAAM,MAAM,GAAG,OAAO,CAAC,MAAM,EAAE,CAAA;AAG/B,MAAM,CAAC,KAAK,CAAC,eAAe,CAAC,CAAC,GAAG,CAAC,UAAC,GAAG,EAAE,GAAG;IACvC,IAAM,MAAM,GAAG,GAAG,CAAC,MAAM,CAAC,MAAM,CAAA;IAGhC,GAAG,CAAC,IAAI,CAAC,EAAC,OAAO,EAAC,qCAAe,CAAC,MAAM,CAAC,EAAC,CAAC,CAAA;AAC/C,CAAC,CAAC,CAAA;AAiBF,iBAAS,MAAM,CAAA"}
->>>>>>> 266ca5303892defaabd5c85e28c665ef50898914
+{"version":3,"file":"auth.js","sourceRoot":"","sources":["../../../../src/routes/api/v1/auth.ts"],"names":[],"mappings":";AAAA,iCAAkC;AAClC,oFAA8E;AAE9E,IAAM,MAAM,GAAG,OAAO,CAAC,MAAM,EAAE,CAAA;AAE/B,MAAM,CAAC,KAAK,CAAC,eAAe,CAAC,CAAC,GAAG,CAAC,UAAC,GAAG,EAAE,GAAG;IACvC,IAAM,MAAM,GAAG,GAAG,CAAC,MAAM,CAAC,MAAM,CAAA;IAGhC,GAAG,CAAC,IAAI,CAAC,EAAE,KAAK,EAAE,qCAAe,CAAC,MAAM,CAAC,EAAE,CAAC,CAAA;AAChD,CAAC,CAAC,CAAA;AAiBF,iBAAS,MAAM,CAAA"}
