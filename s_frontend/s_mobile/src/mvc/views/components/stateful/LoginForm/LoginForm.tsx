@@ -9,7 +9,7 @@ import * as baseStyle from "../../../../../scss/base.scss"
 import * as formStyle from "../../../../../scss/form.scss"
 import { notImplementedSync } from "../../../../controllers/WarningsController"
 import { ILoginFormValues } from "./LoginForm.interfaces"
-import {ILoginFormState} from "./ILoginForm.state"
+import { ILoginFormState } from "./ILoginForm.state"
 import validationYupSchema from "./LoginForm.yup"
 
 const defaultFormValues: ILoginFormValues = { email: "", password: "" }
@@ -21,7 +21,7 @@ export class LoginForm extends React.Component<any, ILoginFormState> {
         pwdHidden: true,
     }
 
-    public render() {
+    public render(): React.ReactNode {
         return (
             <Formik
                 initialValues={defaultFormValues}

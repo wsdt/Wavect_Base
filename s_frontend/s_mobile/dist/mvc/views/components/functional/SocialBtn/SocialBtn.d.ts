@@ -1,3 +1,3 @@
-/// <reference types="react" />
+import * as React from "react";
 import { ISocialBtnProps } from "./ISocialBtn.props";
-export declare const SocialBtn: (props: ISocialBtnProps) => JSX.Element;
+export declare const SocialBtn: (props: ISocialBtnProps) => React.ReactNode;

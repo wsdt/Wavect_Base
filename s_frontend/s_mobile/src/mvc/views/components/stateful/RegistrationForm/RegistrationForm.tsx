@@ -5,7 +5,7 @@ import { Button } from "react-native-elements"
 import { notImplementedSync } from "../../../../controllers/WarningsController"
 import { CustomFormInput } from "../../functional/CustomFormInput/CustomFormInput"
 import IAcceptable from "./RegistrationForm.interfaces"
-import {IRegistrationFormState} from "./IRegistrationForm.state"
+import { IRegistrationFormState } from "./IRegistrationForm.state"
 import yup from "./RegistrationForm.yup"
 
 const acceptableValues: IAcceptable = {
@@ -23,7 +23,7 @@ export class RegistrationForm extends Component<any, IRegistrationFormState> {
         hiddenCheck: true,
     }
 
-    public render() {
+    public render(): React.ReactNode {
         return (
             <Formik
                 initialValues={acceptableValues}

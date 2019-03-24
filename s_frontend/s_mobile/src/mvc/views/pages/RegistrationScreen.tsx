@@ -9,7 +9,7 @@ export class RegistrationScreen extends React.Component<any, any> {
         title: "Registration",
     }
 
-    public render() {
+    public render(): React.ReactNode {
         return (
             <View style={p(styleBase.page)}>
                 <RegistrationForm {...this.props} />

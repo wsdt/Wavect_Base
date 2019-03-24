@@ -1,3 +1,3 @@
-/// <reference types="react" />
+import * as React from "react";
 import { IBeKindIconProps } from "./IBeKindIconProps";
-export declare const BeKindIcon: (props: IBeKindIconProps) => JSX.Element;
+export declare const BeKindIcon: (props: IBeKindIconProps) => React.ReactNode;

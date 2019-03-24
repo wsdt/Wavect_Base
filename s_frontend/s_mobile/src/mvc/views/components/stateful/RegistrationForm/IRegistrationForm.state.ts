@@ -1,5 +1,4 @@
-
 export interface IRegistrationFormState {
-    hidden: boolean,
-    hiddenCheck: boolean,
+    hidden: boolean
+    hiddenCheck: boolean
 }

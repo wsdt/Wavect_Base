@@ -12,7 +12,7 @@ export class LoginScreen extends React.Component<any, any> {
         title: "Login",
     }
 
-    public render() {
+    public render(): React.ReactNode {
         /* Pass all props down to child component (e.g. navigation props! as screen is rendered)! */
         return (
             <View style={p(styleBase.page)}>

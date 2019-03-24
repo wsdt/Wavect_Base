@@ -4,7 +4,7 @@ export declare class LoginForm extends React.Component<any, ILoginFormState> {
     state: {
         pwdHidden: boolean;
     };
-    render(): JSX.Element;
+    render(): React.ReactNode;
     private renderForm;
     private togglePwdVisibility;
     private onLoginBtnPress;

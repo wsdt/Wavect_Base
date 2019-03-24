@@ -1,3 +1,3 @@
 export interface ILoginFormState {
-    pwdHidden: boolean,
+    pwdHidden: boolean
 }

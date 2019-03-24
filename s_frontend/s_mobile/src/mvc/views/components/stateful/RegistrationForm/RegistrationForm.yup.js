@@ -1,7 +1,9 @@
-"use strict"
-Object.defineProperty(exports, "__esModule", { value: true })
-var Yup = require("yup")
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Yup = require("yup");
 var validationScheme = Yup.object().shape({
+    firstname: Yup.string().required(),
+    lastname: Yup.string().required(),
     email: Yup.string()
         .required()
         .email(),
@@ -9,8 +11,6 @@ var validationScheme = Yup.object().shape({
         .required()
         .email()
         .oneOf([Yup.ref("email"), null], "Emails must match! "),
-    firstname: Yup.string().required(),
-    lastname: Yup.string().required(),
     pw: Yup.string()
         .required()
         .min(8)
@@ -20,5 +20,5 @@ var validationScheme = Yup.object().shape({
         .min(8)
         .max(32)
         .oneOf([Yup.ref("pw"), null], "Password must match!"),
-})
-exports.default = validationScheme
+});
+exports.default = validationScheme;
