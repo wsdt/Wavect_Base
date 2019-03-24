@@ -1,21 +1,22 @@
-import {Formik, FormikActions, FormikProps} from "formik"
+import { Formik, FormikActions, FormikProps } from "formik"
 import * as React from "react"
-import {View} from "react-native"
-import {Button} from "react-native-elements"
+import { View } from "react-native"
+import { Button } from "react-native-elements"
 import p from "../../../../../scss/parseScss"
-import {CustomFormInput} from "../../functional/CustomFormInput/CustomFormInput"
+import { CustomFormInput } from "../../functional/CustomFormInput/CustomFormInput"
 
 import * as baseStyle from "../../../../../scss/base.scss"
 import * as formStyle from "../../../../../scss/form.scss"
-import {notImplementedSync} from "../../../../controllers/WarningsController"
-import {ILoginFormValues} from "./LoginForm.interfaces"
+import { notImplementedSync } from "../../../../controllers/WarningsController"
+import { ILoginFormValues } from "./LoginForm.interfaces"
+import {ILoginFormState} from "./ILoginForm.state"
 import validationYupSchema from "./LoginForm.yup"
 
-const defaultFormValues: ILoginFormValues = {email: "", password: ""}
+const defaultFormValues: ILoginFormValues = { email: "", password: "" }
 
 // TODO: https://medium.com/@rajaraodv/securing-react-redux-apps-with-jwt-tokens-fcfe81356ea0
 // After login return JWT and then use it for session auth
-export class LoginForm extends React.Component<any, any> {
+export class LoginForm extends React.Component<any, ILoginFormState> {
     public state = {
         pwdHidden: true,
     }
@@ -38,12 +39,12 @@ export class LoginForm extends React.Component<any, any> {
 
     /** Renders the whole login form (incl. form validation, state management, logic, etc.) */
     private renderForm = ({
-                              values,
-                              handleSubmit,
-                              touched,
-                              errors,
-                              isSubmitting,
-                          }: FormikProps<ILoginFormValues>) => {
+        values,
+        handleSubmit,
+        touched,
+        errors,
+        isSubmitting,
+    }: FormikProps<ILoginFormValues>) => {
         // Which icon to show when pwd input (not) hidden?
         const rightPwdIcon = this.state.pwdHidden ? "eye" : "eye-off"
 
@@ -148,7 +149,10 @@ export class LoginForm extends React.Component<any, any> {
         })
     }
 
-    private onLoginBtnPress = (values: ILoginFormValues, formikBag: FormikActions<ILoginFormValues>) => {
+    private onLoginBtnPress = (
+        values: ILoginFormValues,
+        formikBag: FormikActions<ILoginFormValues>
+    ) => {
         formikBag.setSubmitting(true)
 
         // TODO implement real login

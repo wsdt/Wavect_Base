@@ -3,8 +3,9 @@ import React, { Component } from "react"
 import { View } from "react-native"
 import { Button } from "react-native-elements"
 import { notImplementedSync } from "../../../../controllers/WarningsController"
-import { CustomFormInput} from "../../functional/CustomFormInput/CustomFormInput"
+import { CustomFormInput } from "../../functional/CustomFormInput/CustomFormInput"
 import IAcceptable from "./RegistrationForm.interfaces"
+import {IRegistrationFormState} from "./IRegistrationForm.state"
 import yup from "./RegistrationForm.yup"
 
 const acceptableValues: IAcceptable = {
@@ -16,7 +17,7 @@ const acceptableValues: IAcceptable = {
     pwCheck: "",
 }
 
-export class RegistrationForm extends Component {
+export class RegistrationForm extends Component<any, IRegistrationFormState> {
     public state = {
         hidden: true,
         hiddenCheck: true,
