@@ -1,9 +1,11 @@
 import { buildSchema } from "graphql"
-import {createUserToken} from "../mvc/controllers/GetStreamController"
+import { createUserToken } from "../mvc/controllers/GetStreamController"
+
+// TODO: https://medium.com/@MichalLytek/graphql-typescript-typegraphql-ba0225cb4bed
 
 // Resolver functions
 export const graphqlRoot = {
-    getStreamToken: ({userId}):string => {
+    getStreamToken: ({ userId }): string => {
         return createUserToken(userId)
     },
 }
