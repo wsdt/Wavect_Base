@@ -12,7 +12,7 @@ import * as morgan from "morgan"
  */
 import * as http2 from "spdy"
 import { CLIENT_WEB, HTTP2_OPTIONS, PORT } from "./app.constants"
-import {graphqlRoot, graphqlSchema} from "./graphql/graphql_queries"
+import { graphqlRoot, graphqlSchema } from "./graphql/graphql_queries"
 import * as routes from "./routes/routes"
 
 /**
@@ -60,11 +60,14 @@ class App {
         )
 
         // graphql
-        this.app.use("/graphql", graphqlHTTP({
-            graphiql: true,
-            rootValue: graphqlRoot,
-            schema: graphqlSchema,
-        }))
+        this.app.use(
+            "/graphql",
+            graphqlHTTP({
+                graphiql: true,
+                rootValue: graphqlRoot,
+                schema: graphqlSchema,
+            })
+        )
 
         // Add routes (sse + rest api)
         this.app.use("/", routes)

@@ -14,7 +14,7 @@ function getGetStreamConn(): stream.StreamClient {
  *
  * This function should be called on registration or on login.
  */
-export function createUserToken(userId: string) {
+export function createUserToken(userId: string): string {
     // does work, just typescript definition is wrong
     // maybe alt enter and add to getstream lib file per right click
     return GETSTREAM.createUserToken(userId)
