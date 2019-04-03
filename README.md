@@ -1,4 +1,5 @@
 # BeKind_Playground [![HitCount](http://hits.dwyl.com/wsdt/BeKind_Playground.svg)](http://hits.dwyl.com/wsdt/BeKind_Playground)
+Please use **Yarn** instead of **Npm** as Npm might cause problems in combination with Expo. 
 
 ## Used external tools 
 ### Snyk - Dependency security vulnerabilities
