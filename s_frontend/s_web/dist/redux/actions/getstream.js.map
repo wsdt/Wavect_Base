@@ -1,0 +1,1 @@
+{"version":3,"file":"getstream.js","sourceRoot":"","sources":["../../../src/redux/actions/getstream.ts"],"names":[],"mappings":";;AACA,6DAA0D;AAE7C,QAAA,YAAY,GAAuB,UAC5C,QAAgB,EAChB,SAAiB;;IAChB,OAAA,CAAC;QACF,IAAI,EAAE,wCAAkB;QACxB,UAAU;YACN,GAAC,QAAQ,IAAG;gBAER,SAAS,WAAA;aACZ;eACJ;KACJ,CAAC;AARG,CAQH,CAAA"}

@@ -8,9 +8,6 @@ import { OAuth } from "../components/stateful/OAuth/OAuth"
 // <Header leftComponent={<BeKindIcon width={30} height={30} />} centerComponent={{text: "Authentication", style: {color: "#fff"}}} containerStyle={p(styleBase.header)}/>
 
 export class LoginScreen extends React.Component<any, any> {
-    public static navigationOptions = {
-        title: "Login",
-    }
 
     public render(): React.ReactNode {
         /* Pass all props down to child component (e.g. navigation props! as screen is rendered)! */

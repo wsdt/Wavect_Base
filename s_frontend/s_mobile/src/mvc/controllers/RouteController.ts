@@ -5,6 +5,7 @@ import {
     StackNavigatorConfig,
 } from "react-navigation"
 import { LoginScreen } from "../views/pages/LoginScreen"
+import { ProfileScreen } from "../views/pages/ProfileScreen"
 import { RegistrationScreen } from "../views/pages/RegistrationScreen"
 
 /**
@@ -24,7 +25,8 @@ const defaultNavigationOptions: NavigationScreenOptions = {
 /** You can define additional options for our router here */
 const routerOptions: StackNavigatorConfig = {
     defaultNavigationOptions,
-    initialRouteName: "LoginScreen",
+    initialRouteName: "LoginScreen", // Start page
+    initialRouteParams: {},
 }
 
 /**
@@ -32,8 +34,24 @@ const routerOptions: StackNavigatorConfig = {
  * use the shorthand by just writing the value).
  */
 const routes: NavigationRouteConfigMap = {
-    LoginScreen,
-    RegistrationScreen,
+    LoginScreen: {
+        screen: LoginScreen,
+        navigationOptions: () => ({
+            title: "Login",
+        })
+    },
+    ProfileScreen: {
+        screen: ProfileScreen,
+        navigationOptions: () => ({
+            title: "Profile",
+        })
+    },
+    RegistrationScreen: {
+        screen: RegistrationScreen,
+        navigationOptions: () => ({
+            title: "Registration"
+        })
+    },
 }
 
 /**

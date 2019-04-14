@@ -17,7 +17,7 @@ const defaultFormValues: ILoginFormValues = { email: "", password: "" }
 // TODO: https://medium.com/@rajaraodv/securing-react-redux-apps-with-jwt-tokens-fcfe81356ea0
 // After login return JWT and then use it for session auth
 export class LoginForm extends React.Component<any, ILoginFormState> {
-    public state = {
+    public state:ILoginFormState = {
         pwdHidden: true,
     }
 
@@ -70,7 +70,7 @@ export class LoginForm extends React.Component<any, ILoginFormState> {
                     errorMessage={
                         touched.email && errors.email
                             ? errors.email.toString()
-                            : undefined
+                            : null
                     }
                 />
 
@@ -96,7 +96,7 @@ export class LoginForm extends React.Component<any, ILoginFormState> {
                     errorMessage={
                         touched.password && errors.password
                             ? errors.password.toString()
-                            : undefined
+                            : null
                     }
                     rightIconContainerStyle={p(formStyle.rightIconContainer)}
                     rightIcon={{
@@ -161,6 +161,7 @@ export class LoginForm extends React.Component<any, ILoginFormState> {
         setTimeout(() => {
             formikBag.setSubmitting(false)
             // when successful navigate to next page
+            // this.props.navigation.navigate("ProfileScreen")
         }, 2000)
     }
 

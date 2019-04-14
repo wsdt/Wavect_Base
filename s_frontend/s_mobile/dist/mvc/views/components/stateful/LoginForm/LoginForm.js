@@ -53,7 +53,7 @@ var LoginForm = (function (_super) {
                 type: "feather",
             }} containerStyle={parseScss_1.default(formStyle.listElem)} labelStyle={parseScss_1.default(formStyle.textLabel)} leftIconContainerStyle={parseScss_1.default(formStyle.leftIconContainer)} keyboardType="email-address" errorMessage={touched.email && errors.email
                 ? errors.email.toString()
-                : undefined}/>
+                : null}/>
 
                 <CustomFormInput_1.CustomFormInput label={"Password"} name="password" type="password" placeholder={"Not 1234"} secureTextEntry={_this.state.pwdHidden} editable={!isSubmitting} autoCapitalize="none" autoCorrect={false} value={values.password} leftIcon={{
                 color: "grey",
@@ -62,7 +62,7 @@ var LoginForm = (function (_super) {
                 type: "feather",
             }} containerStyle={parseScss_1.default(formStyle.listElem)} labelStyle={parseScss_1.default(formStyle.textLabel)} leftIconContainerStyle={parseScss_1.default(formStyle.leftIconContainer)} errorMessage={touched.password && errors.password
                 ? errors.password.toString()
-                : undefined} rightIconContainerStyle={parseScss_1.default(formStyle.rightIconContainer)} rightIcon={{
+                : null} rightIconContainerStyle={parseScss_1.default(formStyle.rightIconContainer)} rightIcon={{
                 color: "grey",
                 name: rightPwdIcon,
                 onPress: _this.togglePwdVisibility,
