@@ -15,7 +15,7 @@ var defaultNavigationOptions = {
 };
 var routerOptions = {
     defaultNavigationOptions: defaultNavigationOptions,
-    initialRouteName: "LoginScreen",
+    initialRouteName: "ProfileScreen",
     initialRouteParams: {},
 };
 var routes = {

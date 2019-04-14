@@ -10,10 +10,11 @@ export class ProfileScreen extends React.Component<any, any> {
 
     public render(): React.ReactNode {
         /* Pass all props down to child component (e.g. navigation props! as screen is rendered)! */
+        /* TODO: Real ID from our db*/
         return (
             <View style={p(styleBase.page)}>
                 <View style={p(styleBase.center)}>
-                   <GetStreamParent {...this.props} userId="ERROR"/> {/* TODO: Real ID from our db*/}
+                   <GetStreamParent {...this.props} userId="ERROR"/>
                 </View>
             </View>
         )

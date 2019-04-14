@@ -25,7 +25,7 @@ const defaultNavigationOptions: NavigationScreenOptions = {
 /** You can define additional options for our router here */
 const routerOptions: StackNavigatorConfig = {
     defaultNavigationOptions,
-    initialRouteName: "LoginScreen", // Start page
+    initialRouteName: "ProfileScreen", // Start page
     initialRouteParams: {},
 }
 

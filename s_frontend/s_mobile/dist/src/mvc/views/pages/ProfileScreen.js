@@ -26,7 +26,7 @@ var ProfileScreen = (function (_super) {
     ProfileScreen.prototype.render = function () {
         return (<react_native_1.View style={parseScss_1.default(styleBase.page)}>
                 <react_native_1.View style={parseScss_1.default(styleBase.center)}>
-                   <GetStreamParent_1.GetStreamParent {...this.props} userId="ERROR"/> 
+                   <GetStreamParent_1.GetStreamParent {...this.props} userId="ERROR"/>
                 </react_native_1.View>
             </react_native_1.View>);
     };

@@ -15,6 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var expo_activity_feed_1 = require("expo-activity-feed");
 var React = require("react");
+var react_native_1 = require("react-native");
 var react_navigation_1 = require("react-navigation");
 var App_constants_1 = require("../../../../../../App.constants");
 var GetStreamParent_secrets_1 = require("./GetStreamParent.secrets");
@@ -24,17 +25,28 @@ var GetStreamParent = (function (_super) {
         var _this = _super.call(this, props) || this;
         _this.state = { userToken: "" };
         _this.requestGetstreamToken = function (userId) {
-            fetch(App_constants_1.BACKEND_URL + "/api/v1/auth/" + userId)
+            var TARGET_URI = App_constants_1.BACKEND_URL + "/api/v1/auth/" + userId;
+            fetch(TARGET_URI)
                 .then(function (res) { return res.json(); })
-                .then(function (data) { return _this.setState({ userToken: data.token }); });
+                .then(function (data) { return _this.setState({ userToken: data.token }); })
+                .catch(function (e) {
+                react_native_1.ToastAndroid.show("Could not connect to server.", react_native_1.ToastAndroid.SHORT);
+                console.warn("URI: " + TARGET_URI + ", warning -> " + e.toString());
+            });
         };
         _this.requestGetstreamToken(props.userId);
         return _this;
     }
     GetStreamParent.prototype.render = function () {
-        return (<react_navigation_1.SafeAreaView style={{ flex: 1 }} forceInset={{ top: "always" }}>
-                <expo_activity_feed_1.StreamApp apiKey={GetStreamParent_secrets_1.GS_API_KEY} appId={GetStreamParent_secrets_1.GS_APP_ID} token={this.state.userToken}/>
-            </react_navigation_1.SafeAreaView>);
+        console.log("User token: " + this.state.userToken + " // userId: " + this.props.userId);
+        if (this.state.userToken !== "") {
+            return <react_navigation_1.SafeAreaView style={{ flex: 1 }} forceInset={{ top: "always" }}>
+                <expo_activity_feed_1.StreamApp apiKey={GetStreamParent_secrets_1.GS_KEY} appId={GetStreamParent_secrets_1.GS_APP_ID} token={this.state.userToken}/>
+            </react_navigation_1.SafeAreaView>;
+        }
+        else {
+            return <react_native_1.Text>Loading ...</react_native_1.Text>;
+        }
     };
     return GetStreamParent;
 }(React.Component));
