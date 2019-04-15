@@ -1,6 +1,6 @@
 import App from "./app"
 
-// Start server (ausgelagert für Jest, damit kein Hook offen)
+// Start http2Server (ausgelagert für Jest, damit kein Hook offen)
 App.runServer()
 
-// Major server configurations into app.ts_config()!
+// Major http2Server configurations into app.ts_config()!

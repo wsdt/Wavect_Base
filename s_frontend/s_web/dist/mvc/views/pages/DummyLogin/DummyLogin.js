@@ -79,7 +79,7 @@ var DummyLogin = (function (_super) {
             });
             console.log("DummyLogin:queryGSUserToken: Cookies created.");
             _this.forceUpdate();
-            console.log("DummyLogin:queryGSUserToken: Have set cookie and queried, cached userToken from Getstream on React server -> " +
+            console.log("DummyLogin:queryGSUserToken: Have set cookie and queried, cached userToken from Getstream on React http2Server -> " +
                 data.token);
         })
             .catch(function (err) {

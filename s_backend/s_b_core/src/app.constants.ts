@@ -1,6 +1,9 @@
 import * as fs from "fs"
 import * as path from "path"
 
+/** If false then http 1.1 is used. */
+export const USE_HTTPS:boolean = false
+
 /**
  * Determines on which port the application can be called. Please keep in mind that maybe other
  * applications (e.g. Frontend, db, ...) run on the same machine especially during development!
@@ -8,7 +11,7 @@ import * as path from "path"
 export const PORT = 8090
 
 /**
- * Paths to server certificate and private key for a secure TLS connection. But keep in mind
+ * Paths to http2Server certificate and private key for a secure TLS connection. But keep in mind
  * that the development secrets get pushed to Github (private repo).
  */
 export const HTTP2_OPTIONS = {

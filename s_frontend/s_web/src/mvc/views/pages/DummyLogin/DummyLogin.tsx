@@ -62,7 +62,7 @@ class DummyLogin extends React.Component<any, any> {
                 console.log("DummyLogin:queryGSUserToken: Cookies created.")
                 this.forceUpdate()
                 console.log(
-                    "DummyLogin:queryGSUserToken: Have set cookie and queried, cached userToken from Getstream on React server -> " +
+                    "DummyLogin:queryGSUserToken: Have set cookie and queried, cached userToken from Getstream on React http2Server -> " +
                         data.token
                 )
             })

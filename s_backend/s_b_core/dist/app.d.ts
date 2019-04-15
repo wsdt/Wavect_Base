@@ -1,8 +1,11 @@
+/// <reference types="node" />
 import * as express from "express";
+import * as http from "http";
 import * as http2 from "spdy";
 declare class App {
     app: express.Application;
-    server: http2.Server;
+    http2Server: http2.Server;
+    http1Server: http.Server;
     constructor();
     runServer(): void;
     private config;

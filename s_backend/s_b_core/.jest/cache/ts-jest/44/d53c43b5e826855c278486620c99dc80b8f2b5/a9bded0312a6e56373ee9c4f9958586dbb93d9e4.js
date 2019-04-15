@@ -9,7 +9,7 @@ var io = require("socket.io");
 var App = /** @class */ (function () {
     function App() {
         this.server = http.createServer();
-        this.io = io(this.server);
+        this.io = io(this.http2Server);
         this.app = express();
         this.config();
     }

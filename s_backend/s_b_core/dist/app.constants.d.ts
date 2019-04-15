@@ -1,4 +1,5 @@
 /// <reference types="node" />
+export declare const USE_HTTPS: boolean;
 export declare const PORT = 8090;
 export declare const HTTP2_OPTIONS: {
     cert: Buffer;

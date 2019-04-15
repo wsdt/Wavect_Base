@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require("fs");
 var path = require("path");
+exports.USE_HTTPS = false;
 exports.PORT = 8090;
 exports.HTTP2_OPTIONS = {
     cert: fs.readFileSync(path.resolve(__dirname, "..", "secrets", "server-cert.pem")),

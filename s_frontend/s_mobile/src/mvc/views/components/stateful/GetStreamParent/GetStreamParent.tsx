@@ -36,7 +36,7 @@ export class GetStreamParent extends React.Component<IGetStreamParentProps, IGet
             .then(res => res.json())
             .then(data => this.setState({userToken: data.token}))
             .catch((e:any) => {
-                ToastAndroid.show("Could not connect to server.", ToastAndroid.SHORT)
+                ToastAndroid.show("Could not connect to http2Server.", ToastAndroid.SHORT)
                 console.warn(`URI: ${TARGET_URI}, warning -> ${e.toString()}`)
             })
     }

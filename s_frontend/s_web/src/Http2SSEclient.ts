@@ -1,10 +1,10 @@
 import { SSE_URL } from "./mvc/views/App/App.constants"
 
-/** Initializes server sent events on client side */
+/** Initializes http2Server sent events on client side */
 
 export class Http2SSEclient {
     /**
-     * Declare event source (where to receive server sent events)
+     * Declare event source (where to receive http2Server sent events)
      * EventSource exported to add new event Listeners: e.g.:
      *
      *      SSE_SOURCE.addEventListener('eventType', (e) => {});
@@ -47,5 +47,5 @@ export class Http2SSEclient {
         }
     }
 
-    // TODO: SSE_SOURCE.close() when we do not want to receive any events anymore (but server should stop sending then)
+    // TODO: SSE_SOURCE.close() when we do not want to receive any events anymore (but http2Server should stop sending then)
 }

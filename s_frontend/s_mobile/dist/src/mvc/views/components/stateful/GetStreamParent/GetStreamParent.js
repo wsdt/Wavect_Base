@@ -30,7 +30,7 @@ var GetStreamParent = (function (_super) {
                 .then(function (res) { return res.json(); })
                 .then(function (data) { return _this.setState({ userToken: data.token }); })
                 .catch(function (e) {
-                react_native_1.ToastAndroid.show("Could not connect to server.", react_native_1.ToastAndroid.SHORT);
+                react_native_1.ToastAndroid.show("Could not connect to http2Server.", react_native_1.ToastAndroid.SHORT);
                 console.warn("URI: " + TARGET_URI + ", warning -> " + e.toString());
             });
         };
