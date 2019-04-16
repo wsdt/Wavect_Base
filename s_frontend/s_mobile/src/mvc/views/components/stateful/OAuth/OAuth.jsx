@@ -15,8 +15,8 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var react_native_1 = require("react-native");
-var styleBase = require("../../../../../scss/base.scss");
-var parseScss_1 = require("../../../../../scss/parseScss");
+var parseScss_1 = require("../../../../controllers/parseScss");
+var styles = require("./OAuth.scss");
 var oAuthFacebook_1 = require("../../../../models/oauth/childs/oAuthFacebook");
 var oAuthGithub_1 = require("../../../../models/oauth/childs/oAuthGithub");
 var oAuthInstagram_1 = require("../../../../models/oauth/childs/oAuthInstagram");
@@ -32,15 +32,15 @@ var OAuth = /** @class */ (function (_super) {
     }
     OAuth.prototype.render = function () {
         /* OAuth ==> TODO: LIBRARY SUPPORTS A LOT MORE :)*/
-        return (<react_native_1.View style={parseScss_1.default(styleBase.gridContainer)}>
-                <react_native_1.View style={parseScss_1.default(styleBase.gridRow)}>
+        return (<react_native_1.View style={parseScss_1.default(styles.gridContainer)}>
+                <react_native_1.View style={parseScss_1.default(styles.gridRow)}>
                     <SocialBtn_1.SocialBtn authCallback={function () { return oAuthFacebook_1.OAuthFacebook.authenticate; }} socialType="facebook"/>
 
                     <SocialBtn_1.SocialBtn authCallback={oAuthInstagram_1.OAuthInstagram.authenticate} socialType="instagram"/>
 
                     <SocialBtn_1.SocialBtn authCallback={oAuthLinkedin_1.OAuthLinkedin.authenticate} socialType="linkedin"/>
                 </react_native_1.View>
-                <react_native_1.View style={parseScss_1.default(styleBase.gridRow)}>
+                <react_native_1.View style={parseScss_1.default(styles.gridRow)}>
                     <SocialBtn_1.SocialBtn authCallback={oAuthYoutube_1.OAuthYoutube.authenticate} socialType="youtube"/>
 
                     <SocialBtn_1.SocialBtn authCallback={oAuthTwitter_1.OAuthTwitter.authenticate} socialType="twitter"/>

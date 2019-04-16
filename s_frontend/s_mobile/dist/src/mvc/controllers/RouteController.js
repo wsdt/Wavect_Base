@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_navigation_1 = require("react-navigation");
+var globalConfig = require("../../globalConfiguration/globalConfig");
 var LoginScreen_1 = require("../views/pages/LoginScreen");
 var ProfileScreen_1 = require("../views/pages/ProfileScreen");
 var RegistrationScreen_1 = require("../views/pages/RegistrationScreen");
@@ -15,7 +16,7 @@ var defaultNavigationOptions = {
 };
 var routerOptions = {
     defaultNavigationOptions: defaultNavigationOptions,
-    initialRouteName: "ProfileScreen",
+    initialRouteName: globalConfig.START_PAGE,
     initialRouteParams: {},
 };
 var routes = {

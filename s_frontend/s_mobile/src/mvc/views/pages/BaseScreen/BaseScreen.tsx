@@ -1,6 +1,6 @@
 import * as React from "react"
 import {SafeAreaView} from "react-navigation"
-import p from "../../../../styling/parseScss"
+import p from "../../../controllers/parseScss"
 import * as styles from "./BaseScreen.scss"
 
 export const BaseScreen = (props: any) => {

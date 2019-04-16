@@ -1,4 +1,4 @@
-export const container: string;
+export const formContainer: string;
 export const listElem: string;
 export const textLabel: string;
 export const leftIconContainer: string;

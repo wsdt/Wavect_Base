@@ -28,8 +28,10 @@ var formik_1 = require("formik");
 var react_1 = require("react");
 var react_native_1 = require("react-native");
 var react_native_elements_1 = require("react-native-elements");
+var parseScss_1 = require("../../../../controllers/parseScss");
 var WarningsController_1 = require("../../../../controllers/WarningsController");
 var CustomFormInput_1 = require("../../functional/CustomFormInput/CustomFormInput");
+var styles = require("./RegistrationForm.scss");
 var RegistrationForm_yup_1 = require("./RegistrationForm.yup");
 var RegistrationForm = (function (_super) {
     __extends(RegistrationForm, _super);
@@ -49,7 +51,7 @@ var RegistrationForm = (function (_super) {
         };
         _this.renderForm = function (_a) {
             var values = _a.values, isSubmitting = _a.isSubmitting, handleSubmit = _a.handleSubmit, touched = _a.touched, errors = _a.errors;
-            return (<react_native_1.View>
+            return (<react_native_1.View style={parseScss_1.default(styles.formContainer)}>
                 <CustomFormInput_1.CustomFormInput label="Firstname" name="firstname" type="firstname" placeholder="Max" value={values.firstname} editable={!isSubmitting} errorMessage={touched.firstname && errors.firstname
                 ? errors.firstname.toString()
                 : undefined}/>

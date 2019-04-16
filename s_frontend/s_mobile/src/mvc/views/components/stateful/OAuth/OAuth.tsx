@@ -1,6 +1,6 @@
 import * as React from "react"
 import { View } from "react-native"
-import p from "../../../../../styling/parseScss"
+import p from "../../../../controllers/parseScss"
 import * as styles from "./OAuth.scss"
 
 import { OAuthFacebook } from "../../../../models/oauth/childs/oAuthFacebook"

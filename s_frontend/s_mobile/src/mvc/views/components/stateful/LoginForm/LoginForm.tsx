@@ -2,7 +2,7 @@ import { Formik, FormikActions, FormikProps } from "formik"
 import * as React from "react"
 import { View } from "react-native"
 import { Button } from "react-native-elements"
-import p from "../../../../../styling/parseScss"
+import p from "../../../../controllers/parseScss"
 import { CustomFormInput } from "../../functional/CustomFormInput/CustomFormInput"
 import * as styles from "./LoginForm.scss"
 
@@ -48,7 +48,7 @@ export class LoginForm extends React.Component<any, ILoginFormState> {
         const rightPwdIcon = this.state.pwdHidden ? "eye" : "eye-off"
 
         return (
-            <View style={p(styles.container)}>
+            <View style={p(styles.formContainer)}>
                 <CustomFormInput
                     label={"E-Mail"}
                     name="email"

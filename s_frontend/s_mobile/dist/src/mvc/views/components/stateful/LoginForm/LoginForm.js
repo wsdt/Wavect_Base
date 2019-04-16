@@ -28,7 +28,7 @@ var formik_1 = require("formik");
 var React = require("react");
 var react_native_1 = require("react-native");
 var react_native_elements_1 = require("react-native-elements");
-var parseScss_1 = require("../../../../../styling/parseScss");
+var parseScss_1 = require("../../../../controllers/parseScss");
 var CustomFormInput_1 = require("../../functional/CustomFormInput/CustomFormInput");
 var styles = require("./LoginForm.scss");
 var WarningsController_1 = require("../../../../controllers/WarningsController");
@@ -44,7 +44,7 @@ var LoginForm = (function (_super) {
         _this.renderForm = function (_a) {
             var values = _a.values, handleSubmit = _a.handleSubmit, touched = _a.touched, errors = _a.errors, isSubmitting = _a.isSubmitting;
             var rightPwdIcon = _this.state.pwdHidden ? "eye" : "eye-off";
-            return (<react_native_1.View style={parseScss_1.default(styles.container)}>
+            return (<react_native_1.View style={parseScss_1.default(styles.formContainer)}>
                 <CustomFormInput_1.CustomFormInput label={"E-Mail"} name="email" type="email" placeholder={"your-mail@gmail.com"} editable={!isSubmitting} value={values.email} leftIcon={{
                 color: "grey",
                 name: "user",

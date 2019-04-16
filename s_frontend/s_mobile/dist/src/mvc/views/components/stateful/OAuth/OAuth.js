@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
 var react_native_1 = require("react-native");
-var parseScss_1 = require("../../../../../styling/parseScss");
+var parseScss_1 = require("../../../../controllers/parseScss");
 var styles = require("./OAuth.scss");
 var oAuthFacebook_1 = require("../../../../models/oauth/childs/oAuthFacebook");
 var oAuthGithub_1 = require("../../../../models/oauth/childs/oAuthGithub");

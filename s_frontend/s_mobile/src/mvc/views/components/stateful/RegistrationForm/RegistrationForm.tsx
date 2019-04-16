@@ -2,10 +2,12 @@ import { Formik, FormikActions, FormikProps } from "formik"
 import React, { Component } from "react"
 import { View } from "react-native"
 import { Button } from "react-native-elements"
+import p from "../../../../controllers/parseScss"
 import { notImplementedSync } from "../../../../controllers/WarningsController"
 import { CustomFormInput } from "../../functional/CustomFormInput/CustomFormInput"
 import { IRegistrationFormState } from "./IRegistrationForm.state"
 import IAcceptable from "./RegistrationForm.interfaces"
+import * as styles from "./RegistrationForm.scss"
 import yup from "./RegistrationForm.yup"
 
 export class RegistrationForm extends Component<any, IRegistrationFormState> {
@@ -48,7 +50,7 @@ export class RegistrationForm extends Component<any, IRegistrationFormState> {
         errors,
     }: FormikProps<IAcceptable>) => {
         return (
-            <View>
+            <View style={p(styles.formContainer)}>
                 <CustomFormInput
                     label="Firstname"
                     name="firstname"

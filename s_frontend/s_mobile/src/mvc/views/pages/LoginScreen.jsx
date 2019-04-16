@@ -14,11 +14,9 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var react_native_1 = require("react-native");
-var styleBase = require("../../../scss/base.scss");
-var parseScss_1 = require("../../../scss/parseScss");
 var LoginForm_1 = require("../components/stateful/LoginForm/LoginForm");
 var OAuth_1 = require("../components/stateful/OAuth/OAuth");
+var BaseScreen_1 = require("./BaseScreen/BaseScreen");
 // <Header leftComponent={<BeKindIcon width={30} height={30} />} centerComponent={{text: "Authentication", style: {color: "#fff"}}} containerStyle={p(styleBase.header)}/>
 var LoginScreen = /** @class */ (function (_super) {
     __extends(LoginScreen, _super);
@@ -27,12 +25,10 @@ var LoginScreen = /** @class */ (function (_super) {
     }
     LoginScreen.prototype.render = function () {
         /* Pass all props down to child component (e.g. navigation props! as screen is rendered)! */
-        return (<react_native_1.View style={parseScss_1.default(styleBase.page)}>
-                <react_native_1.View style={parseScss_1.default(styleBase.center)}>
+        return (<BaseScreen_1.BaseScreen>
                     <LoginForm_1.LoginForm {...this.props}/>
                     <OAuth_1.OAuth {...this.props}/>
-                </react_native_1.View>
-            </react_native_1.View>);
+            </BaseScreen_1.BaseScreen>);
     };
     return LoginScreen;
 }(React.Component));
