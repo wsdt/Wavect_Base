@@ -16,7 +16,7 @@ const defaultFormValues: ILoginFormValues = { email: "", password: "" }
 // TODO: https://medium.com/@rajaraodv/securing-react-redux-apps-with-jwt-tokens-fcfe81356ea0
 // After login return JWT and then use it for session auth
 export class LoginForm extends React.Component<any, ILoginFormState> {
-    public state:ILoginFormState = {
+    public state: ILoginFormState = {
         pwdHidden: true,
     }
 

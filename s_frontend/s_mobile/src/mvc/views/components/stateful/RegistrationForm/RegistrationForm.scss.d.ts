@@ -1,1 +1,1 @@
-export const formContainer: string;
+export const formContainer: string

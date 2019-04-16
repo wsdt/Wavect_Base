@@ -32,4 +32,3 @@ export default p
 // https://medium.com/@jan.hesters/unleash-the-power-of-easy-and-efficient-forms-in-react-native-with-formik-and-yup-9210e43794eb
 
 /** IMPORTANT NOTE: The current SCSS parser does not support inheritance! Thus, please do not nest css classes! */
-

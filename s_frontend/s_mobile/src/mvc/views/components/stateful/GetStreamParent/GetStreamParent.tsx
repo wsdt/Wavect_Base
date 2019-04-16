@@ -7,8 +7,9 @@ import {GS_APP_ID, GS_KEY} from "./GetStreamParent.secrets"
 import {IGetStreamParentProps} from "./IGetStreamParent.props"
 import {IGetStreamParentState} from "./IGetStreamParent.state"
 
-export class GetStreamParent extends React.Component<IGetStreamParentProps, IGetStreamParentState> {
-    public state: IGetStreamParentState = {userToken: ""}  // TODO: Also to global (same with userId)
+export class GetStreamParent extends React.Component<IGetStreamParentProps,
+    IGetStreamParentState> {
+    public state: IGetStreamParentState = {userToken: ""} // TODO: Also to global (same with userId)
 
     constructor(props: IGetStreamParentProps) {
         super(props)
@@ -16,25 +17,32 @@ export class GetStreamParent extends React.Component<IGetStreamParentProps, IGet
     }
 
     public render(): JSX.Element {
-        console.log("User token: "+this.state.userToken+" // userId: "+this.props.userId)
+        console.log("User token: " + this.state.userToken + " // userId: " + this.props.userId)
+
         if (this.state.userToken !== "") {
-            return <StreamApp
+            return (
+                <StreamApp
                     apiKey={GS_KEY}
                     appId={GS_APP_ID}
-                    token={this.state.userToken}/>
+                    token={this.state.userToken}
+                />
+            )
         } else {
             // Otherwise show loading indicator
-            return <LoadingIndicator />
+            return <LoadingIndicator/>
         }
     }
 
     private requestGetstreamToken = (userId: string) => {
-        const TARGET_URI:string = `${BACKEND_URL}/api/v1/auth/${userId}`
+        const TARGET_URI: string = `${BACKEND_URL}/api/v1/auth/${userId}`
         fetch(TARGET_URI)
             .then(res => res.json())
             .then(data => this.setState({userToken: data.token}))
-            .catch((e:any) => {
-                ToastAndroid.show("Could not connect to server.", ToastAndroid.SHORT)
+            .catch((e: any) => {
+                ToastAndroid.show(
+                    "Could not connect to server.",
+                    ToastAndroid.SHORT
+                )
                 console.warn(`URI: ${TARGET_URI}, warning -> ${e.toString()}`)
             })
     }

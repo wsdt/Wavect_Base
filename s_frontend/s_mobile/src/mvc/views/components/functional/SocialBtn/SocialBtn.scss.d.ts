@@ -1,1 +1,1 @@
-export const gridElem: string;
+export const gridElem: string

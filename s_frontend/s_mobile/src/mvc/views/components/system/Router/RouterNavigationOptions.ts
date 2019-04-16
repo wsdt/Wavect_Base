@@ -1,4 +1,4 @@
-import {NavigationScreenOptions} from "react-navigation"
+import { NavigationScreenOptions } from "react-navigation"
 
 /**
  * You can provide custom navigationoptions for your nav bar for each page.
@@ -8,7 +8,7 @@ export const defaultNavigationOptions: NavigationScreenOptions = {
     headerStyle: {
         backgroundColor: "#0055ee",
     },
-    headerTintColor: "#fff", /* tintColor is used by title and back btn etc. */
+    headerTintColor: "#fff" /* tintColor is used by title and back btn etc. */,
     headerTitleStyle: {
         fontWeight: "bold",
     },

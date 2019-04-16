@@ -1,3 +1,3 @@
 export interface IGetStreamParentProps {
-    userId: string,
+    userId: string
 }

@@ -1,3 +1,3 @@
 export interface IGetStreamParentState {
-    userToken:string,
+    userToken: string
 }

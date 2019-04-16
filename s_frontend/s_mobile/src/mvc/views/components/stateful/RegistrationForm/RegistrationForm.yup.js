@@ -1,6 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var Yup = require("yup");
+"use strict"
+Object.defineProperty(exports, "__esModule", { value: true })
+var Yup = require("yup")
 var validationScheme = Yup.object().shape({
     firstname: Yup.string().required(),
     lastname: Yup.string().required(),
@@ -20,5 +20,5 @@ var validationScheme = Yup.object().shape({
         .min(8)
         .max(32)
         .oneOf([Yup.ref("pw"), null], "Password must match!"),
-});
-exports.default = validationScheme;
+})
+exports.default = validationScheme
