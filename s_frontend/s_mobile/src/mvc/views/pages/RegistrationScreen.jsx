@@ -28,9 +28,6 @@ var RegistrationScreen = /** @class */ (function (_super) {
                 <RegistrationForm_1.RegistrationForm {...this.props}/>
             </react_native_1.View>);
     };
-    RegistrationScreen.navigationOptions = {
-        title: "Registration",
-    };
     return RegistrationScreen;
 }(React.Component));
 exports.RegistrationScreen = RegistrationScreen;

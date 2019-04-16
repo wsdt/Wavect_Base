@@ -1,9 +1,9 @@
 import * as React from "react"
 import { TouchableOpacity } from "react-native"
 import { SocialIcon } from "react-native-elements"
-import * as styleBase from "../../../../../scss/base.scss"
-import p from "../../../../../scss/parseScss"
+import p from "../../../../../styling/parseScss"
 import { ISocialBtnProps } from "./ISocialBtn.props"
+import * as styles from "./SocialBtn.scss"
 
 export const SocialBtn = (props: ISocialBtnProps): React.ReactNode => {
     return (
@@ -12,7 +12,7 @@ export const SocialBtn = (props: ISocialBtnProps): React.ReactNode => {
                 type={props.socialType}
                 button
                 light
-                style={p(styleBase.gridElem)}
+                style={p(styles.gridElem)}
             />
         </TouchableOpacity>
     )

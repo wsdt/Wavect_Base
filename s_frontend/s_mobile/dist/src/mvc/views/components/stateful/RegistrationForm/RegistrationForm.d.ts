@@ -5,6 +5,7 @@ export declare class RegistrationForm extends Component<any, IRegistrationFormSt
         hidden: boolean;
         hiddenCheck: boolean;
     };
+    private acceptableValues;
     render(): React.ReactNode;
     private renderForm;
     private isHiddenHandler;

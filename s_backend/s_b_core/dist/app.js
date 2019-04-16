@@ -26,7 +26,10 @@ var App = (function () {
                 return process.exit(1);
             }
             else {
-                console.log("App:runServer: Listening on port: " + app_constants_1.PORT + " using http2: " + app_constants_1.USE_HTTPS);
+                console.log("App:runServer: Listening on port: " +
+                    app_constants_1.PORT +
+                    " using http2: " +
+                    app_constants_1.USE_HTTPS);
             }
         });
     };

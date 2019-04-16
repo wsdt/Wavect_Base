@@ -1,9 +1,9 @@
 import {StreamApp} from "expo-activity-feed"
 import * as React from "react"
-import {Text, ToastAndroid} from "react-native"
-import {SafeAreaView} from "react-navigation"
+import {ToastAndroid} from "react-native"
 import {BACKEND_URL} from "../../../../../../App.constants"
-import {GS_KEY, GS_APP_ID} from "./GetStreamParent.secrets"
+import {LoadingIndicator} from "../../functional/LoadingIndicator/LoadingIndicator"
+import {GS_APP_ID, GS_KEY} from "./GetStreamParent.secrets"
 import {IGetStreamParentProps} from "./IGetStreamParent.props"
 import {IGetStreamParentState} from "./IGetStreamParent.state"
 
@@ -15,18 +15,16 @@ export class GetStreamParent extends React.Component<IGetStreamParentProps, IGet
         this.requestGetstreamToken(props.userId)
     }
 
-
     public render(): React.ReactNode {
         console.log("User token: "+this.state.userToken+" // userId: "+this.props.userId)
         if (this.state.userToken !== "") {
-            return <SafeAreaView style={{flex: 1}} forceInset={{top: "always"}}>
-                <StreamApp
+            return <StreamApp
                     apiKey={GS_KEY}
                     appId={GS_APP_ID}
                     token={this.state.userToken}/>
-            </SafeAreaView>
         } else {
-            return <Text>Loading ...</Text>
+            // Otherwise show loading indicator
+            return <LoadingIndicator />
         }
     }
 
@@ -36,7 +34,7 @@ export class GetStreamParent extends React.Component<IGetStreamParentProps, IGet
             .then(res => res.json())
             .then(data => this.setState({userToken: data.token}))
             .catch((e:any) => {
-                ToastAndroid.show("Could not connect to http2Server.", ToastAndroid.SHORT)
+                ToastAndroid.show("Could not connect to server.", ToastAndroid.SHORT)
                 console.warn(`URI: ${TARGET_URI}, warning -> ${e.toString()}`)
             })
     }

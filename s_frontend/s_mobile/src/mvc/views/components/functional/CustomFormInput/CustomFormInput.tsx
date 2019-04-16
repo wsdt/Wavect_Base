@@ -1,11 +1,11 @@
 import * as React from "react"
 import { Input } from "react-native-elements"
 import { handleTextInput } from "react-native-formik"
-import * as formStyle from "../../../../../scss/form.scss"
-import p from "../../../../../scss/parseScss"
+import p from "../../../../../styling/parseScss"
+import * as styles from "./CustomFormInput.scss"
 
 /** Custom Form Input */
 export const CustomFormInput = (props: any) => {
     const TmpFormInput = handleTextInput(Input)
-    return <TmpFormInput {...props} containerStyle={p(formStyle.input)} />
+    return <TmpFormInput {...props} containerStyle={p(styles.input)} />
 }

@@ -14,19 +14,17 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var react_native_1 = require("react-native");
-var styleBase = require("../../../scss/base.scss");
-var parseScss_1 = require("../../../scss/parseScss");
 var RegistrationForm_1 = require("../components/stateful/RegistrationForm/RegistrationForm");
+var BaseScreen_1 = require("./BaseScreen/BaseScreen");
 var RegistrationScreen = (function (_super) {
     __extends(RegistrationScreen, _super);
     function RegistrationScreen() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     RegistrationScreen.prototype.render = function () {
-        return (<react_native_1.View style={parseScss_1.default(styleBase.page)}>
+        return (<BaseScreen_1.BaseScreen>
                 <RegistrationForm_1.RegistrationForm {...this.props}/>
-            </react_native_1.View>);
+            </BaseScreen_1.BaseScreen>);
     };
     return RegistrationScreen;
 }(React.Component));

@@ -24,16 +24,15 @@ var ProfileScreen = /** @class */ (function (_super) {
     function ProfileScreen() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    // TODO: Create top nav navigator (tabbed activity)
     ProfileScreen.prototype.render = function () {
         /* Pass all props down to child component (e.g. navigation props! as screen is rendered)! */
+        /* TODO: Real ID from our db*/
         return (<react_native_1.View style={parseScss_1.default(styleBase.page)}>
                 <react_native_1.View style={parseScss_1.default(styleBase.center)}>
-                   <GetStreamParent_1.GetStreamParent {...this.props} userId="ERROR"/> 
+                   <GetStreamParent_1.GetStreamParent {...this.props} userId="ERROR"/>
                 </react_native_1.View>
             </react_native_1.View>);
-    };
-    ProfileScreen.navigationOptions = {
-        title: "Profile",
     };
     return ProfileScreen;
 }(React.Component));

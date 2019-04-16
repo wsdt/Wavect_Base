@@ -1,7 +1,7 @@
 import * as React from "react"
 import { View } from "react-native"
-import * as styleBase from "../../../../../scss/base.scss"
-import p from "../../../../../scss/parseScss"
+import p from "../../../../../styling/parseScss"
+import * as styles from "./OAuth.scss"
 
 import { OAuthFacebook } from "../../../../models/oauth/childs/oAuthFacebook"
 import { OAuthGithub } from "../../../../models/oauth/childs/oAuthGithub"
@@ -16,8 +16,8 @@ export class OAuth extends React.Component {
     public render() {
         /* OAuth ==> TODO: LIBRARY SUPPORTS A LOT MORE :)*/
         return (
-            <View style={p(styleBase.gridContainer)}>
-                <View style={p(styleBase.gridRow)}>
+            <View style={p(styles.gridContainer)}>
+                <View style={p(styles.gridRow)}>
                     <SocialBtn
                         authCallback={() => OAuthFacebook.authenticate}
                         socialType="facebook"
@@ -33,7 +33,7 @@ export class OAuth extends React.Component {
                         socialType="linkedin"
                     />
                 </View>
-                <View style={p(styleBase.gridRow)}>
+                <View style={p(styles.gridRow)}>
                     <SocialBtn
                         authCallback={OAuthYoutube.authenticate}
                         socialType="youtube"

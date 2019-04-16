@@ -4,8 +4,8 @@ import * as express from "express"
 import * as graphqlHTTP from "express-graphql"
 import * as helmet from "helmet"
 import * as morgan from "morgan"
-import {CLIENT_WEB, HTTP2_OPTIONS, PORT, USE_HTTPS} from "./app.constants"
-import {graphqlRoot, graphqlSchema} from "./graphql/graphql_queries"
+import { CLIENT_WEB, HTTP2_OPTIONS, PORT, USE_HTTPS } from "./app.constants"
+import { graphqlRoot, graphqlSchema } from "./graphql/graphql_queries"
 import * as routes from "./routes/routes"
 
 /**
@@ -15,7 +15,6 @@ import * as routes from "./routes/routes"
  */
 import * as http from "http"
 import * as http2 from "spdy"
-
 
 /**
  * Use HTTP 2, Server-Sent-Events and TSL.
@@ -46,7 +45,12 @@ class App {
                 console.error(err)
                 return process.exit(1)
             } else {
-                console.log("App:runServer: Listening on port: " + PORT + " using http2: " + USE_HTTPS)
+                console.log(
+                    "App:runServer: Listening on port: " +
+                        PORT +
+                        " using http2: " +
+                        USE_HTTPS
+                )
             }
         })
     }
@@ -56,7 +60,7 @@ class App {
         this.app.use(bodyParser.json())
 
         // support application/x-www-form-urlencoded post data
-        this.app.use(bodyParser.urlencoded({extended: false}))
+        this.app.use(bodyParser.urlencoded({ extended: false }))
 
         // Add cors header to be accessible from frontend
         this.app.use(

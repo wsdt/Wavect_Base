@@ -31,14 +31,6 @@ var react_native_elements_1 = require("react-native-elements");
 var WarningsController_1 = require("../../../../controllers/WarningsController");
 var CustomFormInput_1 = require("../../functional/CustomFormInput/CustomFormInput");
 var RegistrationForm_yup_1 = require("./RegistrationForm.yup");
-var acceptableValues = {
-    email: "",
-    emailCheck: "",
-    firstname: "",
-    lastname: "",
-    pw: "",
-    pwCheck: "",
-};
 var RegistrationForm = (function (_super) {
     __extends(RegistrationForm, _super);
     function RegistrationForm() {
@@ -46,6 +38,14 @@ var RegistrationForm = (function (_super) {
         _this.state = {
             hidden: true,
             hiddenCheck: true,
+        };
+        _this.acceptableValues = {
+            email: "",
+            emailCheck: "",
+            firstname: "",
+            lastname: "",
+            pw: "",
+            pwCheck: "",
         };
         _this.renderForm = function (_a) {
             var values = _a.values, isSubmitting = _a.isSubmitting, handleSubmit = _a.handleSubmit, touched = _a.touched, errors = _a.errors;
@@ -109,7 +109,7 @@ var RegistrationForm = (function (_super) {
     }
     RegistrationForm.prototype.render = function () {
         var _this = this;
-        return (<formik_1.Formik initialValues={acceptableValues} validationSchema={RegistrationForm_yup_1.default} onSubmit={function (formikValue, formikbag) {
+        return (<formik_1.Formik initialValues={this.acceptableValues} validationSchema={RegistrationForm_yup_1.default} onSubmit={function (formikValue, formikbag) {
             _this.isSubmittingHandler(formikValue, formikbag);
         }} render={function (formikbag) {
             return _this.renderForm(formikbag);

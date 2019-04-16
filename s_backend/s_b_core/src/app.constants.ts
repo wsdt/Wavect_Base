@@ -2,7 +2,7 @@ import * as fs from "fs"
 import * as path from "path"
 
 /** If false then http 1.1 is used. */
-export const USE_HTTPS:boolean = false
+export const USE_HTTPS: boolean = false
 
 /**
  * Determines on which port the application can be called. Please keep in mind that maybe other

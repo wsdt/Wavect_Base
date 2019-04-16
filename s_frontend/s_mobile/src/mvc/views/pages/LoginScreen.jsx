@@ -34,9 +34,6 @@ var LoginScreen = /** @class */ (function (_super) {
                 </react_native_1.View>
             </react_native_1.View>);
     };
-    LoginScreen.navigationOptions = {
-        title: "Login",
-    };
     return LoginScreen;
 }(React.Component));
 exports.LoginScreen = LoginScreen;

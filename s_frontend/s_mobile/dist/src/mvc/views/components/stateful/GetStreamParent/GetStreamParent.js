@@ -16,8 +16,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var expo_activity_feed_1 = require("expo-activity-feed");
 var React = require("react");
 var react_native_1 = require("react-native");
-var react_navigation_1 = require("react-navigation");
 var App_constants_1 = require("../../../../../../App.constants");
+var LoadingIndicator_1 = require("../../functional/LoadingIndicator/LoadingIndicator");
 var GetStreamParent_secrets_1 = require("./GetStreamParent.secrets");
 var GetStreamParent = (function (_super) {
     __extends(GetStreamParent, _super);
@@ -30,7 +30,7 @@ var GetStreamParent = (function (_super) {
                 .then(function (res) { return res.json(); })
                 .then(function (data) { return _this.setState({ userToken: data.token }); })
                 .catch(function (e) {
-                react_native_1.ToastAndroid.show("Could not connect to http2Server.", react_native_1.ToastAndroid.SHORT);
+                react_native_1.ToastAndroid.show("Could not connect to server.", react_native_1.ToastAndroid.SHORT);
                 console.warn("URI: " + TARGET_URI + ", warning -> " + e.toString());
             });
         };
@@ -40,12 +40,10 @@ var GetStreamParent = (function (_super) {
     GetStreamParent.prototype.render = function () {
         console.log("User token: " + this.state.userToken + " // userId: " + this.props.userId);
         if (this.state.userToken !== "") {
-            return <react_navigation_1.SafeAreaView style={{ flex: 1 }} forceInset={{ top: "always" }}>
-                <expo_activity_feed_1.StreamApp apiKey={GetStreamParent_secrets_1.GS_KEY} appId={GetStreamParent_secrets_1.GS_APP_ID} token={this.state.userToken}/>
-            </react_navigation_1.SafeAreaView>;
+            return <expo_activity_feed_1.StreamApp apiKey={GetStreamParent_secrets_1.GS_KEY} appId={GetStreamParent_secrets_1.GS_APP_ID} token={this.state.userToken}/>;
         }
         else {
-            return <react_native_1.Text>Loading ...</react_native_1.Text>;
+            return <LoadingIndicator_1.LoadingIndicator />;
         }
     };
     return GetStreamParent;

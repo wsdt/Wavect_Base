@@ -4,29 +4,28 @@ import { View } from "react-native"
 import { Button } from "react-native-elements"
 import { notImplementedSync } from "../../../../controllers/WarningsController"
 import { CustomFormInput } from "../../functional/CustomFormInput/CustomFormInput"
-import IAcceptable from "./RegistrationForm.interfaces"
 import { IRegistrationFormState } from "./IRegistrationForm.state"
+import IAcceptable from "./RegistrationForm.interfaces"
 import yup from "./RegistrationForm.yup"
-
-const acceptableValues: IAcceptable = {
-    email: "",
-    emailCheck: "",
-    firstname: "",
-    lastname: "",
-    pw: "",
-    pwCheck: "",
-}
 
 export class RegistrationForm extends Component<any, IRegistrationFormState> {
     public state = {
         hidden: true,
         hiddenCheck: true,
     }
+    private acceptableValues: IAcceptable = {
+        email: "",
+        emailCheck: "",
+        firstname: "",
+        lastname: "",
+        pw: "",
+        pwCheck: "",
+    }
 
     public render(): React.ReactNode {
         return (
             <Formik
-                initialValues={acceptableValues}
+                initialValues={this.acceptableValues}
                 validationSchema={yup}
                 onSubmit={(
                     formikValue: IAcceptable,

@@ -2,14 +2,13 @@ import { Formik, FormikActions, FormikProps } from "formik"
 import * as React from "react"
 import { View } from "react-native"
 import { Button } from "react-native-elements"
-import p from "../../../../../scss/parseScss"
+import p from "../../../../../styling/parseScss"
 import { CustomFormInput } from "../../functional/CustomFormInput/CustomFormInput"
+import * as styles from "./LoginForm.scss"
 
-import * as baseStyle from "../../../../../scss/base.scss"
-import * as formStyle from "../../../../../scss/form.scss"
 import { notImplementedSync } from "../../../../controllers/WarningsController"
-import { ILoginFormValues } from "./LoginForm.interfaces"
 import { ILoginFormState } from "./ILoginForm.state"
+import { ILoginFormValues } from "./LoginForm.interfaces"
 import validationYupSchema from "./LoginForm.yup"
 
 const defaultFormValues: ILoginFormValues = { email: "", password: "" }
@@ -49,7 +48,7 @@ export class LoginForm extends React.Component<any, ILoginFormState> {
         const rightPwdIcon = this.state.pwdHidden ? "eye" : "eye-off"
 
         return (
-            <View style={p(baseStyle.container)}>
+            <View style={p(styles.container)}>
                 <CustomFormInput
                     label={"E-Mail"}
                     name="email"
@@ -63,9 +62,9 @@ export class LoginForm extends React.Component<any, ILoginFormState> {
                         size: 15,
                         type: "feather",
                     }}
-                    containerStyle={p(formStyle.listElem)}
-                    labelStyle={p(formStyle.textLabel)}
-                    leftIconContainerStyle={p(formStyle.leftIconContainer)}
+                    containerStyle={p(styles.listElem)}
+                    labelStyle={p(styles.textLabel)}
+                    leftIconContainerStyle={p(styles.leftIconContainer)}
                     keyboardType="email-address"
                     errorMessage={
                         touched.email && errors.email
@@ -90,15 +89,15 @@ export class LoginForm extends React.Component<any, ILoginFormState> {
                         size: 15,
                         type: "feather",
                     }}
-                    containerStyle={p(formStyle.listElem)}
-                    labelStyle={p(formStyle.textLabel)}
-                    leftIconContainerStyle={p(formStyle.leftIconContainer)}
+                    containerStyle={p(styles.listElem)}
+                    labelStyle={p(styles.textLabel)}
+                    leftIconContainerStyle={p(styles.leftIconContainer)}
                     errorMessage={
                         touched.password && errors.password
                             ? errors.password.toString()
                             : null
                     }
-                    rightIconContainerStyle={p(formStyle.rightIconContainer)}
+                    rightIconContainerStyle={p(styles.rightIconContainer)}
                     rightIcon={{
                         color: "grey",
                         name: rightPwdIcon,
@@ -108,21 +107,21 @@ export class LoginForm extends React.Component<any, ILoginFormState> {
                     }}
                 />
 
-                <View style={p(baseStyle.elemRow)}>
+                <View style={p(styles.elemRow)}>
                     <Button
                         title={"Login"}
                         onPress={handleSubmit as any}
                         disabled={isSubmitting}
                         loading={isSubmitting}
                         type="solid"
-                        containerStyle={p(formStyle.btn)}
+                        containerStyle={p(styles.btn)}
                     />
                     <Button
                         title={"Register"}
                         onPress={this.onRegisterBtnPress}
                         disabled={isSubmitting}
                         type="outline"
-                        containerStyle={p(formStyle.btn)}
+                        containerStyle={p(styles.btn)}
                     />
                 </View>
                 <Button
@@ -130,7 +129,7 @@ export class LoginForm extends React.Component<any, ILoginFormState> {
                     onPress={this.onPwdForgottenBtnPress}
                     disabled={isSubmitting}
                     type="clear"
-                    containerStyle={p(formStyle.btn)}
+                    containerStyle={p(styles.btn)}
                 />
             </View>
         )
