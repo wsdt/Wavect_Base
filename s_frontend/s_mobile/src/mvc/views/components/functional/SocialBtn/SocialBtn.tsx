@@ -5,7 +5,7 @@ import p from "../../../../controllers/parseScss"
 import {ISocialBtnProps} from "./ISocialBtn.props"
 import * as styles from "./SocialBtn.scss"
 
-export const SocialBtn = (props: ISocialBtnProps) => {
+export const SocialBtn = (props: ISocialBtnProps):JSX.Element => {
     return (
         <TouchableOpacity onPress={() => props.authCallback}>
             <SocialIcon

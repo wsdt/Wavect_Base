@@ -13,7 +13,7 @@ import { SocialBtn } from "../../functional/SocialBtn/SocialBtn"
 
 // TODO: Here in stateful as oauth will certainly have a state (otherwise move to functional)
 export class OAuth extends React.Component {
-    public render() {
+    public render(): JSX.Element {
         /* OAuth ==> TODO: LIBRARY SUPPORTS A LOT MORE :)*/
         return (
             <View style={p(styles.gridContainer)}>

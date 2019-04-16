@@ -15,7 +15,7 @@ export class GetStreamParent extends React.Component<IGetStreamParentProps, IGet
         this.requestGetstreamToken(props.userId)
     }
 
-    public render(): React.ReactNode {
+    public render(): JSX.Element {
         console.log("User token: "+this.state.userToken+" // userId: "+this.props.userId)
         if (this.state.userToken !== "") {
             return <StreamApp

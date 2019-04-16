@@ -24,7 +24,7 @@ export class RegistrationForm extends Component<any, IRegistrationFormState> {
         pwCheck: "",
     }
 
-    public render(): React.ReactNode {
+    public render(): JSX.Element {
         return (
             <Formik
                 initialValues={this.acceptableValues}

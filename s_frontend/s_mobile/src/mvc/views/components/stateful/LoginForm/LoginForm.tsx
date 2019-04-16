@@ -20,7 +20,7 @@ export class LoginForm extends React.Component<any, ILoginFormState> {
         pwdHidden: true,
     }
 
-    public render(): React.ReactNode {
+    public render(): JSX.Element {
         return (
             <Formik
                 initialValues={defaultFormValues}

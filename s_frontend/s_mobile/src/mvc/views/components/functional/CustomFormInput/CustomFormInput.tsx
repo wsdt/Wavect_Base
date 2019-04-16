@@ -5,7 +5,7 @@ import p from "../../../../controllers/parseScss"
 import * as styles from "./CustomFormInput.scss"
 
 /** Custom Form Input */
-export const CustomFormInput = (props: any) => {
+export const CustomFormInput = (props: any): JSX.Element => {
     const TmpFormInput = handleTextInput(Input)
     return <TmpFormInput {...props} containerStyle={p(styles.input)} />
 }

@@ -2960,12 +2960,12 @@ expect@^24.1.0:
     jest-message-util "^24.0.0"
     jest-regex-util "^24.0.0"
 
-expo-activity-feed@latest:
-  version "0.8.8"
-  resolved "https://registry.yarnpkg.com/expo-activity-feed/-/expo-activity-feed-0.8.8.tgz#59e34bd84e68b39c3da5cc22c0f8bda169e4287e"
-  integrity sha512-5GBll/BauVJvpjQMRfKbknPkM+KUaBRA9ZBKwD04lum+1y6mCENlcY4RZeA/DPkUTT062CBMYxaOUJISmI16TA==
+expo-activity-feed@^0.8.8:
+  version "0.8.9"
+  resolved "https://registry.yarnpkg.com/expo-activity-feed/-/expo-activity-feed-0.8.9.tgz#21056d9f42d31168020f973f4dac179173326232"
+  integrity sha512-c3mwX9DVfA+L0aFGFwHAOtVSqjQoLaBOAuTdZAFKAAj7tu50NZChxSUr3R25X7tNclUOjMBWPtKheqp1O+6diQ==
   dependencies:
-    react-native-activity-feed-core v0.8.8
+    react-native-activity-feed-core v0.8.9
 
 expo-ads-admob@~2.0.0:
   version "2.0.0"
@@ -7355,10 +7355,10 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-native-activity-feed-core@v0.8.8:
-  version "0.8.8"
-  resolved "https://registry.yarnpkg.com/react-native-activity-feed-core/-/react-native-activity-feed-core-0.8.8.tgz#a816e39a5debfdb7dc82ef80e692656a3288518b"
-  integrity sha512-FaXKeyqUwHYKsHRBS9+2MUCd+zUg2UslxQQ3zrPQtXwhSXh4UDUt1HRROdKR2ek0GEyABv3RFfuhdMwbPDaDVg==
+react-native-activity-feed-core@v0.8.9:
+  version "0.8.9"
+  resolved "https://registry.yarnpkg.com/react-native-activity-feed-core/-/react-native-activity-feed-core-0.8.9.tgz#25bf4b5a867a618441ebca06d76262db6c836cad"
+  integrity sha512-sDZTddrZNqgBPrhJAP+iSqV4zp158UZXBs3fCjv47ZJWovKalayGA5aXbXfayCCwZ0CvCWiCkdIgANzz/xwIcw==
   dependencies:
     es6-symbol "^3.1.1"
     eslint-plugin-babel "^5.3.0"

@@ -19,21 +19,21 @@ export const routes = {
  */
 export const routesConfig: NavigationRouteConfigMap = {
     [routes.LoginScreen]: { // key of route configuration
-        screen: LoginScreen, // which component to load
         navigationOptions: () => ({
             title: "Login", // which title to show in navbar
-        })
+        }),
+        screen: LoginScreen, // which component to load
     },
     [routes.ProfileScreen]: {
-        screen: ProfileScreen,
         navigationOptions: () => ({
             title: "Profile",
-        })
+        }),
+        screen: ProfileScreen,
     },
     [routes.RegistrationScreen]: {
-        screen: RegistrationScreen,
         navigationOptions: () => ({
             title: "Registration"
-        })
+        }),
+        screen: RegistrationScreen,
     },
 }
