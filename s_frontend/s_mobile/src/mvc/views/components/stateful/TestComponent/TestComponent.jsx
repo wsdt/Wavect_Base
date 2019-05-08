@@ -13,12 +13,16 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var oAuthParent_1 = require("../oAuthParent");
-var OAuthFacebook = /** @class */ (function (_super) {
-    __extends(OAuthFacebook, _super);
-    function OAuthFacebook() {
+var React = require("react");
+var react_native_1 = require("react-native");
+var TestComponent = /** @class */ (function (_super) {
+    __extends(TestComponent, _super);
+    function TestComponent() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    return OAuthFacebook;
-}(oAuthParent_1.OAuthParent));
-exports.OAuthFacebook = OAuthFacebook;
+    TestComponent.prototype.render = function () {
+        return <react_native_1.Text>Bring color to the world!</react_native_1.Text>;
+    };
+    return TestComponent;
+}(React.Component));
+exports.TestComponent = TestComponent;

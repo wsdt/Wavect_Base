@@ -4,6 +4,8 @@
 {
     "compilerOptions": {
         "target": "es5",
+        "checkJs": true,
+        "allowJs": true,
         "module": "commonjs",
         "removeComments": true,
         "preserveConstEnums": true,
