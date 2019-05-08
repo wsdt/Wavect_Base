@@ -1,10 +1,6 @@
 import { NavigationRouteConfigMap } from "react-navigation"
 import { TestScreen } from "../../../pages/TestScreen/TestScreen"
-
-/** Public routes mapping to avoid all sorts of spelling errors. */
-export const routes = {
-    TestScreen: "TestScreen",
-}
+import {routes} from "./Routes"
 
 /**
  * Add here your routes as key-value pairs (if key == value, you can
