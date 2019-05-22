@@ -15,3 +15,7 @@ $primaryBackgroundColor: #fffffe;
 /** E.g. used by nav bar. */
 $secondaryColor: #fff;
 $secondaryBackgroundColor: $primaryColor;
+
+/** E.g. used by tab bar. */
+$inactiveColor: $secondaryColor;
+$inactiveBackgroundColor: #46a9fb;

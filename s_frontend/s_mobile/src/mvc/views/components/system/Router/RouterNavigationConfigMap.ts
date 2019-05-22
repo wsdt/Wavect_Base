@@ -1,4 +1,5 @@
 import { NavigationRouteConfigMap } from "react-navigation"
+import {DashboardTabScreen} from "../../../pages/DashboardTabScreen/DashboardTabScreen";
 import { TestScreen } from "../../../pages/TestScreen/TestScreen"
 import {routes} from "./Routes"
 
@@ -16,4 +17,10 @@ export const routesConfig: NavigationRouteConfigMap = {
         }),
         screen: TestScreen, // which component to load
     },
+    [routes.DashboardTabScreen]: {
+        navigationOptions: () => ({
+            title: "Your Tabs",
+        }),
+        screen: DashboardTabScreen,
+    }
 }
