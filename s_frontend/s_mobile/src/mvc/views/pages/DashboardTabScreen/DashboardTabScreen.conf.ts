@@ -1,4 +1,5 @@
 import {BottomTabNavigatorConfig, createAppContainer} from "react-navigation"
+import p from "../../../controllers/parseScss"
 import {SwitchRouter} from "../../components/system/SwitchRouter/SwitchRouter"
 import {DrawerNavigator} from "../../components/system/TabRouter/DrawerNavigator"
 import * as styles from "../../components/system/TabRouter/TabBar.scss"
@@ -9,9 +10,9 @@ import {routesObj} from "./DashboardTabScreenRoutes"
 const tabConf: BottomTabNavigatorConfig = {
     initialRouteName: routesStr.NewsfeedStack.Home,
     tabBarOptions: {
-        iconStyle: styles.tabIcon,
+        iconStyle: p(styles.tabIcon),
         showIcon: true,
-        tabStyle: styles.tabBarStyle,
+        style: p(styles.tabBarStyle),
     },
 }
 

@@ -4,9 +4,9 @@ import {NavigationRouteConfigMap} from "react-navigation"
 import p from "../../../controllers/parseScss"
 import * as styles from "../../components/system/TabRouter/TabBar.scss"
 import {routesStr} from "./DashboardTabScreen.constants"
-import {ChallengeTabRoutes} from "./tab_challenges/ChallengeTabRoutes"
-import {NewsfeedTabRoutes} from "./tab_newsfeed/NewsfeedTabRoutes"
-import {ProfileTabRoutes} from "./tab_profile/ProfileTabRoutes"
+import {ChallengeTab} from "./tab_challenges/ChallengeTab"
+import {NewsfeedTab} from "./tab_newsfeed/NewsfeedTab"
+import {ProfileTab} from "./tab_profile/ProfileTab"
 
 
 export const routesObj: NavigationRouteConfigMap = {
@@ -17,7 +17,7 @@ export const routesObj: NavigationRouteConfigMap = {
             ),
             tabBarLabel: "Challenges",
         },
-        screen: ChallengeTabRoutes,
+        screen: ChallengeTab,
     },
     [routesStr.NewsfeedStack.Home]: {
         navigationOptions: {
@@ -26,7 +26,7 @@ export const routesObj: NavigationRouteConfigMap = {
             ),
             tabBarLabel: "Newsfeed",
         },
-        screen: NewsfeedTabRoutes,
+        screen: NewsfeedTab,
     },
     [routesStr.ProfileStack.Home]: {
         navigationOptions: {
@@ -35,6 +35,6 @@ export const routesObj: NavigationRouteConfigMap = {
             ),
             tabBarLabel: "Profile",
         },
-        screen: ProfileTabRoutes,
+        screen: ProfileTab,
     },
 }
