@@ -1,6 +1,6 @@
 import * as React from "react"
-import BottomChallengeBar from "../BottomChallengeBar/BottomChallengeBar"
 import { ChallengeBackground } from "../../stateful/ChallengeBackground/ChallengeBackground"
+import BottomChallengeBar from "../BottomChallengeBar/BottomChallengeBar"
 import { IChallengeFullPageState } from "./ChallengeFullpage.state"
 
 

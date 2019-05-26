@@ -1,24 +1,5 @@
 import {StyleSheet} from "react-native"
 
-/*.parentContainer {
-    margin-right: 10px;
-}
-
-.button {
-    background-color: ;
-    border-radius: 6px;
-    padding-top: -0.5px;
-    padding-bottom: -0.25px;
-}
-
-.container {
-    margin-top: 10px;
-}
-
-.title {
-    color: #fff;
-}
-*/
 
 const styles = StyleSheet.create({
     button: {

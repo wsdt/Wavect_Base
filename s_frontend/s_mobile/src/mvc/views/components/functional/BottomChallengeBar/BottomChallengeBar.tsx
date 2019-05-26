@@ -1,32 +1,31 @@
-import React, { Component } from "react"
-import { View } from "react-native"
-import { Button, Text } from "react-native-elements"
-import { IChallengeBottomBarProps } from "./BottomChallengeBar.props"
-import * as styles from "./BottomChallengeBar.scss"
-import p from "../../../../controllers/parseScss";
+import React, {Component} from "react"
+import {View} from "react-native"
+import {Button, Text} from "react-native-elements"
+import styles from "./BottomChallengeBar.css"
+import {IChallengeBottomBarProps} from "./BottomChallengeBar.props"
 
 class BottomChallengeBar extends Component<IChallengeBottomBarProps, any> {
-    render() {
-        const { headline, subline } = this.props
+    public render() {
+        const {headline, subline} = this.props
 
         return (
-            <View style={p(styles.topLevel)}>
-                <Text style={p(styles.headline)}>{headline}</Text>
-                <Text style={p(styles.subline)}>{subline}</Text>
-                <View style={p(styles.container)}>
+            <View style={styles.topLevel}>
+                <Text style={styles.headline}>{headline}</Text>
+                <Text style={styles.subline}>{subline}</Text>
+                <View style={styles.container}>
                     <Button
                         title="Ablehnen"
                         type="outline"
-                        titleStyle={p(styles.btnTitle)}
-                        containerStyle={p(styles.btnContainer)}
-                        buttonStyle={p(styles.btnStyle)}
+                        titleStyle={styles.btnTitle}
+                        containerStyle={styles.btnContainer}
+                        buttonStyle={styles.btnStyle}
                     />
                     <Button
                         title="Annehmen"
                         type="outline"
-                        titleStyle={p(styles.btnTitle)}
-                        containerStyle={p(styles.btnContainer)}
-                        buttonStyle={p(styles.btnStyle)}
+                        titleStyle={styles.btnTitle}
+                        containerStyle={styles.btnContainer}
+                        buttonStyle={styles.btnStyle}
                     />
                 </View>
             </View>

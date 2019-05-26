@@ -1,18 +1,17 @@
 import * as React from "react"
-import { Button, withBadge } from "react-native-elements"
-import p from "../../../../controllers/parseScss"
-import { IRoundedButtonProps } from "./RoundedButton.props"
-import * as styles from "./RoundedButton.scss"
 import { View } from "react-native"
+import { Button, withBadge } from "react-native-elements"
+import styles from "./RoundedButton.css"
+import { IRoundedButtonProps } from "./RoundedButton.props"
 
 export const RoundedButton = (props: IRoundedButtonProps) => {
     const BadgedBtn = withBadge()(Button)
     return (
-        <View style={p(styles.parentContainer)}>
+        <View style={styles.parentContainer}>
             <BadgedBtn
                 title={props.title}
-                titleStyle={p(styles.title)}
-                buttonStyle={p(styles.button)}
+                titleStyle={styles.title}
+                buttonStyle={styles.button}
                 onPress={props.press}
             />
         </View>
