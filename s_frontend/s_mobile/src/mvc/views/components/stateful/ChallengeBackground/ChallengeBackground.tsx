@@ -15,19 +15,16 @@ export class ChallengeBackground extends React.PureComponent<
     private getImageStyles(): Array<StyleProp<ViewStyle>> {
         const imageStyles: any = [p(styles.bgImage)]
         if (this.state.isImageGrayscale) {
-            //imageStyles.push({tintColor:"gray"})
+            // imageStyles.push({tintColor:"gray"})
         }
 
         return imageStyles
     }
 
     public render() {
-        return (
-            <ImageBackground
-                imageStyle={this.getImageStyles()}
-                style={p(styles.container)}
-                source={this.props.backgroundImg}
-            />
-        )
+        return <ImageBackground imageStyle={this.getImageStyles()} style={p(styles.container)}
+                                source={this.props.backgroundImg}>
+            {this.props.children}
+        </ImageBackground>
     }
 }
