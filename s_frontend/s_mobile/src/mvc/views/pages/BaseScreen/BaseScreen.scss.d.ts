@@ -1,1 +1,1 @@
-export const page: string;
+export const page: string

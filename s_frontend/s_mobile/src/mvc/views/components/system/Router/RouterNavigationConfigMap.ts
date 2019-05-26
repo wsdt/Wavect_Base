@@ -1,6 +1,6 @@
 import { NavigationRouteConfigMap } from "react-navigation"
 import { HomeScreen } from "../../../pages/HomeScreen/HomeScreen"
-import {routes} from "./Routes"
+import { routes } from "./Routes"
 
 /**
  * Add here your routes as key-value pairs (if key == value, you can

@@ -1,6 +1,5 @@
 import * as React from "react"
-import {createSwitchNavigator, SwitchNavigatorConfig} from "react-navigation"
-
+import { createSwitchNavigator, SwitchNavigatorConfig } from "react-navigation"
 
 /**
  * Used e.g. for authentication.
@@ -8,11 +7,15 @@ import {createSwitchNavigator, SwitchNavigatorConfig} from "react-navigation"
  * @param targetScreen: Calling that screen and deleting/resetting routes -> no return back to noReturnableScreen.
  * @param conf: Additional configuration. Optional
  */
-export const SwitchRouter = (noReturnableScreen: React.ReactNode, targetScreen: React.ReactNode, conf?: SwitchNavigatorConfig) => {
+export const SwitchRouter = (
+    noReturnableScreen: React.ReactNode,
+    targetScreen: React.ReactNode,
+    conf?: SwitchNavigatorConfig
+) => {
     return createSwitchNavigator(
         {
-            noReturnable: {screen: noReturnableScreen},
-            targetScreen: {screen: targetScreen}
+            noReturnable: { screen: noReturnableScreen },
+            targetScreen: { screen: targetScreen },
         },
         conf
     )

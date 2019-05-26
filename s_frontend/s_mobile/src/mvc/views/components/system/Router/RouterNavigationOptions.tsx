@@ -1,7 +1,7 @@
 import * as React from "react"
-import {NavigationScreenOptions} from "react-navigation"
-import {RoundedButton} from "../../functional/RoundedButton/RoundedButton"
-import {Linking} from "react-native";
+import { NavigationScreenOptions } from "react-navigation"
+import { RoundedButton } from "../../functional/RoundedButton/RoundedButton"
+import { Linking } from "react-native"
 
 /**
  * You can provide custom navigationoptions for your nav bar for each page.
@@ -9,7 +9,14 @@ import {Linking} from "react-native";
  */
 export const defaultNavigationOptions: NavigationScreenOptions = {
     headerRight: (
-        <RoundedButton title="Feedback" press={() => Linking.openURL('mailto:support@bekind.com?subject=BeKind-Feedback&body=Was könnten wir verbessern?')}/>
+        <RoundedButton
+            title="Feedback"
+            press={() =>
+                Linking.openURL(
+                    "mailto:support@bekind.com?subject=BeKind-Feedback&body=Was könnten wir verbessern?"
+                )
+            }
+        />
     ),
     headerStyle: {
         backgroundColor: "#fff",
@@ -21,7 +28,7 @@ export const defaultNavigationOptions: NavigationScreenOptions = {
     headerTitleStyle: {
         fontWeight: "bold",
     },
-};
+}
 
 /* In case shadow is on IOS or Android still there
     shadowOffset: {

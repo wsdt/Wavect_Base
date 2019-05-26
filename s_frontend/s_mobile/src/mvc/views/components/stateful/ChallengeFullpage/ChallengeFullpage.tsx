@@ -1,8 +1,9 @@
 import * as React from "react"
-import {ChallengeBackground} from "../ChallengeBackground/ChallengeBackground"
-import {IChallengeFullPageState} from "./ChallengeFullpage.state"
+import { ChallengeBackground } from "../ChallengeBackground/ChallengeBackground"
+import { IChallengeFullPageState } from "./ChallengeFullpage.state"
 
 /** Try to always use PureComponent, as it might be better regarding performance! */
+
 export class ChallengeFullpage extends React.PureComponent<any, IChallengeFullPageState> {
     public state:IChallengeFullPageState = {
         backgroundImg: {uri: "https://images.pexels.com/photos/1116050/pexels-photo-1116050.jpeg?auto=compress&cs=tinysrgb"}

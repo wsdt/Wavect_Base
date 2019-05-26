@@ -1,4 +1,4 @@
-export interface IChallengeBottomBarProps{
-    headline: string,
+export interface IChallengeBottomBarProps {
+    headline: string
     subline: string
 }

@@ -1,2 +1,2 @@
-export const tabIcon: string;
-export const tabBarStyle: string;
+export const tabIcon: string
+export const tabBarStyle: string
