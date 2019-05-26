@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from "react"
 import { ChallengeBackground } from "../ChallengeBackground/ChallengeBackground"
 import { IChallengeFullPageState } from "./ChallengeFullpage.state"
 
