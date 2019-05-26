@@ -1,6 +1,7 @@
 import * as React from "react"
 import {NavigationScreenOptions} from "react-navigation"
 import {RoundedButton} from "../../functional/RoundedButton/RoundedButton"
+import {Linking} from "react-native";
 
 /**
  * You can provide custom navigationoptions for your nav bar for each page.
@@ -8,7 +9,7 @@ import {RoundedButton} from "../../functional/RoundedButton/RoundedButton"
  */
 export const defaultNavigationOptions: NavigationScreenOptions = {
     headerRight: (
-        <RoundedButton title="Feedback"/>
+        <RoundedButton title="Feedback" press={() => Linking.openURL('mailto:support@bekind.com?subject=BeKind-Feedback&body=Was könnten wir verbessern?')}/>
     ),
     headerStyle: {
         backgroundColor: "#fff",
