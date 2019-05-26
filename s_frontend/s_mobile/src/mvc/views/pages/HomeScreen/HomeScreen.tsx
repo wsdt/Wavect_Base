@@ -7,7 +7,7 @@ export class HomeScreen extends React.Component<any, any> {
     public render(): React.ReactNode {
         return (
             <BaseScreen>
-
+                <ChallengeFullpage/>
             </BaseScreen>
         )
     }
