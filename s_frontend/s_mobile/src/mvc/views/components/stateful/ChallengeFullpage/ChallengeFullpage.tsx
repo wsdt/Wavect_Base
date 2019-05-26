@@ -7,11 +7,11 @@ import {IChallengeFullPageState} from "./ChallengeFullpage.state"
 /** Try to always use PureComponent, as it might be better regarding performance! */
 export class ChallengeFullpage extends React.PureComponent<any, IChallengeFullPageState> {
     public state:IChallengeFullPageState = {
-        backgroundImg: {uri: "https://www.dummyurl.com/jdjd.jpg"}, // uri or require dependent whether remote or local!
+        backgroundImg: {uri: ""}, // uri or require dependent whether remote or local!
     }
     
     public componentWillMount(): void {
-        this.setState({backgroundImg: require("LOCAL_RESOURCE_HERE")}) // TODO add local resource or load remote img from backend already
+        // this.setState({backgroundImg: require("LOCAL_RESOURCE_HERE")}) // TODO add local resource or load remote img from backend already
     }
 
     public render() {
@@ -21,6 +21,6 @@ export class ChallengeFullpage extends React.PureComponent<any, IChallengeFullPa
 
     /** Load bg image from backend server. TODO: In the meantime use local image */
     private getBackgroundImg(): React.ReactElement {
-        return (this.state.backgroundImg) ? <LoadingIndicator/> :  <ImageBackground imageStyle={styles.bgImage} style={styles.container} source={this.state.backgroundImg}/>
+        return (this.state.backgroundImg === {uri:""}) ? <LoadingIndicator/> :  <ImageBackground imageStyle={styles.bgImage} style={styles.container} source={this.state.backgroundImg}/>
     }
 }
