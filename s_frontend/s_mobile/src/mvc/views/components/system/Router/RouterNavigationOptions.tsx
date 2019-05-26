@@ -21,7 +21,7 @@ export const defaultNavigationOptions: NavigationScreenOptions = {
     headerTitleStyle: {
         fontWeight: "bold",
     },
-}
+};
 
 /* In case shadow is on IOS or Android still there
     shadowOffset: {
