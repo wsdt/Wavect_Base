@@ -12,9 +12,16 @@ export const defaultNavigationOptions: NavigationScreenOptions = {
     ),
     headerStyle: {
         backgroundColor: "#fff",
+        elevation: 0,
+        shadowOpacity: 0,
+        shadowRadius: 0,
     },
     headerTintColor: "#111" /* tintColor is used by title and back btn etc. */,
     headerTitleStyle: {
         fontWeight: "bold",
     },
 }
+
+/* In case shadow is on IOS or Android still there
+    shadowOffset: {
+    height: 0,} */
