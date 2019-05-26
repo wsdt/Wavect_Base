@@ -1,5 +1,4 @@
-
 export interface IRoundedButtonProps {
-    title: string,
+    title: string
     press: VoidFunction
 }
