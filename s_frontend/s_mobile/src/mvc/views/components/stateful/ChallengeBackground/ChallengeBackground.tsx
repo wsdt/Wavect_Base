@@ -1,8 +1,7 @@
 import * as React from "react"
 import { ImageBackground, StyleProp, ViewStyle } from "react-native"
-import p from "../../../../controllers/parseScss"
+import styles from "./ChallengeBackground.css"
 import { IChallengeBackgroundProps } from "./ChallengeBackground.props"
-import * as styles from "./ChallengeBackground.scss"
 
 export class ChallengeBackground extends React.PureComponent<
     IChallengeBackgroundProps,
@@ -12,19 +11,19 @@ export class ChallengeBackground extends React.PureComponent<
         isImageGrayscale: true,
     }
 
+    public render() {
+        return <ImageBackground imageStyle={this.getImageStyles()} style={styles.container}
+                                source={this.props.backgroundImg}>
+            {this.props.children}
+        </ImageBackground>
+    }
+
     private getImageStyles(): Array<StyleProp<ViewStyle>> {
-        const imageStyles: any = [p(styles.bgImage)]
+        const imageStyles: any = [styles.bgImage]
         if (this.state.isImageGrayscale) {
             // imageStyles.push({tintColor:"gray"})
         }
 
         return imageStyles
-    }
-
-    public render() {
-        return <ImageBackground imageStyle={this.getImageStyles()} style={p(styles.container)}
-                                source={this.props.backgroundImg}>
-            {this.props.children}
-        </ImageBackground>
     }
 }
