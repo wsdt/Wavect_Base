@@ -7,9 +7,9 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        height: "95%",
+        height: "100%",
         justifyContent: "flex-end",
-        width: "97%",
+        width: "100%",
     },
 })
 
