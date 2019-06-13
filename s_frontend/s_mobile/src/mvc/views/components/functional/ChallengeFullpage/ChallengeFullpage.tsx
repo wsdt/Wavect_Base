@@ -3,7 +3,6 @@ import { ChallengeBackground } from "../../stateful/ChallengeBackground/Challeng
 import ChallengeLayerBar from "../ChallengeLayerBar/ChallengeLayerBar"
 import { IChallengeFullPageState } from "./ChallengeFullpage.state"
 
-
 /** Try to always use PureComponent, as it might be better regarding performance! */
 
 export class ChallengeFullpage extends React.PureComponent<
@@ -18,14 +17,17 @@ export class ChallengeFullpage extends React.PureComponent<
     }
 
     public render() {
-        return <ChallengeBackground backgroundImg={this.state.backgroundImg}>
-            <ChallengeLayerBar
-                headline={"Laugh2gether"}
-                subline={"Bring einen Freund zum Lachen und mache dabei ein Video"}
-                company={"Firmenlogo"}
-                icon={"sc-telegram"} />
-
-        </ChallengeBackground>
+        return (
+            <ChallengeBackground backgroundImg={this.state.backgroundImg}>
+                <ChallengeLayerBar
+                    headline={"Laugh2gether"}
+                    subline={
+                        "Bring einen Freund zum Lachen und mache dabei ein Video"
+                    }
+                    company={"Firmenlogo"}
+                    icon={"sc-telegram"}
+                />
+            </ChallengeBackground>
+        )
     }
 }
-

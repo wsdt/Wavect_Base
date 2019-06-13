@@ -9,16 +9,9 @@ export class GrayColorImg extends React.PureComponent<any, any> {
     }
 
     public render() {
-
-        console.log("######### "+React.Children.count(this.props.children))
-
-        let Res:any = null
-        React.Children.map(this.props.children, (child) => {
-            console.log("####### c "+child.toString())
-            Res = <>{child}</>
-        })
-        return (Res == null) ? null : <Res style={styles.backGreyImg} />
-
-        /* style={[Img.style, styles.frontColorImg]} */
+        const Img:any = React.Children.only(this.props.children)
+        return <>
+            <Img />
+        </>
     }
 }

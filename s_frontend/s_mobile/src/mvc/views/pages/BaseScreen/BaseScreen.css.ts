@@ -1,5 +1,5 @@
-import {StyleSheet} from "react-native"
-import {primaryBackgroundColor} from "../../../../globalConfiguration/globalConstants.css"
+import { StyleSheet } from "react-native"
+import { primaryBackgroundColor } from "../../../../globalConfiguration/globalConstants.css"
 
 const styles = StyleSheet.create({
     page: {
@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         margin: 5,
-    }
+    },
 })
 
 export default styles

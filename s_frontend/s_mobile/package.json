@@ -44,6 +44,5 @@
             "pre-commit": "yarn start prettier"
         }
     },
-
     "private": true
 }

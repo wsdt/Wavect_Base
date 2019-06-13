@@ -1,5 +1,4 @@
-import {StyleSheet} from "react-native"
-
+import { StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
     button: {
@@ -15,7 +14,7 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
     title: {
-      color: "#fff",
+        color: "#fff",
     },
 })
 

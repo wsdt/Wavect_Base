@@ -1,20 +1,18 @@
-
-import {StyleSheet} from "react-native"
+import { StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
-
     mainComponent: {
-      height: '100%',
-      width: '100%',
+        height: "100%",
+        width: "100%",
     },
 
     btnStyleTransparent: {
-        borderColor: 'transparent'
+        borderColor: "transparent",
     },
 
     btnStyleWithBorder: {
-        borderColor: '#000',
-        height: 60
+        borderColor: "#000",
+        height: 60,
     },
 
     btnTitleStandard: {
@@ -30,7 +28,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: "row",
-        alignItems: 'center',
+        alignItems: "center",
     },
 
     /* 'Ablehnen' with flex: 1 for 33% of size */
@@ -43,7 +41,7 @@ const styles = StyleSheet.create({
     buttonContainer2: {
         flex: 1.5,
         margin: 5,
-        backgroundColor: '#f3f3ee'
+        backgroundColor: "#f3f3ee",
     },
     headline: {
         fontSize: 32,
@@ -56,7 +54,7 @@ const styles = StyleSheet.create({
     },
     bottomActionContainer: {
         backgroundColor: "#ccc",
-        position: 'absolute',
+        position: "absolute",
         bottom: 0,
         height: 200,
         opacity: 0.7,
@@ -64,27 +62,24 @@ const styles = StyleSheet.create({
     },
 
     topLeftCompany: {
-        alignSelf: 'flex-start',
+        alignSelf: "flex-start",
         margin: 5,
         opacity: 0.8,
         maxWidth: 120,
-        position: 'absolute',
+        position: "absolute",
         borderRadius: 5,
-        backgroundColor: '#ccc'
+        backgroundColor: "#ccc",
     },
 
     topRightSymbol: {
-        alignSelf: 'flex-end',
+        alignSelf: "flex-end",
         marginRight: -20,
-        position: 'absolute',
+        position: "absolute",
         borderRadius: 500,
         width: 75,
         height: 75,
-        backgroundColor: '#fff',
+        backgroundColor: "#fff",
     },
-
-
-
 })
 
 export default styles
