@@ -7,7 +7,7 @@ import {IChallengeBottomBarProps} from "./ChallengeLayerBar.props"
 
 class ChallengeLayerBar extends Component<IChallengeBottomBarProps, any> {
     public render() {
-        //just need to get the icon..
+        // just need to get the icon..
         const {headline, subline, company} = this.props;
 
         return (

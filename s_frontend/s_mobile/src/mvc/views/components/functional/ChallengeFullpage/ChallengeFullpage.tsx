@@ -13,20 +13,17 @@ export class ChallengeFullpage extends React.PureComponent<
     public state: IChallengeFullPageState = {
         backgroundImg: {
             uri:
-                "https://images.pexels.com/photos/1624059/pexels-photo-1624059.jpeg?cs=srgb&dl=afrikanisch-afro-am-telefon-1624059.jpg&fm=jpg",
+                "https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress",
         },
     }
 
     public render() {
-        // TODO: Instead of nesting maybe try to set it as bg property to parent view (grayscale) or make an own component
-
         return <ChallengeBackground backgroundImg={this.state.backgroundImg}>
             <ChallengeLayerBar
                 headline={"Laugh2gether"}
                 subline={"Bring einen Freund zum Lachen und mache dabei ein Video"}
                 company={"Firmenlogo"}
-                /* icon={"sc-telegram"} */
-            />
+                icon={"sc-telegram"} />
 
         </ChallengeBackground>
     }
