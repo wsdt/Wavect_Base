@@ -10,6 +10,18 @@ const styles = StyleSheet.create({
         justifyContent: "flex-end",
         width: "100%",
     },
+
+
+
+
+
+    backGreyImg: {
+        tintColor: "gray",
+    },
+    frontColorImg: {
+        opacity: 0.3,
+        position: "absolute",
+    },
 })
 
 export default styles
