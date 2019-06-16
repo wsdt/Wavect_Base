@@ -31,8 +31,16 @@ export class ChallengeFullpage extends React.PureComponent<IChallengeFullpagePro
             return <LoadingIndicator />
         }
 
-        const { headline, subline, companyLogoUri, majorCategory} = this.props.challenge
-        return <ChallengeLayerBar headline={headline} subline={subline} challengeCategoryUri={majorCategory} companyLogoUri={companyLogoUri} isGrayscale={this.state.isGrayscale}/>
+        const { headline, subline, companyLogoUri, majorCategory } = this.props.challenge
+        return (
+            <ChallengeLayerBar
+                headline={headline}
+                subline={subline}
+                challengeCategoryUri={majorCategory}
+                companyLogoUri={companyLogoUri}
+                isGrayscale={this.state.isGrayscale}
+            />
+        )
     }
 
     private onLoad = () => {

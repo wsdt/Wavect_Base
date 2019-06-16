@@ -11,11 +11,10 @@ const styles = StyleSheet.create({
         borderRadius: radius,
     },
     image: {
-        width:120,
-        height:70,
+        width: 120,
+        height: 70,
         resizeMode: "contain",
     },
-
 })
 
 export default styles

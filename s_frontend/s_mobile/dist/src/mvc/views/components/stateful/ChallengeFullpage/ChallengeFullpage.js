@@ -44,7 +44,7 @@ var ChallengeFullpage = (function (_super) {
                 return <LoadingIndicator_1.LoadingIndicator />;
             }
             var _a = _this.props.challenge, headline = _a.headline, subline = _a.subline, companyLogoUri = _a.companyLogoUri, majorCategory = _a.majorCategory;
-            return <ChallengeLayerBar_1.ChallengeLayerBar headline={headline} subline={subline} challengeCategoryUri={majorCategory} companyLogoUri={companyLogoUri} isGrayscale={_this.state.isGrayscale}/>;
+            return (<ChallengeLayerBar_1.ChallengeLayerBar headline={headline} subline={subline} challengeCategoryUri={majorCategory} companyLogoUri={companyLogoUri} isGrayscale={_this.state.isGrayscale}/>);
         };
         _this.onLoad = function () {
             _this.setState(function (prevState) { return (__assign({}, prevState, { isLoading: false })); });

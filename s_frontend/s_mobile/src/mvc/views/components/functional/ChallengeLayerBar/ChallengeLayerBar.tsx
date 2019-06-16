@@ -1,8 +1,8 @@
 import React from "react"
-import {View} from "react-native"
+import { View } from "react-native"
 import { Text } from "react-native-elements"
-import {ChallengeTypeIcon} from "../ChallengeTypeIcon/ChallengeTypeIcon"
-import {CompanyLogo} from "../CompanyLogo/CompanyLogo"
+import { ChallengeTypeIcon } from "../ChallengeTypeIcon/ChallengeTypeIcon"
+import { CompanyLogo } from "../CompanyLogo/CompanyLogo"
 import { MajorBtnType, MajorButton } from "../MajorButton/MajorButton"
 import styles from "./ChallengeLayerBar.css"
 import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
@@ -13,7 +13,7 @@ export const ChallengeLayerBar: React.FunctionComponent<IChallengeLayerBarProps>
 
     return (
         <View style={styles.mainComponent}>
-            <CompanyLogo companyLogoUri={companyLogoUri} isGrayscale={isGrayscale}/>
+            <CompanyLogo companyLogoUri={companyLogoUri} isGrayscale={isGrayscale} />
             <ChallengeTypeIcon type={challengeCategoryUri} />
 
             <View style={styles.bottomActionContainer}>

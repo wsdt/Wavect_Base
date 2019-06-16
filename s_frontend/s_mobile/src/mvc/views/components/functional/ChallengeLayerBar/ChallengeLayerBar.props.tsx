@@ -1,4 +1,4 @@
-import {ImageURISource} from "react-native"
+import { ImageURISource } from "react-native"
 import { ChallengeCategory } from "../../../../models/ChallengeCategory"
 
 export interface IChallengeLayerBarProps {
@@ -6,5 +6,5 @@ export interface IChallengeLayerBarProps {
     subline: string
     companyLogoUri: ImageURISource
     challengeCategoryUri: ChallengeCategory
-    isGrayscale:boolean
+    isGrayscale: boolean
 }

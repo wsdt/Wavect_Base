@@ -6,7 +6,7 @@ var radius = GlobalStyles_css_1.default.radius.borderRadius;
 var styles = react_native_1.StyleSheet.create({
     mainComponent: {
         height: "100%",
-        width: "100%",
+        width: "98%",
     },
     btnStyleTransparent: {
         borderColor: "transparent",

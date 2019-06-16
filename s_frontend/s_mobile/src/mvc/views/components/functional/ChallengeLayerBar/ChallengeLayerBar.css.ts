@@ -6,7 +6,7 @@ const radius = globalStyles.radius.borderRadius
 const styles = StyleSheet.create({
     mainComponent: {
         height: "100%",
-        width: "100%",
+        width: "98%",
     },
 
     btnStyleTransparent: {
