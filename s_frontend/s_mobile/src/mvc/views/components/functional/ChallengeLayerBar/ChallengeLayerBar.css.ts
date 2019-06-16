@@ -49,6 +49,8 @@ const styles = StyleSheet.create({
         position: "absolute",
         height: 200,
         borderRadius: radius,
+        borderTopLeftRadius: 0,
+        borderTopRightRadius: 0,
         opacity: 0.7,
         width: "100%",
     },
@@ -60,15 +62,6 @@ const styles = StyleSheet.create({
         position: "absolute",
         borderRadius: radius,
         backgroundColor: "#ccc",
-    },
-    topRightSymbol: {
-        alignSelf: "flex-end",
-        position: "absolute",
-        borderRadius: 500,
-        opacity: 0.5,
-        width: 75,
-        height: 75,
-        backgroundColor: "#000",
     },
 })
 

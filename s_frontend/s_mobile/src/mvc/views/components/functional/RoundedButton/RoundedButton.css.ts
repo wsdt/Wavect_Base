@@ -1,8 +1,9 @@
 import { StyleSheet } from "react-native"
+import {GREY} from "../../../GlobalStyles.css"
 
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: "#9b9b9b",
+        backgroundColor: GREY,
         borderRadius: 5,
     },
     container: {

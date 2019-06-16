@@ -5,7 +5,9 @@ const styles = StyleSheet.create({
         flex: 1,
         height: "100%",
         justifyContent: "flex-end",
-        width: "100%",
+        width: "98%",
+        marginLeft: 10,
+        marginRight: 10,
     },
 })
 

@@ -1,5 +1,5 @@
-import {ImageURISource} from "react-native"
-import {ChallengeCategory} from "./ChallengeCategory"
+import { ImageURISource } from "react-native"
+import { ChallengeCategory } from "./ChallengeCategory"
 
 export class Challenge {
     get bgImage(): ImageURISource {
@@ -44,7 +44,7 @@ export class Challenge {
     private _majorCategory!: ChallengeCategory
     private _bgImage!: ImageURISource
 
-    public constructor(headline:string, subline:string, companyName:string, majorCategory:ChallengeCategory, bgImage:ImageURISource) {
+    public constructor(headline: string, subline: string, companyName: string, majorCategory: ChallengeCategory, bgImage: ImageURISource) {
         this.bgImage = bgImage
         this.majorCategory = majorCategory
         this.companyName = companyName

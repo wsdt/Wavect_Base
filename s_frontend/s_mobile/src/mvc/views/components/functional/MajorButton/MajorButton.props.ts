@@ -1,6 +1,6 @@
-import {MajorBtnType} from "./MajorButton";
+import { MajorBtnType } from "./MajorButton"
 
 export interface IMajorButtonProps {
-    title:string,
-    btnType:MajorBtnType
+    title: string
+    btnType: MajorBtnType
 }

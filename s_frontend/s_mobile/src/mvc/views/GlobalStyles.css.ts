@@ -1,5 +1,7 @@
 import { StyleSheet } from "react-native"
 
+export const GREY = "#9b9b9b"
+
 const globalStyles = StyleSheet.create({
     absoluteCenter: {
         position: "absolute",
@@ -15,7 +17,11 @@ const globalStyles = StyleSheet.create({
         width: "100%",
     },
     radius: {
-        borderRadius: 10,
+        borderRadius: 15,
+    },
+    center: {
+        justifyContent: "center",
+        alignItems: "center",
     },
 })
 

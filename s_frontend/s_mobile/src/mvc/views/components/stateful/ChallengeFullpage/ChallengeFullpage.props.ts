@@ -1,5 +1,5 @@
-import {Challenge} from "../../../../models/Challenge"
+import { Challenge } from "../../../../models/Challenge"
 
 export interface IChallengeFullpageProps {
-    challenge:Challenge
+    challenge: Challenge
 }

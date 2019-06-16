@@ -15,7 +15,7 @@ export class ChallengeFullpage extends React.PureComponent<IChallengeFullpagePro
     }
 
     public render() {
-        const {bgImage} = this.props.challenge
+        const { bgImage } = this.props.challenge
 
         return (
             <GrayColorImg isGrayscale={this.state.isGrayscale}>
@@ -31,15 +31,8 @@ export class ChallengeFullpage extends React.PureComponent<IChallengeFullpagePro
             return <LoadingIndicator />
         }
 
-        const {headline, subline, companyName, majorCategory} = this.props.challenge
-        return (
-            <ChallengeLayerBar
-                headline={headline}
-                subline={subline}
-                company={companyName}
-                icon={majorCategory.toString()}
-            />
-        )
+        const { headline, subline, companyName, majorCategory } = this.props.challenge
+        return <ChallengeLayerBar headline={headline} subline={subline} company={companyName} icon={majorCategory} />
     }
 
     private onLoad = () => {
