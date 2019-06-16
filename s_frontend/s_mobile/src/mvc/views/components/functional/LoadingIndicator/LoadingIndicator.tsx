@@ -2,6 +2,6 @@ import * as React from "react"
 import { ActivityIndicator } from "react-native"
 
 /** Convenience component to make loadingIndicator more concise. */
-export const LoadingIndicator = (): JSX.Element => {
+export const LoadingIndicator:React.FunctionComponent = () => {
     return <ActivityIndicator size="large" color="#000000" />
 }

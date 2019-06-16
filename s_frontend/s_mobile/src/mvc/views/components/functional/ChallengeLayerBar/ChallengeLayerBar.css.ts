@@ -1,4 +1,7 @@
 import { StyleSheet } from "react-native"
+import globalStyles from "../../../GlobalStyles.css"
+
+const radius = globalStyles.radius.borderRadius
 
 const styles = StyleSheet.create({
     mainComponent: {
@@ -26,9 +29,9 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     container: {
+        alignItems: "center",
         flex: 1,
         flexDirection: "row",
-        alignItems: "center",
     },
 
     /* 'Ablehnen' with flex: 1 for 33% of size */
@@ -39,9 +42,11 @@ const styles = StyleSheet.create({
 
     /* 'Annehmen' with flex: 1.5 and bright withe */
     buttonContainer2: {
+        backgroundColor: "#f3f3ee",
+        borderRadius: 3,
+
         flex: 1.5,
         margin: 5,
-        backgroundColor: "#f3f3ee",
     },
     headline: {
         fontSize: 32,
@@ -54,23 +59,22 @@ const styles = StyleSheet.create({
     },
     bottomActionContainer: {
         backgroundColor: "#ccc",
-        position: "absolute",
         bottom: 0,
+        position: "absolute",
         height: 200,
+        borderRadius: radius,
         opacity: 0.7,
         width: "100%",
     },
-
     topLeftCompany: {
         alignSelf: "flex-start",
         margin: 5,
         opacity: 0.8,
         maxWidth: 120,
         position: "absolute",
-        borderRadius: 5,
+        borderRadius: radius,
         backgroundColor: "#ccc",
     },
-
     topRightSymbol: {
         alignSelf: "flex-end",
         marginRight: -20,
