@@ -11,11 +11,7 @@ export const defaultNavigationOptions: NavigationScreenOptions = {
     headerRight: (
         <RoundedButton
             title="Feedback"
-            press={() =>
-                Linking.openURL(
-                    "mailto:support@bekind.com?subject=BeKind-Feedback&body=Was könnten wir verbessern?"
-                )
-            }
+            press={() => Linking.openURL("mailto:support@bekind.com?subject=BeKind-Feedback&body=Was könnten wir verbessern?")}
         />
     ),
     headerStyle: {

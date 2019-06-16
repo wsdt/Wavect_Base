@@ -19,10 +19,7 @@ var __extends =
             function __() {
                 this.constructor = d
             }
-            d.prototype =
-                b === null
-                    ? Object.create(b)
-                    : ((__.prototype = b.prototype), new __())
+            d.prototype = b === null ? Object.create(b) : ((__.prototype = b.prototype), new __())
         }
     })()
 Object.defineProperty(exports, "__esModule", { value: true })
