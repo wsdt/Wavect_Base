@@ -1,8 +1,10 @@
 import React from "react"
-import { View } from "react-native"
-import { Button, Text } from "react-native-elements"
+import {View} from "react-native"
+import {Button, Text} from "react-native-elements"
+import {MajorBtnType, MajorButton} from "../MajorButton/MajorButton"
 import styles from "./ChallengeLayerBar.css"
-import { IChallengeBottomBarProps } from "./ChallengeLayerBar.props"
+import {IChallengeBottomBarProps} from "./ChallengeLayerBar.props"
+import ChallengeType from "../ChallengeType/ChallengeType";
 
 export const ChallengeLayerBar: React.FunctionComponent<IChallengeBottomBarProps> = props => {
     // just need to get the icon..
@@ -14,27 +16,14 @@ export const ChallengeLayerBar: React.FunctionComponent<IChallengeBottomBarProps
                 <Button title={company} type="outline" titleStyle={styles.btnTitleWhiteColor} buttonStyle={styles.btnStyleTransparent} />
             </View>
 
-            <View style={styles.topRightSymbol}>
-                <Button
-                    title=""
-                    type="outline"
-                    titleStyle={styles.btnTitleStandard}
-                    buttonStyle={styles.btnStyleTransparent}
-                    /** Insert Icon here.. im just too dumb to do it */
-                />
-            </View>
+            <ChallengeType />
 
             <View style={styles.bottomActionContainer}>
                 <Text style={styles.headline}>{headline}</Text>
                 <Text style={styles.subline}>{subline}</Text>
                 <View style={styles.container}>
-                    <View style={styles.buttonContainer}>
-                        <Button title="Ablehnen" type="outline" titleStyle={styles.btnTitleStandard} buttonStyle={styles.btnStyleWithBorder} />
-                    </View>
-
-                    <View style={styles.buttonContainer2}>
-                        <Button title="Annehmen" type="outline" titleStyle={styles.btnTitleStandard} buttonStyle={styles.btnStyleWithBorder} />
-                    </View>
+                    <MajorButton title="Ablehnen" btnType={MajorBtnType.SECONDARY}/>
+                    <MajorButton title="Annehmen" btnType={MajorBtnType.PRIMARY}/>
                 </View>
             </View>
         </View>

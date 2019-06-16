@@ -34,20 +34,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
     },
 
-    /* 'Ablehnen' with flex: 1 for 33% of size */
-    buttonContainer: {
-        flex: 1,
-        margin: 5,
-    },
-
-    /* 'Annehmen' with flex: 1.5 and bright withe */
-    buttonContainer2: {
-        backgroundColor: "#f3f3ee",
-        borderRadius: 3,
-
-        flex: 1.5,
-        margin: 5,
-    },
     headline: {
         fontSize: 32,
         fontWeight: "bold",
@@ -77,12 +63,12 @@ const styles = StyleSheet.create({
     },
     topRightSymbol: {
         alignSelf: "flex-end",
-        marginRight: -20,
         position: "absolute",
         borderRadius: 500,
+        opacity: 0.5,
         width: 75,
         height: 75,
-        backgroundColor: "#fff",
+        backgroundColor: "#000",
     },
 })
 

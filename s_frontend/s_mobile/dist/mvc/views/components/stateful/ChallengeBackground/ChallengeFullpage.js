@@ -29,8 +29,8 @@ var react_native_1 = require("react-native");
 var GlobalStyles_css_1 = require("../../../GlobalStyles.css");
 var ChallengeLayerBar_1 = require("../../functional/ChallengeLayerBar/ChallengeLayerBar");
 var GrayColorImg_1 = require("../../functional/GrayColorImg/GrayColorImg");
-var ChallengeFullpage_css_1 = require("./ChallengeFullpage.css");
 var LoadingIndicator_1 = require("../../functional/LoadingIndicator/LoadingIndicator");
+var ChallengeFullpage_css_1 = require("./ChallengeFullpage.css");
 var ChallengeFullpage = (function (_super) {
     __extends(ChallengeFullpage, _super);
     function ChallengeFullpage() {
@@ -43,7 +43,7 @@ var ChallengeFullpage = (function (_super) {
             if (_this.state.isLoading) {
                 return <LoadingIndicator_1.LoadingIndicator />;
             }
-            return <ChallengeLayerBar_1.ChallengeLayerBar headline={"Laugh2gether"} subline={"Bring einen Freund zum Lachen und mache dabei ein Video"} company={"Firmenlogo"} icon={"sc-telegram"}/>;
+            return (<ChallengeLayerBar_1.ChallengeLayerBar headline={"Laugh2gether"} subline={"Bring einen Freund zum Lachen und mache dabei ein Video"} company={"Firmenlogo"} icon={"sc-telegram"}/>);
         };
         _this.onLoad = function () {
             _this.setState(function (prevState) { return (__assign({}, prevState, { isLoading: false })); });

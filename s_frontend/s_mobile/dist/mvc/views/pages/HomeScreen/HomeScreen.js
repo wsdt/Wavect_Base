@@ -14,7 +14,9 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var ChallengeFullpage_1 = require("../../components/stateful/ChallengeBackground/ChallengeFullpage");
+var Challenge_1 = require("../../../models/Challenge");
+var ChallengeCategory_1 = require("../../../models/ChallengeCategory");
+var ChallengeFullpage_1 = require("../../components/stateful/ChallengeFullpage/ChallengeFullpage");
 var BaseScreen_1 = require("../BaseScreen/BaseScreen");
 var HomeScreen = (function (_super) {
     __extends(HomeScreen, _super);
@@ -22,10 +24,11 @@ var HomeScreen = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     HomeScreen.prototype.render = function () {
-        return (<BaseScreen_1.BaseScreen>
-                <ChallengeFullpage_1.ChallengeFullpage backgroundImg={{
+        var challenge = new Challenge_1.Challenge("Laugh4Together", "Bring einen Freund zum Lachen und mache ein Video.", "UN-Name", ChallengeCategory_1.ChallengeCategory.ENVIRONMENT, {
             uri: "https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress",
-        }}/>
+        });
+        return (<BaseScreen_1.BaseScreen>
+                <ChallengeFullpage_1.ChallengeFullpage challenge={challenge}/>
             </BaseScreen_1.BaseScreen>);
     };
     return HomeScreen;

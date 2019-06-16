@@ -25,16 +25,6 @@ declare const styles: {
         flex: number;
         flexDirection: "row";
     };
-    buttonContainer: {
-        flex: number;
-        margin: number;
-    };
-    buttonContainer2: {
-        backgroundColor: string;
-        borderRadius: number;
-        flex: number;
-        margin: number;
-    };
     headline: {
         fontSize: number;
         fontWeight: "bold";
@@ -64,9 +54,9 @@ declare const styles: {
     };
     topRightSymbol: {
         alignSelf: "flex-end";
-        marginRight: number;
         position: "absolute";
         borderRadius: number;
+        opacity: number;
         width: number;
         height: number;
         backgroundColor: string;
