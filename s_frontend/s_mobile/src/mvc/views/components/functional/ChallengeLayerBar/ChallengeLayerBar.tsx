@@ -1,22 +1,20 @@
 import React from "react"
 import {View} from "react-native"
-import {Button, Text} from "react-native-elements"
-import ChallengeType from "../ChallengeType/ChallengeType"
-import {MajorBtnType, MajorButton} from "../MajorButton/MajorButton"
+import { Text } from "react-native-elements"
+import {ChallengeTypeIcon} from "../ChallengeTypeIcon/ChallengeTypeIcon"
+import {CompanyLogo} from "../CompanyLogo/CompanyLogo"
+import { MajorBtnType, MajorButton } from "../MajorButton/MajorButton"
 import styles from "./ChallengeLayerBar.css"
-import {IChallengeBottomBarProps} from "./ChallengeLayerBar.props"
+import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
 
-export const ChallengeLayerBar: React.FunctionComponent<IChallengeBottomBarProps> = props => {
+export const ChallengeLayerBar: React.FunctionComponent<IChallengeLayerBarProps> = props => {
     // just need to get the icon..
-    const { headline, subline, company, icon } = props
+    const { headline, subline, companyLogoUri, challengeCategoryUri, isGrayscale } = props
 
     return (
         <View style={styles.mainComponent}>
-            <View style={styles.topLeftCompany}>
-                <Button title={company} type="outline" titleStyle={styles.btnTitleWhiteColor} buttonStyle={styles.btnStyleTransparent} />
-            </View>
-
-            <ChallengeType type={icon} />
+            <CompanyLogo companyLogoUri={companyLogoUri} isGrayscale={isGrayscale}/>
+            <ChallengeTypeIcon type={challengeCategoryUri} />
 
             <View style={styles.bottomActionContainer}>
                 <Text style={styles.headline}>{headline}</Text>

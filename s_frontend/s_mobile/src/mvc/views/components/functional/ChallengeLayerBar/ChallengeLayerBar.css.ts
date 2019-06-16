@@ -54,15 +54,6 @@ const styles = StyleSheet.create({
         opacity: 0.7,
         width: "100%",
     },
-    topLeftCompany: {
-        alignSelf: "flex-start",
-        margin: 5,
-        opacity: 0.8,
-        maxWidth: 120,
-        position: "absolute",
-        borderRadius: radius,
-        backgroundColor: "#ccc",
-    },
 })
 
 export default styles

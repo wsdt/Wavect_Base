@@ -24,7 +24,9 @@ var HomeScreen = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     HomeScreen.prototype.render = function () {
-        var challenge = new Challenge_1.Challenge("Laugh4Together", "Bring einen Freund zum Lachen und mache ein Video.", "UN-Name", ChallengeCategory_1.ChallengeCategory.HEALTH, {
+        var challenge = new Challenge_1.Challenge("Laugh2gether", "Bring einen Freund zum Lachen und mache ein Video.", {
+            uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ikea_logo.svg/1024px-Ikea_logo.svg.png",
+        }, ChallengeCategory_1.ChallengeCategory.HEALTH, {
             uri: "https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress",
         });
         return (<BaseScreen_1.BaseScreen>

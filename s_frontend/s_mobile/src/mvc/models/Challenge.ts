@@ -16,12 +16,12 @@ export class Challenge {
     set majorCategory(value: ChallengeCategory) {
         this._majorCategory = value
     }
-    get companyName(): string {
-        return this._companyName
+    get companyLogoUri(): ImageURISource {
+        return this._companyLogoUri
     }
 
-    set companyName(value: string) {
-        this._companyName = value
+    set companyLogoUri(value: ImageURISource) {
+        this._companyLogoUri = value
     }
     get subline(): string {
         return this._subline
@@ -40,14 +40,14 @@ export class Challenge {
 
     private _headline!: string
     private _subline!: string
-    private _companyName!: string
+    private _companyLogoUri!: string
     private _majorCategory!: ChallengeCategory
     private _bgImage!: ImageURISource
 
-    public constructor(headline: string, subline: string, companyName: string, majorCategory: ChallengeCategory, bgImage: ImageURISource) {
+    public constructor(headline: string, subline: string, companyLogoUri: ImageURISource, majorCategory: ChallengeCategory, bgImage: ImageURISource) {
         this.bgImage = bgImage
         this.majorCategory = majorCategory
-        this.companyName = companyName
+        this.companyLogoUri = companyLogoUri
         this.subline = subline
         this.headline = headline
     }

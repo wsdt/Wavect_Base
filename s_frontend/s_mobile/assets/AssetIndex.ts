@@ -1,4 +1,3 @@
-
 // Paths work, but I don't know why IntelliJ underlines it red
 
 export import ICO_ENVIRONMENT = require("./img/icons/environment.png")

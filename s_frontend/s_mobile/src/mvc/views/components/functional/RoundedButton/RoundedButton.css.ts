@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native"
-import {GREY} from "../../../GlobalStyles.css"
+import { GREY } from "../../../GlobalStyles.css"
 
 const styles = StyleSheet.create({
     button: {

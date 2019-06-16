@@ -1,8 +1,10 @@
-import {ChallengeCategory} from "../../../../models/ChallengeCategory"
+import {ImageURISource} from "react-native"
+import { ChallengeCategory } from "../../../../models/ChallengeCategory"
 
-export interface IChallengeBottomBarProps {
+export interface IChallengeLayerBarProps {
     headline: string
     subline: string
-    company: string // should this be the real logo or a text?
-    icon: ChallengeCategory
+    companyLogoUri: ImageURISource
+    challengeCategoryUri: ChallengeCategory
+    isGrayscale:boolean
 }

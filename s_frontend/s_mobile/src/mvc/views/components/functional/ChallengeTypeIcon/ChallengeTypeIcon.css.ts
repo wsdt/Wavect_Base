@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native"
-import {GREY} from "../../../GlobalStyles.css"
+import { GREY } from "../../../GlobalStyles.css"
 
 const roundRadius = 500
 
 const styles = StyleSheet.create({
     image: {
-        height:"75%",
-        width:"75%",
+        height: "75%",
+        width: "75%",
     },
     imageContainer: {
         alignItems: "center",
