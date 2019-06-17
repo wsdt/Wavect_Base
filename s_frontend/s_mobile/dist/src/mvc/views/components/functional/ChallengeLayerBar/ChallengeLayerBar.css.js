@@ -41,6 +41,7 @@ var styles = react_native_1.StyleSheet.create({
     },
     bottomActionContainer: {
         height: 200,
+        alignSelf: "flex-end",
         backgroundColor: "#ccc",
         borderRadius: radius,
         borderTopLeftRadius: 0,

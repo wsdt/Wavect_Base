@@ -36,6 +36,7 @@ declare const styles: {
     };
     bottomActionContainer: {
         height: number;
+        alignSelf: "flex-end";
         backgroundColor: string;
         borderRadius: number;
         borderTopLeftRadius: number;

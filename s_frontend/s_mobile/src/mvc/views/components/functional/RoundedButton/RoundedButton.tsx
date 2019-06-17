@@ -1,6 +1,6 @@
-import { Text, Button, withBadge } from "react-native-elements"
 import * as React from "react"
 import { View } from "react-native"
+import { Button, withBadge } from "react-native-elements"
 import styles from "./RoundedButton.css"
 import { IRoundedButtonProps } from "./RoundedButton.props"
 

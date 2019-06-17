@@ -14,10 +14,8 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var react_native_1 = require("react-native");
 var Challenge_1 = require("../../../models/Challenge");
 var ChallengeCategory_1 = require("../../../models/ChallengeCategory");
-var BottomTabNavigation_1 = require("../../components/stateful/BottomTabNavigation/BottomTabNavigation");
 var ChallengeFullpage_1 = require("../../components/stateful/ChallengeFullpage/ChallengeFullpage");
 var BaseScreen_1 = require("../BaseScreen/BaseScreen");
 var HomeScreen = (function (_super) {
@@ -32,10 +30,7 @@ var HomeScreen = (function (_super) {
             uri: "https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress",
         });
         return (<BaseScreen_1.BaseScreen>
-                <react_native_1.ScrollView>
-                    <ChallengeFullpage_1.ChallengeFullpage challenge={challenge}/>
-                </react_native_1.ScrollView>
-                <BottomTabNavigation_1.BottomTabNavigation />
+                <ChallengeFullpage_1.ChallengeFullpage challenge={challenge}/>
             </BaseScreen_1.BaseScreen>);
     };
     return HomeScreen;
