@@ -1,12 +1,5 @@
-import {Alert} from "react-native"
+import { Alert } from "react-native"
 
-export const functionalityNotAvailable = (msg:string) => {
-    Alert.alert(
-        "Functionality not available",
-        msg,
-        [
-            {text:"Ok"}
-        ],
-        {cancelable: true},
-    )
+export const functionalityNotAvailable = (msg: string) => {
+    Alert.alert("Nicht verfügbar", msg, [{ text: "Ok" }], { cancelable: true })
 }

@@ -6,8 +6,9 @@ const radius = globalStyles.radius.borderRadius
 const styles = StyleSheet.create({
     topLeftCompany: {
         alignSelf: "flex-start",
-        margin: 5,
         position: "absolute",
+        flex:1,
+        margin: 5,
         borderRadius: radius,
     },
     image: {

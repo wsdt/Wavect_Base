@@ -5,8 +5,8 @@ const radius = globalStyles.radius.borderRadius
 
 const styles = StyleSheet.create({
     mainComponent: {
-        height: "100%",
-        width: "98%",
+        height:"100%",
+        width:"100%",
     },
 
     btnStyleTransparent: {
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         padding: 10,
     },
-    container: {
+    btnContainer: {
         alignItems: "center",
         flex: 1,
         flexDirection: "row",
@@ -44,15 +44,12 @@ const styles = StyleSheet.create({
         margin: 5,
     },
     bottomActionContainer: {
+        height:200,
         backgroundColor: "#ccc",
-        bottom: 0,
-        position: "absolute",
-        height: 200,
         borderRadius: radius,
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
         opacity: 0.7,
-        width: "100%",
     },
 })
 

@@ -1,8 +1,11 @@
 import * as React from "react"
-import { Challenge } from "../../../models/Challenge"
-import { ChallengeCategory } from "../../../models/ChallengeCategory"
-import { ChallengeFullpage } from "../../components/stateful/ChallengeFullpage/ChallengeFullpage"
-import { BaseScreen } from "../BaseScreen/BaseScreen"
+import {ScrollView,Text} from "react-native"
+import {Challenge} from "../../../models/Challenge"
+import {ChallengeCategory} from "../../../models/ChallengeCategory"
+import {BottomTabNavigation} from "../../components/stateful/BottomTabNavigation/BottomTabNavigation"
+import {ChallengeFullpage} from "../../components/stateful/ChallengeFullpage/ChallengeFullpage"
+import globalStyles from "../../GlobalStyles.css"
+import {BaseScreen} from "../BaseScreen/BaseScreen"
 
 export class HomeScreen extends React.Component<any, any> {
     public render(): React.ReactNode {
@@ -20,7 +23,10 @@ export class HomeScreen extends React.Component<any, any> {
 
         return (
             <BaseScreen>
-                <ChallengeFullpage challenge={challenge} />
+                <ScrollView>
+                    <ChallengeFullpage challenge={challenge}/>
+                </ScrollView>
+                <BottomTabNavigation/>
             </BaseScreen>
         )
     }
