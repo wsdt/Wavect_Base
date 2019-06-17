@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         marginTop: -5,
-        marginRight: -2,
+        marginRight: -3,
         borderRadius: roundRadius,
         width: 60,
         height: 60,
@@ -31,3 +31,4 @@ const styles = StyleSheet.create({
 })
 
 export default styles
+

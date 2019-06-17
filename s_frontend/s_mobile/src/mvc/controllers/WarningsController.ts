@@ -1,11 +1,12 @@
-import { ToastAndroid } from "react-native"
+import {Alert} from "react-native"
 
-export const notImplementedSync = (): string => {
-    console.warn("notImplemented: Not implemented.")
-    ToastAndroid.show("Coming soon..", ToastAndroid.SHORT)
-    return "Not Implemented"
-}
-
-export const notImplementedAsync = (): Promise<string> => {
-    return Promise.resolve(notImplementedSync())
+export const functionalityNotAvailable = (msg:string) => {
+    Alert.alert(
+        "Functionality not available",
+        msg,
+        [
+            {text:"Ok"}
+        ],
+        {cancelable: true},
+    )
 }

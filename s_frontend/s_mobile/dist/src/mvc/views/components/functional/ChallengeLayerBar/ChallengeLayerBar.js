@@ -7,6 +7,7 @@ var ChallengeTypeIcon_1 = require("../ChallengeTypeIcon/ChallengeTypeIcon");
 var CompanyLogo_1 = require("../CompanyLogo/CompanyLogo");
 var MajorButton_1 = require("../MajorButton/MajorButton");
 var ChallengeLayerBar_css_1 = require("./ChallengeLayerBar.css");
+var WarningsController_1 = require("../../../../controllers/WarningsController");
 exports.ChallengeLayerBar = function (props) {
     var headline = props.headline, subline = props.subline, companyLogoUri = props.companyLogoUri, challengeCategoryUri = props.challengeCategoryUri, isGrayscale = props.isGrayscale;
     return (<react_native_1.View style={ChallengeLayerBar_css_1.default.mainComponent}>
@@ -17,7 +18,7 @@ exports.ChallengeLayerBar = function (props) {
                 <react_native_elements_1.Text style={ChallengeLayerBar_css_1.default.headline}>{headline}</react_native_elements_1.Text>
                 <react_native_elements_1.Text style={ChallengeLayerBar_css_1.default.subline}>{subline}</react_native_elements_1.Text>
                 <react_native_1.View style={ChallengeLayerBar_css_1.default.container}>
-                    <MajorButton_1.MajorButton title="Ablehnen" btnType={MajorButton_1.MajorBtnType.SECONDARY}/>
+                    <MajorButton_1.MajorButton title="Ablehnen" btnType={MajorButton_1.MajorBtnType.SECONDARY} onPress={function () { return WarningsController_1.functionalityNotAvailable("We currently only support one challenge per day."); }}/>
                     <MajorButton_1.MajorButton title="Annehmen" btnType={MajorButton_1.MajorBtnType.PRIMARY}/>
                 </react_native_1.View>
             </react_native_1.View>

@@ -12,6 +12,9 @@ const globalStyles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
+    tooltipText: {
+        color: "#fff",
+    },
     fullSize: {
         height: "100%",
         width: "100%",

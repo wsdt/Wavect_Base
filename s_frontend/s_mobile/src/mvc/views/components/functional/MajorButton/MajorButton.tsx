@@ -9,10 +9,10 @@ export const MajorButton: React.FunctionComponent<IMajorButtonProps> = props => 
 
     const containerStyle = props.btnType === MajorBtnType.PRIMARY ? styles.primaryBtnContainer : styles.secondaryBtnContainer
 
-    const { title } = props
+    const { title, onPress } = props
     return (
         <View style={containerStyle}>
-            <Button title={title} type="outline" titleStyle={styles.btnTitleStandard} buttonStyle={styles.btnStyleWithBorder} />
+            <Button title={title} type="outline" titleStyle={styles.btnTitleStandard} buttonStyle={styles.btnStyleWithBorder} onPress={onPress}/>
         </View>
     )
 }
