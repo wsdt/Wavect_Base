@@ -1,4 +1,4 @@
-import {Text} from "native-base"
+import { Text } from "native-base"
 import React from "react"
 import { View } from "react-native"
 import { functionalityNotAvailable } from "../../../../controllers/WarningsController"
@@ -14,8 +14,8 @@ export const ChallengeLayerBar: React.FunctionComponent<IChallengeLayerBarProps>
 
     return (
         <View style={styles.mainComponent}>
-            <CompanyLogo companyLogoUri={companyLogoUri} isGrayscale={isGrayscale}/>
-            <ChallengeTypeIcon type={challengeCategoryUri}/>
+            <CompanyLogo companyLogoUri={companyLogoUri} isGrayscale={isGrayscale} />
+            <ChallengeTypeIcon type={challengeCategoryUri} />
 
             <View style={styles.bottomActionContainer}>
                 <Text style={styles.headline}>{headline}</Text>

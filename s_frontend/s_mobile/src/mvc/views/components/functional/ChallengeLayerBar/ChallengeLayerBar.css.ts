@@ -5,8 +5,8 @@ const radius = globalStyles.radius.borderRadius
 
 const styles = StyleSheet.create({
     mainComponent: {
-        height:"100%",
-        width:"100%",
+        height: "100%",
+        width: "100%",
     },
 
     btnStyleTransparent: {
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         margin: 5,
     },
     bottomActionContainer: {
-        height:200,
+        height: 200,
         backgroundColor: "#ccc",
         borderRadius: radius,
         borderTopLeftRadius: 0,

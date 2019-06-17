@@ -12,7 +12,6 @@ exports.ChallengeTypeIcon = function (props) {
             <react_native_elements_1.Tooltip popover={<native_base_1.Text style={GlobalStyles_css_1.default.tooltipText}>{ChallengeCategory_1.CHALLENGE_CATEGORIES[props.type].descr}</native_base_1.Text>} backgroundColor={GlobalStyles_css_1.GREY} height={135}>
                 <react_native_elements_1.Image source={ChallengeCategory_1.CHALLENGE_CATEGORIES[props.type].icon} containerStyle={ChallengeTypeIcon_css_1.default.imageContainer} style={ChallengeTypeIcon_css_1.default.image}/>
             </react_native_elements_1.Tooltip>
-
         </react_native_1.TouchableOpacity>);
 };
 //# sourceMappingURL=ChallengeTypeIcon.js.map
