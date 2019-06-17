@@ -5,6 +5,10 @@ import styles from "./BottomTabNavigation.css"
 
 export class BottomTabNavigation extends React.PureComponent<any, any> {
 
+    public state = {
+
+    }
+
     public render() {
         return <Footer>
             <FooterTab style={styles.footerTab}>
