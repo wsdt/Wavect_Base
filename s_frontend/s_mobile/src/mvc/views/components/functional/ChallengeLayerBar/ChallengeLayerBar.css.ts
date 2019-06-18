@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
     },
     bottomActionContainer: {
         height: 200,
-        alignSelf: "flex-end",
         backgroundColor: "#ccc",
         borderRadius: radius,
         borderTopLeftRadius: 0,

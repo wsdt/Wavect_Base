@@ -1,6 +1,6 @@
-import { Text } from "react-native-elements"
 import React from "react"
 import { View } from "react-native"
+import { Text } from "react-native-elements"
 import { functionalityNotAvailable } from "../../../../controllers/WarningsController"
 import { ChallengeTypeIcon } from "../ChallengeTypeIcon/ChallengeTypeIcon"
 import { CompanyLogo } from "../CompanyLogo/CompanyLogo"
