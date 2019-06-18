@@ -4,10 +4,11 @@ FROM node:11
 WORKDIR /usr/src/app
 
 # Install app dependencies (copy lock and normal package.json)
-COPY package*.json ./ 
+COPY package.json ./
+COPY ./secrets ./secrets
 COPY dist/ dist/
-RUN npm install --only=production
+RUN yarn install
 
 
 # Run npm run prod 
-CMD ["npm", "run","start-built"]
+CMD ["node","./dist/server.js"]

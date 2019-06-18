@@ -1,6 +1,6 @@
 export interface ISettingsFullpageState {
     isEMailUsageAccepted: boolean
-    email:string
+    email: string
     validEmail: boolean
     isSaving: boolean
 }

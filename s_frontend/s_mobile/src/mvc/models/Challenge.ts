@@ -40,7 +40,7 @@ export class Challenge {
 
     private _headline!: string
     private _subline!: string
-    private _companyLogoUri!: string
+    private _companyLogoUri!: ImageURISource
     private _majorCategory!: ChallengeCategory
     private _bgImage!: ImageURISource
 
