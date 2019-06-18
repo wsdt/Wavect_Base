@@ -1,8 +1,8 @@
 import * as React from "react"
-import {Challenge} from "../../../models/Challenge"
-import {ChallengeCategory} from "../../../models/ChallengeCategory"
-import {ChallengeFullpage} from "../../components/stateful/ChallengeFullpage/ChallengeFullpage"
-import {BaseScreen} from "../BaseScreen/BaseScreen"
+import { Challenge } from "../../../models/Challenge"
+import { ChallengeCategory } from "../../../models/ChallengeCategory"
+import { ChallengeFullpage } from "../../components/stateful/ChallengeFullpage/ChallengeFullpage"
+import { BaseScreen } from "../BaseScreen/BaseScreen"
 
 export class HomeScreen extends React.Component<any, any> {
     public render(): React.ReactNode {
@@ -20,7 +20,7 @@ export class HomeScreen extends React.Component<any, any> {
 
         return (
             <BaseScreen>
-                <ChallengeFullpage challenge={challenge}/>
+                <ChallengeFullpage challenge={challenge} />
             </BaseScreen>
         )
     }

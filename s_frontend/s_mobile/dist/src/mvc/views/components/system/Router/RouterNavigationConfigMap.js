@@ -10,5 +10,10 @@ exports.routesConfig = (_a = {},
         }); },
         screen: HomeScreen_1.HomeScreen,
     },
+    _a[Routes_1.routes.SettingsScreen] = {
+        navigationOptions: function () { return ({
+            title: "Einstellungen",
+        }); }
+    },
     _a);
 //# sourceMappingURL=RouterNavigationConfigMap.js.map

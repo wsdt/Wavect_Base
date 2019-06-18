@@ -16,4 +16,9 @@ export const routesConfig: NavigationRouteConfigMap = {
         }),
         screen: HomeScreen, // which component to load
     },
+    [routes.SettingsScreen]: {
+        navigationOptions: () => ({
+            title: "Einstellungen",
+        })
+    },
 }

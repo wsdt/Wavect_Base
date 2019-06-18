@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "row",
     },
-
     headline: {
         fontSize: 32,
         fontWeight: "bold",

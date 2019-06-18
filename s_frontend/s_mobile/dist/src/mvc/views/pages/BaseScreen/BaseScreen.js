@@ -6,11 +6,10 @@ var BaseScreen_css_1 = require("./BaseScreen.css");
 var BottomTabNavigation_1 = require("../../components/stateful/BottomTabNavigation/BottomTabNavigation");
 var react_navigation_1 = require("react-navigation");
 exports.BaseScreen = function (props) {
-    return <react_native_1.View style={BaseScreen_css_1.default.page}>
-        <react_navigation_1.ScrollView>
-            {props.children}
-        </react_navigation_1.ScrollView>
-        <BottomTabNavigation_1.BottomTabNavigation />
-    </react_native_1.View>;
+    return (<react_native_1.View style={BaseScreen_css_1.default.page}>
+            <BottomTabNavigation_1.default>
+                <react_navigation_1.ScrollView>{props.children}</react_navigation_1.ScrollView>
+            </BottomTabNavigation_1.default>
+        </react_native_1.View>);
 };
 //# sourceMappingURL=BaseScreen.js.map

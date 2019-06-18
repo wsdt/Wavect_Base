@@ -2,4 +2,5 @@
 
 export const routes = {
     HomeScreen: "HomeScreen",
+    SettingsScreen: "SettingsScreen",
 }

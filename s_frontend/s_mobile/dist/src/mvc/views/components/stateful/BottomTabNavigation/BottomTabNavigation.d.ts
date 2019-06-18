@@ -1,11 +1,11 @@
 import * as React from "react";
 import { IBottomTabNavigationState } from "./BottomTabNavigation.state";
-export declare enum BottomTabs {
-    TAB_CHALLENGE = "challenge",
-    TAB_SETTINGS = "settings"
-}
-export declare class BottomTabNavigation extends React.PureComponent<any, IBottomTabNavigationState> {
+declare class BottomTabNavigation extends React.PureComponent<any, IBottomTabNavigationState> {
     state: IBottomTabNavigationState;
     private openTab;
     render(): JSX.Element;
 }
+declare const _default: React.ComponentType<Pick<any, string | number | symbol> & {
+    onRef?: ((instance: BottomTabNavigation | null) => void) | React.RefObject<BottomTabNavigation> | null | undefined;
+}>;
+export default _default;
