@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var native_base_1 = require("native-base");
+var react_native_elements_1 = require("react-native-elements");
 var react_1 = require("react");
 var react_native_1 = require("react-native");
 var WarningsController_1 = require("../../../../controllers/WarningsController");
@@ -16,8 +16,8 @@ exports.ChallengeLayerBar = function (props) {
             <ChallengeTypeIcon_1.ChallengeTypeIcon type={challengeCategoryUri}/>
 
             <react_native_1.View style={ChallengeLayerBar_css_1.default.bottomActionContainer}>
-                <native_base_1.Text style={ChallengeLayerBar_css_1.default.headline}>{headline}</native_base_1.Text>
-                <native_base_1.Text style={ChallengeLayerBar_css_1.default.subline}>{subline}</native_base_1.Text>
+                <react_native_elements_1.Text style={ChallengeLayerBar_css_1.default.headline}>{headline}</react_native_elements_1.Text>
+                <react_native_elements_1.Text style={ChallengeLayerBar_css_1.default.subline}>{subline}</react_native_elements_1.Text>
                 <react_native_1.View style={ChallengeLayerBar_css_1.default.btnContainer}>
                     <MajorButton_1.MajorButton title="Ablehnen" btnType={MajorButton_1.MajorBtnType.SECONDARY} onPress={function () { return WarningsController_1.functionalityNotAvailable("Aktuell veröffentlichen wir nur eine Herausforderung gleichzeitig."); }}/>
                     <MajorButton_1.MajorButton title="Annehmen" btnType={MajorButton_1.MajorBtnType.PRIMARY}/>

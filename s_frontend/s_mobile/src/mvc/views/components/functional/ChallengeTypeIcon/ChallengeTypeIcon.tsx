@@ -1,4 +1,4 @@
-import { Text } from "native-base"
+import { Text } from "react-native-elements"
 import React from "react"
 import { TouchableOpacity } from "react-native"
 import { Image, Tooltip } from "react-native-elements"

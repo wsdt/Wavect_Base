@@ -1,4 +1,4 @@
-import { Text } from "native-base"
+import { Text } from "react-native-elements"
 import React from "react"
 import { View } from "react-native"
 import { functionalityNotAvailable } from "../../../../controllers/WarningsController"
