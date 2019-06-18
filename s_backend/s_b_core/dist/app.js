@@ -11,6 +11,7 @@ var graphql_queries_1 = require("./graphql/graphql_queries");
 var routes = require("./routes/routes");
 var http = require("http");
 var http2 = require("spdy");
+var db_1 = require("./db/db");
 var App = (function () {
     function App() {
         this.app = express();
@@ -44,6 +45,7 @@ var App = (function () {
             rootValue: graphql_queries_1.graphqlRoot,
             schema: graphql_queries_1.graphqlSchema,
         }));
+        db_1.connectToDb();
         this.app.use("/", routes);
         this.app.use(helmet());
         this.app.use(morgan("combined"));

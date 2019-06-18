@@ -9,4 +9,5 @@ exports.HTTP2_OPTIONS = {
     key: fs.readFileSync(path.resolve(__dirname, "..", "secrets", "server-key.pem")),
 };
 exports.CLIENT_WEB = "https://localhost:8080";
+exports.DATABASE_URI = "mongodb://192.168.99.100:27017/wavect";
 //# sourceMappingURL=app.constants.js.map

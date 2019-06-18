@@ -6,3 +6,4 @@ export declare const HTTP2_OPTIONS: {
     key: Buffer;
 };
 export declare const CLIENT_WEB = "https://localhost:8080";
+export declare const DATABASE_URI = "mongodb://192.168.99.100:27017/wavect";

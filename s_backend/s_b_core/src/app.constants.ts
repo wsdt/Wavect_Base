@@ -27,3 +27,5 @@ export const HTTP2_OPTIONS = {
  * Used by CORS Header to only specifically allow access to our frontend accessing our services.
  */
 export const CLIENT_WEB = "https://localhost:8080"
+
+export const DATABASE_URI = "mongodb://192.168.99.100:27017/wavect"

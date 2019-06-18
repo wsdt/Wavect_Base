@@ -15,6 +15,7 @@ import * as routes from "./routes/routes"
  */
 import * as http from "http"
 import * as http2 from "spdy"
+import {connectToDb} from "./db/db";
 
 /**
  * Use HTTP 2, Server-Sent-Events and TSL.
@@ -78,6 +79,9 @@ class App {
                 schema: graphqlSchema,
             })
         )
+
+        // db connection
+        connectToDb()
 
         // Add routes (sse + rest api)
         this.app.use("/", routes)

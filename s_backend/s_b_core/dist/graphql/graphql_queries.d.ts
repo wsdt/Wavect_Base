@@ -3,4 +3,4 @@ export declare const graphqlRoot: {
         userId: any;
     }) => string;
 };
-export declare const graphqlSchema: import("graphql").GraphQLSchema;
+export declare const graphqlSchema: any;

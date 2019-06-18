@@ -3,8 +3,9 @@ version: "3.6"
 services:
   s_backend_core:
     container_name: s_backend_core
-    restart: always
-    network_mode: host
+    restart: unless-stopped
+    networks:
+      - backend_database
     ports:
       - 8090:8090
     build:
@@ -19,16 +20,25 @@ services:
 # CREATE VOLUME MANUALLY BEFORE: docker volume create --name=s_database_data
 
   s_database:
-    restart: always
+    restart: unless-stopped
     image: mongo
     container_name: s_database
     ports:
       - 27017:27017
     volumes:
       - s_database_data:/data/db
-    network_mode: host
+    networks:
+      - backend_database
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: changeme
 
+# necessary see comments above
 volumes:
   s_database_data:
     external: true
     name: s_database_data
+
+networks:
+  backend_database:
+    driver: bridge
