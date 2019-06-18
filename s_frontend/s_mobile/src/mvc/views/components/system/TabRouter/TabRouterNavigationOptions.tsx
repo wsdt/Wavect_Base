@@ -1,6 +1,6 @@
 import * as React from "react"
-import {Icon} from "react-native-elements"
-import {BottomTabNavigatorConfig} from "react-navigation"
+import { Icon } from "react-native-elements"
+import { BottomTabNavigatorConfig } from "react-navigation"
 import * as globalConfig from "../../../../../globalConfiguration/globalConfig"
 
 /**
@@ -19,16 +19,7 @@ export const routerOptions: BottomTabNavigatorConfig = {
             fontSize: 12,
         },
     },
-    defaultNavigationOptions: ({
-        tabBarIcon: <Icon name="exclamation-triangle" type="font-awesome" />
-    }),
+    defaultNavigationOptions: {
+        tabBarIcon: <Icon name="exclamation-triangle" type="font-awesome" />,
+    },
 }
-
-
-/*
-  <RoundedButton
-            title="Feedback"
-            press={() => Linking.openURL("mailto:support@bekind.com?subject=BeKind-Feedback&body=Was könnten wir verbessern?")}
-        />
-
-*/

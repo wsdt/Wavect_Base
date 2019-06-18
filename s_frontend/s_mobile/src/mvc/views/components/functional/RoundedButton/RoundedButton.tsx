@@ -7,7 +7,7 @@ import { IRoundedButtonProps } from "./RoundedButton.props"
 export const RoundedButton: React.FunctionComponent<IRoundedButtonProps> = props => {
     const BadgedBtn = withBadge()(Button)
     return (
-        <View style={styles.parentContainer}>
+        <View style={props.containerStyle}>
             <BadgedBtn buttonStyle={styles.button} onPress={props.press} title={props.title} titleStyle={styles.title} />
         </View>
     )

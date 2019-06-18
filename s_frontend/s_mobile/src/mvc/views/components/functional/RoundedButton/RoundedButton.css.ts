@@ -9,9 +9,6 @@ const styles = StyleSheet.create({
     container: {
         marginTop: 10,
     },
-    parentContainer: {
-        marginRight: 5,
-    },
     title: {
         color: "#fff",
     },

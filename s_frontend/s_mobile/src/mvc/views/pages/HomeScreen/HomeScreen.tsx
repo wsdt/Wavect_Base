@@ -1,8 +1,10 @@
 import * as React from "react"
-import { Challenge } from "../../../models/Challenge"
-import { ChallengeCategory } from "../../../models/ChallengeCategory"
-import { ChallengeFullpage } from "../../components/stateful/ChallengeFullpage/ChallengeFullpage"
-import { BaseScreen } from "../BaseScreen/BaseScreen"
+import {ScrollView} from "react-navigation"
+import {Challenge} from "../../../models/Challenge"
+import {ChallengeCategory} from "../../../models/ChallengeCategory"
+import {ChallengeFullpage} from "../../components/stateful/ChallengeFullpage/ChallengeFullpage"
+import {Header} from "../../components/system/Header/Header"
+import {BaseScreen} from "../BaseScreen/BaseScreen"
 
 export class HomeScreen extends React.Component<any, any> {
     public render(): React.ReactNode {
@@ -20,7 +22,11 @@ export class HomeScreen extends React.Component<any, any> {
 
         return (
             <BaseScreen>
-                <ChallengeFullpage challenge={challenge} />
+                <Header title="Challenge" btnTitle="Feedback"
+                        btnLink="mailto:support@bekind.com?subject=BeKind-Feedback&body=Was könnten wir verbessern?"/>
+                <ScrollView>
+                    <ChallengeFullpage challenge={challenge}/>
+                </ScrollView>
             </BaseScreen>
         )
     }

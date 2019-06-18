@@ -1,8 +1,8 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = require("react");
-var react_native_elements_1 = require("react-native-elements");
-var globalConfig = require("../../../../../globalConfiguration/globalConfig");
+"use strict"
+Object.defineProperty(exports, "__esModule", { value: true })
+var React = require("react")
+var react_native_elements_1 = require("react-native-elements")
+var globalConfig = require("../../../../../globalConfiguration/globalConfig")
 /**
  * You can provide custom navigationoptions for your nav bar for each page.
  * But if you don't provide any, then these default options are set.
@@ -19,14 +19,14 @@ exports.routerOptions = {
             fontSize: 12,
         },
     },
-    defaultNavigationOptions: ({
-        tabBarIcon: <react_native_elements_1.Icon name="exclamation-triangle" type="font-awesome"/>
-    }),
-};
+    defaultNavigationOptions: {
+        tabBarIcon: <react_native_elements_1.Icon name="exclamation-triangle" type="font-awesome" />,
+    },
+}
 /*
   <RoundedButton
             title="Feedback"
             press={() => Linking.openURL("mailto:support@bekind.com?subject=BeKind-Feedback&body=Was könnten wir verbessern?")}
         />
 
-*/ 
+*/

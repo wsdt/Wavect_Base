@@ -1,4 +1,4 @@
-import {createBottomTabNavigator} from "react-navigation"
+import { createBottomTabNavigator } from "react-navigation"
 import { routesConfig } from "./TabRouterNavigationConfigMap"
 import { routerOptions } from "./TabRouterNavigationOptions"
 
