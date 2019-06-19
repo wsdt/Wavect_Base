@@ -7,9 +7,12 @@ router.use((_req, res, next) => {
     next() // handle also other routes which are approached by this (here all routes)
 })
 
-// TODO: v1 & mobile/web routes can be modularized too!
-import * as mobileV1 from "./mobile/v1/settings"
-router.use("/mobile/v1", mobileV1)
+// Add mobile routes
+import * as mobileRoutes from "./mobile/apiMobileRoutes"
+router.use("/mobile", mobileRoutes)
+
+// ADD here web and other routes (e.g. for regular website [not just web-application])
+
 
 // show page not found error for API use (json)
 router.use("*", (_req, res) => {
