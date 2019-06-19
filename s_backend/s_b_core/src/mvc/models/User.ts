@@ -39,9 +39,7 @@ export class User {
         this._profilePicPath = value
     }
     public static getUserById(id: string) {
-        return new User(id, "Max", "Mustermann", "#", [
-            new User("blaUser", "Katharina", "Summer", "#", []),
-        ])
+        return new User(id, "Max", "Mustermann", "#", [new User("blaUser", "Katharina", "Summer", "#", [])])
     }
 
     private _id: string // username
@@ -50,13 +48,7 @@ export class User {
     private _profilePicPath: string
     private _following: User[]
 
-    constructor(
-        id: string,
-        forename: string,
-        surname: string,
-        profilePicPath: string,
-        following: User[]
-    ) {
+    constructor(id: string, forename: string, surname: string, profilePicPath: string, following: User[]) {
         this._id = id
         this._forename = forename
         this._surname = surname
@@ -66,30 +58,9 @@ export class User {
 
     public getPosts() {
         return [
-            new Post(
-                "First post",
-                "first descr",
-                new Date().toDateString(),
-                "p",
-                "#",
-                this.id
-            ),
-            new Post(
-                "Sec post",
-                "descr",
-                new Date().toISOString(),
-                "p",
-                "#",
-                this.id
-            ),
-            new Post(
-                "Third post",
-                "description",
-                new Date().toLocaleString(),
-                "p",
-                "#",
-                this.id
-            ),
+            new Post("First post", "first descr", new Date().toDateString(), "p", "#", this.id),
+            new Post("Sec post", "descr", new Date().toISOString(), "p", "#", this.id),
+            new Post("Third post", "description", new Date().toLocaleString(), "p", "#", this.id),
         ]
     }
 

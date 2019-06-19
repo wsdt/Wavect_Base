@@ -1,6 +1,4 @@
 export declare const graphqlRoot: {
-    getStreamToken: ({ userId }: {
-        userId: any;
-    }) => string;
+    getStreamToken: (userId: string) => string;
 };
-export declare const graphqlSchema: any;
+export declare const graphqlSchema: import("graphql").GraphQLSchema;

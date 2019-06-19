@@ -29,9 +29,9 @@ services:
       - s_database_data:/data/db
     networks:
       - backend_database
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: changeme
+#    environment:
+#      MONGO_INITDB_ROOT_USERNAME: root
+#      MONGO_INITDB_ROOT_PASSWORD: changeme
 
 # necessary see comments above
 volumes:

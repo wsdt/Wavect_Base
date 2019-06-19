@@ -1,5 +1,5 @@
 import * as express from "express"
-import { createUserToken } from "../../../mvc/controllers/GetStreamController"
+import { createUserToken } from "../../../../mvc/controllers/GetStreamController"
 
 const router = express.Router()
 

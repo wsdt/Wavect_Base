@@ -5,7 +5,7 @@ import { createUserToken } from "../mvc/controllers/GetStreamController"
 
 // Resolver functions
 export const graphqlRoot = {
-    getStreamToken: ({ userId }): string => {
+    getStreamToken: (userId:string): string => {
         return createUserToken(userId)
     },
 }

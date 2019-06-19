@@ -10,7 +10,7 @@ var SSEvent = (function () {
         res.write(this.toString());
     };
     SSEvent.prototype.toString = function () {
-        return ("event: new_post\n" + ("id: " + this.id + "\n") + ("data: " + this.data + "\n\n"));
+        return "event: new_post\n" + ("id: " + this.id + "\n") + ("data: " + this.data + "\n\n");
     };
     return SSEvent;
 }());

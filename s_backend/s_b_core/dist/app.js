@@ -27,10 +27,7 @@ var App = (function () {
                 return process.exit(1);
             }
             else {
-                console.log("App:runServer: Listening on port: " +
-                    app_constants_1.PORT +
-                    " using http2: " +
-                    app_constants_1.USE_HTTPS);
+                console.log("App:runServer: Listening on port: " + app_constants_1.PORT + " using http2: " + app_constants_1.USE_HTTPS);
             }
         });
     };
@@ -45,7 +42,7 @@ var App = (function () {
             rootValue: graphql_queries_1.graphqlRoot,
             schema: graphql_queries_1.graphqlSchema,
         }));
-        db_1.connectToDb();
+        db_1.establishDbConnection();
         this.app.use("/", routes);
         this.app.use(helmet());
         this.app.use(morgan("combined"));

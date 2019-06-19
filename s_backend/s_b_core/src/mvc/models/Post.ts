@@ -8,14 +8,7 @@ export class Post {
     // likedBy
     // comments etc.
 
-    constructor(
-        title: string,
-        descr: string,
-        uploadDatetime: string,
-        mediaType: string,
-        mediaUrl: string,
-        userId: string
-    ) {
+    constructor(title: string, descr: string, uploadDatetime: string, mediaType: string, mediaUrl: string, userId: string) {
         this.title = title
         this.descr = descr
         this.uploadDatetime = uploadDatetime

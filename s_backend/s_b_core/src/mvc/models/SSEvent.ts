@@ -16,8 +16,6 @@ export class SSEvent {
     }
 
     public toString() {
-        return (
-            "event: new_post\n" + `id: ${this.id}\n` + `data: ${this.data}\n\n`
-        )
+        return "event: new_post\n" + `id: ${this.id}\n` + `data: ${this.data}\n\n`
     }
 }

@@ -60,9 +60,7 @@ var User = (function () {
         configurable: true
     });
     User.getUserById = function (id) {
-        return new User(id, "Max", "Mustermann", "#", [
-            new User("blaUser", "Katharina", "Summer", "#", []),
-        ]);
+        return new User(id, "Max", "Mustermann", "#", [new User("blaUser", "Katharina", "Summer", "#", [])]);
     };
     User.prototype.getPosts = function () {
         return [

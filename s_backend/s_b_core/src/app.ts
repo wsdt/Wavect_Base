@@ -15,7 +15,7 @@ import * as routes from "./routes/routes"
  */
 import * as http from "http"
 import * as http2 from "spdy"
-import {connectToDb} from "./db/db";
+import {establishDbConnection} from "./db/db"
 
 /**
  * Use HTTP 2, Server-Sent-Events and TSL.
@@ -46,12 +46,7 @@ class App {
                 console.error(err)
                 return process.exit(1)
             } else {
-                console.log(
-                    "App:runServer: Listening on port: " +
-                        PORT +
-                        " using http2: " +
-                        USE_HTTPS
-                )
+                console.log("App:runServer: Listening on port: " + PORT + " using http2: " + USE_HTTPS)
             }
         })
     }
@@ -81,7 +76,7 @@ class App {
         )
 
         // db connection
-        connectToDb()
+        establishDbConnection()
 
         // Add routes (sse + rest api)
         this.app.use("/", routes)

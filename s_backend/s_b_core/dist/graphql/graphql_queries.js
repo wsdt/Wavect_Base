@@ -3,8 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var graphql_1 = require("graphql");
 var GetStreamController_1 = require("../mvc/controllers/GetStreamController");
 exports.graphqlRoot = {
-    getStreamToken: function (_a) {
-        var userId = _a.userId;
+    getStreamToken: function (userId) {
         return GetStreamController_1.createUserToken(userId);
     },
 };

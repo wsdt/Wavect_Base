@@ -1,7 +1,7 @@
 import * as stream from "getstream"
 import { GS_APP_ID, GS_KEY, GS_SECRET } from "./GetStreamController.constants"
 
-export const GETSTREAM: stream.StreamClient = getGetStreamConn()
+export const GETSTREAM: any = getGetStreamConn()
 
 /** Connects to GetStream API for scalable newsfeeds etc. */
 function getGetStreamConn(): stream.StreamClient {
