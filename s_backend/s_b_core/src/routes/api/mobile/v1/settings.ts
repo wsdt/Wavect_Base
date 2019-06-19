@@ -4,13 +4,12 @@ import { Settings } from "../../../../mvc/models/mobile/Settings"
 const router = express.Router()
 
 router.route("/:userId").get((req, res) => {
-    Settings.findOne({ userId: req.params.userId })
-        .exec((err, userSetting) => {
-            res.json({
-                error: err,
-                res: userSetting,
-            })
+    Settings.findOne({ userId: req.params.userId }).exec((err, userSetting) => {
+        res.json({
+            error: err,
+            res: userSetting,
         })
+    })
 })
 
 router.route("/:userId").post((req, res) => {

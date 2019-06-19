@@ -15,3 +15,5 @@ export const establishDbConnection = () => {
         console.log("establishDbConnection: Db connection opened.")
     })
 }
+
+// no need for callback functions as mongoose returns singletons etc. :)

@@ -137,7 +137,6 @@ android {
 }
 
 dependencies {
-    implementation project(':@react-native-community_async-storage')
     implementation project(':react-native-color-matrix-image-filters')
     compile project(':react-native-gesture-handler')
     compile project(':react-native-vector-icons')

@@ -13,7 +13,6 @@ router.use("/mobile", mobileRoutes)
 
 // ADD here web and other routes (e.g. for regular website [not just web-application])
 
-
 // show page not found error for API use (json)
 router.use("*", (_req, res) => {
     res.json({ error: { msg: "Route not found.", err_code: 404 } })

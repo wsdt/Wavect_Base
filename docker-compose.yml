@@ -1,5 +1,8 @@
 version: "3.6"
 
+# network_mode: host for backend only to access it from lan or other etc.
+
+
 services:
   s_backend_core:
     container_name: s_backend_core
@@ -13,7 +16,6 @@ services:
       context: ./s_backend/s_b_core/
     depends_on:
       - s_database
-
 
 
 # NOT WORKING ON WINDOWS AS VIRTUALBOX, MONGODB AND WINDOWS MAPPING DOES NOT WORK, thus this external volume declaration is necessary here
