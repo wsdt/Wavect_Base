@@ -11,7 +11,7 @@ var graphql_queries_1 = require("./graphql/graphql_queries");
 var routes = require("./routes/routes");
 var http = require("http");
 var http2 = require("spdy");
-var db_1 = require("./db/db");
+var db_1 = require("./mvc/controllers/db/db");
 var App = (function () {
     function App() {
         this.app = express();

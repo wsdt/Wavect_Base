@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var graphql_1 = require("graphql");
-var GetStreamController_1 = require("../mvc/controllers/GetStreamController");
+var GetStreamController_1 = require("../mvc/controllers/getstream/GetStreamController");
 exports.graphqlRoot = {
     getStreamToken: function (userId) {
         return GetStreamController_1.createUserToken(userId);

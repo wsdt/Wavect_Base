@@ -14,21 +14,6 @@ export class ChallengeFullpage extends React.PureComponent<IChallengeFullpagePro
         isLoading: true,
     }
 
-    private testBackend = () => {
-        // TODO: REMOVE ME ########################
-        const url = "http://192.168.99.100:8090/api/mobile/v1/settings/00"
-        fetch(url)
-            .then(res => res.json())
-            .then(data => console.log(JSON.stringify(data)))
-            .catch(e => console.error(e))
-    }
-
-    componentDidMount(): void {
-        this.testBackend()
-        // TODO remove
-        console.log("executed ############")
-    }
-
     public render() {
         const { bgImage } = this.props.challenge
 

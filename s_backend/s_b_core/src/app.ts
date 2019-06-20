@@ -15,7 +15,7 @@ import * as routes from "./routes/routes"
  */
 import * as http from "http"
 import * as http2 from "spdy"
-import { establishDbConnection } from "./db/db"
+import { establishDbConnection } from "./mvc/controllers/db/db"
 
 /**
  * Use HTTP 2, Server-Sent-Events and TSL.

@@ -1,6 +1,6 @@
 import * as fs from "fs"
 import * as path from "path"
-import { DB_NAME } from "./db/db.constants"
+import { DB_NAME } from "./mvc/controllers/db/db.constants"
 
 /** If false then http 1.1 is used. */
 export const USE_HTTPS: boolean = false

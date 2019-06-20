@@ -1,5 +1,5 @@
 import * as mongoose from "mongoose"
-import { COLLECTION_SETTINGS_NAME } from "../../../db/db.constants"
+import { COLLECTION_SETTINGS_NAME } from "../../controllers/db/db.constants"
 
 const SettingsModel = new mongoose.Schema({
     userId: { type: String, unique: true, required: true, dropDups: true },

@@ -1,5 +1,5 @@
 import * as mongoose from "mongoose"
-import { DATABASE_URI } from "../app.constants"
+import { DATABASE_URI } from "../../../app.constants"
 
 export const establishDbConnection = () => {
     // No need to create db here, as it is created automatically when inserting sth.

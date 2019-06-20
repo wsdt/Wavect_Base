@@ -1,8 +1,8 @@
-"use strict"
-Object.defineProperty(exports, "__esModule", { value: true })
-var react_native_1 = require("react-native")
-var GlobalStyles_css_1 = require("../../../GlobalStyles.css")
-var roundRadius = 500
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_native_1 = require("react-native");
+var GlobalStyles_css_1 = require("../../../GlobalStyles.css");
+var roundRadius = 500;
 var styles = react_native_1.StyleSheet.create({
     image: {
         height: "75%",
@@ -28,5 +28,5 @@ var styles = react_native_1.StyleSheet.create({
         height: 60,
         backgroundColor: "#fff",
     },
-})
-exports.default = styles
+});
+exports.default = styles;

@@ -7,4 +7,5 @@ import { tabRoutes } from "../mvc/views/components/system/TabRouter/TabRoutes"
 export const START_PAGE = tabRoutes.HomeScreen
 
 /** How do we reach our backend API/GraphQL */
-export const BACKEND_URL = "http://10.0.0.22:8090"
+export const BACKEND_URL = "http://192.168.99.100:8090"
+export const BACKEND_MOBILE_API = `${BACKEND_URL}/mobile/api/v1`

@@ -1,4 +1,4 @@
-import * as stream from "getstream"
+import * as stream from ""
 import { GS_APP_ID, GS_KEY, GS_SECRET } from "./GetStreamController.constants"
 
 export const GETSTREAM: any = getGetStreamConn()

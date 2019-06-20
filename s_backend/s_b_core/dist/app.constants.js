@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require("fs");
 var path = require("path");
-var db_constants_1 = require("./db/db.constants");
+var db_constants_1 = require("./mvc/controllers/db/db.constants");
 exports.USE_HTTPS = false;
 exports.PORT = 8090;
 exports.HTTP2_OPTIONS = {

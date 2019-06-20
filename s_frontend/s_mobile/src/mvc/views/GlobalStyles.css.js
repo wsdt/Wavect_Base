@@ -1,7 +1,7 @@
-"use strict"
-Object.defineProperty(exports, "__esModule", { value: true })
-var react_native_1 = require("react-native")
-exports.GREY = "#9b9b9b"
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_native_1 = require("react-native");
+exports.GREY = "#9b9b9b";
 var globalStyles = react_native_1.StyleSheet.create({
     absoluteCenter: {
         position: "absolute",
@@ -26,5 +26,5 @@ var globalStyles = react_native_1.StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
-})
-exports.default = globalStyles
+});
+exports.default = globalStyles;

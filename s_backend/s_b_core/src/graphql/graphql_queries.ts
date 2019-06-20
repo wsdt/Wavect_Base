@@ -1,5 +1,5 @@
 import { buildSchema } from "graphql"
-import { createUserToken } from "../mvc/controllers/GetStreamController"
+import { createUserToken } from "../mvc/controllers/getstream/GetStreamController"
 
 // TODO: https://medium.com/@MichalLytek/graphql-typescript-typegraphql-ba0225cb4bed
 

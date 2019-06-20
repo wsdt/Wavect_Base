@@ -1,6 +1,6 @@
 import * as React from "react"
 import { ScrollView } from "react-navigation"
-import { SettingsFullpage } from "../../components/functional/SettingsFullpage/SettingsFullpage"
+import { SettingsFullpage } from "../../components/stateful/SettingsFullpage/SettingsFullpage"
 import { Header } from "../../components/system/Header/Header"
 import { BaseScreen } from "../BaseScreen/BaseScreen"
 
