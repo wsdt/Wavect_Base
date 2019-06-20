@@ -1,6 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_native_1 = require("react-native");
+"use strict"
+Object.defineProperty(exports, "__esModule", { value: true })
+var react_native_1 = require("react-native")
 var styles = react_native_1.StyleSheet.create({
     primaryBtnContainer: {
         backgroundColor: "#f3f3ee",
@@ -21,5 +21,5 @@ var styles = react_native_1.StyleSheet.create({
         borderColor: "#000",
         height: 60,
     },
-});
-exports.default = styles;
+})
+exports.default = styles

@@ -43,12 +43,12 @@ const styles = StyleSheet.create({
         margin: 5,
     },
     bottomActionContainer: {
-        height: 200,
-        backgroundColor: "#ccc",
+        height: 1000,
         borderRadius: radius,
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
         opacity: 0.7,
+        maraginBottom: 10
     },
 })
 

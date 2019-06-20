@@ -9,7 +9,6 @@ import styles from "./ChallengeLayerBar.css"
 import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
 
 export const ChallengeLayerBar: React.FunctionComponent<IChallengeLayerBarProps> = props => {
-    // just need to get the icon..
     const { headline, subline, companyLogoUri, challengeCategoryUri, isGrayscale } = props
 
     return (

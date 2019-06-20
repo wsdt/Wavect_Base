@@ -1,6 +1,6 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_native_1 = require("react-native");
+"use strict"
+Object.defineProperty(exports, "__esModule", { value: true })
+var react_native_1 = require("react-native")
 var styles = react_native_1.StyleSheet.create({
     btnContainer: {
         marginRight: 5,
@@ -19,5 +19,5 @@ var styles = react_native_1.StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
     },
-});
-exports.default = styles;
+})
+exports.default = styles

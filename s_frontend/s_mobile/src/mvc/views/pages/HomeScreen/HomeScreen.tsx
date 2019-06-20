@@ -8,6 +8,7 @@ import { BaseScreen } from "../BaseScreen/BaseScreen"
 
 export class HomeScreen extends React.Component<any, any> {
     public render(): React.ReactNode {
+        // todo make Sponsor class
         const challenge: Challenge = new Challenge(
             "Laugh2gether",
             "Bring einen Freund zum Lachen und mache ein Video.",
