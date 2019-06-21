@@ -2,6 +2,20 @@ import { ImageURISource } from "react-native"
 import { ChallengeCategory } from "./ChallengeCategory"
 
 export class Challenge {
+    get whyDoesOrganizationSponsor(): string {
+        return this._whyDoesOrganizationSponsor;
+    }
+
+    set whyDoesOrganizationSponsor(value: string) {
+        this._whyDoesOrganizationSponsor = value;
+    }
+    get expirationInMs(): number {
+        return this._expirationInMs;
+    }
+
+    set expirationInMs(value: number) {
+        this._expirationInMs = value;
+    }
     get bgImage(): ImageURISource {
         return this._bgImage
     }
@@ -40,15 +54,19 @@ export class Challenge {
 
     private _headline!: string
     private _subline!: string
+    private _whyDoesOrganizationSponsor!: string
     private _companyLogoUri!: ImageURISource
     private _majorCategory!: ChallengeCategory
     private _bgImage!: ImageURISource
+    private _expirationInMs!: number
 
-    public constructor(headline: string, subline: string, companyLogoUri: ImageURISource, majorCategory: ChallengeCategory, bgImage: ImageURISource) {
+    public constructor(headline: string, subline: string, whyDoesOrganizationSponsor: string, companyLogoUri: ImageURISource, majorCategory: ChallengeCategory, bgImage: ImageURISource, expirationInMs: number) {
         this.bgImage = bgImage
         this.majorCategory = majorCategory
         this.companyLogoUri = companyLogoUri
         this.subline = subline
         this.headline = headline
+        this.whyDoesOrganizationSponsor = whyDoesOrganizationSponsor
+        this.expirationInMs = expirationInMs
     }
 }

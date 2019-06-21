@@ -14,7 +14,7 @@ export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpage
         validEmail: false,
         isSaving: false,
     }
-    private userId : string = ""
+    private userId: string = ""
 
     public componentDidMount(): void {
         this.getUserSettings()
@@ -83,21 +83,21 @@ export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpage
     }
 
     private postUserSettings = () => {
-        (async () => {
-            const rawResp =  await fetch(`${SettingsFullpage.API_ENDPOINT}/${this.getUserId()}`, {
+        ;(async () => {
+            const rawResp = await fetch(`${SettingsFullpage.API_ENDPOINT}/${this.getUserId()}`, {
                 method: "POST",
                 headers: {
-                    "Accept": "application/json",
+                    Accept: "application/json",
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
                     email: this.state.email,
                     hasAcceptedDataPrivacy: this.state.hasAcceptedDataPrivacy,
-                })
+                }),
             })
-            
+
             const res = await rawResp.json()
-            console.log("SettingsFullpage:postUserSettings: Tried to save userSettings -> "+JSON.stringify(res))
+            console.log("SettingsFullpage:postUserSettings: Tried to save userSettings -> " + JSON.stringify(res))
         })()
     }
 
