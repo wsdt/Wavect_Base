@@ -14,7 +14,7 @@ export class HomeScreen extends React.Component<any, any> {
             "0",
             "Laugh2gether",
             "Bring einen Freund zum Lachen und mache ein Video.",
-            "WARUM SPONSORT SPONSOR HERE",
+            "Wir und alle anderen finden Wavect einfach nur grandios!",
             {
                 uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ikea_logo.svg/1024px-Ikea_logo.svg.png",
             },
