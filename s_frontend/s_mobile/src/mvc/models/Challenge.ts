@@ -3,11 +3,11 @@ import { ChallengeCategory } from "./ChallengeCategory"
 
 export class Challenge {
     get id(): string {
-        return this._id;
+        return this._id
     }
 
     set id(value: string) {
-        this._id = value;
+        this._id = value
     }
     get whyDoesOrganizationSponsor(): string {
         return this._whyDoesOrganizationSponsor

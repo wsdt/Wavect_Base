@@ -10,6 +10,7 @@ export class HomeScreen extends React.Component<any, any> {
     public render(): React.ReactNode {
         // todo make Sponsor class
         const challenge: Challenge = new Challenge(
+            "0",
             "Laugh2gether",
             "Bring einen Freund zum Lachen und mache ein Video.",
             "WARUM SPONSORT SPONSOR HERE",
