@@ -7,9 +7,8 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
     },
     top: {
-        justifyContent: 'flex-start'
-    }
+        justifyContent: "flex-start",
+    },
 })
 
 export default styles
-

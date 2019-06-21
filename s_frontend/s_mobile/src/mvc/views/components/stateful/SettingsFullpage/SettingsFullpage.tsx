@@ -45,7 +45,7 @@ export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpage
                     containerStyle={styles.row}
                     checkedColor="#000"
                     title="Ich verstehe und akzeptiere, dass meine E-Mail-Adresse bei erfolgreichem Abschluss einer Herausforderung an den angegebenen Sponsor übermittelt wird."
-                    onPress={() => this.setState({ hasAcceptedDataPrivacy: !this.state.isEMailUsageAccepted })}
+                    onPress={() => this.setState({ hasAcceptedDataPrivacy: !this.state.hasAcceptedDataPrivacy })}
                 />
 
                 <Button

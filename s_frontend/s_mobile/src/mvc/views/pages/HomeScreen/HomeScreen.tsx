@@ -4,7 +4,7 @@ import { ChallengeCategory } from "../../../models/ChallengeCategory"
 import { ChallengeFullpage } from "../../components/stateful/ChallengeFullpage/ChallengeFullpage"
 import { Header } from "../../components/system/Header/Header"
 import { BaseScreen } from "../BaseScreen/BaseScreen"
-import {SafeAreaView} from "react-native";
+import { SafeAreaView } from "react-native"
 
 export class HomeScreen extends React.Component<any, any> {
     public render(): React.ReactNode {
@@ -38,4 +38,3 @@ export class HomeScreen extends React.Component<any, any> {
         )
     }
 }
-
