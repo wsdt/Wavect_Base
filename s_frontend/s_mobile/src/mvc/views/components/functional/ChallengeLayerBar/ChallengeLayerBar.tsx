@@ -33,9 +33,9 @@ export const ChallengeLayerBar: React.FunctionComponent<IChallengeLayerBarProps>
 }
 
 const execBtnAccept = (expirationInMs: number) => {
-    Alert.alert("Challenge Accepted", `Du hast nun ${expirationInMs} Tage Zeit, um die Challenge zu lösen!`,
-        [{ text: "Verstanden" }],
-        {cancelable: true,})
+    Alert.alert("Challenge Accepted", `Du hast nun ${expirationInMs} Tage Zeit, um die Challenge zu lösen!`, [{ text: "Verstanden" }], {
+        cancelable: true,
+    })
 
     // TODO: Save status locally
 }
