@@ -9,11 +9,12 @@ export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpage
     private static API_ENDPOINT = `${BACKEND_MOBILE_API}/settings`
     private static EMAIL_REGEX: RegExp = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
     public state: ISettingsFullpageState = {
-        isEMailUsageAccepted: false,
+        hasAcceptedDataPrivacy: false,
         email: "",
         validEmail: false,
         isSaving: false,
     }
+    private userId : string = ""
 
     public componentDidMount(): void {
         this.getUserSettings()
@@ -40,11 +41,11 @@ export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpage
                 />
 
                 <CheckBox
-                    checked={this.state.isEMailUsageAccepted}
+                    checked={this.state.hasAcceptedDataPrivacy}
                     containerStyle={styles.row}
                     checkedColor="#000"
                     title="Ich verstehe und akzeptiere, dass meine E-Mail-Adresse bei erfolgreichem Abschluss einer Herausforderung an den angegebenen Sponsor übermittelt wird."
-                    onPress={() => this.setState({ isEMailUsageAccepted: !this.state.isEMailUsageAccepted })}
+                    onPress={() => this.setState({ hasAcceptedDataPrivacy: !this.state.isEMailUsageAccepted })}
                 />
 
                 <Button
@@ -61,14 +62,43 @@ export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpage
         )
     }
 
+    private getUserId = () => {
+        if (!this.userId) {
+            // TODO: load locally, if not exist create one
+            //  save as instance var to not fetch on every render from local storage
+            this.userId = "00"
+        }
+
+        return this.userId
+    }
+
     private getUserSettings = () => {
-        fetch(`${SettingsFullpage.API_ENDPOINT}/`)
+        fetch(`${SettingsFullpage.API_ENDPOINT}/${this.getUserId()}`)
             .then(res => res.json())
             .then(data => {
-                this.setState({ isEMailUsageAccepted: data.isEMailUsageAccepted, email: data.email })
+                this.setState({ hasAcceptedDataPrivacy: data.hasAcceptedDataPrivacy, email: data.email })
                 console.log("SettingsFullpage:getUserSettings: Received user settings.")
             })
             .catch(e => console.error(e))
+    }
+
+    private postUserSettings = () => {
+        (async () => {
+            const rawResp =  await fetch(`${SettingsFullpage.API_ENDPOINT}/${this.getUserId()}`, {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    email: this.state.email,
+                    hasAcceptedDataPrivacy: this.state.hasAcceptedDataPrivacy,
+                })
+            })
+            
+            const res = await rawResp.json()
+            console.log("SettingsFullpage:postUserSettings: Tried to save userSettings -> "+JSON.stringify(res))
+        })()
     }
 
     private emailValidation = (email: string) => {
@@ -77,12 +107,11 @@ export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpage
 
     private save = () => {
         this.setState({ isSaving: true })
-
-        // TODO: save async
+        this.postUserSettings()
         this.setState({ isSaving: false })
     }
 
     private isFormSubmittable = (): boolean => {
-        return this.state.validEmail && this.state.isEMailUsageAccepted
+        return this.state.validEmail && this.state.hasAcceptedDataPrivacy
     }
 }

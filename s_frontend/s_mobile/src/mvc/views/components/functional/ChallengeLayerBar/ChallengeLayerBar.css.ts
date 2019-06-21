@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
         opacity: 0.7,
-        maraginBottom: 10
+        maraginBottom: 10,
     },
 })
 
