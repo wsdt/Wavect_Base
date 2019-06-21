@@ -1,4 +1,4 @@
-import {StyleSheet} from "react-native"
+import { StyleSheet } from "react-native"
 import globalStyles from "../../../GlobalStyles.css"
 
 const radius = globalStyles.radius.borderRadius
@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         flex: 1,
         color: "#32CD32",
         marginLeft: 5,
-        textAlign: "center"
+        textAlign: "center",
     },
     mainComponent: {
         height: "100%",

@@ -4,8 +4,8 @@ import { ChallengeCategory } from "../../../models/ChallengeCategory"
 import { ChallengeFullpage } from "../../components/stateful/ChallengeFullpage/ChallengeFullpage"
 import { Header } from "../../components/system/Header/Header"
 import { BaseScreen } from "../BaseScreen/BaseScreen"
-import {SafeAreaView, View} from "react-native"
-import globalStyles from "../../GlobalStyles.css";
+import { SafeAreaView, View } from "react-native"
+import globalStyles from "../../GlobalStyles.css"
 
 export class HomeScreen extends React.Component<any, any> {
     public render(): React.ReactNode {

@@ -1,14 +1,14 @@
 import AsyncStorage from "@react-native-community/async-storage"
 import React from "react"
-import {Alert, View} from "react-native"
-import {Text} from "react-native-elements"
-import {functionalityNotAvailable} from "../../../../controllers/WarningsController"
+import { Alert, View } from "react-native"
+import { Text } from "react-native-elements"
+import { functionalityNotAvailable } from "../../../../controllers/WarningsController"
 
-import {ExpirationTimeObj} from "../../../../models/ExpirationTimeObj"
-import {MajorBtnType, MajorButton} from "../../functional/MajorButton/MajorButton"
+import { ExpirationTimeObj } from "../../../../models/ExpirationTimeObj"
+import { MajorBtnType, MajorButton } from "../../functional/MajorButton/MajorButton"
 import styles from "./ChallengeLayerBar.css"
-import {IChallengeLayerBarProps} from "./ChallengeLayerBar.props"
-import {IChallengeLayerBarState} from "./ChallengeLayerBar.state"
+import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
+import { IChallengeLayerBarState } from "./ChallengeLayerBar.state"
 
 // Key for persisting locally
 const CHALLENGE_ACCEPTED_ID = "challenge_accepted_id"
@@ -17,7 +17,7 @@ const CHALLENGE_ACCEPTED_DATETIME = "challenge_accepted_datetime"
 export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, IChallengeLayerBarState> {
     public state: IChallengeLayerBarState = {
         currChallengeAccepted: null,
-        remainingMilliseconds: this.props.expirationInMs
+        remainingMilliseconds: this.props.expirationInMs,
     }
 
     private lastChallengeIdAccepted: string | null = null
@@ -25,7 +25,7 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
     private intervalId!: any
 
     public render() {
-        const {headline, subline, challengeId} = this.props
+        const { headline, subline, challengeId } = this.props
 
         return (
             <View style={styles.mainComponent}>
@@ -41,7 +41,7 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
 
     private startCountdownInterval = () => {
         this.intervalId = setInterval(() => {
-            this.setState({remainingMilliseconds: this.state.remainingMilliseconds - 1000})
+            this.setState({ remainingMilliseconds: this.state.remainingMilliseconds - 1000 })
             if (this.state.remainingMilliseconds <= 0) {
                 clearInterval(this.intervalId) // stop countdown when reaching 0
                 this.storeChallengeExpired() // unset challenge accepted lcoally
@@ -55,14 +55,13 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
         if (currChallengeAccepted) {
             // subtract last accepted from today with expirationInMs to make countdown persistent (to avoid restarting it one every startup)
             if (this.lastChallengeAcceptedDatetime != null) {
-                const persistedLastAcceptedDatetime:Date = new Date(this.lastChallengeAcceptedDatetime)
-                const correctedExpireMs = (persistedLastAcceptedDatetime.getMilliseconds()+this.props.expirationInMs) - new Date().getMilliseconds()
-                this.setState({remainingMilliseconds: (correctedExpireMs <= 0 ? 0 : (Math.round(correctedExpireMs/1000)*1000))}) // dividing by 1000 to have a comma as later
+                const persistedLastAcceptedDatetime: Date = new Date(this.lastChallengeAcceptedDatetime)
+                const correctedExpireMs = persistedLastAcceptedDatetime.getMilliseconds() + this.props.expirationInMs - new Date().getMilliseconds()
+                this.setState({ remainingMilliseconds: correctedExpireMs <= 0 ? 0 : Math.round(correctedExpireMs / 1000) * 1000 }) // dividing by 1000 to have a comma as later
             }
             this.startCountdownInterval()
         }
     }
-
 
     public componentWillMount(): void {
         if (this.state.currChallengeAccepted) {
@@ -75,9 +74,10 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
             // TODO: Add on press for trigger backend challenge solved
             return (
                 <>
-                    <Text style={styles.expirationCountdownText}
-                          h4>Noch {this.state.remainingMilliseconds / 1000}s</Text>
-                    <MajorButton title="Abschließen" btnType={MajorBtnType.HIGHLIGHTED}/>
+                    <Text style={styles.expirationCountdownText} h4>
+                        Noch {this.state.remainingMilliseconds / 1000}s
+                    </Text>
+                    <MajorButton title="Abschließen" btnType={MajorBtnType.HIGHLIGHTED} />
                 </>
             )
         }
@@ -89,8 +89,7 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
                     btnType={MajorBtnType.SECONDARY}
                     onPress={() => functionalityNotAvailable("Aktuell veröffentlichen wir nur eine Herausforderung gleichzeitig.")}
                 />
-                <MajorButton title="Annehmen" btnType={MajorBtnType.PRIMARY}
-                             onPress={() => this.execBtnAccept(challengeId)}/>
+                <MajorButton title="Annehmen" btnType={MajorBtnType.PRIMARY} onPress={() => this.execBtnAccept(challengeId)} />
             </>
         )
     }
@@ -102,7 +101,7 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
         Alert.alert(
             "Challenge Accepted",
             `Du hast nun ${this.msToFormattedStr(this.props.expirationInMs)} Zeit, um die Challenge zu lösen!`,
-            [{text: "Verstanden"}],
+            [{ text: "Verstanden" }],
             {
                 cancelable: true,
             }
@@ -124,7 +123,7 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
                 }
             }
 
-            this.setState({currChallengeAccepted})
+            this.setState({ currChallengeAccepted })
         } catch (e) {
             console.error(e)
         }
@@ -135,7 +134,7 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
         try {
             await AsyncStorage.removeItem(CHALLENGE_ACCEPTED_ID)
             await AsyncStorage.removeItem(CHALLENGE_ACCEPTED_DATETIME)
-            this.setState({currChallengeAccepted: false})
+            this.setState({ currChallengeAccepted: false })
             console.log("ChallengeLayerBar:storeChallengeExpired: Challenge expired.")
         } catch (e) {
             console.error(e)
@@ -143,11 +142,10 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
     }
 
     private storeChallengeAccepted = async (challengeId: string) => {
-
         try {
             await AsyncStorage.setItem(CHALLENGE_ACCEPTED_ID, challengeId)
             await AsyncStorage.setItem(CHALLENGE_ACCEPTED_DATETIME, new Date().toString())
-            this.setState({currChallengeAccepted: true, remainingMilliseconds: this.props.expirationInMs})
+            this.setState({ currChallengeAccepted: true, remainingMilliseconds: this.props.expirationInMs })
             this.startCountdownInterval()
         } catch (e) {
             console.error(e)

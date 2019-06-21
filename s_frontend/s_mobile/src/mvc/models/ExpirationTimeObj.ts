@@ -1,10 +1,10 @@
 export class ExpirationTimeObj {
     get milliseconds(): number {
-        return this._milliseconds;
+        return this._milliseconds
     }
 
     set milliseconds(value: number) {
-        this._milliseconds = value;
+        this._milliseconds = value
     }
     get days(): number {
         return this._days

@@ -1,5 +1,3 @@
-
-
 export interface IChallengeLayerBarProps {
     challengeId: string
     headline: string
