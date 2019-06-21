@@ -12,13 +12,15 @@ export class HomeScreen extends React.Component<any, any> {
         const challenge: Challenge = new Challenge(
             "Laugh2gether",
             "Bring einen Freund zum Lachen und mache ein Video.",
+            "WARUM SPONSORT SPONSOR HERE",
             {
                 uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ikea_logo.svg/1024px-Ikea_logo.svg.png",
             },
             ChallengeCategory.HEALTH,
             {
                 uri: "https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress",
-            }
+            },
+            3000
         )
 
         return (

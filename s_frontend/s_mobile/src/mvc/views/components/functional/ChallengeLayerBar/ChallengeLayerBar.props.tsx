@@ -7,4 +7,5 @@ export interface IChallengeLayerBarProps {
     companyLogoUri: ImageURISource
     challengeCategoryUri: ChallengeCategory
     isGrayscale: boolean
+    expirationInMs: number
 }

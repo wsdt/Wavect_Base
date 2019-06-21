@@ -1,5 +1,5 @@
 import React from "react"
-import { View } from "react-native"
+import {Alert, View} from "react-native"
 import { Text } from "react-native-elements"
 import { functionalityNotAvailable } from "../../../../controllers/WarningsController"
 import { ChallengeTypeIcon } from "../ChallengeTypeIcon/ChallengeTypeIcon"
@@ -25,9 +25,18 @@ export const ChallengeLayerBar: React.FunctionComponent<IChallengeLayerBarProps>
                         btnType={MajorBtnType.SECONDARY}
                         onPress={() => functionalityNotAvailable("Aktuell veröffentlichen wir nur eine Herausforderung gleichzeitig.")}
                     />
-                    <MajorButton title="Annehmen" btnType={MajorBtnType.PRIMARY} />
+                    <MajorButton
+                        title="Annehmen" btnType={MajorBtnType.PRIMARY}
+                        onPress={() => execBtnAccept(props.expirationInMs)} />
                 </View>
             </View>
         </View>
     )
+}
+
+
+const execBtnAccept = (expirationInMs: number) => {
+    Alert.alert("Challenge Accepted",
+        `Du hast nun ${expirationInMs} Tage Zeit, um die Challenge zu lösen!`
+        , [{ text: "Verstanden" }], { cancelable: true })
 }

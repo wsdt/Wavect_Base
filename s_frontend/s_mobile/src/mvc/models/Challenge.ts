@@ -2,19 +2,26 @@ import { ImageURISource } from "react-native"
 import { ChallengeCategory } from "./ChallengeCategory"
 
 export class Challenge {
+    get id(): string {
+        return this._id;
+    }
+
+    set id(value: string) {
+        this._id = value;
+    }
     get whyDoesOrganizationSponsor(): string {
-        return this._whyDoesOrganizationSponsor;
+        return this._whyDoesOrganizationSponsor
     }
 
     set whyDoesOrganizationSponsor(value: string) {
-        this._whyDoesOrganizationSponsor = value;
+        this._whyDoesOrganizationSponsor = value
     }
     get expirationInMs(): number {
-        return this._expirationInMs;
+        return this._expirationInMs
     }
 
     set expirationInMs(value: number) {
-        this._expirationInMs = value;
+        this._expirationInMs = value
     }
     get bgImage(): ImageURISource {
         return this._bgImage
@@ -52,6 +59,7 @@ export class Challenge {
         this._headline = value
     }
 
+    private _id!: string
     private _headline!: string
     private _subline!: string
     private _whyDoesOrganizationSponsor!: string
@@ -60,7 +68,17 @@ export class Challenge {
     private _bgImage!: ImageURISource
     private _expirationInMs!: number
 
-    public constructor(headline: string, subline: string, whyDoesOrganizationSponsor: string, companyLogoUri: ImageURISource, majorCategory: ChallengeCategory, bgImage: ImageURISource, expirationInMs: number) {
+    public constructor(
+        id: string,
+        headline: string,
+        subline: string,
+        whyDoesOrganizationSponsor: string,
+        companyLogoUri: ImageURISource,
+        majorCategory: ChallengeCategory,
+        bgImage: ImageURISource,
+        expirationInMs: number
+    ) {
+        this.id = id
         this.bgImage = bgImage
         this.majorCategory = majorCategory
         this.companyLogoUri = companyLogoUri
