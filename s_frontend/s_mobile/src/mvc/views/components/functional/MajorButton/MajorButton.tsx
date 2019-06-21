@@ -9,9 +9,15 @@ export const MajorButton: React.FunctionComponent<IMajorButtonProps> = props => 
 
     let containerStyle
     switch (props.btnType) {
-        case MajorBtnType.PRIMARY: containerStyle = styles.primaryBtnContainer; break
-        case MajorBtnType.SECONDARY: containerStyle = styles.secondaryBtnContainer; break
-        case MajorBtnType.HIGHLIGHTED: containerStyle = styles.highlightedBtnContainer; break
+        case MajorBtnType.PRIMARY:
+            containerStyle = styles.primaryBtnContainer
+            break
+        case MajorBtnType.SECONDARY:
+            containerStyle = styles.secondaryBtnContainer
+            break
+        case MajorBtnType.HIGHLIGHTED:
+            containerStyle = styles.highlightedBtnContainer
+            break
     }
 
     const { title, onPress } = props
