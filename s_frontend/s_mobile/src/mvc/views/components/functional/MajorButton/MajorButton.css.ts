@@ -8,6 +8,13 @@ const styles = StyleSheet.create({
         flex: 1.5,
         margin: 5,
     },
+    highlightedBtnContainer: {
+        backgroundColor: "#32CD32",
+        borderRadius: 3,
+
+        flex: 1.5,
+        margin: 5,
+    },
     secondaryBtnContainer: {
         flex: 1,
         margin: 5,

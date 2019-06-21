@@ -24,7 +24,6 @@ export class HomeScreen extends React.Component<any, any> {
             3000
         )
 
-
         return (
             <BaseScreen>
                 <Header

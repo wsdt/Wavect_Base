@@ -78,7 +78,6 @@ export class Challenge {
         bgImage: ImageURISource,
         expirationInMs: number
     ) {
-
         this.id = id
         this.bgImage = bgImage
         this.majorCategory = majorCategory

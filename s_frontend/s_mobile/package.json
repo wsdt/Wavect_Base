@@ -6,6 +6,7 @@
     },
     "dependencies": {
         "@babel/runtime": "^7.0.0",
+        "@react-native-community/async-storage": "^1.5.0",
         "react": "16.8.3",
         "react-native": "0.59.1",
         "react-native-color-matrix-image-filters": "^5.1.5",
