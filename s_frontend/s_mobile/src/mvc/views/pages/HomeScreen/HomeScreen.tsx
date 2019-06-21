@@ -4,7 +4,8 @@ import { ChallengeCategory } from "../../../models/ChallengeCategory"
 import { ChallengeFullpage } from "../../components/stateful/ChallengeFullpage/ChallengeFullpage"
 import { Header } from "../../components/system/Header/Header"
 import { BaseScreen } from "../BaseScreen/BaseScreen"
-import { SafeAreaView } from "react-native"
+import {SafeAreaView, View} from "react-native"
+import globalStyles from "../../GlobalStyles.css";
 
 export class HomeScreen extends React.Component<any, any> {
     public render(): React.ReactNode {
@@ -31,9 +32,9 @@ export class HomeScreen extends React.Component<any, any> {
                     btnTitle="Feedback"
                     btnLink="mailto:support@bekind.com?subject=BeKind-Feedback&body=Was könnten wir verbessern?"
                 />
-                <SafeAreaView>
+                <View style={globalStyles.tabBarMargin}>
                     <ChallengeFullpage challenge={challenge} />
-                </SafeAreaView>
+                </View>
             </BaseScreen>
         )
     }
