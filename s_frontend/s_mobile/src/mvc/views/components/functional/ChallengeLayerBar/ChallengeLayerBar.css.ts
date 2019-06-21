@@ -5,8 +5,8 @@ const radius = globalStyles.radius.borderRadius
 
 const styles = StyleSheet.create({
     mainComponent: {
-        height: '100%',
-        justifyContent: 'flex-end'
+        height: "100%",
+        justifyContent: "flex-end",
     },
     btnStyleTransparent: {
         borderColor: "transparent",
@@ -43,13 +43,13 @@ const styles = StyleSheet.create({
     },
     bottomActionContainer: {
         height: 200,
-        backgroundColor: '#ccc',
+        backgroundColor: "#ccc",
         borderRadius: radius,
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
-        justifyContent: 'flex-end',
+        justifyContent: "flex-end",
         opacity: 0.7,
     },
-});
+})
 
 export default styles

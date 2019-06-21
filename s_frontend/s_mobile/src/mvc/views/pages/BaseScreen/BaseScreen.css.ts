@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         backgroundColor: primaryBackgroundColor,
         flex: 1,
         margin: 5,
-        justifyContent: 'flex-start'
+        justifyContent: "flex-start",
     },
 })
 

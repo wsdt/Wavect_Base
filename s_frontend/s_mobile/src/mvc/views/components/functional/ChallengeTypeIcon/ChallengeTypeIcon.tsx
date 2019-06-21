@@ -9,7 +9,6 @@ import { IChallengeTypeIconProps } from "./ChallengeTypeIcon.props"
 
 export const ChallengeTypeIcon: React.FunctionComponent<IChallengeTypeIconProps> = props => {
     return (
-
         <TouchableOpacity style={styles.touchableContainer}>
             <Tooltip
                 popover={<Text style={globalStyles.tooltipText}>{CHALLENGE_CATEGORIES[props.type].descr}</Text>}
