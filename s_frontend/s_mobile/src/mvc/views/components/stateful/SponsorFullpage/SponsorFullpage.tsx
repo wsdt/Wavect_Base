@@ -4,6 +4,9 @@ import { MajorButton, MajorBtnType } from "../../functional/MajorButton/MajorBut
 
 class SponsorFullpage extends Component {
     render() {
+
+        //const { sponsorId, sponsorName, logoUri} = this.props.sponsor;
+
         return (
             <View>
                 <MajorButton btnType={MajorBtnType.PRIMARY} title={"Test"} />

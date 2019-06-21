@@ -6,8 +6,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
         backgroundColor: primaryBackgroundColor,
         flex: 1,
-        justifyContent: "flex-end",
         margin: 5,
+        justifyContent: 'flex-start'
     },
 })
 
