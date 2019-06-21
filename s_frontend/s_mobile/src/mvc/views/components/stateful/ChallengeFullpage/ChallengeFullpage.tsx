@@ -26,7 +26,7 @@ export class ChallengeFullpage extends React.PureComponent<IChallengeFullpagePro
                 <SponsorFullpage
                     sponsorName={"IKEA"}
                     sponsorDescr={"Wir von IKEA sind sind große Eierbauern und interessieren uns sehr für mittel und großbusige Damen. Ruf uns an"}
-                    sponsorLogo={{uri:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ikea_logo.svg/1024px-Ikea_logo.svg.png"}}
+                    sponsorLogo={{ uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ikea_logo.svg/1024px-Ikea_logo.svg.png" }}
                 />
             )
         } else {

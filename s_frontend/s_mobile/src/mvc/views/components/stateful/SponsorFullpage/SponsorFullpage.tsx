@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import { Text, View } from "react-native"
 import { Button, Image } from "react-native-elements"
-import {styles} from "./SponsorFullpage.css"
-import {ISponsorFullpageProps} from "./SponsorFullpage.props"
+import { styles } from "./SponsorFullpage.css"
+import { ISponsorFullpageProps } from "./SponsorFullpage.props"
 
 class SponsorFullpage extends Component<ISponsorFullpageProps, any> {
     public render() {
