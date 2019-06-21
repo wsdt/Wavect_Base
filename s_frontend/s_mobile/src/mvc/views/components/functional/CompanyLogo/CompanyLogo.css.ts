@@ -6,7 +6,7 @@ const radius = globalStyles.radius.borderRadius
 const styles = StyleSheet.create({
     topLeftCompany: {
         alignSelf: "flex-start",
-        position: "absolute",
+        position: 'absolute',
         flex: 1,
         margin: 5,
         borderRadius: radius,

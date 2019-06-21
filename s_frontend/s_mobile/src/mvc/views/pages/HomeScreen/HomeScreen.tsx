@@ -1,10 +1,10 @@
 import * as React from "react"
-import { ScrollView } from "react-navigation"
 import { Challenge } from "../../../models/Challenge"
 import { ChallengeCategory } from "../../../models/ChallengeCategory"
 import { ChallengeFullpage } from "../../components/stateful/ChallengeFullpage/ChallengeFullpage"
 import { Header } from "../../components/system/Header/Header"
 import { BaseScreen } from "../BaseScreen/BaseScreen"
+import {SafeAreaView} from "react-native";
 
 export class HomeScreen extends React.Component<any, any> {
     public render(): React.ReactNode {
@@ -31,10 +31,11 @@ export class HomeScreen extends React.Component<any, any> {
                     btnTitle="Feedback"
                     btnLink="mailto:support@bekind.com?subject=BeKind-Feedback&body=Was könnten wir verbessern?"
                 />
-                <ScrollView>
+                <SafeAreaView>
                     <ChallengeFullpage challenge={challenge} />
-                </ScrollView>
+                </SafeAreaView>
             </BaseScreen>
         )
     }
 }
+

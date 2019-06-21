@@ -4,10 +4,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         margin: 5,
-        justifyContent: "center",
-        alignItems: "flex-end",
-        height: 530,
+        justifyContent: "flex-start",
     },
+    top: {
+        justifyContent: 'flex-start'
+    }
 })
 
 export default styles
+

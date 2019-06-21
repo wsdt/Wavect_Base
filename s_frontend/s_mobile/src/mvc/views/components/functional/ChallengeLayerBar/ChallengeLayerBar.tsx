@@ -3,8 +3,7 @@ import React from "react"
 import { Alert, View } from "react-native"
 import { Text } from "react-native-elements"
 import { functionalityNotAvailable } from "../../../../controllers/WarningsController"
-import { ChallengeTypeIcon } from "../ChallengeTypeIcon/ChallengeTypeIcon"
-import { CompanyLogo } from "../CompanyLogo/CompanyLogo"
+
 import { MajorBtnType, MajorButton } from "../MajorButton/MajorButton"
 import styles from "./ChallengeLayerBar.css"
 import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
@@ -15,20 +14,18 @@ const CHALLENGE_ACCEPTED_DATETIME = "challenge_accepted_datetime"
 
 let lastChallengeIdAccepted
 let lastChallengeAcceptedDatetime
-let currChallengeAccepted: boolean = false
+let currChallengeAccepted: boolean|null = null
 
 export const ChallengeLayerBar: React.FunctionComponent<IChallengeLayerBarProps> = props => {
-    const { challengeId, headline, subline, companyLogoUri, challengeCategory, isGrayscale, expirationInMs } = props
 
-    if (companyLogoUri == null) {
+    const { headline, subline, expirationInMs, challengeId } = props
+
+    if (currChallengeAccepted == null) {
         retrieveChallengeAccepted(challengeId)
     }
 
     return (
         <View style={styles.mainComponent}>
-            <CompanyLogo companyLogoUri={companyLogoUri} isGrayscale={isGrayscale} />
-            <ChallengeTypeIcon type={challengeCategory} />
-
             <View style={styles.bottomActionContainer}>
                 <Text style={styles.headline}>{headline}</Text>
                 <Text style={styles.subline}>{subline}</Text>
@@ -81,6 +78,8 @@ const retrieveChallengeAccepted = async (challengeId: string) => {
                 // current challenge already accepted
                 currChallengeAccepted = true
             }
+        } else {
+            currChallengeAccepted = false
         }
     } catch (e) {
         console.error(e)

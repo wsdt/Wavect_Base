@@ -75,7 +75,11 @@
 		D100779F3F5D44058323BE92 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4BEFF9516849437291AFC394 /* rubicon-icon-font.ttf */; };
 		014EA7B369284CB5A5E77CBC /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 607A5038274349D4901CB345 /* SimpleLineIcons.ttf */; };
 		FB1F3099A1B94A74AB1472C0 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6F7501F88F96495994DFD09C /* Zocial.ttf */; };
+<<<<<<< HEAD
 		B35B2CA048DB48E7969BE95E /* libRNCAsyncStorage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC093A8D7666412997F61BBE /* libRNCAsyncStorage.a */; };
+=======
+		5A1A77033E1C48C180D6AE88 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FED518760D474919AC7CBF5C /* FontAwesome.ttf */; };
+>>>>>>> 4b730be94ff942f99b0a5c4f12358f6150c986eb
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -422,8 +426,12 @@
 		4BEFF9516849437291AFC394 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		607A5038274349D4901CB345 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		6F7501F88F96495994DFD09C /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+<<<<<<< HEAD
 		376ECD4D13DC4B4E8B16FACA /* RNCAsyncStorage.xcodeproj */ = {isa = PBXFileReference; name = "RNCAsyncStorage.xcodeproj"; path = "../node_modules/@react-native-community/async-storage/ios/RNCAsyncStorage.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		FC093A8D7666412997F61BBE /* libRNCAsyncStorage.a */ = {isa = PBXFileReference; name = "libRNCAsyncStorage.a"; path = "libRNCAsyncStorage.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+=======
+		FED518760D474919AC7CBF5C /* FontAwesome.ttf */ = {isa = PBXFileReference; name = "FontAwesome.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+>>>>>>> 4b730be94ff942f99b0a5c4f12358f6150c986eb
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -731,6 +739,7 @@
 				4BEFF9516849437291AFC394 /* rubicon-icon-font.ttf */,
 				607A5038274349D4901CB345 /* SimpleLineIcons.ttf */,
 				6F7501F88F96495994DFD09C /* Zocial.ttf */,
+				FED518760D474919AC7CBF5C /* FontAwesome.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1215,6 +1224,7 @@
 				D100779F3F5D44058323BE92 /* rubicon-icon-font.ttf in Resources */,
 				014EA7B369284CB5A5E77CBC /* SimpleLineIcons.ttf in Resources */,
 				FB1F3099A1B94A74AB1472C0 /* Zocial.ttf in Resources */,
+				5A1A77033E1C48C180D6AE88 /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

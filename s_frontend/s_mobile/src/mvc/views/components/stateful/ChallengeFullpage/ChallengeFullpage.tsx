@@ -1,5 +1,5 @@
 import * as React from "react"
-import { ImageBackground } from "react-native"
+import {ImageBackground, View} from "react-native"
 import globalStyles from "../../../GlobalStyles.css"
 import { ChallengeLayerBar } from "../../functional/ChallengeLayerBar/ChallengeLayerBar"
 import { GrayColorImg } from "../../functional/GrayColorImg/GrayColorImg"
@@ -7,12 +7,15 @@ import { LoadingIndicator } from "../../functional/LoadingIndicator/LoadingIndic
 import styles from "./ChallengeFullpage.css"
 import { IChallengeFullpageProps } from "./ChallengeFullpage.props"
 import { IChallengeFullpageState } from "./ChallengeFullpage.state"
+import {CompanyLogo} from "../../functional/CompanyLogo/CompanyLogo";
+import {ChallengeTypeIcon} from "../../functional/ChallengeTypeIcon/ChallengeTypeIcon";
+import {functionalityNotAvailable} from "../../../../controllers/WarningsController";
 
 export class ChallengeFullpage extends React.PureComponent<IChallengeFullpageProps, IChallengeFullpageState> {
     public state: IChallengeFullpageState = {
         isGrayscale: true,
         isLoading: true,
-    }
+    };
 
     public render() {
         const { bgImage } = this.props.challenge
@@ -34,14 +37,18 @@ export class ChallengeFullpage extends React.PureComponent<IChallengeFullpagePro
         const { headline, subline, companyLogoUri, majorCategory, expirationInMs } = this.props.challenge
 
         return (
-            <ChallengeLayerBar
-                headline={headline}
-                subline={subline}
-                challengeCategory={majorCategory}
-                companyLogoUri={companyLogoUri}
-                isGrayscale={this.state.isGrayscale}
-                expirationInMs={expirationInMs}
-            />
+            <>
+                <View style={styles.top}>
+                    <CompanyLogo companyLogoUri={companyLogoUri} isGrayscale={this.state.isGrayscale} onPressed={() => functionalityNotAvailable("Fette Eier")} />
+                    <ChallengeTypeIcon type={majorCategory} />
+                </View>
+
+                <ChallengeLayerBar
+                    headline={headline}
+                    subline={subline}
+                    expirationInMs={expirationInMs}
+                />
+            </>
         )
     }
 
