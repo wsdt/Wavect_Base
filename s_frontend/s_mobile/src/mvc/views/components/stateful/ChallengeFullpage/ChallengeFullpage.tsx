@@ -32,11 +32,12 @@ export class ChallengeFullpage extends React.PureComponent<IChallengeFullpagePro
         }
 
         const { headline, subline, companyLogoUri, majorCategory, expirationInMs } = this.props.challenge
+
         return (
             <ChallengeLayerBar
                 headline={headline}
                 subline={subline}
-                challengeCategoryUri={majorCategory}
+                challengeCategory={majorCategory}
                 companyLogoUri={companyLogoUri}
                 isGrayscale={this.state.isGrayscale}
                 expirationInMs={expirationInMs}
