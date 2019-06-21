@@ -4,6 +4,6 @@ import { IGrayColorImgProps } from "./GrayColorImg.props"
 import globalStyles from "../../../GlobalStyles.css"
 
 export const GrayColorImg: React.FunctionComponent<IGrayColorImgProps> = props => {
-    //  style={globalStyles.fullSize}
+    //  style={globalStyles.bottomBackButton}
     return props.isGrayscale ? <Grayscale>{props.children}</Grayscale> : <>{props.children}</>
 }

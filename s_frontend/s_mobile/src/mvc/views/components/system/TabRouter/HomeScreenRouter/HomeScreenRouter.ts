@@ -1,4 +1,4 @@
-import {createBottomTabNavigator, createStackNavigator} from "react-navigation"
+import { createBottomTabNavigator, createStackNavigator } from "react-navigation"
 import { routesConfig } from "./HomeScreenRouterConfigMap"
 import { routerOptions } from "./HomeScreenRouterOptions"
 
