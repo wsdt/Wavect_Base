@@ -9,12 +9,12 @@ import styles from "./ChallengeLayerBar.css"
 import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
 
 export const ChallengeLayerBar: React.FunctionComponent<IChallengeLayerBarProps> = props => {
-    const { headline, subline, companyLogoUri, challengeCategoryUri, isGrayscale } = props
+    const { headline, subline, companyLogoUri, challengeCategory, isGrayscale } = props
 
     return (
         <View style={styles.mainComponent}>
             <CompanyLogo companyLogoUri={companyLogoUri} isGrayscale={isGrayscale} />
-            <ChallengeTypeIcon type={challengeCategoryUri} />
+            <ChallengeTypeIcon type={challengeCategory} />
 
             <View style={styles.bottomActionContainer}>
                 <Text style={styles.headline}>{headline}</Text>
@@ -36,6 +36,18 @@ const execBtnAccept = (expirationInMs: number) => {
     Alert.alert("Challenge Accepted", `Du hast nun ${expirationInMs} Tage Zeit, um die Challenge zu lösen!`, [{ text: "Verstanden" }], {
         cancelable: true,
     })
-
     // TODO: Save status locally
+}
+
+const msToFormattedStr = (ms: number) => {
+    let day, hours, minute, seconds
+    seconds = Math.floor(ms/1000)
+    minute = Math.floor(seconds/60)
+    hours = Math.floor(minute/60)
+    minute = minute % 60
+    day = Math.floor(hours/24)
+    hours = hours%24
+    return `${day} Tage, ${hours} Stunden, ${minute} Minuten`
+
+
 }

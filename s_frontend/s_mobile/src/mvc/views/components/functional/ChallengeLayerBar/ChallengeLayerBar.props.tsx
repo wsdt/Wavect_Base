@@ -5,7 +5,7 @@ export interface IChallengeLayerBarProps {
     headline: string
     subline: string
     companyLogoUri: ImageURISource
-    challengeCategoryUri: ChallengeCategory
+    challengeCategory: ChallengeCategory
     isGrayscale: boolean
     expirationInMs: number
 }
