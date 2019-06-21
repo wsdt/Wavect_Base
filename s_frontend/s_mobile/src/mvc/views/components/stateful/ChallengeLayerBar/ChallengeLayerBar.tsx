@@ -7,44 +7,39 @@ import { functionalityNotAvailable } from "../../../../controllers/WarningsContr
 import { MajorBtnType, MajorButton } from "../../functional/MajorButton/MajorButton"
 import styles from "./ChallengeLayerBar.css"
 import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
-import {IChallengeLayerBarState} from "./ChallengeLayerBar.state"
+import { IChallengeLayerBarState } from "./ChallengeLayerBar.state"
 
 // Key for persisting locally
 const CHALLENGE_ACCEPTED_ID = "challenge_accepted_id"
 const CHALLENGE_ACCEPTED_DATETIME = "challenge_accepted_datetime"
 
-
-
 export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, IChallengeLayerBarState> {
-    public state:IChallengeLayerBarState = {
+    public state: IChallengeLayerBarState = {
         currChallengeAccepted: null,
         lastChallengeIdAccepted: "",
         lastChallengeAcceptedDatetime: "",
-
     }
 
-  public render() {
-      const { headline, subline, expirationInMs, challengeId } = this.props
+    public render() {
+        const { headline, subline, expirationInMs, challengeId } = this.props
 
-      if (this.state.currChallengeAccepted == null) {
-          this.retrieveChallengeAccepted(challengeId)
-      }
+        if (this.state.currChallengeAccepted == null) {
+            this.retrieveChallengeAccepted(challengeId)
+        }
 
-      return (
-          <View style={styles.mainComponent}>
-              <View style={styles.bottomActionContainer}>
-                  <Text style={styles.headline}>{headline}</Text>
-                  <Text style={styles.subline}>{subline}</Text>
+        return (
+            <View style={styles.mainComponent}>
+                <View style={styles.bottomActionContainer}>
+                    <Text style={styles.headline}>{headline}</Text>
+                    <Text style={styles.subline}>{subline}</Text>
 
-                  <View style={styles.btnContainer}>{this.getBtnRow(expirationInMs, challengeId)}</View>
-              </View>
-          </View>
-      )
-  }
-
+                    <View style={styles.btnContainer}>{this.getBtnRow(expirationInMs, challengeId)}</View>
+                </View>
+            </View>
+        )
+    }
 
     private getBtnRow = (expirationInMs: number, challengeId: string) => {
-
         if (this.state.currChallengeAccepted) {
             // TODO: Add on press for trigger backend challenge solved
             return (
@@ -71,20 +66,25 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
         // Save status locally
         this.storeChallengeAccepted(challengeId)
 
-        Alert.alert("Challenge Accepted", `Du hast nun ${this.msToFormattedStr(expirationInMs)} Zeit, um die Challenge zu lösen!`, [{ text: "Verstanden" }], {
-            cancelable: true,
-        })
+        Alert.alert(
+            "Challenge Accepted",
+            `Du hast nun ${this.msToFormattedStr(expirationInMs)} Zeit, um die Challenge zu lösen!`,
+            [{ text: "Verstanden" }],
+            {
+                cancelable: true,
+            }
+        )
     }
 
     private retrieveChallengeAccepted = async (challengeId: string) => {
         try {
-            let currChallengeAccepted:boolean = false
+            let currChallengeAccepted: boolean = false
 
             console.log("######## retrieve")
             if (this.state.lastChallengeIdAccepted !== null && this.state.lastChallengeAcceptedDatetime !== null) {
                 // vals previously stored
 
-                console.log("########## vals stored -> "+this.state.lastChallengeIdAccepted+ " // "+challengeId)
+                console.log("########## vals stored -> " + this.state.lastChallengeIdAccepted + " // " + challengeId)
 
                 if (this.state.lastChallengeIdAccepted === challengeId) {
                     // current challenge already accepted
@@ -95,11 +95,10 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
                 }
             }
 
-
             this.setState({
                 lastChallengeIdAccepted: await AsyncStorage.getItem(CHALLENGE_ACCEPTED_ID),
                 lastChallengeAcceptedDatetime: await AsyncStorage.getItem(CHALLENGE_ACCEPTED_DATETIME),
-                currChallengeAccepted: currChallengeAccepted
+                currChallengeAccepted: currChallengeAccepted,
             })
         } catch (e) {
             console.error(e)
@@ -107,7 +106,7 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
     }
 
     private storeChallengeAccepted = async (challengeId: string) => {
-        console.log("chall id - "+challengeId)
+        console.log("chall id - " + challengeId)
 
         try {
             await AsyncStorage.setItem(CHALLENGE_ACCEPTED_ID, challengeId)
@@ -129,4 +128,3 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
         return `${day} Tage, ${hours} Stunden, ${minute} Minuten, ${seconds} Sekunden`
     }
 }
-
