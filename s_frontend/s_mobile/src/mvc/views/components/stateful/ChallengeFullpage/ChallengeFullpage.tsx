@@ -10,6 +10,7 @@ import SponsorFullpage from "../SponsorFullpage/SponsorFullpage"
 import styles from "./ChallengeFullpage.css"
 import { IChallengeFullpageProps } from "./ChallengeFullpage.props"
 import { IChallengeFullpageState } from "./ChallengeFullpage.state"
+import {Sponsor} from "../../../../models/Sponsor";
 
 export class ChallengeFullpage extends React.PureComponent<IChallengeFullpageProps, IChallengeFullpageState> {
     public state: IChallengeFullpageState = {
@@ -19,20 +20,32 @@ export class ChallengeFullpage extends React.PureComponent<IChallengeFullpagePro
     }
 
     public render() {
-        const { bgImage } = this.props.challenge
+
+        //test sponsor --> fetch here.. so we can destructure down there
+        const sponsor_ikea = new Sponsor(
+            "asdfawef213asdf",
+            "IKEA",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ikea_logo.svg/1024px-Ikea_logo.svg.png",
+            "Im Herzen von IKEA steht eine Vision – den Menschen einen besseren Alltag zu schaffen. Bei IKEA findest du alles, " +
+            "was dein Zuhause braucht: von den Ikonen BILLY und PAX hin zu unserem vielfältigen Sortiment an Sofas, Boxspringbetten, Küchen und unserer lebhaften Kinderwelt. Entdecke unsere beliebtesten Produktserien und informiere dich über unsere Neuheiten. Das IKEA Konzept wird auf viele Weisen lebendig: durch unsere Einrichtungshäuser, den IKEA Katalog und Broschüren, im IKEA Onlineshop und in Millionen von Haushalten auf der ganzen Welt. Wir bieten auch eine Vielzahl von Services an, die dir helfen Zeit zu sparen." +
+            "Lass dir deine Möbel mit unserem Transportservice direkt nach Hause liefern oder nutze unseren Click & Collect Service.",
+            "ikea@ikea.at",
+            "https://www.ikea.com/at/de/"
+        );
+
+        //destructure
+        const { bgImage } = this.props.challenge;
+        const { sponsorName, logoUri, shortDescr, website, email} = sponsor_ikea;
 
         if (this.state.isSponsorPressed) {
             return (
                 <SponsorFullpage
-                    sponsorName={"IKEA"}
-                    sponsorLogo={{ uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ikea_logo.svg/1024px-Ikea_logo.svg.png" }}
-                    sponsorDescr={"Du suchst eine Montageanleitung?\n" +
-                    "Hier findest du die meistgesuchten Montageanleitungen zu deinen Lieblingsmöbeln. Du findest die PDF-Anleitungen sortiert nach Wohnbereich und Möbelstück." +
-                    " Bei Klick auf den Link öffnen sie sich in einem neuen Fenster - " +
-                    "so kannst du deine Montageanleitungen abspeichern oder drucken. Alle Anleitungen aus unserem aktuellen Produktsortiment findest du auch immer auf den jeweiligen Produktseiten."}
+                    sponsorName={sponsorName}
+                    sponsorLogo={{uri: logoUri}}
+                    sponsorDescr={shortDescr}
                     whySponsor={this.props.challenge.whyDoesOrganizationSponsor}
-                    email={"ikea@ikea.at"}
-                    website={"https://www.ikea.com/at/de/"}
+                    email={email}
+                    website={website}
                 />
             )
         } else {

@@ -1,20 +1,18 @@
-import { ImageURISource } from "react-native"
-
 export class Sponsor {
-    private _sponsorId!: string
-    private _sponsorName!: string
-    private _logoUri!: ImageURISource
-    private _shortDescr!: string
-    private _website?: string
-    private _email!: string
+    private _sponsorId!: string;
+    private _sponsorName!: string;
+    private _logoUri!: string;
+    private _shortDescr!: string;
+    private _website!: string;
+    private _email!: string;
 
-    public constructor(sponsorId: string, sponsorName: string, logoUri: ImageURISource, shortDescr: string, website: string, email: string) {
-        this.sponsorId = sponsorId
-        this.sponsorName = sponsorName
-        this.logoUri = logoUri
-        this.shortDescr = shortDescr
-        this.website = website
-        this.email = email
+    public constructor(sponsorId: string, sponsorName: string, logoUri: string, shortDescr: string, website: string, email: string) {
+        this.sponsorId = sponsorId;
+        this.sponsorName = sponsorName;
+        this.logoUri = logoUri;
+        this.shortDescr = shortDescr;
+        this.website = website;
+        this.email = email;
     }
 
     set sponsorId(sponsorId: string) {
@@ -33,11 +31,11 @@ export class Sponsor {
         this._sponsorName = value
     }
 
-    get logoUri(): ImageURISource {
+    get logoUri(): string {
         return this._logoUri
     }
 
-    set logoUri(value: ImageURISource) {
+    set logoUri(value: string) {
         this._logoUri = value
     }
 
@@ -49,11 +47,11 @@ export class Sponsor {
         this._shortDescr = value
     }
 
-    get website(): string | undefined {
+    get website(): string {
         return this._website
     }
 
-    set website(value: string | undefined) {
+    set website(value: string) {
         this._website = value
     }
 
