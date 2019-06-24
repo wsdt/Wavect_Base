@@ -1,12 +1,14 @@
+import {ImageURISource} from "react-native";
+
 export class Sponsor {
     private _sponsorId!: string
     private _sponsorName!: string
-    private _logoUri!: string
+    private _logoUri!: ImageURISource
     private _shortDescr!: string
     private _website!: string
     private _email!: string
 
-    public constructor(sponsorId: string, sponsorName: string, logoUri: string, shortDescr: string, website: string, email: string) {
+    public constructor(sponsorId: string, sponsorName: string, logoUri: ImageURISource, shortDescr: string, website: string, email: string) {
         this.sponsorId = sponsorId
         this.sponsorName = sponsorName
         this.logoUri = logoUri
@@ -31,11 +33,11 @@ export class Sponsor {
         this._sponsorName = value
     }
 
-    get logoUri(): string {
+    get logoUri(): ImageURISource {
         return this._logoUri
     }
 
-    set logoUri(value: string) {
+    set logoUri(value: ImageURISource) {
         this._logoUri = value
     }
 

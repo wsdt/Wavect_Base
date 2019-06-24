@@ -11,7 +11,7 @@ router.use((_req, res, next) => {
 import * as mobileRoutes from "./mobile/apiMobileRoutes"
 router.use("/mobile", mobileRoutes)
 
-// ADD here web and other routes (e.g. for regular website [not just web-application])
+// ADD here web and other routes (e.g. for regular website [not  just web-application])
 
 // show page not found error for API use (json)
 router.use("*", (_req, res) => {

@@ -5,7 +5,7 @@ const SettingsModel = new mongoose.Schema({
     userId: { type: String, unique: true, required: true, dropDups: true },
     email: { type: String, unique: true, required: true, dropDups: true },
     hasAcceptedDataPrivacy: { type: Boolean, required: true },
-})
+});
 
 // Also functions addable (BEFORE .model())
 
