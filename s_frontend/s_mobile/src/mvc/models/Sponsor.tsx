@@ -1,18 +1,18 @@
 export class Sponsor {
-    private _sponsorId!: string;
-    private _sponsorName!: string;
-    private _logoUri!: string;
-    private _shortDescr!: string;
-    private _website!: string;
-    private _email!: string;
+    private _sponsorId!: string
+    private _sponsorName!: string
+    private _logoUri!: string
+    private _shortDescr!: string
+    private _website!: string
+    private _email!: string
 
     public constructor(sponsorId: string, sponsorName: string, logoUri: string, shortDescr: string, website: string, email: string) {
-        this.sponsorId = sponsorId;
-        this.sponsorName = sponsorName;
-        this.logoUri = logoUri;
-        this.shortDescr = shortDescr;
-        this.website = website;
-        this.email = email;
+        this.sponsorId = sponsorId
+        this.sponsorName = sponsorName
+        this.logoUri = logoUri
+        this.shortDescr = shortDescr
+        this.website = website
+        this.email = email
     }
 
     set sponsorId(sponsorId: string) {

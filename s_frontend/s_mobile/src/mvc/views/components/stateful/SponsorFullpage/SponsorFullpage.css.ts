@@ -16,11 +16,11 @@ export const styles = StyleSheet.create({
     bottomBackButton: {
         width: "100%",
         height: 50,
-        justifyContent: "flex-end"
+        justifyContent: "flex-end",
     },
     heading: {
         fontSize: 100,
-        fontWeight: 'bold',
+        fontWeight: "bold",
         letterSpacing: 10,
         textAlign: "center",
     },
@@ -30,18 +30,18 @@ export const styles = StyleSheet.create({
     },
 
     hr_line: {
-        borderBottomColor: 'black',
+        borderBottomColor: "black",
         borderBottomWidth: 1,
-        margin: 20
+        margin: 20,
     },
     boldCenteredText: {
-        fontWeight: 'bold',
-        textAlign: 'center',
-        fontSize: 20
+        fontWeight: "bold",
+        textAlign: "center",
+        fontSize: 20,
     },
     link: {
         fontSize: 20,
-        textAlign: 'center',
-        color: 'blue'
+        textAlign: "center",
+        color: "blue",
     },
 })

@@ -9,8 +9,6 @@ import globalStyles from "../../GlobalStyles.css"
 
 export class HomeScreen extends React.Component<any, any> {
     public render(): React.ReactNode {
-
-
         const challenge: Challenge = new Challenge(
             "0",
             "Laugh2gether",
@@ -24,7 +22,7 @@ export class HomeScreen extends React.Component<any, any> {
                 uri: "https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress",
             },
             30000
-        );
+        )
 
         return (
             <BaseScreen>
