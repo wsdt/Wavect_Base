@@ -4,12 +4,11 @@ import { ChallengeCategory } from "../../../models/ChallengeCategory"
 import { ChallengeFullpage } from "../../components/stateful/ChallengeFullpage/ChallengeFullpage"
 import { Header } from "../../components/system/Header/Header"
 import { BaseScreen } from "../BaseScreen/BaseScreen"
-import { SafeAreaView, View } from "react-native"
+import { View } from "react-native"
 import globalStyles from "../../GlobalStyles.css"
 
 export class HomeScreen extends React.Component<any, any> {
     public render(): React.ReactNode {
-        // todo make Sponsor class
         const challenge: Challenge = new Challenge(
             "0",
             "Laugh2gether",
@@ -22,7 +21,7 @@ export class HomeScreen extends React.Component<any, any> {
             {
                 uri: "https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress",
             },
-            3000
+            30000
         )
 
         return (
