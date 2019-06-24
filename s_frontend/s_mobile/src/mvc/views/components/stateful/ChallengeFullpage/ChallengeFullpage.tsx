@@ -1,5 +1,5 @@
 import * as React from "react"
-import {ImageBackground, View} from "react-native"
+import { ImageBackground, View } from "react-native"
 import globalStyles from "../../../GlobalStyles.css"
 import { ChallengeTypeIcon } from "../../functional/ChallengeTypeIcon/ChallengeTypeIcon"
 import { CompanyLogo } from "../../functional/CompanyLogo/CompanyLogo"
@@ -26,10 +26,12 @@ export class ChallengeFullpage extends React.PureComponent<IChallengeFullpagePro
                 <SponsorFullpage
                     sponsorName={"IKEA"}
                     sponsorLogo={{ uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ikea_logo.svg/1024px-Ikea_logo.svg.png" }}
-                    sponsorDescr={"Du suchst eine Montageanleitung?\n" +
-                    "Hier findest du die meistgesuchten Montageanleitungen zu deinen Lieblingsmöbeln. Du findest die PDF-Anleitungen sortiert nach Wohnbereich und Möbelstück." +
-                    " Bei Klick auf den Link öffnen sie sich in einem neuen Fenster - " +
-                    "so kannst du deine Montageanleitungen abspeichern oder drucken. Alle Anleitungen aus unserem aktuellen Produktsortiment findest du auch immer auf den jeweiligen Produktseiten."}
+                    sponsorDescr={
+                        "Du suchst eine Montageanleitung?\n" +
+                        "Hier findest du die meistgesuchten Montageanleitungen zu deinen Lieblingsmöbeln. Du findest die PDF-Anleitungen sortiert nach Wohnbereich und Möbelstück." +
+                        " Bei Klick auf den Link öffnen sie sich in einem neuen Fenster - " +
+                        "so kannst du deine Montageanleitungen abspeichern oder drucken. Alle Anleitungen aus unserem aktuellen Produktsortiment findest du auch immer auf den jeweiligen Produktseiten."
+                    }
                     whySponsor={this.props.challenge.whyDoesOrganizationSponsor}
                     email={"ikea@ikea.at"}
                     website={"https://www.ikea.com/at/de/"}
