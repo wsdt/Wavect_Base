@@ -20,7 +20,7 @@ export class ChallengeFullpage extends React.PureComponent<IChallengeFullpagePro
     }
 
     public render() {
-        //test sponsor --> fetch here.. so we can destructure down there
+        // test sponsor --> fetch here.. so we can destructure down there
         const sponsor_ikea = new Sponsor(
             "asdfawef213asdf",
             "IKEA",
