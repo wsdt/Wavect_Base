@@ -63,7 +63,7 @@ class App {
             cors({
                 origin: CLIENT_WEB,
             })
-        )
+        ) // TODO: Maybe cors blocks mobile requests!
 
         // graphql
         this.app.use(

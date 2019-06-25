@@ -9,7 +9,7 @@ import { MajorBtnType, MajorButton } from "../../functional/MajorButton/MajorBut
 import styles from "./ChallengeLayerBar.css"
 import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
 import { IChallengeLayerBarState } from "./ChallengeLayerBar.state"
-import {CHALLENGE_ACCEPTED_ID, CHALLENGE_EXPIRATION_DATE} from "./ChallengeLayerBar.constants";
+import { CHALLENGE_ACCEPTED_ID, CHALLENGE_EXPIRATION_DATE } from "./ChallengeLayerBar.constants"
 
 export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, IChallengeLayerBarState> {
     public state: IChallengeLayerBarState = {

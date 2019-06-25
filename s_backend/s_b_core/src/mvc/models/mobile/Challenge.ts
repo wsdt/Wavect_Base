@@ -1,6 +1,6 @@
 import * as mongoose from "mongoose"
+import {ChallengeCategory} from "../../../../../../s_frontend/s_mobile/src/mvc/models/ChallengeCategory"
 import { COLLECTION_SETTINGS_NAME } from "../../controllers/db/db.constants"
-import {ChallengeCategory} from "../../../../../../s_frontend/s_mobile/src/mvc/models/ChallengeCategory";
 
 const ChallengeModel = new mongoose.Schema({
     id: { type: String, unique: true, required: true, dropDups: true },
@@ -10,7 +10,7 @@ const ChallengeModel = new mongoose.Schema({
     companyLogoUri: {type: String, required: false},
     majorCategory: {type: ChallengeCategory, required: true},
     expirationInMs: {type: Number, required: true}
-});
+})
 
 // Also functions addable (BEFORE .model())
 
@@ -21,4 +21,4 @@ const ChallengeModel = new mongoose.Schema({
 
 // Also Middlewares possible with Mongoose
 
-export const Challenge = mongoose.model(COLLECTION_SETTINGS_NAME, ChallengeModel);
+export const Challenge = mongoose.model(COLLECTION_SETTINGS_NAME, ChallengeModel)
