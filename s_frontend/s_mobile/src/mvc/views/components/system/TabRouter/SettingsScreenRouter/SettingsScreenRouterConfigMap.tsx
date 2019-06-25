@@ -1,5 +1,5 @@
 import { NavigationRouteConfigMap } from "react-navigation"
-import {SettingsScreen} from "../../../../pages/SettingsScreen/SettingsScreen"
+import { SettingsScreen } from "../../../../pages/SettingsScreen/SettingsScreen"
 import { routes } from "./SettingsRoutes"
 
 export const routesConfig: NavigationRouteConfigMap = {

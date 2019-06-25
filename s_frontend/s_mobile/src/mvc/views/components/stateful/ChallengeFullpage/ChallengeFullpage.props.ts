@@ -1,4 +1,4 @@
-import {NavigationInjectedProps, NavigationParams, NavigationRoute, NavigationScreenProp} from "react-navigation"
+import { NavigationInjectedProps, NavigationParams, NavigationRoute, NavigationScreenProp } from "react-navigation"
 import { Challenge } from "../../../../models/Challenge"
 
 export interface IChallengeFullpageProps {

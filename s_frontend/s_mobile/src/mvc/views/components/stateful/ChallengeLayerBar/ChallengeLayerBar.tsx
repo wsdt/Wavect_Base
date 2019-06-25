@@ -12,7 +12,7 @@ import { IChallengeLayerBarState } from "./ChallengeLayerBar.state"
 
 // Key for persisting locally
 const CHALLENGE_ACCEPTED_ID = "challenge_accepted_id"
-const CHALLENGE_ACCEPTED_DATETIME = "challenge_accepted_datetime"
+const CHALLENGE_EXPIRATION_DATE = "challenge_expiration_date"
 
 export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, IChallengeLayerBarState> {
     public state: IChallengeLayerBarState = {
@@ -21,7 +21,7 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
     }
 
     private lastChallengeIdAccepted: string | null = null
-    private lastChallengeAcceptedDatetime: string | null = null
+    private lastChallengeExpirationDateTime: string | null = null
     private intervalId!: any
 
     public render() {
@@ -54,9 +54,10 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
 
         if (currChallengeAccepted) {
             // subtract last accepted from today with expirationInMs to make countdown persistent (to avoid restarting it one every startup)
-            if (this.lastChallengeAcceptedDatetime != null) {
-                const persistedLastAcceptedDatetime: Date = new Date(this.lastChallengeAcceptedDatetime)
-                const correctedExpireMs = persistedLastAcceptedDatetime.getMilliseconds() + this.props.expirationInMs - new Date().getMilliseconds()
+            if (this.lastChallengeExpirationDateTime != null) {
+                const persistedLastExpirationDatetime: Date = new Date(this.lastChallengeExpirationDateTime)
+
+                const correctedExpireMs = persistedLastExpirationDatetime.getTime() - Date.now()
                 this.setState({ remainingMilliseconds: correctedExpireMs <= 0 ? 0 : Math.round(correctedExpireMs / 1000) * 1000 }) // dividing by 1000 to have a comma as later
             }
             this.startCountdownInterval()
@@ -112,9 +113,9 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
         let currChallengeAccepted: boolean = false
         try {
             this.lastChallengeIdAccepted = await AsyncStorage.getItem(CHALLENGE_ACCEPTED_ID)
-            this.lastChallengeAcceptedDatetime = await AsyncStorage.getItem(CHALLENGE_ACCEPTED_DATETIME)
+            this.lastChallengeExpirationDateTime = await AsyncStorage.getItem(CHALLENGE_EXPIRATION_DATE)
 
-            if (this.lastChallengeIdAccepted !== null && this.lastChallengeAcceptedDatetime !== null) {
+            if (this.lastChallengeIdAccepted !== null && this.lastChallengeExpirationDateTime !== null) {
                 // vals previously stored
 
                 if (this.lastChallengeIdAccepted === challengeId) {
@@ -133,7 +134,7 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
     private storeChallengeExpired = async () => {
         try {
             await AsyncStorage.removeItem(CHALLENGE_ACCEPTED_ID)
-            await AsyncStorage.removeItem(CHALLENGE_ACCEPTED_DATETIME)
+            await AsyncStorage.removeItem(CHALLENGE_EXPIRATION_DATE)
             this.setState({ currChallengeAccepted: false })
             console.log("ChallengeLayerBar:storeChallengeExpired: Challenge expired.")
         } catch (e) {
@@ -144,7 +145,7 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
     private storeChallengeAccepted = async (challengeId: string) => {
         try {
             await AsyncStorage.setItem(CHALLENGE_ACCEPTED_ID, challengeId)
-            await AsyncStorage.setItem(CHALLENGE_ACCEPTED_DATETIME, new Date().toString())
+            await AsyncStorage.setItem(CHALLENGE_EXPIRATION_DATE, new Date(Date.now()+this.props.expirationInMs).toString())
             this.setState({ currChallengeAccepted: true, remainingMilliseconds: this.props.expirationInMs })
             this.startCountdownInterval()
         } catch (e) {
