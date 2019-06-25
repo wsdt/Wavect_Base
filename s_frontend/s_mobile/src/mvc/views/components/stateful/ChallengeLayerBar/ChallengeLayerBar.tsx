@@ -9,10 +9,7 @@ import { MajorBtnType, MajorButton } from "../../functional/MajorButton/MajorBut
 import styles from "./ChallengeLayerBar.css"
 import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
 import { IChallengeLayerBarState } from "./ChallengeLayerBar.state"
-
-// Key for persisting locally
-const CHALLENGE_ACCEPTED_ID = "challenge_accepted_id"
-const CHALLENGE_EXPIRATION_DATE = "challenge_expiration_date"
+import {CHALLENGE_ACCEPTED_ID, CHALLENGE_EXPIRATION_DATE} from "./ChallengeLayerBar.constants";
 
 export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, IChallengeLayerBarState> {
     public state: IChallengeLayerBarState = {
@@ -145,7 +142,7 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
     private storeChallengeAccepted = async (challengeId: string) => {
         try {
             await AsyncStorage.setItem(CHALLENGE_ACCEPTED_ID, challengeId)
-            await AsyncStorage.setItem(CHALLENGE_EXPIRATION_DATE, new Date(Date.now()+this.props.expirationInMs).toString())
+            await AsyncStorage.setItem(CHALLENGE_EXPIRATION_DATE, new Date(Date.now() + this.props.expirationInMs).toString())
             this.setState({ currChallengeAccepted: true, remainingMilliseconds: this.props.expirationInMs })
             this.startCountdownInterval()
         } catch (e) {
