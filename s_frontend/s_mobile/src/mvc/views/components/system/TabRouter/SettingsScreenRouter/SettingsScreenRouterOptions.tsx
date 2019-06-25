@@ -1,8 +1,8 @@
 import * as React from "react"
 import {Linking} from "react-native"
 import {StackNavigatorConfig} from "react-navigation"
-import {START_PAGE} from "../../../../../../globalConfiguration/globalConfig"
 import {RoundedButton} from "../../../functional/RoundedButton/RoundedButton"
+import {routes} from "./SettingsRoutes";
 
 /**
  * You can provide custom navigationoptions for your nav bar for each page.
@@ -11,9 +11,8 @@ import {RoundedButton} from "../../../functional/RoundedButton/RoundedButton"
 
 /** You can define additional options for our router here */
 export const routerOptions:StackNavigatorConfig = {
-    initialRouteName: START_PAGE, // Start page
+    initialRouteName: routes.SettingsScreen, // Start page
     defaultNavigationOptions: {
-
         headerRight: (
             <RoundedButton
                 containerStyle={{marginRight: 5}}

@@ -1,10 +1,7 @@
-import { ImageURISource } from "react-native"
+import {Sponsor} from "../../../../models/Sponsor"
 
 export interface ISponsorFullpageProps {
-    sponsorName: string
-    sponsorDescr: string
-    whySponsor: string
-    website: string
-    email: string
-    sponsorLogo: ImageURISource
+    sponsor: Sponsor,
+    whySponsor: string,
+    // No navigation prop necessary here
 }

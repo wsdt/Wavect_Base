@@ -5660,6 +5660,13 @@ react-navigation-drawer@~1.2.1:
   dependencies:
     react-native-tab-view "^1.2.0"
 
+react-navigation-props-mapper@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-navigation-props-mapper/-/react-navigation-props-mapper-1.0.1.tgz#f2c619911ab45c927d57fb07a57d94c93570d355"
+  integrity sha512-Za76r2YU2FIDJBU5itGYW9tsHd0SXQlvO5GGu2XJldi8ng/qEoTA3J7hm1aaPMMbrcg08hiOYHljWofw6iQiIA==
+  dependencies:
+    hoist-non-react-statics "^3.3.0"
+
 react-navigation-stack@~1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/react-navigation-stack/-/react-navigation-stack-1.4.0.tgz#69cdb029ea4ee5877d7e933b3117dc90bc841eb2"

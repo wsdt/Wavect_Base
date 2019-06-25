@@ -26,9 +26,6 @@ const globalStyles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
     },
-    tabBarMargin: {
-        marginBottom: 50,
-    },
 })
 
 export default globalStyles

@@ -1,8 +1,8 @@
 import * as React from "react"
 import { Icon } from "react-native-elements"
 import { NavigationRouteConfigMap } from "react-navigation"
-import { HomeScreen } from "../../../pages/HomeScreen/HomeScreen"
-import { SettingsScreen } from "../../../pages/SettingsScreen/SettingsScreen"
+import HomeScreenRouter from "./HomeScreenRouter/HomeScreenRouter"
+import SettingsScreenRouter from "./SettingsScreenRouter/SettingsScreenRouter"
 import { tabRoutes } from "./TabRoutes"
 
 /**
@@ -13,14 +13,14 @@ import { tabRoutes } from "./TabRoutes"
  */
 export const routesConfig: NavigationRouteConfigMap = {
     [tabRoutes.HomeScreen]: {
-        screen: HomeScreen, // which component to load
+        screen: HomeScreenRouter, // which component to load
         navigationOptions: {
             title: "Challenge",
             tabBarIcon: <Icon name="bell" type="font-awesome" />,
         },
     },
     [tabRoutes.SettingsScreen]: {
-        screen: SettingsScreen,
+        screen: SettingsScreenRouter,
         navigationOptions: {
             title: "Settings",
             tabBarIcon: <Icon name="cog" type="font-awesome" />,

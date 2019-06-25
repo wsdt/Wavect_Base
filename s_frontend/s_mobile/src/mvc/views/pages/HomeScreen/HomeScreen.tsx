@@ -1,11 +1,9 @@
 import * as React from "react"
 import { Challenge } from "../../../models/Challenge"
 import { ChallengeCategory } from "../../../models/ChallengeCategory"
-import { ChallengeFullpage } from "../../components/stateful/ChallengeFullpage/ChallengeFullpage"
-import { Header } from "../../components/system/Header/Header"
+import ChallengeFullpage from "../../components/stateful/ChallengeFullpage/ChallengeFullpage"
 import { BaseScreen } from "../BaseScreen/BaseScreen"
 import { View } from "react-native"
-import globalStyles from "../../GlobalStyles.css"
 
 export class HomeScreen extends React.Component<any, any> {
     public render(): React.ReactNode {
@@ -26,12 +24,7 @@ export class HomeScreen extends React.Component<any, any> {
 
         return (
             <BaseScreen>
-                <Header
-                    title="Challenge"
-                    btnTitle="Feedback"
-                    btnLink="mailto:support@bekind.com?subject=BeKind-Feedback&body=Was könnten wir verbessern?"
-                />
-                <View style={globalStyles.tabBarMargin}>
+                <View>
                     <ChallengeFullpage challenge={challenge} />
                 </View>
             </BaseScreen>
