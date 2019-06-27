@@ -7,5 +7,5 @@ import { tabRoutes } from "../mvc/views/components/system/TabRouter/TabRoutes"
 export const START_PAGE = tabRoutes.HomeScreen
 
 /** How do we reach our backend API/GraphQL */
-export const BACKEND_URL = "http://localhost:8090"
-export const BACKEND_MOBILE_API = `${BACKEND_URL}/mobile/api/v1`
+export const BACKEND_URL = "http://38b9c74e.ngrok.io"
+export const BACKEND_MOBILE_API = `${BACKEND_URL}/api/mobile/v1`
