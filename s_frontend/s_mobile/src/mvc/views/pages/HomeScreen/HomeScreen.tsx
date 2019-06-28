@@ -3,7 +3,7 @@ import * as React from "react"
 import ChallengeFullpage from "../../components/stateful/ChallengeFullpage/ChallengeFullpage"
 import { BaseScreen } from "../BaseScreen/BaseScreen"
 import { View } from "react-native"
-import { fetchChallenge } from "../../../controllers/challenge"
+import { fetchChallenge } from "../../../controllers/ChallengeController"
 
 export class HomeScreen extends React.Component<any, any> {
     public render(): React.ReactNode {

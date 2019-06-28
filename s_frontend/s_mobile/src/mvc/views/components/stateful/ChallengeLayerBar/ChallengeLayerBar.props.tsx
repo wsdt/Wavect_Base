@@ -3,4 +3,5 @@ export interface IChallengeLayerBarProps {
     headline: string
     subline: string
     expirationInMs: number
+    sponsorEmail: string
 }
