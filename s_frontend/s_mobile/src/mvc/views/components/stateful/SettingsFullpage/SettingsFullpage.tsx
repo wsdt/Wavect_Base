@@ -8,6 +8,10 @@ import { LoadingIndicator } from "../../functional/LoadingIndicator/LoadingIndic
 import { USER_ID } from "./SettingsFullpage.constants"
 import styles from "./SettingsFullpage.css"
 import { ISettingsFullpageState } from "./SettingsFullpage.state"
+import AsyncStorage from "@react-native-community/async-storage"
+import { USER_ID } from "./SettingsFullpage.constants"
+import { LoadingIndicator } from "../../functional/LoadingIndicator/LoadingIndicator"
+import globalStyles from "../../../GlobalStyles.css"
 import { noInternetAvailable } from "../../../../controllers/WarningsController"
 
 export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpageState> {

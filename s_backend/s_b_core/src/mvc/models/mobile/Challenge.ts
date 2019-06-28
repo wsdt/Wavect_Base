@@ -7,7 +7,6 @@ const ChallengeModel = new mongoose.Schema({
     headline: { type: String, required: true },
     subline: { type: String, required: true },
     whySponsor: { type: String, required: false },
-    companyLogoUri: { type: String, required: false },
     majorCategory: { type: ChallengeCategory, required: true },
     sponsor: { type: Number, required: true },
     expirationInMs: { type: Number, required: true },
