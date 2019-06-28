@@ -21,6 +21,11 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
+android/app/wavect.keystore
+./android/app/wavect.keystore
+android/gradle.properties
+./android/gradle.properties
+
 
 # Android/IntelliJ
 #
