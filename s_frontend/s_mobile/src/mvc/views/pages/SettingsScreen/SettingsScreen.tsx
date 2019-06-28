@@ -15,5 +15,3 @@ export class SettingsScreen extends React.Component<any, any> {
         )
     }
 }
-
-

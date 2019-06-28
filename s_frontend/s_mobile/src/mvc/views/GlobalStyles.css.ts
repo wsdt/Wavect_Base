@@ -1,4 +1,4 @@
-import {Dimensions, StyleSheet} from "react-native"
+import { Dimensions, StyleSheet } from "react-native"
 
 export const GREY = "#9b9b9b"
 export const FULL_WIDTH = Dimensions.get("window").width

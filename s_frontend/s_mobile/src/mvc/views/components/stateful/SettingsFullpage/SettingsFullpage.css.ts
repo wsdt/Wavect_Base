@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     },
     fullpageWidth: {
         width: "95%",
-    }
+    },
 })
 
 export default styles
