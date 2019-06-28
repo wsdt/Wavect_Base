@@ -39,16 +39,6 @@ class ChallengeFullpage extends React.PureComponent<IChallengeFullpageProps, ICh
 
         const { id, headline, subline, companyLogoUri, majorCategory, expirationInMs, whyDoesOrganizationSponsor } = this.props.challenge
         // test sponsor --> fetch here.. so we can destructure down there
-        const sponsor_ikea = new Sponsor(
-            "asdfawef213asdf",
-            "IKEA",
-            { uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ikea_logo.svg/1024px-Ikea_logo.svg.png" },
-            "Im Herzen von IKEA steht eine Vision – den Menschen einen besseren Alltag zu schaffen. Bei IKEA findest du alles, " +
-                "was dein Zuhause braucht: von den Ikonen BILLY und PAX hin zu unserem vielfältigen Sortiment an Sofas, Boxspringbetten, Küchen und unserer lebhaften Kinderwelt. Entdecke unsere beliebtesten Produktserien und informiere dich über unsere Neuheiten. Das IKEA Konzept wird auf viele Weisen lebendig: durch unsere Einrichtungshäuser, den IKEA Katalog und Broschüren, im IKEA Onlineshop und in Millionen von Haushalten auf der ganzen Welt. Wir bieten auch eine Vielzahl von Services an, die dir helfen Zeit zu sparen." +
-                "Lass dir deine Möbel mit unserem Transportservice direkt nach Hause liefern oder nutze unseren Click & Collect Service.",
-            "https://www.ikea.com/at/de/",
-            "ikea@ikea.at"
-        )
 
         return (
             <>
