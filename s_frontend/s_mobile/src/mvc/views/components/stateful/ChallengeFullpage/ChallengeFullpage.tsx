@@ -34,7 +34,7 @@ class ChallengeFullpage extends React.PureComponent<IChallengeFullpageProps, ICh
 
     private getChallengeView = (): React.ReactElement => {
         if (this.state.isLoading) {
-            return <LoadingIndicator styles={globalStyles.absoluteCenter} />
+            return <LoadingIndicator />
         }
 
         const { id, headline, subline, companyLogoUri, majorCategory, expirationInMs, whyDoesOrganizationSponsor } = this.props.challenge

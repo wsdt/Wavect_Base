@@ -36,10 +36,7 @@ export const NAV_ROUTER = (props: IUser) => {
 
                 <Switch>
                     <Route exact path="/" render={() => <Home {...props} />} />
-                    <Route
-                        path="/profile"
-                        render={() => <Profile {...props} />}
-                    />
+                    <Route path="/profile" render={() => <Profile {...props} />} />
                     <Route path="/impressum" component={Impressum} />
                     <Route component={ERR_404} />
                 </Switch>

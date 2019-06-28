@@ -1,13 +1,18 @@
+import AsyncStorage from "@react-native-community/async-storage"
 import React from "react"
 import { View } from "react-native"
 import { Button, CheckBox, Icon, Input, Text } from "react-native-elements"
 import { BACKEND_MOBILE_API } from "../../../../../globalConfiguration/globalConfig"
+import globalStyles from "../../../GlobalStyles.css"
+import { LoadingIndicator } from "../../functional/LoadingIndicator/LoadingIndicator"
+import { USER_ID } from "./SettingsFullpage.constants"
 import styles from "./SettingsFullpage.css"
 import { ISettingsFullpageState } from "./SettingsFullpage.state"
 import AsyncStorage from "@react-native-community/async-storage"
 import { USER_ID } from "./SettingsFullpage.constants"
 import { LoadingIndicator } from "../../functional/LoadingIndicator/LoadingIndicator"
 import globalStyles from "../../../GlobalStyles.css"
+import { noInternetAvailable } from "../../../../controllers/WarningsController"
 
 export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpageState> {
     private static API_ENDPOINT = `${BACKEND_MOBILE_API}/settings`
@@ -31,7 +36,7 @@ export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpage
 
     private getSettingsView = () => {
         if (this.state.isLoadingSettings) {
-            return <LoadingIndicator styles={[globalStyles.absoluteCenter]} />
+            return <LoadingIndicator />
         }
 
         const isFormSubmittable = this.isFormSubmittable()
@@ -108,27 +113,35 @@ export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpage
                 })
                 console.log("SettingsFullpage:getUserSettings: Received user settings.")
             })
-            .catch(e => console.error(e))
+            .catch(e => {
+                console.error(e)
+                noInternetAvailable()
+            })
     }
 
     private postUserSettings = () => {
         this.setState({ isSavingSettings: true }, async () => {
             console.log("State " + JSON.stringify(this.state))
-            const rawResp = await fetch(`${SettingsFullpage.API_ENDPOINT}/${await this.getUserId()}`, {
-                method: "POST",
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    email: this.state.email,
-                    hasAcceptedDataPrivacy: this.state.hasAcceptedDataPrivacy,
-                }),
-            })
+            try {
+                const rawResp = await fetch(`${SettingsFullpage.API_ENDPOINT}/${await this.getUserId()}`, {
+                    method: "POST",
+                    headers: {
+                        Accept: "application/json",
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        email: this.state.email,
+                        hasAcceptedDataPrivacy: this.state.hasAcceptedDataPrivacy,
+                    }),
+                })
 
-            const res = await rawResp.json()
-            this.setState({ isSavingSettings: false })
-            console.log("SettingsFullpage:postUserSettings: Tried to save userSettings -> " + JSON.stringify(res))
+                const res = await rawResp.json()
+                this.setState({ isSavingSettings: false })
+                console.log("SettingsFullpage:postUserSettings: Tried to save userSettings -> " + JSON.stringify(res))
+            } catch (e) {
+                noInternetAvailable()
+                console.error(e)
+            }
         })
     }
 

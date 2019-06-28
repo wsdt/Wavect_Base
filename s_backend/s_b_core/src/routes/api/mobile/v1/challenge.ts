@@ -6,11 +6,13 @@ const router = express.Router()
 
 const constant = 2
 
+
 /**
  * use constant = 0 to indicate that we're using always a current obj
  */
 router.route("/current").get((_, res) => {
     Challenge.findOne({ id: constant }).exec((err, challenge) => {
+
         if(challenge) {
             Sponsor.findOne({sponsorID: challenge.get('sponsor')}).exec((err2, sponsor) => {
                 console.log(challenge.get('sponsor'))

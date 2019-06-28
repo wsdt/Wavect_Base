@@ -29,17 +29,11 @@ export class Http2SSEclient {
     private addDefaultEventHandlers() {
         // On connection error show msg
         this.SSE_SOURCE.onerror = e => {
-            console.error(
-                "Http2SSEClient: Could not establish connection with backend.\n" +
-                    JSON.stringify(e)
-            )
+            console.error("Http2SSEClient: Could not establish connection with backend.\n" + JSON.stringify(e))
         }
 
         this.SSE_SOURCE.onopen = e => {
-            console.log(
-                "Http2SSEClient: ServerSent-Events connection established: " +
-                    JSON.stringify(e)
-            )
+            console.log("Http2SSEClient: ServerSent-Events connection established: " + JSON.stringify(e))
         }
 
         this.SSE_SOURCE.onmessage = e => {

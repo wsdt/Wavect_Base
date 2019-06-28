@@ -19,16 +19,9 @@ class Newsfeed extends React.Component<IUser, any> {
         console.log(JSON.stringify(this.props))
 
         return (
-            <StreamApp
-                apiKey={GS_KEY}
-                appId={GS_APP_ID}
-                token={this.props.userToken}
-            >
+            <StreamApp apiKey={GS_KEY} appId={GS_APP_ID} token={this.props.userToken}>
                 <NotificationDropdown notify />
-                <StatusUpdateForm
-                    feedGroup="timeline"
-                    userId={this.props.userName}
-                />
+                <StatusUpdateForm feedGroup="timeline" userId={this.props.userName} />
                 <FlatFeed
                     options={{ reactions: { recent: true } }}
                     Paginator={InfiniteScrollPaginator}
@@ -39,13 +32,8 @@ class Newsfeed extends React.Component<IUser, any> {
                             Footer={() => (
                                 <div style={{ padding: "8px 16px" }}>
                                     <LikeButton {...props} />
-                                    <CommentField
-                                        activity={props.activity}
-                                        onAddReaction={props.onAddReaction}
-                                    />
-                                    <CommentList
-                                        activityId={props.activity.id}
-                                    />
+                                    <CommentField activity={props.activity} onAddReaction={props.onAddReaction} />
+                                    <CommentList activityId={props.activity.id} />
                                 </div>
                             )}
                         />

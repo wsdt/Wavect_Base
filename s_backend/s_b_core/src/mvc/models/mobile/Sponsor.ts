@@ -8,6 +8,7 @@ const SponsorModel = new mongoose.Schema({
     shortDescr: { type: String, required: false },
     sponsorWebsite: { type: String, required: true },
     sponsorEmail: { type: String, required: true },
+
 })
 
 export const Sponsor = mongoose.model(COLLECTION_SPONSOR_NAME, SponsorModel)
