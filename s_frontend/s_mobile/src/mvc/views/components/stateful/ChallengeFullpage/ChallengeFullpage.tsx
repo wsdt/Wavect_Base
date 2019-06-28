@@ -25,7 +25,7 @@ class ChallengeFullpage extends React.PureComponent<IChallengeFullpageProps, ICh
 
         return (
             <GrayColorImg isGrayscale={this.state.isGrayscale}>
-                <ImageBackground source={bgImage} imageStyle={globalStyles.radius} onLoad={this.onLoad} style={styles.container}>
+                <ImageBackground source={bgImage} imageStyle={globalStyles.radius} onLoad={this.onLoad} style={globalStyles.pageContainer}>
                     {this.getChallengeView()}
                 </ImageBackground>
             </GrayColorImg>
@@ -34,7 +34,7 @@ class ChallengeFullpage extends React.PureComponent<IChallengeFullpageProps, ICh
 
     private getChallengeView = (): React.ReactElement => {
         if (this.state.isLoading) {
-            return <LoadingIndicator />
+            return <LoadingIndicator styles={globalStyles.absoluteCenter} />
         }
 
         const { id, headline, subline, companyLogoUri, majorCategory, expirationInMs, whyDoesOrganizationSponsor } = this.props.challenge

@@ -1,8 +1,8 @@
 import * as React from "react"
 import { ActivityIndicator } from "react-native"
-import globalStyles from "../../../GlobalStyles.css"
+import {ILoadingIndicatorProps} from "./LoadingIndicator.props"
 
 /** Convenience component to make loadingIndicator more concise. */
-export const LoadingIndicator: React.FunctionComponent = () => {
-    return <ActivityIndicator size="large" color="#000000" style={globalStyles.absoluteCenter} />
+export const LoadingIndicator = (props: ILoadingIndicatorProps) => {
+    return <ActivityIndicator size="large" color="#000000" style={props.styles}/>
 }

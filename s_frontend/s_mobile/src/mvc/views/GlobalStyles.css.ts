@@ -1,8 +1,14 @@
-import { StyleSheet } from "react-native"
+import {Dimensions, StyleSheet} from "react-native"
 
 export const GREY = "#9b9b9b"
+export const FULL_WIDTH = Dimensions.get("window").width
+export const FULL_HEIGHT = Dimensions.get("window").height
 
 const globalStyles = StyleSheet.create({
+    scrollViewContainer: {
+        flexGrow: 1,
+        width: FULL_WIDTH,
+    },
     absoluteCenter: {
         position: "absolute",
         left: 0,
@@ -11,6 +17,11 @@ const globalStyles = StyleSheet.create({
         bottom: 0,
         justifyContent: "center",
         alignItems: "center",
+    },
+    pageContainer: {
+        flex: 1,
+        margin: 5,
+        justifyContent: "flex-start",
     },
     tooltipText: {
         color: "#fff",

@@ -24,5 +24,8 @@
         "hooks": {
             "pre-commit": "yarn run prettier"
         }
+    },
+    "dependencies": {
+        "typescript": "^3.5.2"
     }
 }

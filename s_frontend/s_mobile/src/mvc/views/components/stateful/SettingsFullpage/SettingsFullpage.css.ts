@@ -5,9 +5,9 @@ const styles = StyleSheet.create({
         margin: 5,
         marginTop: 15,
     },
-    container: {
+    fullpageWidth: {
         width: "95%",
-    },
+    }
 })
 
 export default styles

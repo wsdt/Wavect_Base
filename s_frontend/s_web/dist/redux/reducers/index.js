@@ -16,8 +16,8 @@ exports.DEFAULT_STATE = {
     userName: "",
 };
 function reducer(state, action) {
-    if (state === void 0) { state = exports.DEFAULT_STATE; }
     var _a;
+    if (state === void 0) { state = exports.DEFAULT_STATE; }
     switch (action.type) {
         case getstream_constants_1.GS_CACHE_USERTOKEN:
             return __assign({}, state, { userTokens: (_a = {}, _a[action.userName] = action.userToken, _a) });
