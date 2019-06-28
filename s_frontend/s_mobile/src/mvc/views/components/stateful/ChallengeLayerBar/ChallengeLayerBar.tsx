@@ -2,7 +2,7 @@ import AsyncStorage from "@react-native-community/async-storage"
 import React from "react"
 import { Alert, View } from "react-native"
 import { Text } from "react-native-elements"
-import {functionalityNotAvailable, noInternetAvailable} from "../../../../controllers/WarningsController"
+import { functionalityNotAvailable, noInternetAvailable } from "../../../../controllers/WarningsController"
 
 import { ExpirationTimeObj } from "../../../../models/ExpirationTimeObj"
 import { MajorBtnType, MajorButton } from "../../functional/MajorButton/MajorButton"
@@ -10,7 +10,7 @@ import styles from "./ChallengeLayerBar.css"
 import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
 import { IChallengeLayerBarState } from "./ChallengeLayerBar.state"
 import { CHALLENGE_ACCEPTED_ID, CHALLENGE_EXPIRATION_DATE } from "./ChallengeLayerBar.constants"
-import {BACKEND_MOBILE_API} from "../../../../../globalConfiguration/globalConfig";
+import { BACKEND_MOBILE_API } from "../../../../../globalConfiguration/globalConfig"
 
 export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, IChallengeLayerBarState> {
     public state: IChallengeLayerBarState = {
@@ -72,7 +72,7 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
     }
 
     private challengeSolved = async () => {
-        this.setState({isLoadingChallengeSolved: true})
+        this.setState({ isLoadingChallengeSolved: true })
         try {
             const rawResp = await fetch(`${ChallengeLayerBar.API_ENDPOINT}/current`, {
                 method: "POST",
@@ -83,11 +83,12 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
                 body: JSON.stringify({
                     userEmail: "", //TODO ################################
                     sponsorEmail: "",
-                })
+                }),
             })
 
             const res = await rawResp.json()
-            if (res.error === null || res.error === undefined) { // might return {}
+            if (res.error === null || res.error === undefined) {
+                // might return {}
                 console.error(res.error)
             } else {
                 this.setState({
@@ -98,7 +99,7 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
                 Alert.alert(
                     "Sponsor notified",
                     "Wir haben den Sponsor der aktuellen Herausforderung benachrichtigt! Dieser sollte dich bzgl. Sponsoring demnächst kontaktieren.",
-                    [{text: "Super!"}],
+                    [{ text: "Super!" }],
                     {
                         cancelable: true,
                     }
@@ -120,7 +121,12 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
                     <Text style={styles.expirationCountdownText} h4>
                         Noch {this.state.remainingMilliseconds / 1000}s
                     </Text>
-                    <MajorButton title="Abschließen" btnType={MajorBtnType.HIGHLIGHTED} onPress={this.challengeSolved} isLoading={this.state.isLoadingChallengeSolved}/>
+                    <MajorButton
+                        title="Abschließen"
+                        btnType={MajorBtnType.HIGHLIGHTED}
+                        onPress={this.challengeSolved}
+                        isLoading={this.state.isLoadingChallengeSolved}
+                    />
                 </>
             )
         }

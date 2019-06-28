@@ -1,4 +1,3 @@
-
 export interface IEmailHtmlProps {
-    userEmail: string,
+    userEmail: string
 }
