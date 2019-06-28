@@ -33,7 +33,7 @@ export class HomeScreen extends React.Component<any, IHomeScreenState> {
     public render() {
         return (
             <BaseScreen>
-                <View>{this.state.challenge ? <ChallengeFullpage challenge={this.state.challenge} /> : <LoadingIndicator />}</View>
+                <View>{this.state.challenge ? <ChallengeFullpage challenge={this.state.challenge} /> : null }</View>
             </BaseScreen>
         )
     }
