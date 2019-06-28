@@ -2,13 +2,13 @@ import React from "react"
 import { View } from "react-native"
 import { Button, CheckBox, Icon, Input, Text } from "react-native-elements"
 import { BACKEND_MOBILE_API } from "../../../../../globalConfiguration/globalConfig"
+import { getLocalUserId } from "../../../../controllers/LocalStorageController"
+import { noInternetAvailable } from "../../../../controllers/WarningsController"
 import { LoadingIndicator } from "../../functional/LoadingIndicator/LoadingIndicator"
-import { USER_ID } from "./SettingsFullpage.constants"
 import styles from "./SettingsFullpage.css"
 import { ISettingsFullpageState } from "./SettingsFullpage.state"
-import AsyncStorage from "@react-native-community/async-storage"
-import { noInternetAvailable } from "../../../../controllers/WarningsController"
 import globalStyles from "../../../GlobalStyles.css"
+
 
 export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpageState> {
     private static API_ENDPOINT = `${BACKEND_MOBILE_API}/settings`
@@ -75,23 +75,10 @@ export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpage
         )
     }
 
-    private generateNewUserId = async (): Promise<string> => {
-        const newUserId: string = Math.random()
-            .toString(36)
-            .substring(7)
-        try {
-            await AsyncStorage.setItem(USER_ID, newUserId)
-        } catch (e) {
-            console.error(e)
-        }
-        return newUserId
-    }
-
     private getUserId = async () => {
         if (!this.userId) {
             // save as instance var to not fetch on every render from local storage
-            const localUserId: string | null = await AsyncStorage.getItem(USER_ID)
-            this.userId = localUserId === null ? await this.generateNewUserId() : localUserId
+            this.userId = await getLocalUserId()
         }
 
         return this.userId

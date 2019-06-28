@@ -1,21 +1,20 @@
 import * as express from "express"
 import { Challenge } from "../../../../mvc/models/mobile/Challenge"
-import {Sponsor} from "../../../../mvc/models/mobile/Sponsor";
+import { Sponsor } from "../../../../mvc/models/mobile/Sponsor"
 
 const router = express.Router()
 
 const constant = 5
-
 
 /**
  * use constant = 0 to indicate that we're using always a current obj
  */
 router.route("/current").get((_, res) => {
     Challenge.findOne({ id: constant }).exec((err, challenge) => {
+        if (challenge) {
+            Sponsor.findOne({ sponsorID: challenge.get("sponsor") }).exec((err2, sponsor) => {
+                console.log(challenge.get("sponsor"))
 
-        if(challenge) {
-            Sponsor.findOne({sponsorID: challenge.get('sponsor')}).exec((err2, sponsor) => {
-                console.log(challenge.get('sponsor'))
 
                 if(sponsor){
                     res.json({
@@ -55,7 +54,7 @@ router.route("/current").get((_, res) => {
         }else {
             console.log("Challenge: Challenge undefined")
             res.json({
-                err
+                err,
             })
         }
     })

@@ -4,13 +4,14 @@ import { Alert, View } from "react-native"
 import { Text } from "react-native-elements"
 import { functionalityNotAvailable, noInternetAvailable } from "../../../../controllers/WarningsController"
 
+import { BACKEND_MOBILE_API } from "../../../../../globalConfiguration/globalConfig"
 import { ExpirationTimeObj } from "../../../../models/ExpirationTimeObj"
 import { MajorBtnType, MajorButton } from "../../functional/MajorButton/MajorButton"
+import { CHALLENGE_ACCEPTED_ID, CHALLENGE_EXPIRATION_DATE } from "./ChallengeLayerBar.constants"
 import styles from "./ChallengeLayerBar.css"
 import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
 import { IChallengeLayerBarState } from "./ChallengeLayerBar.state"
-import { CHALLENGE_ACCEPTED_ID, CHALLENGE_EXPIRATION_DATE } from "./ChallengeLayerBar.constants"
-import { BACKEND_MOBILE_API } from "../../../../../globalConfiguration/globalConfig"
+import { getLocalUserId } from "../../../../controllers/LocalStorageController"
 
 export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, IChallengeLayerBarState> {
     public state: IChallengeLayerBarState = {
@@ -74,15 +75,14 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
     private challengeSolved = async () => {
         this.setState({ isLoadingChallengeSolved: true })
         try {
-            const rawResp = await fetch(`${ChallengeLayerBar.API_ENDPOINT}/current`, {
+            const rawResp = await fetch(`${ChallengeLayerBar.API_ENDPOINT}/current/${await getLocalUserId()}`, {
                 method: "POST",
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    userEmail: "", //TODO ################################
-                    sponsorEmail: "",
+                    sponsorEmail: this.props.sponsorEmail,
                 }),
             })
 
