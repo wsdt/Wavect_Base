@@ -11,9 +11,11 @@ import { CHALLENGE_ACCEPTED_ID, CHALLENGE_EXPIRATION_DATE } from "./ChallengeLay
 import styles from "./ChallengeLayerBar.css"
 import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
 import { IChallengeLayerBarState } from "./ChallengeLayerBar.state"
-import { getLocalUserId } from "../../../../controllers/LocalStorageController"
+import { getLocalUserId, getEmailMarked } from "../../../../controllers/LocalStorageController"
+import { withNavigation } from "react-navigation"
+import { routes } from "../../system/TabRouter/SettingsScreenRouter/SettingsRoutes"
 
-export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, IChallengeLayerBarState> {
+class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, IChallengeLayerBarState> {
     public state: IChallengeLayerBarState = {
         currChallengeAccepted: null,
         isLoadingChallengeSolved: false,
@@ -143,18 +145,33 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
         )
     }
 
-    private execBtnAccept = (challengeId: string) => {
-        // Save status locally
-        this.storeChallengeAccepted(challengeId)
+    private execBtnAccept = async (challengeId: string) => {
+        if (await getEmailMarked()) {
+            console.log("Email exists, gratuliere du mongo")
 
-        Alert.alert(
-            "Challenge Accepted",
-            `Du hast nun ${this.msToFormattedStr(this.props.expirationInMs)} Zeit, um die Challenge zu lösen!`,
-            [{ text: "Verstanden" }],
-            {
-                cancelable: true,
-            }
-        )
+            // Save status locally
+            this.storeChallengeAccepted(challengeId)
+
+            Alert.alert(
+                "Challenge Accepted",
+                `Du hast nun ${this.msToFormattedStr(this.props.expirationInMs)} Zeit, um die Challenge zu lösen!`,
+                [{ text: "Verstanden" }],
+                {
+                    cancelable: true,
+                }
+            )
+        } else {
+            Alert.alert(
+                "Einen Moment noch!",
+                "Wir benötigen deine E-Mail Adresse damit dich unsere Sponsoren kontaktieren können.   ",
+                [{ text: "OK", onPress: () => this.props.navigation.navigate(routes.SettingsScreen) }],
+                {
+                    cancelable: true,
+                }
+            )
+            //Usability: User leaves the UI Field without pressing OK
+            this.props.navigation.navigate(routes.SettingsScreen)
+        }
     }
 
     private retrieveChallengeAccepted = async (challengeId: string) => {
@@ -206,3 +223,5 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
         return `${expirationObj.days} Tage, ${expirationObj.hours} Stunden, ${expirationObj.minutes} Minuten, ${expirationObj.seconds} Sekunden`
     }
 }
+
+export default withNavigation(ChallengeLayerBar)

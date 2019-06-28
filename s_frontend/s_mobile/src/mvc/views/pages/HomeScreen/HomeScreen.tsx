@@ -6,7 +6,6 @@ import { View } from "react-native"
 import { Challenge } from "../../../models/Challenge"
 import { noInternetAvailable } from "../../../controllers/WarningsController"
 import { IHomeScreenState } from "./HomeScreen.state"
-import { LoadingIndicator } from "../../components/functional/LoadingIndicator/LoadingIndicator"
 import { BACKEND_MOBILE_API } from "../../../../globalConfiguration/globalConfig"
 
 export class HomeScreen extends React.Component<any, IHomeScreenState> {
@@ -33,7 +32,7 @@ export class HomeScreen extends React.Component<any, IHomeScreenState> {
     public render() {
         return (
             <BaseScreen>
-                <View>{this.state.challenge ? <ChallengeFullpage challenge={this.state.challenge} /> : <LoadingIndicator />}</View>
+                <View>{this.state.challenge ? <ChallengeFullpage challenge={this.state.challenge} /> : null}</View>
             </BaseScreen>
         )
     }
