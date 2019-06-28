@@ -97,7 +97,7 @@ export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpage
                     })
                     console.log("SettingsFullpage:getUserSettings: Received user settings.")
                 } else {
-                    this.setState({isLoadingSettings: false})
+                    this.setState({ isLoadingSettings: false })
                 }
             })
 

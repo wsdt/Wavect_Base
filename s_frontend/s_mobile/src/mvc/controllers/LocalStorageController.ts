@@ -23,20 +23,19 @@ export const getLocalUserId = async (): Promise<string> => {
 
 export const doesLocalUserIDExist = async () => {
     const localUserId: string | null = await AsyncStorage.getItem(USER_ID)
-    return localUserId !== null;
+    return localUserId !== null
 }
 
 export const markEmailAsCreated = async () => {
-    const marked = "true";
+    const marked = "true"
 
     try {
-        await AsyncStorage.setItem(EMAIL_MARKED, marked )
-    }catch (e) {
+        await AsyncStorage.setItem(EMAIL_MARKED, marked)
+    } catch (e) {
         console.error(e)
     }
-};
+}
 
 export const getEmailMarked = async () => {
     return await AsyncStorage.getItem(EMAIL_MARKED)
-};
-
+}

@@ -12,9 +12,8 @@ import styles from "./ChallengeLayerBar.css"
 import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
 import { IChallengeLayerBarState } from "./ChallengeLayerBar.state"
 import { getLocalUserId, getEmailMarked } from "../../../../controllers/LocalStorageController"
-import {withNavigation} from "react-navigation";
-import {routes} from "../../system/TabRouter/SettingsScreenRouter/SettingsRoutes";
-
+import { withNavigation } from "react-navigation"
+import { routes } from "../../system/TabRouter/SettingsScreenRouter/SettingsRoutes"
 
 class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, IChallengeLayerBarState> {
     public state: IChallengeLayerBarState = {
@@ -147,8 +146,7 @@ class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, ICh
     }
 
     private execBtnAccept = async (challengeId: string) => {
-
-        if(await getEmailMarked()){
+        if (await getEmailMarked()) {
             console.log("Email exists, gratuliere du mongo")
 
             // Save status locally
@@ -162,11 +160,11 @@ class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, ICh
                     cancelable: true,
                 }
             )
-        }else{
+        } else {
             Alert.alert(
                 "Einen Moment noch!",
                 "Wir benötigen deine E-Mail Adresse damit dich unsere Sponsoren kontaktieren können.   ",
-                [{ text: "OK", onPress: () => this.props.navigation.navigate(routes.SettingsScreen)}],
+                [{ text: "OK", onPress: () => this.props.navigation.navigate(routes.SettingsScreen) }],
                 {
                     cancelable: true,
                 }
@@ -174,7 +172,7 @@ class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, ICh
             //Usability: User leaves the UI Field without pressing OK
             this.props.navigation.navigate(routes.SettingsScreen)
         }
-    };
+    }
 
     private retrieveChallengeAccepted = async (challengeId: string) => {
         let currChallengeAccepted: boolean = false
