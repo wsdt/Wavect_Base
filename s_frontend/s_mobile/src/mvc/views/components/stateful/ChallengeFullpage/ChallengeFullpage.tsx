@@ -5,7 +5,7 @@ import { ChallengeTypeIcon } from "../../functional/ChallengeTypeIcon/ChallengeT
 import { CompanyLogo } from "../../functional/CompanyLogo/CompanyLogo"
 import { GrayColorImg } from "../../functional/GrayColorImg/GrayColorImg"
 import { LoadingIndicator } from "../../functional/LoadingIndicator/LoadingIndicator"
-import { ChallengeLayerBar } from "../ChallengeLayerBar/ChallengeLayerBar"
+import ChallengeLayerBar from "../ChallengeLayerBar/ChallengeLayerBar"
 import styles from "./ChallengeFullpage.css"
 import { IChallengeFullpageProps } from "./ChallengeFullpage.props"
 import { IChallengeFullpageState } from "./ChallengeFullpage.state"

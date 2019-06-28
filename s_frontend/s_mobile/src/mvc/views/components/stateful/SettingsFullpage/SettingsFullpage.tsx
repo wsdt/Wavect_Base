@@ -8,6 +8,7 @@ import { LoadingIndicator } from "../../functional/LoadingIndicator/LoadingIndic
 import styles from "./SettingsFullpage.css"
 import { ISettingsFullpageState } from "./SettingsFullpage.state"
 import globalStyles from "../../../GlobalStyles.css"
+import { markEmailAsCreated } from "../../../../controllers/LocalStorageController"
 
 export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpageState> {
     private static API_ENDPOINT = `${BACKEND_MOBILE_API}/settings`
@@ -123,6 +124,10 @@ export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpage
                 })
 
                 const res = await rawResp.json()
+
+                //mark the email as created, --> "Accept" Button works now.
+                markEmailAsCreated()
+
                 this.setState({ isSavingSettings: false })
                 console.log("SettingsFullpage:postUserSettings: Tried to save userSettings -> " + JSON.stringify(res))
             } catch (e) {
