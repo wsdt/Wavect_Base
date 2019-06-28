@@ -1,8 +1,8 @@
 import { IEmailHtmlProps } from "./emailHtml.props"
 
 export const EMAIL_PROVIDER: string = "gmail"
-export const FROM: string = "kevin.riedl.privat@gmail.com"
-export const FROM_PWD: string = "459145914591"
+export const FROM: string = "EMAIL HERE" // TODO
+export const FROM_PWD: string = "PASSWORD HERE"
 export const SUBJECT: string = "A user solved your challenge"
 export const HTML = (props: IEmailHtmlProps) => {
     return `<h1>Challenge solved</h1>
