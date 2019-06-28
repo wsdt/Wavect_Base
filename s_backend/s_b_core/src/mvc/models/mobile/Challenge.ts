@@ -6,7 +6,7 @@ const ChallengeModel = new mongoose.Schema({
     id: { type: String, unique: true, required: true, dropDups: true },
     headline: { type: String, required: true },
     subline: { type: String, required: true },
-    bgImage: {type: String, required: true},
+    bgImage: { type: String, required: true },
     whyDoesOrganizationSponsor: { type: String, required: false },
     majorCategory: { type: ChallengeCategory, required: true },
     sponsor: { type: Number, required: true },

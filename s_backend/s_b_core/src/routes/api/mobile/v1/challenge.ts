@@ -15,50 +15,46 @@ router.route("/current").get((_, res) => {
             Sponsor.findOne({ sponsorID: challenge.get("sponsor") }).exec((err2, sponsor) => {
                 console.log(challenge.get("sponsor"))
 
-
-                if(sponsor){
+                if (sponsor) {
                     res.json({
-                        err: [
-                            err,
-                            err2
-                        ],
+                        err: [err, err2],
                         res: {
-                            id: challenge.get('id'),
-                            headline: challenge.get('headline'),
-                            subline: challenge.get('subline'),
+                            id: challenge.get("id"),
+                            headline: challenge.get("headline"),
+                            subline: challenge.get("subline"),
                             bgImage: {
-                                uri: challenge.get("bgImage")
+                                uri: challenge.get("bgImage"),
                             },
-                            whyDoesOrganizationSponsor: challenge.get('whySponsor'),
-                            majorCategory: challenge.get('majorCategory'),
+                            whyDoesOrganizationSponsor: challenge.get("whySponsor"),
+                            majorCategory: challenge.get("majorCategory"),
                             sponsor: {
-                                sponsorId: sponsor.get('sponsorID'),
-                                sponsorName: sponsor.get('sponsorName'),
+                                sponsorId: sponsor.get("sponsorID"),
+                                sponsorName: sponsor.get("sponsorName"),
                                 logoUri: {
-                                    uri: sponsor.get('logoUri')
+                                    uri: sponsor.get("logoUri"),
                                 },
-                                shortDescr: sponsor.get('shortDescr'),
-                                email: sponsor.get('sponsorEmail'),
-                                website: sponsor.get('sponsorWebsite')
+                                shortDescr: sponsor.get("shortDescr"),
+                                email: sponsor.get("sponsorEmail"),
+                                website: sponsor.get("sponsorWebsite"),
                             },
-                            expirationInMs: challenge.get('expirationInMs')
-                        }
+                            expirationInMs: challenge.get("expirationInMs"),
+                        },
                     })
-                }else{
+                } else {
                     console.log("Challenge: Sponsor undefined")
                     res.json({
-                        err
+                        err,
                     })
                 }
             })
-        }else {
+        } else {
             console.log("Challenge: Challenge undefined")
             res.json({
                 err,
             })
         }
     })
-});
+})
 
 router.route("/current").post((req, res) => {
     const challenge = new Challenge({
@@ -72,8 +68,8 @@ router.route("/current").post((req, res) => {
         bgImage: req.body.bgImage,
     })
 
-    challenge.save( (err) => {
-        res.json({err})
+    challenge.save(err => {
+        res.json({ err })
     })
 })
 

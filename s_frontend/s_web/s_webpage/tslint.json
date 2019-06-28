@@ -1,0 +1,3 @@
+{
+    "extends": ["tslint-react", "../../../_base/tslint.json"]
+}

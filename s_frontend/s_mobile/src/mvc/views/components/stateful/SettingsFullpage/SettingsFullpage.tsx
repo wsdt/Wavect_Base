@@ -9,7 +9,6 @@ import styles from "./SettingsFullpage.css"
 import { ISettingsFullpageState } from "./SettingsFullpage.state"
 import globalStyles from "../../../GlobalStyles.css"
 
-
 export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpageState> {
     private static API_ENDPOINT = `${BACKEND_MOBILE_API}/settings`
     private static EMAIL_REGEX: RegExp = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
@@ -97,7 +96,7 @@ export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpage
                     })
                     console.log("SettingsFullpage:getUserSettings: Received user settings.")
                 } else {
-                    this.setState({isLoadingSettings: false})
+                    this.setState({ isLoadingSettings: false })
                 }
             })
 
