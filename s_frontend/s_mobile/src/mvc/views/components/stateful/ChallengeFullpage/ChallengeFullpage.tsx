@@ -9,7 +9,6 @@ import { ChallengeLayerBar } from "../ChallengeLayerBar/ChallengeLayerBar"
 import styles from "./ChallengeFullpage.css"
 import { IChallengeFullpageProps } from "./ChallengeFullpage.props"
 import { IChallengeFullpageState } from "./ChallengeFullpage.state"
-import { Sponsor } from "../../../../models/Sponsor"
 import { routes } from "../../system/TabRouter/HomeScreenRouter/HomeRoutes"
 import { withNavigation } from "react-navigation"
 
@@ -37,17 +36,17 @@ class ChallengeFullpage extends React.PureComponent<IChallengeFullpageProps, ICh
             return <LoadingIndicator />
         }
 
-        const { id, headline, subline, companyLogoUri, majorCategory, expirationInMs, whyDoesOrganizationSponsor } = this.props.challenge
+        const { id, headline, subline, sponsor, majorCategory, expirationInMs, whyDoesOrganizationSponsor } = this.props.challenge
         // test sponsor --> fetch here.. so we can destructure down there
 
         return (
             <>
                 <View style={styles.top}>
                     <CompanyLogo
-                        companyLogoUri={companyLogoUri}
+                        companyLogoUri={sponsor.logoUri}
                         isGrayscale={this.state.isGrayscale}
                         onPressed={() => {
-                            this.props.navigation.navigate(routes.SponsorFullpage, { sponsor: sponsor_ikea, whySponsor: whyDoesOrganizationSponsor })
+                            this.props.navigation.navigate(routes.SponsorFullpage, { sponsor: sponsor, whySponsor: whyDoesOrganizationSponsor })
                         }}
                     />
                     <ChallengeTypeIcon type={majorCategory} />

@@ -1,5 +1,5 @@
-import {Challenge} from "../../../models/Challenge";
+import { Challenge } from "../../../models/Challenge"
 
 export interface IHomeScreenState {
-    challenge: Challenge|undefined
+    challenge: Challenge | undefined
 }
