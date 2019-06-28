@@ -1,6 +1,6 @@
 import { ImageURISource } from "react-native"
 import { ChallengeCategory } from "./ChallengeCategory"
-import {Sponsor} from "./Sponsor";
+import { Sponsor } from "./Sponsor"
 
 export class Challenge {
     get id(): string {
@@ -77,7 +77,7 @@ export class Challenge {
         expirationInMs: number,
         majorCategory: ChallengeCategory,
         bgImage: ImageURISource,
-        sponsor: Sponsor,
+        sponsor: Sponsor
     ) {
         this.id = id
         this.bgImage = bgImage
