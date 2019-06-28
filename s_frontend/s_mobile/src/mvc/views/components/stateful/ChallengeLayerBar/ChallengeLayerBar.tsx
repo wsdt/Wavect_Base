@@ -2,7 +2,7 @@ import AsyncStorage from "@react-native-community/async-storage"
 import React from "react"
 import { Alert, View } from "react-native"
 import { Text } from "react-native-elements"
-import { functionalityNotAvailable } from "../../../../controllers/WarningsController"
+import {functionalityNotAvailable, noInternetAvailable} from "../../../../controllers/WarningsController"
 
 import { ExpirationTimeObj } from "../../../../models/ExpirationTimeObj"
 import { MajorBtnType, MajorButton } from "../../functional/MajorButton/MajorButton"
@@ -10,12 +10,16 @@ import styles from "./ChallengeLayerBar.css"
 import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
 import { IChallengeLayerBarState } from "./ChallengeLayerBar.state"
 import { CHALLENGE_ACCEPTED_ID, CHALLENGE_EXPIRATION_DATE } from "./ChallengeLayerBar.constants"
+import {BACKEND_MOBILE_API} from "../../../../../globalConfiguration/globalConfig";
 
 export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, IChallengeLayerBarState> {
     public state: IChallengeLayerBarState = {
         currChallengeAccepted: null,
+        isLoadingChallengeSolved: false,
         remainingMilliseconds: this.props.expirationInMs,
     }
+
+    private static API_ENDPOINT = `${BACKEND_MOBILE_API}/email`
 
     private lastChallengeIdAccepted: string | null = null
     private lastChallengeExpirationDateTime: string | null = null
@@ -67,6 +71,47 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
         }
     }
 
+    private challengeSolved = async () => {
+        this.setState({isLoadingChallengeSolved: true})
+        try {
+            const rawResp = await fetch(`${ChallengeLayerBar.API_ENDPOINT}/current`, {
+                method: "POST",
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    userEmail: "", //TODO ################################
+                    sponsorEmail: "",
+                })
+            })
+
+            const res = await rawResp.json()
+            if (res.error === null || res.error === undefined) { // might return {}
+                console.error(res.error)
+            } else {
+                this.setState({
+                    currChallengeAccepted: false,
+                    isLoadingChallengeSolved: false,
+                })
+
+                Alert.alert(
+                    "Sponsor notified",
+                    "Wir haben den Sponsor der aktuellen Herausforderung benachrichtigt! Dieser sollte dich bzgl. Sponsoring demnächst kontaktieren.",
+                    [{text: "Super!"}],
+                    {
+                        cancelable: true,
+                    }
+                )
+
+                console.log("ChallengeLayerBar:challengeSolved: Sent email to sponsor.")
+            }
+        } catch (e) {
+            console.error(e)
+            noInternetAvailable()
+        }
+    }
+
     private getBtnRow = (challengeId: string) => {
         if (this.state.currChallengeAccepted) {
             // TODO: Add on press for trigger backend challenge solved
@@ -75,7 +120,7 @@ export class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarPro
                     <Text style={styles.expirationCountdownText} h4>
                         Noch {this.state.remainingMilliseconds / 1000}s
                     </Text>
-                    <MajorButton title="Abschließen" btnType={MajorBtnType.HIGHLIGHTED} />
+                    <MajorButton title="Abschließen" btnType={MajorBtnType.HIGHLIGHTED} onPress={this.challengeSolved} isLoading={this.state.isLoadingChallengeSolved}/>
                 </>
             )
         }

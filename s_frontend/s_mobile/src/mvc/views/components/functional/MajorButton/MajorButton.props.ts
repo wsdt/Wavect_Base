@@ -5,4 +5,5 @@ export interface IMajorButtonProps {
     btnType: MajorBtnType
     // tslint:disable-next-line:ban-types
     onPress?: () => void
+    isLoading?: boolean
 }

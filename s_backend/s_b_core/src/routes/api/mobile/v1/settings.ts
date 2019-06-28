@@ -5,7 +5,6 @@ const router = express.Router()
 
 router.route("/:userId").get((req, res) => {
     Settings.findOne({ userId: req.params.userId }).exec((err, userSetting) => {
-
         res.json({
             error: err,
             res: userSetting,

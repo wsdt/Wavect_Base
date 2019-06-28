@@ -1,10 +1,7 @@
 import { ActionCreator } from "redux"
 import { GS_CACHE_USERTOKEN } from "./getstream.constants"
 
-export const setUserToken: ActionCreator<any> = (
-    userName: string,
-    userToken: string
-) => ({
+export const setUserToken: ActionCreator<any> = (userName: string, userToken: string) => ({
     type: GS_CACHE_USERTOKEN,
     userTokens: {
         [userName]: {

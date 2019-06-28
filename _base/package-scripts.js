@@ -15,8 +15,7 @@
  */
 
 // Bash echo formatting with colors: https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
-const errScriptNotImplemented =
-    "echo.&&echo \033[0;31mError:\033[0m Script not defined yet, but implemented in parent package-scripts.js!"
+const errScriptNotImplemented = "echo.&&echo \033[0;31mError:\033[0m Script not defined yet, but implemented in parent package-scripts.js!"
 
 module.exports = {
     scripts: {

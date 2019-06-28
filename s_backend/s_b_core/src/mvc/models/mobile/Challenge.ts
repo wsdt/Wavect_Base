@@ -1,17 +1,16 @@
 import * as mongoose from "mongoose"
-import {COLLECTION_CHALLENGE_NAME} from "../../controllers/db/db.constants"
-import {ChallengeCategory} from "./ChallengeCategory";
-
+import { COLLECTION_CHALLENGE_NAME } from "../../controllers/db/db.constants"
+import { ChallengeCategory } from "./ChallengeCategory"
 
 const ChallengeModel = new mongoose.Schema({
     id: { type: String, unique: true, required: true, dropDups: true },
     headline: { type: String, required: true },
     subline: { type: String, required: true },
-    whySponsor: { type: String, required: false},
-    companyLogoUri: {type: String, required: false},
-    majorCategory: {type: ChallengeCategory, required: true},
-    sponsor: {type: Number, required: true},
-    expirationInMs: {type: Number, required: true}
+    whySponsor: { type: String, required: false },
+    companyLogoUri: { type: String, required: false },
+    majorCategory: { type: ChallengeCategory, required: true },
+    sponsor: { type: Number, required: true },
+    expirationInMs: { type: Number, required: true },
 })
 
 // Also functions addable (BEFORE .model())
