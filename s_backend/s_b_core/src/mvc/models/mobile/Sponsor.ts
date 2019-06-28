@@ -1,5 +1,5 @@
 import * as mongoose from "mongoose"
-import { COLLECTION_SETTINGS_NAME } from "../../controllers/db/db.constants"
+import {COLLECTION_SPONSOR_NAME} from "../../controllers/db/db.constants"
 
 const SponsorModel = new mongoose.Schema({
     sponsorID: { type: String, unique: true, required: true, dropDups: true },
@@ -10,4 +10,4 @@ const SponsorModel = new mongoose.Schema({
     sponsoreEmail: {type: String, required: true}
 })
 
-export const Sponsor = mongoose.model(COLLECTION_SETTINGS_NAME, SponsorModel)
+export const Sponsor = mongoose.model(COLLECTION_SPONSOR_NAME, SponsorModel)

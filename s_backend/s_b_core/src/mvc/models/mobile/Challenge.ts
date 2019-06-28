@@ -1,14 +1,16 @@
 import * as mongoose from "mongoose"
-import {ChallengeCategory} from "../../../../../../s_frontend/s_mobile/src/mvc/models/ChallengeCategory"
-import { COLLECTION_SETTINGS_NAME } from "../../controllers/db/db.constants"
+import {COLLECTION_CHALLENGE_NAME} from "../../controllers/db/db.constants"
+import {ChallengeCategory} from "./ChallengeCategory";
+
 
 const ChallengeModel = new mongoose.Schema({
     id: { type: String, unique: true, required: true, dropDups: true },
-    headling: { type: String, required: true },
+    headline: { type: String, required: true },
     subline: { type: String, required: true },
     whySponsor: { type: String, required: false},
     companyLogoUri: {type: String, required: false},
     majorCategory: {type: ChallengeCategory, required: true},
+    sponsor: {type: Number, required: true},
     expirationInMs: {type: Number, required: true}
 })
 
@@ -21,4 +23,4 @@ const ChallengeModel = new mongoose.Schema({
 
 // Also Middlewares possible with Mongoose
 
-export const Challenge = mongoose.model(COLLECTION_SETTINGS_NAME, ChallengeModel)
+export const Challenge = mongoose.model(COLLECTION_CHALLENGE_NAME, ChallengeModel)
