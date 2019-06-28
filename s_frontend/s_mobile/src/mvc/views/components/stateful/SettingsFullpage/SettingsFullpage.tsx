@@ -88,14 +88,19 @@ export class SettingsFullpage extends React.PureComponent<any, ISettingsFullpage
         fetch(`${SettingsFullpage.API_ENDPOINT}/${await this.getUserId()}`)
             .then(res => res.json())
             .then(data => {
-                this.setState({
-                    hasAcceptedDataPrivacy: data.res.hasAcceptedDataPrivacy,
-                    email: data.res.email,
-                    validEmail: true,
-                    isLoadingSettings: false,
-                })
-                console.log("SettingsFullpage:getUserSettings: Received user settings.")
+                if (data.res) {
+                    this.setState({
+                        hasAcceptedDataPrivacy: data.res.hasAcceptedDataPrivacy,
+                        email: data.res.email,
+                        validEmail: true,
+                        isLoadingSettings: false,
+                    })
+                    console.log("SettingsFullpage:getUserSettings: Received user settings.")
+                } else {
+                    this.setState({isLoadingSettings: false})
+                }
             })
+
             .catch(e => {
                 console.error(e)
                 noInternetAvailable()
