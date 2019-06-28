@@ -1,41 +1,36 @@
 import * as express from "express"
 import { Challenge } from "../../../../mvc/models/mobile/Challenge"
-import {Sponsor} from "../../../../mvc/models/mobile/Sponsor";
+import { Sponsor } from "../../../../mvc/models/mobile/Sponsor"
 
 const router = express.Router()
 
 const constant = 2
-
 
 /**
  * use constant = 0 to indicate that we're using always a current obj
  */
 router.route("/current").get((_, res) => {
     Challenge.findOne({ id: constant }).exec((err, challenge) => {
-
-        if(challenge) {
-            Sponsor.findOne({sponsorID: challenge.get('sponsor')}).exec((err2, sponsor) => {
-                console.log(challenge.get('sponsor'))
+        if (challenge) {
+            Sponsor.findOne({ sponsorID: challenge.get("sponsor") }).exec((err2, sponsor) => {
+                console.log(challenge.get("sponsor"))
 
                 res.json({
-                    err: [
-                        err,
-                        err2
-                    ],
+                    err: [err, err2],
                     res: {
-                        id: challenge.get('id'),
-                        headline: challenge.get('headling'),
-                        subline: challenge.get('subline'),
-                        whySponsor: challenge.get('whySponsor'),
-                        majorCategory: challenge.get('majorCategory'),
+                        id: challenge.get("id"),
+                        headline: challenge.get("headling"),
+                        subline: challenge.get("subline"),
+                        whySponsor: challenge.get("whySponsor"),
+                        majorCategory: challenge.get("majorCategory"),
                         sponsor: sponsor,
-                        expirationInMs: challenge.get('expirationInMs')
-                    }
+                        expirationInMs: challenge.get("expirationInMs"),
+                    },
                 })
             })
-        }else {
+        } else {
             res.json({
-                err
+                err,
             })
         }
     })

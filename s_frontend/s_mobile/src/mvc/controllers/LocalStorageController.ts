@@ -1,8 +1,7 @@
-import AsyncStorage from "@react-native-community/async-storage";
+import AsyncStorage from "@react-native-community/async-storage"
 
 // Local constants
 const USER_ID = "user_id"
-
 
 const generateNewUserId = async (): Promise<string> => {
     const newUserId: string = Math.random()
@@ -16,7 +15,7 @@ const generateNewUserId = async (): Promise<string> => {
     return newUserId
 }
 
-export const getLocalUserId = async ():Promise<string> => {
-        const localUserId: string | null = await AsyncStorage.getItem(USER_ID)
-        return localUserId === null ? generateNewUserId() : localUserId
+export const getLocalUserId = async (): Promise<string> => {
+    const localUserId: string | null = await AsyncStorage.getItem(USER_ID)
+    return localUserId === null ? generateNewUserId() : localUserId
 }

@@ -51,7 +51,13 @@ class ChallengeFullpage extends React.PureComponent<IChallengeFullpageProps, ICh
                     />
                     <ChallengeTypeIcon type={majorCategory} />
                 </View>
-                <ChallengeLayerBar headline={headline} subline={subline} expirationInMs={expirationInMs} challengeId={id} sponsorEmail={sponsor.email} />
+                <ChallengeLayerBar
+                    headline={headline}
+                    subline={subline}
+                    expirationInMs={expirationInMs}
+                    challengeId={id}
+                    sponsorEmail={sponsor.email}
+                />
             </>
         )
     }
