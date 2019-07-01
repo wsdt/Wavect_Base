@@ -3,6 +3,7 @@ package com.wavect;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import iyegoroff.RNColorMatrixImageFilters.ColorMatrixImageFiltersPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
@@ -27,6 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new SplashScreenReactPackage(),
             new AsyncStoragePackage(),
             new ColorMatrixImageFiltersPackage(),
             new RNGestureHandlerPackage(),

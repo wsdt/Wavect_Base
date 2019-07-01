@@ -16,7 +16,6 @@ import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
 import { IChallengeLayerBarState } from "./ChallengeLayerBar.state"
 
 class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, IChallengeLayerBarState> {
-
     private static API_ENDPOINT = `${BACKEND_MOBILE_API}/email`
     public state: IChallengeLayerBarState = {
         currChallengeAccepted: null,

@@ -1,10 +1,9 @@
 import * as React from "react"
 import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom"
 import { ERR_404 } from "../errors/404/Err404"
-import {Home} from "../pages/Home";
+import { Home } from "../pages/Home"
 
-export const NAV_ROUTER = (props:any) => {
-
+export const NAV_ROUTER = (props: any) => {
     return (
         <Router>
             <div>

@@ -11,8 +11,8 @@
  */
 
 /** Primary color of application */
-export const primaryColor = "#fff"
-export const primaryBackgroundColor = "#0275d8"
+export const primaryColor = "#0275d8"
+export const primaryBackgroundColor = "#fff"
 
 /** E.g. used by nav bar. */
 export const secondaryColor = primaryBackgroundColor

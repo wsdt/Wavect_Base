@@ -9,6 +9,8 @@ dist/
 /.pnp
 .pnp.js
 
+vendor/
+
 
 # testing
 /coverage

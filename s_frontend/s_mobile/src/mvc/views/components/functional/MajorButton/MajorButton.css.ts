@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native"
-import {primaryBackgroundColor} from "../../../../../globalConfiguration/globalConstants.css";
+import {secondaryBackgroundColor} from "../../../../../globalConfiguration/globalConstants.css"
 
 const styles = StyleSheet.create({
     primaryBtnContainer: {
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         margin: 5,
     },
     highlightedBtnContainer: {
-        backgroundColor: primaryBackgroundColor,
+        backgroundColor: secondaryBackgroundColor,
         borderRadius: 3,
 
         flex: 1.5,
