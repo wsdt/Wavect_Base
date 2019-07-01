@@ -1,6 +1,6 @@
 import React from "react"
 import { View } from "react-native"
-import { Button } from "react-native-elements"
+import { Button, Icon } from "react-native-elements"
 import styles from "./MajorButton.css"
 import { IMajorButtonProps } from "./MajorButton.props"
 
@@ -20,7 +20,7 @@ export const MajorButton: React.FunctionComponent<IMajorButtonProps> = props => 
             break
     }
 
-    const { title, onPress } = props
+    const { title, onPress, icon } = props
     return (
         <View style={containerStyle}>
             <Button
@@ -30,6 +30,7 @@ export const MajorButton: React.FunctionComponent<IMajorButtonProps> = props => 
                 buttonStyle={styles.btnStyleWithBorder}
                 onPress={onPress}
                 loading={props.isLoading}
+                icon={<Icon name={icon} type="font-awesome" />}
             />
         </View>
     )

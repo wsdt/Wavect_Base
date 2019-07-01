@@ -1,12 +1,12 @@
 import * as express from "express"
 import { Sponsor } from "../../../../mvc/models/mobile/Sponsor"
+import {SPONSOR_CHALLENGE_CONSTANT} from '.././../../../mvc/controllers/db/db.constants'
 
 const router = express.Router()
 
-const constant = 1
 
 router.route("/current").get((_, res) => {
-    Sponsor.findOne({ sponsorID: constant }).exec((err, sponsor) => {
+    Sponsor.findOne({ sponsorID: SPONSOR_CHALLENGE_CONSTANT }).exec((err, sponsor) => {
         res.json({
             err,
             sponsor,
@@ -22,7 +22,11 @@ router.route("/current").post((req, res) => {
         shortDescr: req.body.shortDescr,
         sponsorWebsite: req.body.sponsorWebsite,
         sponsorEmail: req.body.sponsorEmail,
-    })
+        sponsorYoutube: req.body.sponsorYoutube,
+        sponsorInstagram: req.body.sponsorInstagram,
+        sponsorFacebook: req.body.sponsorFacebook,
+        sponsorLinkedIn: req.body.sponsorLinkedIn
+    });
 
     sponsor.save(err => {
         res.json({
