@@ -4,25 +4,24 @@ import { Alert, View } from "react-native"
 import { Text } from "react-native-elements"
 import { functionalityNotAvailable, noInternetAvailable } from "../../../../controllers/WarningsController"
 
+import { withNavigation } from "react-navigation"
 import { BACKEND_MOBILE_API } from "../../../../../globalConfiguration/globalConfig"
+import { getEmailMarked, getLocalUserId } from "../../../../controllers/LocalStorageController"
 import { ExpirationTimeObj } from "../../../../models/ExpirationTimeObj"
 import { MajorBtnType, MajorButton } from "../../functional/MajorButton/MajorButton"
+import { routes } from "../../system/TabRouter/SettingsScreenRouter/SettingsRoutes"
 import { CHALLENGE_ACCEPTED_ID, CHALLENGE_EXPIRATION_DATE } from "./ChallengeLayerBar.constants"
 import styles from "./ChallengeLayerBar.css"
 import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
 import { IChallengeLayerBarState } from "./ChallengeLayerBar.state"
-import { getLocalUserId, getEmailMarked } from "../../../../controllers/LocalStorageController"
-import { withNavigation } from "react-navigation"
-import { routes } from "../../system/TabRouter/SettingsScreenRouter/SettingsRoutes"
 
 class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, IChallengeLayerBarState> {
+    private static API_ENDPOINT = `${BACKEND_MOBILE_API}/email`
     public state: IChallengeLayerBarState = {
         currChallengeAccepted: null,
         isLoadingChallengeSolved: false,
         remainingMilliseconds: this.props.expirationInMs,
     }
-
-    private static API_ENDPOINT = `${BACKEND_MOBILE_API}/email`
 
     private lastChallengeIdAccepted: string | null = null
     private lastChallengeExpirationDateTime: string | null = null
@@ -41,16 +40,6 @@ class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, ICh
                 </View>
             </View>
         )
-    }
-
-    private startCountdownInterval = () => {
-        this.intervalId = setInterval(() => {
-            this.setState({ remainingMilliseconds: this.state.remainingMilliseconds - 1000 })
-            if (this.state.remainingMilliseconds <= 0) {
-                clearInterval(this.intervalId) // stop countdown when reaching 0
-                this.storeChallengeExpired() // unset challenge accepted lcoally
-            }
-        }, 1000)
     }
 
     public componentDidMount = async () => {
@@ -72,6 +61,16 @@ class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, ICh
         if (this.state.currChallengeAccepted) {
             clearInterval(this.intervalId)
         }
+    }
+
+    private startCountdownInterval = () => {
+        this.intervalId = setInterval(() => {
+            this.setState({ remainingMilliseconds: this.state.remainingMilliseconds - 1000 })
+            if (this.state.remainingMilliseconds <= 0) {
+                clearInterval(this.intervalId) // stop countdown when reaching 0
+                this.storeChallengeExpired() // unset challenge accepted lcoally
+            }
+        }, 1000)
     }
 
     private challengeSolved = async () => {
@@ -169,7 +168,7 @@ class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, ICh
                     cancelable: true,
                 }
             )
-            //Usability: User leaves the UI Field without pressing OK
+            // Usability: User leaves the UI Field without pressing OK
             this.props.navigation.navigate(routes.SettingsScreen)
         }
     }

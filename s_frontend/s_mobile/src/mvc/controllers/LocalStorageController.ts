@@ -27,15 +27,13 @@ export const doesLocalUserIDExist = async () => {
 }
 
 export const markEmailAsCreated = async () => {
-    const marked = "true"
-
     try {
-        await AsyncStorage.setItem(EMAIL_MARKED, marked)
+        await AsyncStorage.setItem(EMAIL_MARKED, "true")
     } catch (e) {
         console.error(e)
     }
 }
 
 export const getEmailMarked = async () => {
-    return await AsyncStorage.getItem(EMAIL_MARKED)
+    return AsyncStorage.getItem(EMAIL_MARKED)
 }

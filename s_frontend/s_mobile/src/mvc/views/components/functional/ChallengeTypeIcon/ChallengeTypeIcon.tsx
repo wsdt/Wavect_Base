@@ -1,7 +1,6 @@
-import { Text } from "react-native-elements"
 import React from "react"
 import { TouchableOpacity } from "react-native"
-import { Image, Tooltip } from "react-native-elements"
+import { Image, Text, Tooltip } from "react-native-elements"
 import { CHALLENGE_CATEGORIES } from "../../../../models/ChallengeCategory"
 import globalStyles, { GREY } from "../../../GlobalStyles.css"
 import styles from "./ChallengeTypeIcon.css"

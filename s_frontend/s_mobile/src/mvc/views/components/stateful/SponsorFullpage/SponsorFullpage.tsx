@@ -1,11 +1,11 @@
 import React from "react"
-import { Linking, ScrollView, View } from "react-native"
-import { Image, Text } from "react-native-elements"
+import { Text } from "react-native-elements"
 import { styles } from "./SponsorFullpage.css"
 import { ISponsorFullpageProps } from "./SponsorFullpage.props"
 import { withMappedNavigationParams } from "react-navigation-props-mapper"
 import { MajorBtnType, MajorButton } from "../../functional/MajorButton/MajorButton"
 import { TouchableIcon } from "../../functional/TouchableIcon/TouchableIcon"
+import { Image, Linking, ScrollView, View } from "react-native"
 
 const SponsorFullpage: React.FunctionComponent<ISponsorFullpageProps> = props => {
     const { shortDescr, logoUri, email, website, sponsorYoutube, sponsorFacebook, sponsorLinkedIn, sponsorInstagram } = props.sponsor

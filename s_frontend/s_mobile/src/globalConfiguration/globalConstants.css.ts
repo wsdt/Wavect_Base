@@ -15,9 +15,9 @@ export const primaryColor = "#0275d8"
 export const primaryBackgroundColor = "#fff"
 
 /** E.g. used by nav bar. */
-export const secondaryColor = "#fff"
+export const secondaryColor = primaryBackgroundColor
 export const secondaryBackgroundColor = primaryColor
 
 /** E.g. used by tab bar. */
-export const inactiveColor = secondaryColor
-export const inactiveBackgroundColor = "#46a9fb"
+export const inactiveColor = "#333"
+export const inactiveBackgroundColor = "#999"
