@@ -1,9 +1,9 @@
 import React from "react"
 import { Image, Linking, ScrollView, View } from "react-native"
 import { Text } from "react-native-elements"
+import { withMappedNavigationParams } from "react-navigation-props-mapper"
 import { styles } from "./SponsorFullpage.css"
 import { ISponsorFullpageProps } from "./SponsorFullpage.props"
-import { withMappedNavigationParams } from "react-navigation-props-mapper"
 
 const SponsorFullpage: React.FunctionComponent<ISponsorFullpageProps> = props => {
     const { sponsorName, shortDescr, logoUri, email, website } = props.sponsor

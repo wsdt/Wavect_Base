@@ -1,16 +1,16 @@
 import * as React from "react"
 import { ImageBackground, View } from "react-native"
+import { withNavigation } from "react-navigation"
 import globalStyles from "../../../GlobalStyles.css"
 import { ChallengeTypeIcon } from "../../functional/ChallengeTypeIcon/ChallengeTypeIcon"
 import { CompanyLogo } from "../../functional/CompanyLogo/CompanyLogo"
 import { GrayColorImg } from "../../functional/GrayColorImg/GrayColorImg"
 import { LoadingIndicator } from "../../functional/LoadingIndicator/LoadingIndicator"
+import { routes } from "../../system/TabRouter/HomeScreenRouter/HomeRoutes"
 import ChallengeLayerBar from "../ChallengeLayerBar/ChallengeLayerBar"
 import styles from "./ChallengeFullpage.css"
 import { IChallengeFullpageProps } from "./ChallengeFullpage.props"
 import { IChallengeFullpageState } from "./ChallengeFullpage.state"
-import { routes } from "../../system/TabRouter/HomeScreenRouter/HomeRoutes"
-import { withNavigation } from "react-navigation"
 
 class ChallengeFullpage extends React.PureComponent<IChallengeFullpageProps, IChallengeFullpageState> {
     public state: IChallengeFullpageState = {
@@ -46,7 +46,7 @@ class ChallengeFullpage extends React.PureComponent<IChallengeFullpageProps, ICh
                         companyLogoUri={sponsor.logoUri}
                         isGrayscale={this.state.isGrayscale}
                         onPressed={() => {
-                            this.props.navigation.navigate(routes.SponsorFullpage, { sponsor: sponsor, whySponsor: whyDoesOrganizationSponsor })
+                            this.props.navigation.navigate(routes.SponsorFullpage, { sponsor, whySponsor: whyDoesOrganizationSponsor })
                         }}
                     />
                     <ChallengeTypeIcon type={majorCategory} />
