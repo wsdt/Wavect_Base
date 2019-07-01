@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native"
-import { FULL_WIDTH } from "../../../GlobalStyles.css";
+import { FULL_WIDTH } from "../../../GlobalStyles.css"
 
 export const styles = StyleSheet.create({
     mainContainer: {
@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
 
     hr_line: {
         borderBottomColor: "black",
-        width: '100%',
+        width: "100%",
         borderBottomWidth: 1,
         marginBottom: 20,
         marginTop: 20,
@@ -47,21 +47,21 @@ export const styles = StyleSheet.create({
     },
     imageContainer: {
         width: FULL_WIDTH,
-        alignItems: 'center',
+        alignItems: "center",
     },
     imageStyle: {
-        width: '50%',
+        width: "50%",
         height: 150,
     },
     buttonContainer: {
-        flexDirection: 'row',
-        width: '100%',
-        justifyContent: 'center'
+        flexDirection: "row",
+        width: "100%",
+        justifyContent: "center",
     },
     socialMedia: {
-        flexDirection: 'row',
-        width: '100%',
-        justifyContent: 'space-around',
-        marginTop: 20
-    }
-});
+        flexDirection: "row",
+        width: "100%",
+        justifyContent: "space-around",
+        marginTop: 20,
+    },
+})

@@ -36,7 +36,7 @@ class ChallengeFullpage extends React.PureComponent<IChallengeFullpageProps, ICh
             return <LoadingIndicator />
         }
 
-        const { id, headline, subline, sponsor, majorCategory, expirationInMs, whyDoesOrganizationSponsor } = this.props.challenge;
+        const { id, headline, subline, sponsor, majorCategory, expirationInMs, whyDoesOrganizationSponsor } = this.props.challenge
         // test sponsor --> fetch here.. so we can destructure down there
 
         return (

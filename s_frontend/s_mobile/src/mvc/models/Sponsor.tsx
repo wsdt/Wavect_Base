@@ -12,9 +12,18 @@ export class Sponsor {
     private _sponsorLinkedIn?: string
     private _sponsorFacebook?: string
 
-    public constructor(sponsorId: string, sponsorName: string, logoUri: ImageURISource, shortDescr: string,
-                       website: string, email: string, sponsorFacebook: string, sponsorInstagram: string,
-                       sponsorLinkedIn: string, sponsorYoutube: string) {
+    public constructor(
+        sponsorId: string,
+        sponsorName: string,
+        logoUri: ImageURISource,
+        shortDescr: string,
+        website: string,
+        email: string,
+        sponsorFacebook: string,
+        sponsorInstagram: string,
+        sponsorLinkedIn: string,
+        sponsorYoutube: string
+    ) {
         this.sponsorId = sponsorId
         this.sponsorName = sponsorName
         this.logoUri = logoUri
@@ -75,36 +84,35 @@ export class Sponsor {
         this._email = value
     }
 
-
     get sponsorYoutube(): string | undefined {
-        return this._sponsorYoutube;
+        return this._sponsorYoutube
     }
 
     set sponsorYoutube(value: string | undefined) {
-        this._sponsorYoutube = value;
+        this._sponsorYoutube = value
     }
 
     get sponsorInstagram(): string | undefined {
-        return this._sponsorInstagram;
+        return this._sponsorInstagram
     }
 
     set sponsorInstagram(value: string | undefined) {
-        this._sponsorInstagram = value;
+        this._sponsorInstagram = value
     }
 
     get sponsorLinkedIn(): string | undefined {
-        return this._sponsorLinkedIn;
+        return this._sponsorLinkedIn
     }
 
     set sponsorLinkedIn(value: string | undefined) {
-        this._sponsorLinkedIn = value;
+        this._sponsorLinkedIn = value
     }
 
     get sponsorFacebook(): string | undefined {
-        return this._sponsorFacebook;
+        return this._sponsorFacebook
     }
 
     set sponsorFacebook(value: string | undefined) {
-        this._sponsorFacebook = value;
+        this._sponsorFacebook = value
     }
 }
