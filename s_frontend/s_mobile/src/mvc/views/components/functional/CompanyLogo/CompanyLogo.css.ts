@@ -9,13 +9,16 @@ const styles = StyleSheet.create({
         position: "absolute",
         flex: 1,
         margin: 5,
+        marginLeft: 15,
+        marginTop: 15,
         borderRadius: radius,
     },
     image: {
-        width: 120,
-        height: 70,
+        width: 75,
+        height: 50,
         resizeMode: "contain",
     },
 })
 
 export default styles
+

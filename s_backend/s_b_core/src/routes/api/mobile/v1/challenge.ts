@@ -1,7 +1,7 @@
 import * as express from "express"
+import {SPONSOR_CHALLENGE_CONSTANT} from "../../../../mvc/controllers/db/db.constants"
 import { Challenge } from "../../../../mvc/models/mobile/Challenge"
 import { Sponsor } from "../../../../mvc/models/mobile/Sponsor"
-import {SPONSOR_CHALLENGE_CONSTANT} from '.././../../../mvc/controllers/db/db.constants'
 
 
 const router = express.Router()
@@ -14,7 +14,6 @@ router.route("/current").get((_, res) => {
     Challenge.findOne({ id: SPONSOR_CHALLENGE_CONSTANT }).exec((err, challenge) => {
         if (challenge) {
             Sponsor.findOne({ sponsorID: challenge.get("sponsor") }).exec((err2, sponsor) => {
-                console.log("++++++++++++++++++++++++++++++++++++++++" + challenge.get("whyDoesOrganizationSponsor"))
 
                 if (sponsor) {
                     res.json({
@@ -48,14 +47,20 @@ router.route("/current").get((_, res) => {
                 } else {
                     console.log("Challenge: Sponsor undefined")
                     res.json({
-                        err,
+                        err: [
+                            err,
+                            "Sponsor undefined",
+                        ],
                     })
                 }
             })
         } else {
             console.log("Challenge: Challenge undefined")
             res.json({
-                err,
+                err: [
+                    err,
+                    "Challenge undefined",
+                ],
             })
         }
     })
@@ -71,18 +76,11 @@ router.route("/current").post((req, res) => {
         sponsor: req.body.sponsor,
         expirationInMs: req.body.expirationInMs,
         bgImage: req.body.bgImage,
-    });
-
-    console.log("############################" + req.body.whyDoesOrganizationSponsor);
+    })
 
     challenge.save(err => {
         res.json({ err })
     })
 })
-
-// yarn build start
-// docker-machine start
-// docker-compose up --build
-//
 
 export = router

@@ -8,8 +8,9 @@ export const CompanyLogo: React.FunctionComponent<ICompanyLogoProps> = props => 
     return (
         <TouchableOpacity style={styles.topLeftCompany} onPress={props.onPressed}>
             <GrayColorImg isGrayscale={props.isGrayscale}>
-                <Image source={props.companyLogoUri} style={styles.image} />
+                <Image source={props.companyLogoUri} style={styles.image}/>
             </GrayColorImg>
         </TouchableOpacity>
     )
 }
+

@@ -3,5 +3,4 @@ export interface ISettingsFullpageState {
     email: string
     validEmail: boolean
     isSavingSettings: boolean
-    isLoadingSettings: boolean
 }
