@@ -1,5 +1,6 @@
 /.idea/
 /dist/**/*
+dist/
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
@@ -7,6 +8,8 @@
 /node_modules
 /.pnp
 .pnp.js
+
+vendor/
 
 
 # testing

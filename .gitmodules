@@ -1,0 +1,12 @@
+[submodule "s_backend/s_b_core"]
+	path = s_backend/s_b_core
+	url = https://github.com/wsdt/Wavect__s_b_core
+[submodule "s_frontend/s_f_mobile"]
+	path = s_frontend/s_f_mobile
+	url = https://github.com/wsdt/Wavect__s_f_mobile
+[submodule "s_frontend/s_web/s_f_comingsoon"]
+	path = s_frontend/s_web/s_f_comingsoon
+	url = https://github.com/wsdt/Wavect__s_f_comingsoon
+[submodule "s_frontend/s_web/s_f_webpage"]
+	path = s_frontend/s_web/s_f_webpage
+	url = https://github.com/wsdt/Wavect__s_f_webpage

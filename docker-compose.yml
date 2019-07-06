@@ -1,0 +1,46 @@
+version: "3.6"
+
+# network_mode: host for backend only to access it from lan or other etc.
+
+
+services:
+  s_backend_core:
+    container_name: s_b_core
+    restart: unless-stopped
+    networks:
+      - backend_database
+    ports:
+      - 8090:8090
+    build:
+      dockerfile: ./Dockerfile
+      context: ./s_backend/s_b_core/
+    depends_on:
+      - s_database
+
+
+# NOT WORKING ON WINDOWS AS VIRTUALBOX, MONGODB AND WINDOWS MAPPING DOES NOT WORK, thus this external volume declaration is necessary here
+# CREATE VOLUME MANUALLY BEFORE: docker volume create --name=s_database_data
+
+  s_database:
+    restart: unless-stopped
+    image: mongo
+    container_name: s_database
+    ports:
+      - 27017:27017
+    volumes:
+      - s_database_data:/data/db
+    networks:
+      - backend_database
+#    environment:
+#      MONGO_INITDB_ROOT_USERNAME: root
+#      MONGO_INITDB_ROOT_PASSWORD: changeme
+
+# necessary see comments above
+volumes:
+  s_database_data:
+    external: true
+    name: s_database_data
+
+networks:
+  backend_database:
+    driver: bridge

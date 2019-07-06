@@ -2,10 +2,9 @@
  * They extend from this json and might add or overwrite some params. */
 
 {
+    "compileOnSave": true,
     "compilerOptions": {
         "target": "es5",
-        "checkJs": true,
-        "allowJs": true,
         "module": "commonjs",
         "removeComments": true,
         "preserveConstEnums": true,
