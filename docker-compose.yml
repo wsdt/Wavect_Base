@@ -5,7 +5,7 @@ version: "3.6"
 
 services:
   s_backend_core:
-    container_name: s_backend_core
+    container_name: s_b_core
     restart: unless-stopped
     networks:
       - backend_database
