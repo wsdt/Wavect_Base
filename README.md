@@ -1,7 +1,8 @@
 # BeKind_Playground [![HitCount](http://hits.dwyl.com/wsdt/BeKind_Playground.svg)](http://hits.dwyl.com/wsdt/BeKind_Playground)
 
 ## Submodules
-We are using submodules. If you clone this repo for the first time you may want to execute `git clone --recursive https://github.com/wsdt/Wavect_Base.git`
+We are using submodules. If you clone this repo for the first time you may want to execute 
+`git clone --recursive https://github.com/wsdt/Wavect_Base.git`
 
 ## Used external tools 
 ### Snyk - Dependency security vulnerabilities
