@@ -12,6 +12,6 @@ node_js:
 script:
 #  - cd $SERVICE_DIR && npm install && npm start evaluate
 #  - docker build -t service . 
-  - docker-compose build
+#  - docker-compose build
 
 # TODO: Execute jest tests, docker builds etc.  
