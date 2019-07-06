@@ -1,8 +1,7 @@
 import * as express from "express"
 import {SPONSOR_CHALLENGE_CONSTANT} from "../../../../mvc/controllers/db/db.constants"
-import { Challenge } from "../../../../mvc/models/mobile/Challenge"
-import { Sponsor } from "../../../../mvc/models/mobile/Sponsor"
-
+import {Challenge, challengeToResponse} from "../../../../mvc/models/mobile/Challenge"
+import {ApiResult} from "./ApiResult"
 
 const router = express.Router()
 
@@ -11,57 +10,12 @@ const router = express.Router()
  * use constant = 0 to indicate that we're using always a current obj
  */
 router.route("/current").get((_, res) => {
-    Challenge.findOne({ id: SPONSOR_CHALLENGE_CONSTANT }).exec((err, challenge) => {
+    Challenge.findOne({id: SPONSOR_CHALLENGE_CONSTANT}).exec(async (err, challenge) => {
         if (challenge) {
-            Sponsor.findOne({ sponsorID: challenge.get("sponsor") }).exec((err2, sponsor) => {
-
-                if (sponsor) {
-                    res.json({
-                        err: [err, err2],
-                        res: {
-                            id: challenge.get("id"),
-                            headline: challenge.get("headline"),
-                            subline: challenge.get("subline"),
-                            bgImage: {
-                                uri: challenge.get("bgImage"),
-                            },
-                            whyDoesOrganizationSponsor: challenge.get("whyDoesOrganizationSponsor"),
-                            majorCategory: challenge.get("majorCategory"),
-                            sponsor: {
-                                sponsorId: sponsor.get("sponsorID"),
-                                sponsorName: sponsor.get("sponsorName"),
-                                logoUri: {
-                                    uri: sponsor.get("logoUri"),
-                                },
-                                shortDescr: sponsor.get("shortDescr"),
-                                email: sponsor.get("sponsorEmail"),
-                                website: sponsor.get("sponsorWebsite"),
-                                sponsorFacebook: sponsor.get("sponsorFacebook"),
-                                sponsorYoutube: sponsor.get("sponsorYoutube"),
-                                sponsorLinkedIn: sponsor.get("sponsorLinkedIn"),
-                                sponsorInstagram: sponsor.get("sponsorInstagram")
-                            },
-                            expirationInMs: challenge.get("expirationInMs"),
-                        },
-                    })
-                } else {
-                    console.log("Challenge: Sponsor undefined")
-                    res.json({
-                        err: [
-                            err,
-                            "Sponsor undefined",
-                        ],
-                    })
-                }
-            })
+            (await challengeToResponse(err, challenge)).sendJson(res)
         } else {
             console.log("Challenge: Challenge undefined")
-            res.json({
-                err: [
-                    err,
-                    "Challenge undefined",
-                ],
-            })
+            ApiResult.sendJson(res, [err, "Challenge undefined"], null)
         }
     })
 })
@@ -79,7 +33,7 @@ router.route("/current").post((req, res) => {
     })
 
     challenge.save(err => {
-        res.json({ err })
+        ApiResult.sendJson(res, err, null)
     })
 })
 

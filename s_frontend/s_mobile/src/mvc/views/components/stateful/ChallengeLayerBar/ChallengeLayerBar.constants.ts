@@ -1,3 +1,2 @@
 // Key for persisting locally
-export const CHALLENGE_ACCEPTED_ID = "challenge_accepted_id"
-export const CHALLENGE_EXPIRATION_DATE = "challenge_expiration_date"
+export const CHALLENGE_SOLVED_ID = "challenge_solved_id"

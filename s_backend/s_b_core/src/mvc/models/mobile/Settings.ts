@@ -1,10 +1,18 @@
 import * as mongoose from "mongoose"
 import { COLLECTION_SETTINGS_NAME } from "../../controllers/db/db.constants"
 
+
+/** Following constants must match the attribute values of the followed model to ensure typo-safety. */
+export enum SettingsFields {
+    userId = "userId",
+    email = "email",
+    hasAcceptedDataPrivacy = "hasAcceptedDataPrivacy",
+}
+
 const SettingsModel = new mongoose.Schema({
-    userId: { type: String, unique: true, required: true, dropDups: true },
-    email: { type: String, unique: true, required: true, dropDups: true },
-    hasAcceptedDataPrivacy: { type: Boolean, required: true },
+    [SettingsFields.userId]: { type: String, unique: true, required: true, dropDups: true },
+    [SettingsFields.email]: { type: String, unique: true, required: true, dropDups: true },
+    [SettingsFields.hasAcceptedDataPrivacy]: { type: Boolean, required: true },
 })
 
 // Also functions addable (BEFORE .model())

@@ -1,55 +1,55 @@
 import { ImageURISource } from "react-native"
 
 export class Sponsor {
-    private _sponsorId!: string
-    private _sponsorName!: string
+    private _id!: string
+    private _name!: string
     private _logoUri!: ImageURISource
     private _shortDescr!: string
     private _website!: string
     private _email!: string
-    private _sponsorYoutube?: string
-    private _sponsorInstagram?: string
-    private _sponsorLinkedIn?: string
-    private _sponsorFacebook?: string
+    private _youtube?: string
+    private _instagram?: string
+    private _linkedin?: string
+    private _facebook?: string
 
     public constructor(
-        sponsorId: string,
-        sponsorName: string,
+        id: string,
+        name: string,
         logoUri: ImageURISource,
         shortDescr: string,
         website: string,
         email: string,
-        sponsorFacebook: string,
-        sponsorInstagram: string,
-        sponsorLinkedIn: string,
-        sponsorYoutube: string
+        facebook: string,
+        instagram: string,
+        linkedin: string,
+        youtube: string
     ) {
-        this.sponsorId = sponsorId
-        this.sponsorName = sponsorName
+        this.id = id
+        this.name = name
         this.logoUri = logoUri
         this.shortDescr = shortDescr
         this.website = website
         this.email = email
-        this.sponsorYoutube = sponsorYoutube
-        this.sponsorInstagram = sponsorInstagram
-        this.sponsorFacebook = sponsorFacebook
-        this.sponsorLinkedIn = sponsorLinkedIn
+        this.youtube = youtube
+        this.instagram = instagram
+        this.facebook = facebook
+        this.linkedin = linkedin
     }
 
-    set sponsorId(sponsorId: string) {
-        this._sponsorId = sponsorId
+    set id(sponsorId: string) {
+        this._id = sponsorId
     }
 
-    get sponsorId(): string {
-        return this._sponsorId
+    get id(): string {
+        return this._id
     }
 
-    get sponsorName(): string {
-        return this._sponsorName
+    get name(): string {
+        return this._name
     }
 
-    set sponsorName(value: string) {
-        this._sponsorName = value
+    set name(value: string) {
+        this._name = value
     }
 
     get logoUri(): ImageURISource {
@@ -84,35 +84,35 @@ export class Sponsor {
         this._email = value
     }
 
-    get sponsorYoutube(): string | undefined {
-        return this._sponsorYoutube
+    get youtube(): string | undefined {
+        return this._youtube
     }
 
-    set sponsorYoutube(value: string | undefined) {
-        this._sponsorYoutube = value
+    set youtube(value: string | undefined) {
+        this._youtube = value
     }
 
-    get sponsorInstagram(): string | undefined {
-        return this._sponsorInstagram
+    get instagram(): string | undefined {
+        return this._instagram
     }
 
-    set sponsorInstagram(value: string | undefined) {
-        this._sponsorInstagram = value
+    set instagram(value: string | undefined) {
+        this._instagram = value
     }
 
-    get sponsorLinkedIn(): string | undefined {
-        return this._sponsorLinkedIn
+    get linkedin(): string | undefined {
+        return this._linkedin
     }
 
-    set sponsorLinkedIn(value: string | undefined) {
-        this._sponsorLinkedIn = value
+    set linkedin(value: string | undefined) {
+        this._linkedin = value
     }
 
-    get sponsorFacebook(): string | undefined {
-        return this._sponsorFacebook
+    get facebook(): string | undefined {
+        return this._facebook
     }
 
-    set sponsorFacebook(value: string | undefined) {
-        this._sponsorFacebook = value
+    set facebook(value: string | undefined) {
+        this._facebook = value
     }
 }

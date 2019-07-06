@@ -1,14 +1,14 @@
 import React from "react"
-import { Text } from "react-native-elements"
-import { styles } from "./SponsorFullpage.css"
-import { ISponsorFullpageProps } from "./SponsorFullpage.props"
+import { Linking, ScrollView, View} from "react-native"
+import { Image, Text } from "react-native-elements"
 import { withMappedNavigationParams } from "react-navigation-props-mapper"
 import { MajorBtnType, MajorButton } from "../../functional/MajorButton/MajorButton"
 import { TouchableIcon } from "../../functional/TouchableIcon/TouchableIcon"
-import { Image, Linking, ScrollView, View } from "react-native"
+import { styles } from "./SponsorFullpage.css"
+import { ISponsorFullpageProps } from "./SponsorFullpage.props"
 
 const SponsorFullpage: React.FunctionComponent<ISponsorFullpageProps> = props => {
-    const { shortDescr, logoUri, email, website, sponsorYoutube, sponsorFacebook, sponsorLinkedIn, sponsorInstagram } = props.sponsor
+    const { shortDescr, logoUri, email, website, youtube, facebook, linkedin, instagram } = props.sponsor
 
     return (
         <ScrollView>
@@ -40,10 +40,10 @@ const SponsorFullpage: React.FunctionComponent<ISponsorFullpageProps> = props =>
                 </View>
 
                 <View style={styles.socialMedia}>
-                    {sponsorLinkedIn ? <TouchableIcon icon={"linkedin"} onPress={() => Linking.openURL(sponsorLinkedIn)} /> : null}
-                    {sponsorFacebook ? <TouchableIcon icon={"facebook"} onPress={() => Linking.openURL(sponsorFacebook)} /> : null}
-                    {sponsorInstagram ? <TouchableIcon icon={"instagram"} onPress={() => Linking.openURL(sponsorInstagram)} /> : null}
-                    {sponsorYoutube ? <TouchableIcon icon={"youtube"} onPress={() => Linking.openURL(sponsorYoutube)} /> : null}
+                    {linkedin ? <TouchableIcon icon={"linkedin"} onPress={() => Linking.openURL(linkedin)} /> : null}
+                    {facebook ? <TouchableIcon icon={"facebook"} onPress={() => Linking.openURL(facebook)} /> : null}
+                    {instagram ? <TouchableIcon icon={"instagram"} onPress={() => Linking.openURL(instagram)} /> : null}
+                    {youtube ? <TouchableIcon icon={"youtube"} onPress={() => Linking.openURL(youtube)} /> : null}
                 </View>
             </View>
         </ScrollView>

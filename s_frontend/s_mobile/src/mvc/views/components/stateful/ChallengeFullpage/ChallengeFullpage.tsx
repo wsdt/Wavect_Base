@@ -58,6 +58,7 @@ class ChallengeFullpage extends React.PureComponent<IChallengeFullpageProps, ICh
                 </View>
                 <ChallengeLayerBar
                     headline={headline}
+                    setGrayscale={(isGrayscale:boolean) => this.setState({isGrayscale})}
                     subline={subline}
                     expirationInMs={expirationInMs}
                     challengeId={id}
@@ -70,6 +71,8 @@ class ChallengeFullpage extends React.PureComponent<IChallengeFullpageProps, ICh
     private onLoad = () => {
         this.setLoading(LoadingStatus.DONE)
     }
+
+
 }
 
 export default withNavigation(ChallengeFullpage)

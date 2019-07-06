@@ -1,5 +1,5 @@
-import { StyleSheet } from "react-native"
-import {secondaryBackgroundColor} from "../../../../../globalConfiguration/globalConstants.css"
+import {StyleSheet} from "react-native"
+import {secondaryBackgroundColor, secondaryColor} from "../../../../../globalConfiguration/globalConstants.css"
 
 const styles = StyleSheet.create({
     primaryBtnContainer: {
@@ -28,6 +28,11 @@ const styles = StyleSheet.create({
     btnStyleWithBorder: {
         borderColor: "#000",
         height: 60,
+    },
+    btnTitleHighlighted: {
+        color: secondaryColor,
+        fontSize: 20,
+        padding: 10,
     },
 })
 

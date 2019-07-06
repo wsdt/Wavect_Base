@@ -1,9 +1,11 @@
 import * as nodemailer from "nodemailer"
-import { EMAIL_PROVIDER, FROM, FROM_PWD, HTML, SUBJECT } from "./email.constants"
+import {FROM, FROM_PWD, HTML, REPLY_TO, SMTP_PROVIDER, SUBJECT} from "./email.constants"
 
 // Might throw a console error
 const transporter = nodemailer.createTransport({
-    service: EMAIL_PROVIDER,
+    host: SMTP_PROVIDER,
+    port: 465,
+    secure: true, // true for 465
     auth: {
         user: FROM,
         pass: FROM_PWD,
@@ -13,17 +15,19 @@ const transporter = nodemailer.createTransport({
 export const sendEmailToSponsor = async (userEmail: string, sponsorEmail: string) => {
     const mailOptions = {
         from: FROM,
+        cc: userEmail,
+        replyTo: REPLY_TO,
         to: sponsorEmail,
         subject: SUBJECT,
         html: HTML({ userEmail }),
     }
 
-    const { err, info } = await transporter.sendMail(mailOptions)
-    if (err) {
-        console.error(err)
-        return err
-    } else {
-        console.log("email:sendMail: Email sent -> " + info.response)
+    try {
+        transporter.sendMail(mailOptions)
+        console.log("email:sendMail: Email sent")
+    } catch(e) {
+        console.error("Email:sentEmailToSponsor: "+e)
+        return e
     }
     return null
 }

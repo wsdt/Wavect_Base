@@ -8,6 +8,7 @@ export const MajorButton: React.FunctionComponent<IMajorButtonProps> = props => 
     // TODO: Allow to provide custom style obj (merge here) e.g. flex dynamic
 
     let containerStyle
+    let titleStyle = styles.btnTitleStandard
     switch (props.btnType) {
         case MajorBtnType.PRIMARY:
             containerStyle = styles.primaryBtnContainer
@@ -17,6 +18,7 @@ export const MajorButton: React.FunctionComponent<IMajorButtonProps> = props => 
             break
         case MajorBtnType.HIGHLIGHTED:
             containerStyle = styles.highlightedBtnContainer
+            titleStyle = styles.btnTitleHighlighted
             break
     }
 
@@ -26,11 +28,11 @@ export const MajorButton: React.FunctionComponent<IMajorButtonProps> = props => 
             <Button
                 title={title}
                 type="outline"
-                titleStyle={styles.btnTitleStandard}
+                titleStyle={titleStyle}
                 buttonStyle={styles.btnStyleWithBorder}
                 onPress={onPress}
                 loading={props.isLoading}
-                icon={<Icon name={icon} type="font-awesome" />}
+                icon={(icon) ? <Icon name={icon} type="font-awesome" /> : undefined}
             />
         </View>
     )

@@ -1,14 +1,12 @@
 import * as express from "express"
 import { Settings } from "../../../../mvc/models/mobile/Settings"
+import {ApiResult} from "./ApiResult"
 
 const router = express.Router()
 
 router.route("/:userId").get((req, res) => {
     Settings.findOne({ userId: req.params.userId }).exec((err, userSetting) => {
-        res.json({
-            error: err,
-            res: userSetting,
-        })
+        ApiResult.sendJson(res, err, userSetting)
     })
 })
 
@@ -20,10 +18,7 @@ router.route("/:userId").post((req, res) => {
     })
 
     settings.save(err => {
-        res.json({ error: err })
-        if (err) {
-            return console.error(`${err} --> ${settings}`)
-        }
+        ApiResult.sendJson(res, err, null)
     })
 })
 

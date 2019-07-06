@@ -1,34 +1,30 @@
 import AsyncStorage from "@react-native-community/async-storage"
 import React from "react"
-import { Alert, View } from "react-native"
-import { Text } from "react-native-elements"
-import { functionalityNotAvailable, noInternetAvailable } from "../../../../controllers/WarningsController"
-
-import { withNavigation } from "react-navigation"
-import { BACKEND_MOBILE_API } from "../../../../../globalConfiguration/globalConfig"
-import { getEmailMarked, getLocalUserId } from "../../../../controllers/LocalStorageController"
-import { ExpirationTimeObj } from "../../../../models/ExpirationTimeObj"
-import { MajorBtnType, MajorButton } from "../../functional/MajorButton/MajorButton"
-import { routes } from "../../system/TabRouter/SettingsScreenRouter/SettingsRoutes"
-import { CHALLENGE_ACCEPTED_ID, CHALLENGE_EXPIRATION_DATE } from "./ChallengeLayerBar.constants"
+import {Alert, View} from "react-native"
+import {Text} from "react-native-elements"
+import {withNavigation} from "react-navigation"
+import {BACKEND_MOBILE_API} from "../../../../../globalConfiguration/globalConfig"
+import {getEmailMarked, getLocalUserId} from "../../../../controllers/LocalStorageController"
+import {noInternetAvailable} from "../../../../controllers/WarningsController"
+import {MajorBtnType, MajorButton} from "../../functional/MajorButton/MajorButton"
+import {routes} from "../../system/TabRouter/SettingsScreenRouter/SettingsRoutes"
+import {CHALLENGE_SOLVED_ID} from "./ChallengeLayerBar.constants"
 import styles from "./ChallengeLayerBar.css"
-import { IChallengeLayerBarProps } from "./ChallengeLayerBar.props"
-import { IChallengeLayerBarState } from "./ChallengeLayerBar.state"
+import {IChallengeLayerBarProps} from "./ChallengeLayerBar.props"
+import {IChallengeLayerBarState} from "./ChallengeLayerBar.state"
 
 class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, IChallengeLayerBarState> {
     private static API_ENDPOINT = `${BACKEND_MOBILE_API}/email`
+
     public state: IChallengeLayerBarState = {
-        currChallengeAccepted: null,
         isLoadingChallengeSolved: false,
-        remainingMilliseconds: this.props.expirationInMs,
+        currChallengeSolved: false,
     }
 
-    private lastChallengeIdAccepted: string | null = null
-    private lastChallengeExpirationDateTime: string | null = null
-    private intervalId!: any
+    private lastChallengeIdSolved: string | null = null
 
     public render() {
-        const { headline, subline, challengeId } = this.props
+        const {headline, subline} = this.props
 
         return (
             <View style={styles.mainComponent}>
@@ -36,71 +32,65 @@ class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, ICh
                     <Text style={styles.headline}>{headline}</Text>
                     <Text style={styles.subline}>{subline}</Text>
 
-                    <View style={styles.btnContainer}>{this.getBtnRow(challengeId)}</View>
+                    <View style={styles.btnContainer}>
+                        {
+                            (this.state.currChallengeSolved) ?
+                                <MajorButton title="Challenge solved" btnType={MajorBtnType.HIGHLIGHTED}
+                                             onPress={() => this.challengeAlreadySolved()}/>
+                                : <MajorButton title="Abschließen" btnType={MajorBtnType.PRIMARY}
+                                               onPress={() => this.execBtnAccept()} isLoading={this.state.isLoadingChallengeSolved}/>
+                        }
+                    </View>
                 </View>
             </View>
         )
     }
 
-    public componentDidMount = async () => {
-        const currChallengeAccepted = await this.retrieveChallengeAccepted(this.props.challengeId)
-
-        if (currChallengeAccepted) {
-            // subtract last accepted from today with expirationInMs to make countdown persistent (to avoid restarting it one every startup)
-            if (this.lastChallengeExpirationDateTime != null) {
-                const persistedLastExpirationDatetime: Date = new Date(this.lastChallengeExpirationDateTime)
-
-                const correctedExpireMs = persistedLastExpirationDatetime.getTime() - Date.now()
-                this.setState({ remainingMilliseconds: correctedExpireMs <= 0 ? 0 : Math.round(correctedExpireMs / 1000) * 1000 }) // dividing by 1000 to have a comma as later
-            }
-            this.startCountdownInterval()
-        }
+    public componentDidMount(): void {
+        this.retrieveChallengeSolved()
     }
 
-    public componentWillMount(): void {
-        if (this.state.currChallengeAccepted) {
-            clearInterval(this.intervalId)
-        }
-    }
-
-    private startCountdownInterval = () => {
-        this.intervalId = setInterval(() => {
-            this.setState({ remainingMilliseconds: this.state.remainingMilliseconds - 1000 })
-            if (this.state.remainingMilliseconds <= 0) {
-                clearInterval(this.intervalId) // stop countdown when reaching 0
-                this.storeChallengeExpired() // unset challenge accepted lcoally
+    private challengeAlreadySolved = () => {
+        Alert.alert(
+            "Challenge solved",
+            "Du hast diese Herausforderung bereits abgeschlossen. Bitte warte, bis sich der Sponsor mit dir in Verbindung setzt oder eine neue Herausforderung veröffentlicht wird.",
+            [{text: "OK"}],
+            {
+                cancelable: true,
             }
-        }, 1000)
+        )
     }
 
     private challengeSolved = async () => {
-        this.setState({ isLoadingChallengeSolved: true })
+        this.setState({isLoadingChallengeSolved: true})
         try {
-            const rawResp = await fetch(`${ChallengeLayerBar.API_ENDPOINT}/current/${await getLocalUserId()}`, {
+            const rawResp = await fetch(`${ChallengeLayerBar.API_ENDPOINT}/current/${await getLocalUserId()}`, { // TODO: Test email with wavect.io
                 method: "POST",
                 headers: {
                     Accept: "application/json",
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    sponsorEmail: this.props.sponsorEmail,
+                    email: this.props.sponsorEmail,
                 }),
             })
 
             const res = await rawResp.json()
-            if (res.error === null || res.error === undefined) {
+            if (res.error !== null && res.error !== undefined) {
                 // might return {}
                 console.error(res.error)
             } else {
+                this.storeChallengeSolved()
+
                 this.setState({
-                    currChallengeAccepted: false,
+                    currChallengeSolved: true,
                     isLoadingChallengeSolved: false,
                 })
 
                 Alert.alert(
                     "Sponsor notified",
                     "Wir haben den Sponsor der aktuellen Herausforderung benachrichtigt! Dieser sollte dich bzgl. Sponsoring demnächst kontaktieren.",
-                    [{ text: "Super!" }],
+                    [{text: "Super!"}],
                     {
                         cancelable: true,
                     }
@@ -114,56 +104,14 @@ class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, ICh
         }
     }
 
-    private getBtnRow = (challengeId: string) => {
-        if (this.state.currChallengeAccepted) {
-            // TODO: Add on press for trigger backend challenge solved
-            return (
-                <>
-                    <Text style={styles.expirationCountdownText} h4>
-                        Noch {this.state.remainingMilliseconds / 1000}s
-                    </Text>
-                    <MajorButton
-                        title="Abschließen"
-                        btnType={MajorBtnType.HIGHLIGHTED}
-                        onPress={this.challengeSolved}
-                        isLoading={this.state.isLoadingChallengeSolved}
-                    />
-                </>
-            )
-        }
-
-        return (
-            <>
-                <MajorButton
-                    title="Ablehnen"
-                    btnType={MajorBtnType.SECONDARY}
-                    onPress={() => functionalityNotAvailable("Aktuell veröffentlichen wir nur eine Herausforderung gleichzeitig.")}
-                />
-                <MajorButton title="Annehmen" btnType={MajorBtnType.PRIMARY} onPress={() => this.execBtnAccept(challengeId)} />
-            </>
-        )
-    }
-
-    private execBtnAccept = async (challengeId: string) => {
+    private execBtnAccept = async () => {
         if (await getEmailMarked()) {
-            console.log("Email exists, gratuliere du mongo")
-
-            // Save status locally
-            this.storeChallengeAccepted(challengeId)
-
-            Alert.alert(
-                "Challenge Accepted",
-                `Du hast nun ${this.msToFormattedStr(this.props.expirationInMs)} Zeit, um die Challenge zu lösen!`,
-                [{ text: "Verstanden" }],
-                {
-                    cancelable: true,
-                }
-            )
+            this.challengeSolved()
         } else {
             Alert.alert(
                 "Einen Moment noch!",
                 "Wir benötigen deine E-Mail Adresse damit dich unsere Sponsoren kontaktieren können.   ",
-                [{ text: "OK", onPress: () => this.props.navigation.navigate(routes.SettingsScreen) }],
+                [{text: "OK", onPress: () => this.props.navigation.navigate(routes.SettingsScreen)}],
                 {
                     cancelable: true,
                 }
@@ -173,53 +121,35 @@ class ChallengeLayerBar extends React.PureComponent<IChallengeLayerBarProps, ICh
         }
     }
 
-    private retrieveChallengeAccepted = async (challengeId: string) => {
-        let currChallengeAccepted: boolean = false
+    private retrieveChallengeSolved = async () => {
+        let currChallengeSolved: boolean = false
         try {
-            this.lastChallengeIdAccepted = await AsyncStorage.getItem(CHALLENGE_ACCEPTED_ID)
-            this.lastChallengeExpirationDateTime = await AsyncStorage.getItem(CHALLENGE_EXPIRATION_DATE)
+            this.lastChallengeIdSolved = await AsyncStorage.getItem(CHALLENGE_SOLVED_ID)
 
-            if (this.lastChallengeIdAccepted !== null && this.lastChallengeExpirationDateTime !== null) {
+            if (this.lastChallengeIdSolved !== null) {
                 // vals previously stored
 
-                if (this.lastChallengeIdAccepted === challengeId) {
+                if (this.lastChallengeIdSolved === this.props.challengeId) {
                     // current challenge already accepted
-                    currChallengeAccepted = true
+                    currChallengeSolved = true
                 }
             }
 
-            this.setState({ currChallengeAccepted })
+            this.setState({currChallengeSolved})
+            this.props.setGrayscale(!this.state.currChallengeSolved)
         } catch (e) {
             console.error(e)
         }
-        return currChallengeAccepted
     }
 
-    private storeChallengeExpired = async () => {
+    private storeChallengeSolved = async () => {
         try {
-            await AsyncStorage.removeItem(CHALLENGE_ACCEPTED_ID)
-            await AsyncStorage.removeItem(CHALLENGE_EXPIRATION_DATE)
-            this.setState({ currChallengeAccepted: false })
-            console.log("ChallengeLayerBar:storeChallengeExpired: Challenge expired.")
+            await AsyncStorage.setItem(CHALLENGE_SOLVED_ID, this.props.challengeId)
+            this.setState({currChallengeSolved: true})
+            this.props.setGrayscale(!this.state.currChallengeSolved)
         } catch (e) {
             console.error(e)
         }
-    }
-
-    private storeChallengeAccepted = async (challengeId: string) => {
-        try {
-            await AsyncStorage.setItem(CHALLENGE_ACCEPTED_ID, challengeId)
-            await AsyncStorage.setItem(CHALLENGE_EXPIRATION_DATE, new Date(Date.now() + this.props.expirationInMs).toString())
-            this.setState({ currChallengeAccepted: true, remainingMilliseconds: this.props.expirationInMs })
-            this.startCountdownInterval()
-        } catch (e) {
-            console.error(e)
-        }
-    }
-
-    private msToFormattedStr = (ms: number): string => {
-        const expirationObj: ExpirationTimeObj = new ExpirationTimeObj(ms)
-        return `${expirationObj.days} Tage, ${expirationObj.hours} Stunden, ${expirationObj.minutes} Minuten, ${expirationObj.seconds} Sekunden`
     }
 }
 
