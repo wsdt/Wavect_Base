@@ -7,7 +7,8 @@ WORKDIR /usr/src/app
 COPY package.json ./
 COPY ./secrets ./secrets
 COPY dist/ dist/
-RUN yarn install
+RUN yarn install --prod
 
-# Run npm run prod 
+# Run npm run prod
+EXPOSE 8090
 CMD ["node","./dist/server.js"]
