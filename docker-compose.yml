@@ -11,6 +11,8 @@ services:
       - backend_database
     ports:
       - 8090:8090
+    volumes:
+      - ./s_backend/s_b_core/logs:/usr/src/app/logs
     build:
       dockerfile: ./Dockerfile
       context: ./s_backend/s_b_core/
