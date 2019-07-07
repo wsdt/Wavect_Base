@@ -87,18 +87,9 @@ services:
     depends_on:
       - docker-socket-proxy-ro
 
-  trust-layer-api:
-    user: 1000:1000
-    read_only: true
-    deploy:
-      replicas: 1
-    networks:
-      - web
-    environment:
-      VIRTUAL_HOST: trust-layer-api.${AC_HOSTNAME:-dev.tributech.io}
-      LETSENCRYPT_HOST: trust-layer-api.${AC_HOSTNAME:-dev.tributech.io}
-      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-r.shokri@tributech.io}
-
+  #trust-layer-api:
+    #user: 1000:1000
+    #read_only: true
 
   #TODO: Due to the capabilities of ACME v2(wildcard support), we should consider switching to: https://github.com/adferrand/docker-letsencrypt-dns
   #However, only certain DNS server provider are supported at this moment.
@@ -124,9 +115,9 @@ services:
     image: mongo
     container_name: s_database
     volumes:
-      - database_data:/data/db
+      - database:/data/db
     networks:
-      - backend_database
+      - database
   #    environment:
   #      MONGO_INITDB_ROOT_USERNAME: root
   #      MONGO_INITDB_ROOT_PASSWORD: changeme
@@ -134,7 +125,7 @@ services:
   backend_core:
     deploy:
       replicas: 1
-    image: registry.gitlab.com/wavect/backend
+    image: registry.gitlab.com/wavect/backend/backend_core:latest
     restart: unless-stopped
     networks:
       - web
@@ -145,7 +136,7 @@ services:
       dockerfile: ./Dockerfile
       context: ./s_backend/s_b_core/
     depends_on:
-      - s_database
+      - database
     environment:
       VIRTUAL_HOST: api.${AC_HOSTNAME:-dev.wavect.io}
       LETSENCRYPT_HOST: trust-layer-api.${AC_HOSTNAME:-dev.wavect.io}
@@ -154,15 +145,13 @@ services:
   coming-soon-page:
     deploy:
       replicas: 1
-    image: registry.gitlab.com/wavect/coming-soon-page
+    image: registry.gitlab.com/wavect/coming-soon-page/coming-soon-page:latest
     restart: unless-stopped
     networks:
       - web
     build:
       dockerfile: ./Dockerfile
       context: ./s_frontend/s_web/s_comingsoon
-    depends_on:
-      - s_database
     environment:
       VIRTUAL_HOST: wavect.io
       LETSENCRYPT_HOST: wavect.io

@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 # Install app dependencies (copy lock and normal package.json)
 COPY package.json ./
 COPY ./secrets ./secrets
-COPY dist/ dist/
+#COPY dist/ dist/
 RUN yarn install --prod
 
 # Run npm run prod
