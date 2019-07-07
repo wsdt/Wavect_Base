@@ -129,8 +129,6 @@ services:
     networks:
       - web
       - database
-    ports:
-      - 8090:8090
     build:
       dockerfile: ./Dockerfile
       context: ./s_backend/s_b_core/
