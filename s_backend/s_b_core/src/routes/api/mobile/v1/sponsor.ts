@@ -1,9 +1,8 @@
 import * as express from "express"
 import { Sponsor } from "../../../../mvc/models/mobile/Sponsor"
-import {SPONSOR_CHALLENGE_CONSTANT} from '.././../../../mvc/controllers/db/db.constants'
+import { SPONSOR_CHALLENGE_CONSTANT } from ".././../../../mvc/controllers/db/db.constants"
 
 const router = express.Router()
-
 
 router.route("/current").get((_, res) => {
     Sponsor.findOne({ sponsorID: SPONSOR_CHALLENGE_CONSTANT }).exec((err, sponsor) => {
@@ -25,8 +24,8 @@ router.route("/current").post((req, res) => {
         sponsorYoutube: req.body.sponsorYoutube,
         sponsorInstagram: req.body.sponsorInstagram,
         sponsorFacebook: req.body.sponsorFacebook,
-        sponsorLinkedIn: req.body.sponsorLinkedIn
-    });
+        sponsorLinkedIn: req.body.sponsorLinkedIn,
+    })
 
     sponsor.save(err => {
         res.json({

@@ -1,11 +1,9 @@
 import * as express from "express"
-import {SPONSOR_CHALLENGE_CONSTANT} from "../../../../mvc/controllers/db/db.constants"
+import { SPONSOR_CHALLENGE_CONSTANT } from "../../../../mvc/controllers/db/db.constants"
 import { Challenge } from "../../../../mvc/models/mobile/Challenge"
 import { Sponsor } from "../../../../mvc/models/mobile/Sponsor"
 
-
 const router = express.Router()
-
 
 /**
  * use constant = 0 to indicate that we're using always a current obj
@@ -14,7 +12,6 @@ router.route("/current").get((_, res) => {
     Challenge.findOne({ id: SPONSOR_CHALLENGE_CONSTANT }).exec((err, challenge) => {
         if (challenge) {
             Sponsor.findOne({ sponsorID: challenge.get("sponsor") }).exec((err2, sponsor) => {
-
                 if (sponsor) {
                     res.json({
                         err: [err, err2],
@@ -39,7 +36,7 @@ router.route("/current").get((_, res) => {
                                 sponsorFacebook: sponsor.get("sponsorFacebook"),
                                 sponsorYoutube: sponsor.get("sponsorYoutube"),
                                 sponsorLinkedIn: sponsor.get("sponsorLinkedIn"),
-                                sponsorInstagram: sponsor.get("sponsorInstagram")
+                                sponsorInstagram: sponsor.get("sponsorInstagram"),
                             },
                             expirationInMs: challenge.get("expirationInMs"),
                         },
@@ -47,20 +44,14 @@ router.route("/current").get((_, res) => {
                 } else {
                     console.log("Challenge: Sponsor undefined")
                     res.json({
-                        err: [
-                            err,
-                            "Sponsor undefined",
-                        ],
+                        err: [err, "Sponsor undefined"],
                     })
                 }
             })
         } else {
             console.log("Challenge: Challenge undefined")
             res.json({
-                err: [
-                    err,
-                    "Challenge undefined",
-                ],
+                err: [err, "Challenge undefined"],
             })
         }
     })

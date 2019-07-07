@@ -8,10 +8,10 @@ const SponsorModel = new mongoose.Schema({
     shortDescr: { type: String, required: false },
     sponsorWebsite: { type: String, required: true },
     sponsorEmail: { type: String, required: true },
-    sponsorLinkedIn: {type: String, required: false},
-    sponsorYoutube: {type: String, required: false},
-    sponsorInstagram: {type: String, required: false},
-    sponsorFacebook: {type: String, required: false}
+    sponsorLinkedIn: { type: String, required: false },
+    sponsorYoutube: { type: String, required: false },
+    sponsorInstagram: { type: String, required: false },
+    sponsorFacebook: { type: String, required: false },
 })
 
 export const Sponsor = mongoose.model(COLLECTION_SPONSOR_NAME, SponsorModel)
