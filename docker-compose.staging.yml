@@ -1,4 +1,4 @@
-version: "3.6"
+version: "3.7"
 
 services:
 
@@ -87,10 +87,6 @@ services:
     depends_on:
       - docker-socket-proxy-ro
 
-    #trust-layer-api:
-    #user: 1000:1000
-    #read_only: true
-
   #TODO: Due to the capabilities of ACME v2(wildcard support), we should consider switching to: https://github.com/adferrand/docker-letsencrypt-dns
   #However, only certain DNS server provider are supported at this moment.
   letsencrypt:
@@ -129,8 +125,6 @@ services:
     networks:
       - web
       - database
-    volumes:
-      - ./s_backend/s_b_core/logs:/usr/src/app/logs
     build:
       dockerfile: ./Dockerfile
       context: ./s_backend/s_b_core/
@@ -138,8 +132,10 @@ services:
       - database
     environment:
       VIRTUAL_HOST: api.${AC_HOSTNAME:-dev.wavect.io}
-      LETSENCRYPT_HOST: trust-layer-api.${AC_HOSTNAME:-dev.wavect.io}
+      LETSENCRYPT_HOST: api.${AC_HOSTNAME:-dev.wavect.io}
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
+      DATABASE_NAME: wavect
+      DATABASE_URI: mongodb://database:27017
 
   coming-soon-page:
     deploy:
