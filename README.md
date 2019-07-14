@@ -4,6 +4,20 @@
 We are using submodules. If you clone this repo for the first time you may want to execute 
 `git clone --recursive https://github.com/wsdt/Wavect_Base.git`
 
+## How to start
+Please refer to the ReadMe-Files in the submodules itself. If you don't make any changes to the backend, you can
+use the real development api: [api.dev.wavect.io](https://api.dev.wavect.io). In case you want to add new features in the backend 
+you need to startup a local instance with Docker. 
+
+### Setup Script for mobile
+To keep everything as simple as it can be, you could use a simple startup-script which is located in /start_mobile_infrastructure.sh.
+This script starts up your docker-machine (as you might have Docker-Toolbox installed), the backend and even starts the mobile
+compilers. Please be aware that this script executes command, which you do not need every time (e.g. docker-machine start). 
+
+In that case we recommend that you make yourself familiar with the commands in the script and always only execute those lines manually
+which you actually need (to speed up development). 
+
+
 ## Used external tools 
 ### Snyk - Dependency security vulnerabilities
 We are using [Snyk](https://snyk.io) for automatically scanning for security vulnerabilities. As we have a private repository we cannot add the badge here. Please check for vulnerabilities regularly: [Snyk - Projects](https://app.snyk.io/org/wsdt/projects). 
@@ -48,6 +62,6 @@ Exemplary technologies used:
 - Tslint
 
 ### Database
-- NoSQL/SQL in future. 
+- NoSQL (currently MongoDb with Mongoose). 
 
 [![ForTheBadge built-by-developers](http://ForTheBadge.com/images/badges/built-by-developers.svg)](https://GitHub.com/wsdt/)
