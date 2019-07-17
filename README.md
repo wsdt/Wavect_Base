@@ -4,6 +4,12 @@
 We are using submodules. If you clone this repo for the first time you may want to execute 
 `git clone --recursive https://github.com/wsdt/Wavect_Base.git`
 
+#### Pulling submodules
+use `git submodule foreach "(git checkout master; git pull)&"` to easily pull and update all submodules.
+
+#### pushing submodules
+use `git push --recurse-submodules=on-demand` to push submodules
+
 ## How to start
 Please refer to the ReadMe-Files in the submodules itself. If you don't make any changes to the backend, you can
 use the real development api: [api.dev.wavect.io](https://api.dev.wavect.io). In case you want to add new features in the backend 
