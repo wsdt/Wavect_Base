@@ -2,7 +2,7 @@
 
 ## Submodules
 We are using submodules. If you clone this repo for the first time you may want to execute 
-`git clone --recursive https://github.com/wsdt/Wavect_Base.git`
+`git clone --recursive https://github.com/wsdt/Wavect_Base.git && cd Wavect_Base && git submodule foreach "(git checkout master; git pull)&" && yarn install`
 
 #### Pulling submodules
 use `git submodule foreach "(git checkout master; git pull)&"` to easily pull and update all submodules.
