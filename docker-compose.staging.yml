@@ -195,6 +195,9 @@ services:
       - wordpress_db
     image: phpmyadmin/phpmyadmin
     restart: unless-stopped
+    networks:
+      - web
+      - wordpress_db
     environment:
       PMA_HOST: wordpress_db
       PMA_PORT: 3306
