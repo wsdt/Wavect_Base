@@ -152,15 +152,68 @@ services:
       LETSENCRYPT_HOST: wavect.io,www.wavect.io
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
 
+  wordpress_db:
+    deploy:
+      replicas: 1
+    image: mysql:latest
+    restart: unless-stopped
+    volumes:
+      - wordpress_db:/var/lib/mysql
+    networks:
+      - wordpress_db
+    environment:
+      MYSQL_ROOT_PASSWORD: bk6dRLYWw2duFDNgLX2tbDebFcGnPN
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: BC8WYWIpnGA2UG0Au8uQK9W6UQOG
+
+  wordpress:
+    deploy:
+      replicas: 1
+    depends_on:
+      - wordpress_db
+    image: wordpress:latest
+    restart: unless-stopped
+    volumes:
+      - wordpress-content:/var/www/html/wp-content
+    networks:
+      - web
+      - wordpress_db
+    environment:
+      WORDPRESS_DB_HOST: wordpress_db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: BC8WYWIpnGA2UG0Au8uQK9W6UQOG
+      WORDPRESS_DB_NAME: wordpress
+      VIRTUAL_HOST: wordpress.dev.wavect.io
+      LETSENCRYPT_HOST: wordpress.dev.wavect.io
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
+
+  wordpress_pma:
+    deploy:
+      replicas: 1
+    depends_on:
+      - wordpress_db
+    image: phpmyadmin/phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: wordpress_db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: bk6dRLYWw2duFDNgLX2tbDebFcGnPN
+      VIRTUAL_HOST: wordpress-pma.dev.wavect.io
+      LETSENCRYPT_HOST: wordpress-pma.dev.wavect.io
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
+
 
 networks:
   private-docker-socks-proxy-ro:
   private-docker-socks-proxy-rw:
   web:
   database:
+  wordpress_db:
 
 volumes:
   database:
   nginx-certs:
   nginx-vhosts:
   nginx-html:
+  wordpress_db:
