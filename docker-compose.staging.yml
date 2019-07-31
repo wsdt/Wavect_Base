@@ -234,5 +234,5 @@ volumes:
   nginx-certs:
   nginx-vhosts:
   nginx-html:
-  wordpress__mariadb:
+  wordpress_mariadb:
   wordpress-content:
