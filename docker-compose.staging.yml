@@ -169,7 +169,7 @@ services:
       replicas: 1
     depends_on:
       - wordpress_db
-    image: wordpress:latest
+    image: registry.gitlab.com/wavect/wordpress:2019-08-05-custom
     volumes:
       - wordpress-content:/var/www/html/wp-content
     networks:
