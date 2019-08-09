@@ -156,6 +156,7 @@ services:
       image: mariadb:latest
       volumes:
         - wordpress_mariadb:/var/lib/mysql
+        -  ./s_frontend/s_web/s_f_wordpress_db/mysql/low_ram.d:/etc/mysql/conf.d:ro
       networks:
         - wordpress_db
       environment:
