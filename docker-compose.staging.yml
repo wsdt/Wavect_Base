@@ -75,6 +75,7 @@ services:
       - nginx-certs:/etc/nginx/certs #read only?
       - nginx-vhosts:/etc/nginx/vhost.d
       - nginx-html:/usr/share/nginx/html
+      - ./s_frontend/s_web/s_f_reverse_proxy/nginx/custom_nginx.conf:/etc/nginx/conf.d/custom_nginx.conf:ro
     ports:
       - "80:80"
       - "443:443"
@@ -183,6 +184,7 @@ services:
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_CONFIG_EXTRA: |
         define('FS_METHOD', 'direct');
+        define('WP_MEMORY_LIMIT', '64M');
       VIRTUAL_HOST: wordpress.dev.wavect.io
       LETSENCRYPT_HOST: wordpress.dev.wavect.io
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
