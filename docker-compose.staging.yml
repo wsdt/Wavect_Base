@@ -173,6 +173,7 @@ services:
     image: registry.gitlab.com/wavect/wordpress:2019-08-05-custom
     volumes:
       - wordpress-content:/var/www/html/wp-content
+      - ./s_frontend/s_web/s_f_reverse_proxy/nginx/custom_nginx.conf:/etc/nginx/conf.d/custom_nginx.conf:ro
     networks:
       - web
       - wordpress_db
