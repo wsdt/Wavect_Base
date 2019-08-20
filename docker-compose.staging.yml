@@ -3,6 +3,8 @@ version: "3.6"
 services:
 
   docker-socket-proxy-ro:
+    deploy:
+      replicas: 1
     image: tecnativa/docker-socket-proxy
     networks:
       - private-docker-socks-proxy-ro
@@ -34,6 +36,8 @@ services:
       - SECRETS=0
 
   docker-socket-proxy-rw:
+    deploy:
+      replicas: 1
     image: tecnativa/docker-socket-proxy
     networks:
       - private-docker-socks-proxy-rw
@@ -185,6 +189,8 @@ services:
       WORDPRESS_CONFIG_EXTRA: |
         define('FS_METHOD', 'direct');
         define('WP_MEMORY_LIMIT', '64M');
+        define('WP_POST_MAX_SIZE', '16M');
+        define('WP_UPLOAD_MAX_SIZE', '16M');
       VIRTUAL_HOST: wordpress.dev.wavect.io
       LETSENCRYPT_HOST: wordpress.dev.wavect.io
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
