@@ -8,7 +8,7 @@
         "no-console": [false],
         "variable-name": [true, "check-format", "ban-keywords", "allow-pascal-case", "allow-leading-underscore"],
         "quotemark": [true, "single", "avoid-escape", "jsx-single", "avoid-template"],
-        "semicolon": [true, "never"], /* Semicolons are not free, remove them */
+        "semicolon": [true, "never"] /* Semicolons are not free, remove them */,
         "object-literal-sort-keys": false
     },
     "rulesDirectory": [],
