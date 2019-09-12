@@ -1,0 +1,34 @@
+db.challenges.insertOne({
+        "id" : "0",
+        "headline" : "Laugh2Gether",
+        "subline" : "Bringe einen Freund zum Lachen und mache dabei ein Video",
+        "whyDoesOrganizationSponsor" : "Wir m�chten die Welt zu einem besseren Ort machen und zusammen mit Wavect k�nnen wir das erreichen",
+        "majorCategory" : "ENVIRONMENT",
+        "sponsor" : "0",
+	    "challengeInformation": "0",
+        "bgImage" : "https://images.pexels.com/photos/432722/pexels-photo-432722.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "expirationInMs" : 30000
+})
+
+db.sponsors.insertOne({
+        "id" : "0",
+        "name" : "IKEA",
+        "logoUri" : "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Ikea_logo.svg/1024px-Ikea_logo.svg.png",
+        "shortDescr" : "IKEA steht f�r tolle Produkte und die Liebe zum Handwerk",
+        "website" : "www.ikea.at",
+        "email" : "ikea@ikea.at",
+        "misc" : "Etwas kurzes �ber uns",
+        "aboutUs" : "Test 1 2 3",
+        "instagram" : "https://www.instagram.com/redbull/?hl=de",
+        "youtube" : "www.youtube.com",
+        "facebook" : "www.facebook.at",
+        "linkedin" : "www.linkedin.at"
+})
+
+db.challengeinfos.insertOne({
+	"id": "0",
+	"instruction": "Um diese Challenge zu l�sen, musst du einen deiner Freude zum Lachen bringen und dabei ein Foto oder Video erstellen. Wie - ist dir �berlassen!",
+	"privacy": "WaveCT und IKEA werden deine Fotos/Videos nicht f�r Werbezwecke verwenden oder diese an Dritte weiterleiten. F�r weitere Infos besuch doch bitte unsere Website: wavect.io",
+	"intention": "Wir m�chten die Menschen zusammenbrigen und den sozialen Zusammenhalt st�rken!",
+	"misc": "Um mehr Informationen �ber unsere Kampagnen zu 'sozialen Zusammenhalt' zu erhalten, besuch doch bitte unsere Website!"
+})

@@ -28,6 +28,7 @@
     "dependencies": {
         "react-native-vector-icons": "^6.6.0",
         "simple-node-logger": "^18.12.22",
+        "tslint-consistent-codestyle": "^1.15.1",
         "typescript": "^3.5.2"
     }
 }
