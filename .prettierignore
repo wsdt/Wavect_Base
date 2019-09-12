@@ -2,6 +2,7 @@
 dist/
 .jest/
 coverage/
+android/app/build
 node_modules/
 vendor/
 *.min.css
