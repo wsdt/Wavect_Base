@@ -15,7 +15,7 @@
  */
 
 // Bash echo formatting with colors: https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
-const errScriptNotImplemented = "echo.&&echo \033[0;31mError:\033[0m Script not defined yet, but implemented in parent package-scripts.js!"
+const errScriptNotImplemented = 'echo.&&echo \033[0;31mError:\033[0m Script not defined yet, but implemented in parent package-scripts.js!'
 
 module.exports = {
     scripts: {
@@ -23,11 +23,11 @@ module.exports = {
         once: errScriptNotImplemented,
         production: errScriptNotImplemented,
         build: errScriptNotImplemented,
-        clean: "rimraf ./dist",
-        test: "jest --detectOpenHandles",
+        clean: 'rimraf ./dist',
+        test: 'jest --detectOpenHandles',
         prettier: 'prettier --write "**/*.{ts,tsx,js,jsx,scss,css,json}"',
-        tslint: "tslint -p ./tsconfig.json",
-        tslintFix: "tslint --fix -p ./tsconfig.json",
-        evaluate: "yarn test && yarn start prettier && yarn start tslintFix",
+        tslint: 'tslint -p ./tsconfig.json',
+        tslintFix: 'tslint --fix -p ./tsconfig.json',
+        evaluate: 'yarn test && yarn start prettier && yarn start tslintFix',
     },
 }

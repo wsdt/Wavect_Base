@@ -1,14 +1,17 @@
 {
     "defaultSeverity": "warn",
-    "extends": ["tslint:latest", "tslint-eslint-rules", "tslint-consistent-codestyle", "tslint-config-prettier", "prettier"],
+    "extends": ["tslint:recommended", "tslint-react", "tslint-eslint-rules", "tslint-config-prettier"],
     "jsRules": {
         "semicolon": [true, "never"] /* Semicolons are not free, remove them */
     },
     "rules": {
+        "jsx-no-lambda": false,
+        "object-literal-sort-keys": false,
+        "curly": [true, "ignore-same-line"],
         "no-console": [false],
         "variable-name": [true, "check-format", "ban-keywords", "allow-pascal-case", "allow-leading-underscore"],
-        "quotemark": [true, "double", "avoid-escape", "jsx-double", "avoid-template"],
-        "semicolon": [true, "never"] /* Semicolons are not free, remove them */
+        "quotemark": [true, "single", "avoid-escape", "jsx-single", "avoid-template"],
+        "semicolon": [true, "never"] /* Semicolons are not free, remove them */,
     },
     "rulesDirectory": [],
     "linterOptions": {

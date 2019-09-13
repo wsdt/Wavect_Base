@@ -12,6 +12,7 @@
         "declaration": true,
         "lib": ["es6"],
         "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
 
         "strict": true /* Enable all strict type-checking options. */,
         "strictNullChecks": true /* Enable strict null checks. */,
