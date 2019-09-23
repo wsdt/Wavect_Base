@@ -3,6 +3,8 @@ version: "3.6"
 services:
 
   docker-socket-proxy-ro:
+    deploy:
+      replicas: 1
     image: tecnativa/docker-socket-proxy
     networks:
       - private-docker-socks-proxy-ro
@@ -34,6 +36,8 @@ services:
       - SECRETS=0
 
   docker-socket-proxy-rw:
+    deploy:
+      replicas: 1
     image: tecnativa/docker-socket-proxy
     networks:
       - private-docker-socks-proxy-rw
@@ -137,6 +141,7 @@ services:
       DATABASE_NAME: wavect
       DATABASE_URI: mongodb://database:27017
 
+  #Don't delete me! Instead, redirect wavect.io to coming-soon if the wp instance is down...
   coming-soon-page:
     deploy:
       replicas: 1
@@ -147,8 +152,8 @@ services:
       dockerfile: ./Dockerfile
       context: ./s_frontend/s_web/s_f_comingsoon
     environment:
-      VIRTUAL_HOST: wavect.io,www.wavect.io
-      LETSENCRYPT_HOST: wavect.io,www.wavect.io
+      VIRTUAL_HOST: coming-soon.dev.wavect.io
+      LETSENCRYPT_HOST: coming-soon.dev.wavect.io
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
 
   wordpress_db:
@@ -185,8 +190,12 @@ services:
       WORDPRESS_CONFIG_EXTRA: |
         define('FS_METHOD', 'direct');
         define('WP_MEMORY_LIMIT', '64M');
-      VIRTUAL_HOST: wordpress.dev.wavect.io
-      LETSENCRYPT_HOST: wordpress.dev.wavect.io
+        define('WP_POST_MAX_SIZE', '16M');
+        define('WP_UPLOAD_MAX_SIZE', '16M');
+        define( 'WP_HOME', 'https://wavect.io');
+        define( 'WP_SITEURL', 'https://wavect.io');
+      VIRTUAL_HOST: wavect.io,www.wavect.io
+      LETSENCRYPT_HOST: wavect.io,www.wavect.io
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
 
 networks:
