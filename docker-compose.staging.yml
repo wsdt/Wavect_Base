@@ -141,19 +141,19 @@ services:
       DATABASE_NAME: wavect
       DATABASE_URI: mongodb://database:27017
 
-  coming-soon-page:
-    deploy:
-      replicas: 1
-    image: registry.gitlab.com/wavect/coming-soon-page/coming-soon-page:latest
-    networks:
-      - web
-    build:
-      dockerfile: ./Dockerfile
-      context: ./s_frontend/s_web/s_f_comingsoon
-    environment:
-      VIRTUAL_HOST: wavect.io,www.wavect.io
-      LETSENCRYPT_HOST: wavect.io,www.wavect.io
-      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
+  #coming-soon-page:
+  #  deploy:
+  #    replicas: 1
+  #  image: registry.gitlab.com/wavect/coming-soon-page/coming-soon-page:latest
+  #  networks:
+  #    - web
+  #  build:
+  #    dockerfile: ./Dockerfile
+  #    context: ./s_frontend/s_web/s_f_comingsoon
+  #  environment:
+  #    VIRTUAL_HOST: wavect.io,www.wavect.io
+  #    LETSENCRYPT_HOST: wavect.io,www.wavect.io
+  #    LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
 
   wordpress_db:
       deploy:
@@ -191,8 +191,8 @@ services:
         define('WP_MEMORY_LIMIT', '64M');
         define('WP_POST_MAX_SIZE', '16M');
         define('WP_UPLOAD_MAX_SIZE', '16M');
-      VIRTUAL_HOST: wordpress.dev.wavect.io
-      LETSENCRYPT_HOST: wordpress.dev.wavect.io
+      VIRTUAL_HOST: wavect.io
+      LETSENCRYPT_HOST: wavect.io
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
 
 networks:
