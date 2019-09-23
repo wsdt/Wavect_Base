@@ -191,6 +191,8 @@ services:
         define('WP_MEMORY_LIMIT', '64M');
         define('WP_POST_MAX_SIZE', '16M');
         define('WP_UPLOAD_MAX_SIZE', '16M');
+        define( 'WP_HOME', 'https://wavect.io');
+        define( 'WP_SITEURL', 'https://wavect.io');
       VIRTUAL_HOST: wavect.io
       LETSENCRYPT_HOST: wavect.io
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
