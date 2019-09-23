@@ -141,6 +141,7 @@ services:
       DATABASE_NAME: wavect
       DATABASE_URI: mongodb://database:27017
 
+  #Don't delete me! Instead, redirect wavect.io to coming-soon if the wp instance is down...
   coming-soon-page:
     deploy:
       replicas: 1
