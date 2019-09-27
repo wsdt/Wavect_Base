@@ -34,7 +34,16 @@ Update deployment via docker stack:
 **NOTICE:** Yes, we have a typo here -> playgorund. Rename docker services is not possible. Please do not correct the typo.
 `docker stack deploy -c docker-compose.staging.yml  playgorund --with-registry-auth`
 
-## Step 3 check service health, optional (Remove server):
+## Step 3 run malicious commands on mongodb, optional (Remove server):
+Figure out current mongodb container ID via:
+`docker ps`
+
+Bash intro container (Please replace $CONTAINER-ID with the real container ID!):
+`docker exec -it $CONTAINER-ID /bin/bash`
+
+Exit with `exit` the container bash session
+
+## Step 4 check service health, optional (Remove server):
 `docker ps`
 
 `docker stack ls`
@@ -43,10 +52,10 @@ Update deployment via docker stack:
 
 `docker service ls`
 
- print log files (backend):
+ print log files (backend, last 10 minutes, with timestamp, floating):
 `docker service logs playgorund_backend_core  -f -t --since 10m`
 
-print log files (mongodb):
+print log files (mongodb, last 10 minutes, with timestamp, floating):
 `docker service logs playgorund_database  -f -t --since 10m`
 
 Cancel with ctr+c
