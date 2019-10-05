@@ -62,3 +62,6 @@ Cancel with ctr+c
 
 Exit ssh with:
 `exit` (dev user scope) and `exit` (root session)
+
+## Step 5 restarting a single service
+`docker service update playgorund_backend_core --force`

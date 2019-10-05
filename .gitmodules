@@ -10,3 +10,6 @@
 [submodule "s_frontend/s_web/s_f_webpage"]
 	path = s_frontend/s_web/s_f_webpage
 	url = https://github.com/wsdt/Wavect__s_f_webpage
+[submodule "s_frontend/s_web/s_f_website_paperkit"]
+	path = s_frontend/s_web/s_f_website_paperkit
+	url = https://github.com/wsdt/Wavect__s_f_websitereact

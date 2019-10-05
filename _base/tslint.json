@@ -1,6 +1,6 @@
 {
     "defaultSeverity": "warn",
-    "extends": ["tslint:recommended", "tslint-react", "tslint-eslint-rules", "tslint-config-prettier"],
+    "extends": ["tslint:recommended", "tslint-eslint-rules", "tslint-config-prettier"],
     "jsRules": {
         "semicolon": [true, "never"] /* Semicolons are not free, remove them */
     },

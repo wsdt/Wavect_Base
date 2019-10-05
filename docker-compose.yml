@@ -18,6 +18,12 @@ services:
       context: ./s_backend/s_b_core/
     depends_on:
       - s_database
+#    environment:
+#      DATABASE_USER: db_root
+#      DATABASE_NAME: wavect
+#      DATABASE_HOST: 192.168.99.100
+#      DATABASE_PORT: 27017
+#      DATABASE_PWD: hQNde3ts92QUnNDKF2KMQDVfEmVshpHSsG7CgVxpyBxGDQeC3P2YnFrtnTwG
 
 
 # NOT WORKING ON WINDOWS AS VIRTUALBOX, MONGODB AND WINDOWS MAPPING DOES NOT WORK, thus this external volume declaration is necessary here
@@ -31,17 +37,22 @@ services:
       - 27017:27017
     volumes:
       - s_database_data:/data/db
+#      - s_database_config:/data/configdb
+#      - ./s_database/startup/001_users.js:/docker-entrypoint-initdb.d/001_users.js:ro
     networks:
       - backend_database
 #    environment:
-#      MONGO_INITDB_ROOT_USERNAME: root
-#      MONGO_INITDB_ROOT_PASSWORD: changeme
+#      MONGO_INITDB_ROOT_USERNAME: db_root
+#      MONGO_INITDB_ROOT_PASSWORD: hQNde3ts92QUnNDKF2KMQDVfEmVshpHSsG7CgVxpyBxGDQeC3P2YnFrtnTwG
 
 # necessary see comments above
 volumes:
   s_database_data:
     external: true
     name: s_database_data
+#  s_database_config:
+#    external: true
+#    name: s_database_config
 
 networks:
   backend_database:
