@@ -1,0 +1,185 @@
+version: "3.6"
+
+services:
+
+  docker-socket-proxy-ro:
+    deploy:
+      replicas: 1
+    image: tecnativa/docker-socket-proxy
+    networks:
+      - private-docker-socks-proxy-ro
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - EVENTS=1
+      - PING=1
+      - VERSION=1
+      - CONTAINERS=1
+      - INFO=1
+      - POST=0
+      - BUILD=0
+      - COMMIT=0
+      - CONFIGS=0
+      - DISTRIBUTION=0
+      - EXEC=0
+      - IMAGES=0
+      - NETWORKS=0
+      - NODES=0
+      - PLUGINS=0
+      - SERVICES=0
+      - SESSION=0
+      - SWARM=0
+      - SYSTEM=0
+      - TASKS=0
+      - VOLUMES=0
+      - AUTH=0
+      - SECRETS=0
+
+  docker-socket-proxy-rw:
+    deploy:
+      replicas: 1
+    image: tecnativa/docker-socket-proxy
+    networks:
+      - private-docker-socks-proxy-rw
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - EVENTS=1
+      - PING=1
+      - VERSION=1
+      - CONTAINERS=1
+      - INFO=1
+      - POST=1 #TODO: Due tue the letsencrypt container, we have to set write permissions (reloading the nginx settings). On the long run, we need another solution likehttps://github.com/adferrand/docker-letsencrypt-dns. Or kubernetes!
+      - BUILD=0
+      - COMMIT=0
+      - CONFIGS=0
+      - DISTRIBUTION=0
+      - EXEC=1
+      - IMAGES=0
+      - NETWORKS=0
+      - NODES=0
+      - PLUGINS=0
+      - SERVICES=0
+      - SESSION=0
+      - SWARM=0
+      - SYSTEM=0
+      - TASKS=0
+      - VOLUMES=0
+      - AUTH=0
+      - SECRETS=0
+
+  nginx-proxy:
+    deploy:
+      replicas: 1
+    image: jwilder/nginx-proxy:alpine
+    environment:
+      - DOCKER_HOST=tcp://docker-socket-proxy-ro:2375
+      - DHPARAM_GENERATION=false #We have to set this recording to: https://github.com/jwilder/nginx-proxy.
+    volumes:
+      - nginx-certs:/etc/nginx/certs #read only?
+      - nginx-vhosts:/etc/nginx/vhost.d
+      - nginx-html:/usr/share/nginx/html
+      - ./s_frontend/s_web/s_f_reverse_proxy/nginx/custom_nginx.conf:/etc/nginx/conf.d/custom_nginx.conf:ro
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - private-docker-socks-proxy-ro
+      - web
+    labels:
+      - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy"
+      - "com.github.jrcs.letsencrypt_nginx_proxy_companion.docker_gen."
+    depends_on:
+      - docker-socket-proxy-ro
+
+  #TODO: Due to the capabilities of ACME v2(wildcard support), we should consider switching to: https://github.com/adferrand/docker-letsencrypt-dns
+  #However, only certain DNS server provider are supported at this moment.
+  letsencrypt:
+    deploy:
+      replicas: 1
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    environment:
+      - DOCKER_HOST=tcp://docker-socket-proxy-rw:2375
+    volumes:
+      - nginx-certs:/etc/nginx/certs
+      - nginx-vhosts:/etc/nginx/vhost.d
+      - nginx-html:/usr/share/nginx/html
+    networks:
+      - private-docker-socks-proxy-rw
+    depends_on:
+      - nginx-proxy
+      - docker-socket-proxy-rw
+
+  database:
+    deploy:
+      replicas: 1
+    image: mongo
+    volumes:
+      - database:/data/db
+    networks:
+      - database
+  #    environment:
+  #      MONGO_INITDB_ROOT_USERNAME: root
+  #      MONGO_INITDB_ROOT_PASSWORD: changeme
+
+  backend_core:
+    deploy:
+      replicas: 1
+    image: registry.gitlab.com/wavect/backend/backend_core:latest
+    networks:
+      - web
+      - database
+    build:
+      dockerfile: ./Dockerfile
+      context: ./s_backend/s_b_core/
+    depends_on:
+      - database
+    environment:
+      VIRTUAL_HOST: api.${AC_HOSTNAME:-dev.wavect.io}
+      LETSENCRYPT_HOST: api.${AC_HOSTNAME:-dev.wavect.io}
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
+      DATABASE_NAME: wavect
+      DATABASE_URI: mongodb://database:27017
+
+  website_react:
+    deploy:
+      replicas: 1
+    image: registry.gitlab.com/wavect/frontend/react_website:latest
+    networks:
+      - web
+    build:
+      dockerfile: ./Dockerfile
+      context: ./s_frontend/s_web/s_f_website_paperkit
+    depends_on:
+      - backend_core
+    environment:
+      VIRTUAL_HOST: wavect.io,www.wavect.io
+      LETSENCRYPT_HOST: wavect.io,www.wavect.io
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
+
+  #Don't delete me! Instead, redirect wavect.io to coming-soon if the wp instance is down...
+  coming-soon-page:
+    deploy:
+      replicas: 1
+    image: registry.gitlab.com/wavect/coming-soon-page/coming-soon-page:latest
+    networks:
+      - web
+    build:
+      dockerfile: ./Dockerfile
+      context: ./s_frontend/s_web/s_f_comingsoon
+    environment:
+      VIRTUAL_HOST: coming-soon.dev.wavect.io
+      LETSENCRYPT_HOST: coming-soon.dev.wavect.io
+      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
+
+networks:
+  private-docker-socks-proxy-ro:
+  private-docker-socks-proxy-rw:
+  web:
+  database:
+
+volumes:
+  database:
+  nginx-certs:
+  nginx-vhosts:
+  nginx-html:
