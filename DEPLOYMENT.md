@@ -32,7 +32,7 @@ Pull the latest docker images:
 
 Update deployment via docker stack:
 **NOTICE:** Yes, we have a typo here -> playgorund. Rename docker services is not possible. Please do not correct the typo.
-`docker stack deploy -c docker-compose.staging.yml  playgorund --with-registry-auth`
+`docker stack deploy -c docker-compose.staging.yml  wavect --with-registry-auth`
 
 ## Step 3 run malicious commands on mongodb, optional (Remove server):
 Figure out current mongodb container ID via:
@@ -52,11 +52,14 @@ Exit with `exit` the container bash session
 
 `docker service ls`
 
+`docker service ps --no-trunc {serviceName}`
+`journalctl -u docker.service | tail -n 50`
+
  print log files (backend, last 10 minutes, with timestamp, floating):
-`docker service logs playgorund_backend_core  -f -t --since 10m`
+`docker service logs wavect  -f -t --since 10m`
 
 print log files (mongodb, last 10 minutes, with timestamp, floating):
-`docker service logs playgorund_database  -f -t --since 10m`
+`docker service logs wavect  -f -t --since 10m`
 
 Cancel with ctr+c
 
@@ -64,4 +67,4 @@ Exit ssh with:
 `exit` (dev user scope) and `exit` (root session)
 
 ## Step 5 restarting a single service
-`docker service update playgorund_backend_core --force`
+`docker service update wavect_backend_core --force`
