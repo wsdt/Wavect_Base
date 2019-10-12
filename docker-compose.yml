@@ -24,6 +24,9 @@ services:
 #      DATABASE_HOST: 192.168.99.100
 #      DATABASE_PORT: 27017
 #      DATABASE_PWD: hQNde3ts92QUnNDKF2KMQDVfEmVshpHSsG7CgVxpyBxGDQeC3P2YnFrtnTwG
+    environment:
+      DATABASE_NAME: wavect
+      DATABASE_URI: mongodb://database:27017
 
 
 # NOT WORKING ON WINDOWS AS VIRTUALBOX, MONGODB AND WINDOWS MAPPING DOES NOT WORK, thus this external volume declaration is necessary here
@@ -41,6 +44,11 @@ services:
 #      - ./s_database/startup/001_users.js:/docker-entrypoint-initdb.d/001_users.js:ro
     networks:
       - backend_database
+    #environment:
+      #MYSQL_ROOT_PASSWORD: bk6dRLYWw2duFDNgLX2tbDebFcGnPN
+      #MYSQL_DATABASE: wavect
+      #MYSQL_USER: mongodb
+      #MYSQL_PASSWORD: BC8WYWIpnGA2UG0Au8uQK9W6UQOG
 #    environment:
 #      MONGO_INITDB_ROOT_USERNAME: db_root
 #      MONGO_INITDB_ROOT_PASSWORD: hQNde3ts92QUnNDKF2KMQDVfEmVshpHSsG7CgVxpyBxGDQeC3P2YnFrtnTwG

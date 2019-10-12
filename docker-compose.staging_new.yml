@@ -157,20 +157,20 @@ services:
       LETSENCRYPT_HOST: wavect.io,www.wavect.io
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
 
-  #Don't delete me! Instead, redirect wavect.io to coming-soon if the wp instance is down...
-  coming-soon-page:
-    deploy:
-      replicas: 1
-    image: registry.gitlab.com/wavect/coming-soon-page/coming-soon-page:latest
-    networks:
-      - web
-    build:
-      dockerfile: ./Dockerfile
-      context: ./s_frontend/s_web/s_f_comingsoon
-    environment:
-      VIRTUAL_HOST: coming-soon.dev.wavect.io
-      LETSENCRYPT_HOST: coming-soon.dev.wavect.io
-      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
+#  #Don't delete me! Instead, redirect wavect.io to coming-soon if the wp instance is down...
+#  coming-soon-page:
+#    deploy:
+#      replicas: 1
+#    image: registry.gitlab.com/wavect/coming-soon-page/coming-soon-page:latest
+#    networks:
+#      - web
+#    build:
+#      dockerfile: ./Dockerfile
+#      context: ./s_frontend/s_web/s_f_comingsoon
+#    environment:
+#      VIRTUAL_HOST: coming-soon.dev.wavect.io
+#      LETSENCRYPT_HOST: coming-soon.dev.wavect.io
+#      LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
 
 networks:
   private-docker-socks-proxy-ro:
