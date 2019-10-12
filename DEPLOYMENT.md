@@ -51,11 +51,16 @@ Exit with `exit` the container bash session
 
 `docker service ls`
 
+`docker service ps --no-trunc {serviceName}`
+`journalctl -u docker.service | tail -n 50`
+
  print log files (backend, last 10 minutes, with timestamp, floating):
+
 `docker service logs wavect_backend_core  -f -t --since 10m`
 
 print log files (mongodb, last 10 minutes, with timestamp, floating):
 `docker service logs wavect_database  -f -t --since 10m`
+
 
 Cancel with ctr+c
 
@@ -63,4 +68,6 @@ Exit ssh with:
 `exit` (dev user scope) and `exit` (root session)
 
 ## Step 5 restarting a single service
+
 `docker service update wavect_backend_core --force`
+
