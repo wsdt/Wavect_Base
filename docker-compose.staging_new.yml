@@ -114,6 +114,12 @@ services:
     deploy:
       replicas: 1
     image: mongo
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongo mongo:27017/test --quiet 1
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
     volumes:
       - database:/data/db
     networks:
@@ -129,6 +135,7 @@ services:
     networks:
       - web
       - database
+    restart: on-failure
     build:
       dockerfile: ./Dockerfile
       context: ./s_backend/s_b_core/
