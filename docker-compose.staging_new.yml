@@ -114,6 +114,7 @@ services:
     deploy:
       replicas: 1
     image: mongo
+    command: mongod --wiredTigerCacheSizeGB 0.25 #see: https://docs.mongodb.com/manual/reference/program/mongod/#wiredtiger-options
     healthcheck:
       test: echo 'db.runCommand("ping").ok' | mongo mongo:27017/test --quiet 1
       interval: 10s
