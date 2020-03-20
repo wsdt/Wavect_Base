@@ -34,6 +34,12 @@ services:
       - VOLUMES=0
       - AUTH=0
       - SECRETS=0
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '5'
+    restart: always
 
   docker-socket-proxy-rw:
     deploy:
@@ -67,6 +73,12 @@ services:
       - VOLUMES=0
       - AUTH=0
       - SECRETS=0
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '5'
+    restart: always
 
   nginx-proxy:
     deploy:
@@ -91,6 +103,12 @@ services:
       - "com.github.jrcs.letsencrypt_nginx_proxy_companion.docker_gen."
     depends_on:
       - docker-socket-proxy-ro
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '5'
+    restart: always
 
   #TODO: Due to the capabilities of ACME v2(wildcard support), we should consider switching to: https://github.com/adferrand/docker-letsencrypt-dns
   #However, only certain DNS server provider are supported at this moment.
@@ -109,11 +127,18 @@ services:
     depends_on:
       - nginx-proxy
       - docker-socket-proxy-rw
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '5'
+    restart: always
 
   database:
     deploy:
       replicas: 1
     image: mongo
+    command: mongod --wiredTigerCacheSizeGB 0.25 #see: https://docs.mongodb.com/manual/reference/program/mongod/#wiredtiger-options
     healthcheck:
       test: echo 'db.runCommand("ping").ok' | mongo mongo:27017/test --quiet 1
       interval: 10s
@@ -124,6 +149,12 @@ services:
       - database:/data/db
     networks:
       - database
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '5'
+    restart: always
   #    environment:
   #      MONGO_INITDB_ROOT_USERNAME: root
   #      MONGO_INITDB_ROOT_PASSWORD: changeme
@@ -135,7 +166,6 @@ services:
     networks:
       - web
       - database
-    restart: on-failure
     build:
       dockerfile: ./Dockerfile
       context: ./s_backend/s_b_core/
@@ -147,6 +177,13 @@ services:
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
       DATABASE_NAME: wavect
       DATABASE_URI: mongodb://database:27017
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '5'
+    restart: always
+    #restart: on-failure
 
   website_react:
     deploy:
@@ -163,6 +200,12 @@ services:
       VIRTUAL_HOST: wavect.io,www.wavect.io
       LETSENCRYPT_HOST: wavect.io,www.wavect.io
       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL:-kevin.riedl.privat@gmail.com}
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+        max-file: '5'
+    restart: always
 
 #  #Don't delete me! Instead, redirect wavect.io to coming-soon if the wp instance is down...
 #  coming-soon-page:
