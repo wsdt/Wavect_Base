@@ -1,1 +1,0 @@
-10x Bäderwertgutschein im Wert von 10,10€ 
