@@ -1,3 +1,6 @@
+[submodule "s_frontend/s_f_comingsoon"]
+	path = s_frontend/s_f_comingsoon
+	url = https://github.com/wsdt/Wavect__s_f_comingsoon
 [submodule "s_backend/s_b_core_watchdog"]
 	path = s_backend/s_b_core_watchdog
 	url = https://github.com/wsdt/Wavect__s_b_core_watchdog
