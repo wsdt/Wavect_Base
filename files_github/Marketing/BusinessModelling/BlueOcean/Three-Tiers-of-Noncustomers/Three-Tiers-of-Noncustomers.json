@@ -1,0 +1,57 @@
+﻿{
+  "created": 1549634194903,
+  "custom_group": {
+    "-LYCP_CgTJF7P5wOF3g0": {
+      "assessed": "",
+      "label": "Teenagers",
+      "needs": "Environmental, social and health issues not that important. Winning prizes either based on law not possible or they are not interested in it.",
+      "size": 70,
+      "type": [
+        2
+      ]
+    },
+    "-LYCPuOOIUXSePknfEqa": {
+      "assessed": "",
+      "label": "Influencers",
+      "needs": "Social media influencers will take a lot of time to convert. Nevertheless, they will switch at a certain point of time.",
+      "size": 15,
+      "type": [
+        1
+      ]
+    },
+    "-LYCQ97i0yFmTWn3kGbR": {
+      "assessed": "",
+      "label": "50+",
+      "needs": "Not that much on the Internet. They don't want to spend time on Social Media.",
+      "size": 15,
+      "type": [
+        0
+      ]
+    }
+  },
+  "insights": {
+    "-LYCQamDqEvFHpMh4f0a": {
+      "author": "Kevin Riedl",
+      "created": 1549634792749,
+      "label": "Gamification",
+      "uid": 1413326
+    },
+    "-LYCQerngoP50x8aVPRK": {
+      "author": "Kevin Riedl",
+      "created": 1549634809491,
+      "label": "Good Marketing",
+      "uid": 1413326
+    },
+    "-LYCQgsMLY40YSML2o6M": {
+      "author": "Kevin Riedl",
+      "created": 1549634817719,
+      "label": "Events",
+      "uid": 1413326
+    }
+  },
+  "name": "Three Tiers of Noncustomers",
+  "status": "draft",
+  "active": true,
+  "id": "-LYCOK3oM6aTI1fbXgCu",
+  "type": "three_tiers"
+}

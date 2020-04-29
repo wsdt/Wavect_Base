@@ -1,0 +1,64 @@
+﻿{
+  "created": 1549637295582,
+  "key_factors": [
+    {
+      "description": "Direct messaging other users.",
+      "errc": "E",
+      "label": "Direct Messaging"
+    },
+    {
+      "errc": "Re",
+      "label": "Fake profiles"
+    },
+    {
+      "errc": "C",
+      "label": "Sponsored Challenges"
+    },
+    {
+      "errc": "C",
+      "label": "Paid Challenges"
+    },
+    {
+      "errc": "E",
+      "label": "Ads"
+    },
+    {
+      "errc": "Ra",
+      "label": "Data Privacy"
+    },
+    {
+      "errc": "C",
+      "label": "Ernesto - Mascot"
+    },
+    {
+      "errc": "C",
+      "label": "Grayscale/Interactive UI"
+    },
+    {
+      "errc": "Ra",
+      "label": "Customer Support"
+    },
+    {
+      "errc": "E",
+      "label": "Custom Content"
+    },
+    {
+      "errc": "Ra",
+      "label": "Content Quality (Post Rating)"
+    },
+    {
+      "errc": "E",
+      "label": "Premium Version"
+    },
+    {
+      "errc": "C",
+      "label": "Events"
+    }
+  ],
+  "name": "Eliminate-Reduce-Raise-Create Grid",
+  "status": "draft",
+  "updated": 1549638909965,
+  "active": true,
+  "id": "-LYC_92bi_qdyqYfXT0V",
+  "type": "errc"
+}
