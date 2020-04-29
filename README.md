@@ -1,4 +1,4 @@
-# Wavect_Base [![HitCount](http://hits.dwyl.com/wsdt/Wavect_Base.svg)](http://hits.dwyl.com/wsdt/Wavect_Base) [![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors) [![GitHub license](https://img.shields.io/github/license/wsdt/Wavect_Base.svg)](https://github.com/wsdt/Wavect_Base/blob/master/LICENSE) [![Generic badge](https://img.shields.io/badge/Made%20with-TypeScript-9cf)](https://www.typescriptlang.org/)
+# Wavect_Base [![HitCount](http://hits.dwyl.com/wsdt/Wavect_Base.svg)](http://hits.dwyl.com/wsdt/Wavect_Base) [![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors) [![GitHub license](https://img.shields.io/github/license/wsdt/Wavect_Base.svg)](https://github.com/wsdt/Wavect_Base/blob/master/LICENSE) [![Generic badge](https://img.shields.io/badge/Made%20with-TypeScript-9cf)](https://www.typescriptlang.org/) [![Generic badge](https://img.shields.io/badge/Docker-Compatible-blue.svg)](https://docker.com)
 
 
 ## What was Wavect®? ("BeKind" from October 2018 - April 2019)
