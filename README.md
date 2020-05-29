@@ -17,6 +17,13 @@ If you should plan to commercialize any of our software or/and business-model, w
 * [Business-Plan](https://github.com/wsdt/Wavect_Base/blob/master/files_github/Wavect_BusinessPlan.pdf)
 * [One-Pager](https://github.com/wsdt/Wavect_Base/blob/master/files_github/Konzept_OnePager.pdf)
 
+### Team
+Our startup consisted of 5 people.
+* Kevin Riedl, Bsc.
+* Reza Shokri, Bsc.
+* Christof Jori
+* Mariella Galneder
+* Ing. Daniel Gosterxeier
 
 ### Social-Media (might not be online anymore)
 * [Facebook](https://www.facebook.com/wavect/)
