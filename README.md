@@ -19,11 +19,11 @@ If you should plan to commercialize any of our software or/and business-model, w
 
 ### Team
 Our startup consisted of 5 people.
-* Kevin Riedl, Bsc.
-* Reza Shokri, Bsc.
-* Christof Jori
-* Mariella Galneder
-* Ing. Daniel Gosterxeier
+* **CEO:** Kevin Riedl, Bsc.
+* **CIO:** Reza Shokri, Bsc.
+* **CTO:** Christof Jori
+* **CMO:** Mariella Galneder
+* **CFO:** Ing. Daniel Gosterxeier
 
 ### Social-Media (might not be online anymore)
 * [Facebook](https://www.facebook.com/wavect/)
