@@ -7,7 +7,6 @@ Wavect® has been a Tech-Startup from October 2018 to May 2020 to offer low-pric
 ![Image Wavect_Logo](https://github.com/wsdt/Wavect_Base/blob/master/files_github/Marketing/Corporate-Identity/01_Logo/color/combination-mark/png/Logo_WAVECT_color_comb-m_200.png)
 
 ### Our latest mockup
-Click on the image to view a short YouTube-Video.
 
 ![Wavect - Mockup](https://github.com/wsdt/Wavect_Base/blob/master/files_github/Marketing/Corporate-Identity/15_Prototype/Wireframes_Mockups_Design/20190925_MariellasMockup.png)
 
