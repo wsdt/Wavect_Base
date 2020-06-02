@@ -10,12 +10,13 @@ Wavect® has been a Tech-Startup from October 2018 to May 2020 to offer low-pric
 ### Our latest mockup
 
 ![Wavect - Mockup](https://github.com/wsdt/Wavect_Base/blob/master/files_github/Marketing/Corporate-Identity/15_Prototype/Wireframes_Mockups_Design/20190925_MariellasMockup.png)
-
+<hr />
 
 ### Main documents
 If you should plan to commercialize any of our software or/and business-model, we would greatly appreciate if you get in touch with us!
 * [Business-Plan](https://github.com/wsdt/Wavect_Base/blob/master/files_github/Wavect_BusinessPlan.pdf)
 * [One-Pager](https://github.com/wsdt/Wavect_Base/blob/master/files_github/Konzept_OnePager.pdf)
+<hr />
 
 ### Team
 Our startup consisted of 5 people.
@@ -24,13 +25,14 @@ Our startup consisted of 5 people.
 * **CTO:** Christof Jori
 * **CMO:** Mariella Galneder
 * **CFO:** Ing. Daniel Gosterxeier
+<hr />
 
 ### Social-Media (might not be online anymore)
 * [Facebook](https://www.facebook.com/wavect/)
 * [LinkedIn](https://www.linkedin.com/company/wavect)
 * [Instagram](https://www.instagram.com/wavect.io)
 * [Github](https://github.com/bekind-austria)
-
+<hr />
 
 ## Contribution [![Open Source Love svg2](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
@@ -40,8 +42,7 @@ This project is licensed under GNU V3, so contributions/pull-requests are welcom
 - Kevin Riedl ([WSDT](https://github.com/wsdt))
 - Christof Jori ([Jo-Chris](https://github.com/Jo-Chris))
 - Reza Shokri ([Bioharz](https://github.com/bioharz))
-
-
+<hr />
 
 ## Submodules
 We are using submodules. If you clone this repo for the first time you may want to execute 
