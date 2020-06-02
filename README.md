@@ -1,7 +1,7 @@
 # Wavect_Base [![HitCount](http://hits.dwyl.com/wsdt/Wavect_Base.svg)](http://hits.dwyl.com/wsdt/Wavect_Base) [![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors) [![GitHub license](https://img.shields.io/github/license/wsdt/Wavect_Base.svg)](https://github.com/wsdt/Wavect_Base/blob/master/LICENSE) [![Generic badge](https://img.shields.io/badge/Made%20with-TypeScript-9cf)](https://www.typescriptlang.org/) [![Generic badge](https://img.shields.io/badge/Docker-Compatible-blue.svg)](https://docker.com)
 
 
-## What was Wavect®? ("BeKind" from October 2018 - August 2020)
+## What was Wavect®? ("BeKind" from October 2018 - May 2020)
 Wavect® has been a Tech-Startup from October 2018 to May 2020 to offer low-priced and personalized Corporate-Social-Responsibility campaigns to SMEs. We basically built a social-platform where people can solve so-called challenges related to environment-protection, health and solidarity and win prizes based on their interests by companies they love (e.g. exclusive rebates, products, vouchers, ...).
 
 ![Image Wavect_Logo](https://github.com/wsdt/Wavect_Base/blob/master/files_github/Marketing/Corporate-Identity/01_Logo/color/combination-mark/png/Logo_WAVECT_color_comb-m_200.png)
