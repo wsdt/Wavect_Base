@@ -1,4 +1,4 @@
-# Wavect_Base [![HitCount](http://hits.dwyl.com/wsdt/Wavect_Base.svg)](http://hits.dwyl.com/wsdt/Wavect_Base) [![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors) [![Generic badge](https://img.shields.io/badge/Made%20with-TypeScript-9cf)](https://www.typescriptlang.org/) [![Generic badge](https://img.shields.io/badge/Docker-Compatible-blue.svg)](https://docker.com)
+# Wavect_Base [![HitCount](http://hits.dwyl.com/wsdt/Wavect_Base.svg)](http://hits.dwyl.com/wsdt/Wavect_Base) [![Maintenance](https://img.shields.io/badge/Maintained%3F-no-red.svg)](https://bitbucket.org/lbesson/ansi-colors) [![Generic badge](https://img.shields.io/badge/Made%20with-TypeScript-9cf)](https://www.typescriptlang.org/) [![Generic badge](https://img.shields.io/badge/Docker-Compatible-blue.svg)](https://docker.com) [![Donate](https://img.shields.io/badge/Donate-Pay%20me%20a%20coffee-3cf)](https://github.com/wsdt/Global/wiki/Donation) [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/kevin.riedl.privat%40gmail.com)
 
 
 ## What was Wavect®? ("BeKind" from October 2018 - April 2019)
@@ -38,7 +38,7 @@ Our startup consisted of 5 people.
 
 This project is licensed under GNU V3, so contributions/pull-requests are welcome. All contributors get listed here. 
 
-**Contributors** [![saythanks](https://img.shields.io/badge/say-thanks-ff69b4.svg)](https://saythanks.io/to/kennethreitz)
+**Contributors**
 - Kevin Riedl ([WSDT](https://github.com/wsdt))
 - Christof Jori ([Jo-Chris](https://github.com/Jo-Chris))
 - Reza Shokri ([Bioharz](https://github.com/bioharz))
